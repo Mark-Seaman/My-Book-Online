@@ -105,7 +105,6 @@ user
 docs.correct
 docs.tst
 files.correct
-files.tmp
 files.tst
 git.correct
 git.tst
