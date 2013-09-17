@@ -94,31 +94,6 @@
     <!-- END Header -->
     {% endif %}
     
-    {% if messages %}
-    <ul class="messagelist">{% for message in messages %}<li>{{ message }}</li>{% endfor %}</ul>
-    {% endif %}
-    
-    <!-- Content -->
-    <div id="content" class="{% block coltype %}colM{% endblock %}">
-      {% block content %}{{ content }}{% endblock %}
-      <br class="clear" />
-    </div>
-    
-    <!-- Facebook -->
-    <div class="fb-like" data-href="" data-send="false" data-width="225"
-         data-show-faces="false"></div>
-    <!-- Place this tag where you want the +1 button to render -->
-    <g:plusone annotation="inline"></g:plusone>
-    
-    <!-- Google Plus -->
-    <script type="text/javascript">
-      (function() {
-      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-      po.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-      })();
-    </script>
-    
     <!-- END Content -->
     
     {% block footer %}{% endblock %}
