@@ -2,7 +2,7 @@
 # Start working on the simple project
 
 export p=~/Projects/mybook
-[ `hostname` == web126.webfaction.com ] export p=~
+[ `hostname` == web126.webfaction.com ] && export p=~
 
 export ph=seaman@markseaman.org
 export pa=$p/webapps/mybook
