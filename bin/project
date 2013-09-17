@@ -28,7 +28,7 @@ $pt:\
 
 
 # Show the banner
-[ 'web389.webfaction.com' == `hostname` ] && return
+[ 'web126.webfaction.com' == `hostname` ] && return
 figlet 'My Book'
 
 # Use virtualenv
