@@ -1,0 +1,6 @@
+#!/bin/bash
+# Show the pending changes
+
+cd $pd
+echo "Pending Updates to Templates"
+rsync -nauv SimpleApps/template/ template | rsync-filter

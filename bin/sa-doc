@@ -1,0 +1,4 @@
+#!/bin/bash
+# Edit the simple apps docs
+
+e $p/app/user_doc/User/SimpleApps/business/Index

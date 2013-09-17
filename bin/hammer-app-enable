@@ -1,0 +1,22 @@
+#!/bin/bash
+# Enable a single application
+
+user=$1
+app=$2
+
+# Update the installed app list
+t=/tmp/apps-$user
+cp $pd/$user/.apps $t
+echo $app >> $t
+cat $t | sort -u > $pd/$user/.apps
+
+# Create the directory
+mkdir -p "$user/$app"
+
+# Create the Index
+cp $pd/template/$app/.index $user/$app/Index
+chmod +x $user/$app/Index
+
+# Create the .template file
+[ -f "$pd/template/$app/.template" ] &&
+cp $pd/template/$app/.template $user/$app/.template 

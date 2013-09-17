@@ -1,0 +1,10 @@
+#!/bin/bash
+# Create a new project folder in AppThumper
+
+cd ~/Projects/thumper/bin
+. project
+
+hammer-add seaman/myprojects/$1
+
+
+

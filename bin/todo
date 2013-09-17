@@ -1,0 +1,7 @@
+#!/bin/bash
+# Add a to do item
+
+f=$pd/SimpleApps/Action
+
+echo "$*" >> $f
+e $f

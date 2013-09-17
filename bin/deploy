@@ -1,0 +1,19 @@
+#!/bin/bash
+# Show the pipe scan home page
+
+echo 'Deploy code for $p to server'
+
+cd $p                               &&
+pwd                                 &&
+scp bin/bashrc $ph:.bashrc          &&
+scp bin/emacs.conf $ph:.emacs       &&
+cd $pa                              &&
+git add -A .                        &&
+git commit -m'Automatic deployment' ;
+git pull                            &&
+git push                            &&
+svr-do 'git pull'                   &&
+svr-restart                         &&
+web  
+
+

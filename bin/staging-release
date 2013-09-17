@@ -1,0 +1,6 @@
+#!/bin/bash
+# Show the pending changes
+
+cd $pd
+echo "Release Updates to Templates"
+rsync -auv SimpleApps/template/ template

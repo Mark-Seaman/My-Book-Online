@@ -1,0 +1,7 @@
+#!/bin/bash
+# Stop the simple app dev server
+
+ps -ef | grep -v grep | grep runserver | awk '{ print "kill", $2 }' | sh
+ 
+ps -ef | grep -v grep | grep runserver
+

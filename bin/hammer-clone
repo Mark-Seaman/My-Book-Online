@@ -1,0 +1,60 @@
+#!/usr/bin/env python
+# Create a new doc from a template
+
+from os import environ,mkdir
+from os.path import join,isdir,basename,exists
+from sys import argv
+
+# Copy the file contents
+def copy_file(infile,outfile,title=None):
+    text =  open(infile).read()
+    if title: 
+        text = text % title
+    f = open(outfile,'w')
+    f.write(text)
+    f.close()
+    return text
+
+# Format a page title
+def title_string(str):
+    str = basename(str)
+    word = ''
+    result = []
+    for i,c in enumerate(str):
+        word += c
+        if i+1>=len(str) or str[i+1].isupper():
+            result.append(word)
+            word = ''
+    return ' '.join(result)
+
+# Remove the user part of the doc name
+def remove_user(doc):
+    a = doc.split('/')
+    return '/'.join(a[1:])
+    
+tname    = argv[1]
+docname  = argv[2]
+title    = title_string(docname)
+template = join(environ['pd'],'template',tname)
+outfile  = join(environ['pd'],docname)
+
+if isdir(template):
+    if not exists(outfile):
+        mkdir(outfile)
+    copy_file(join(template,'.template'), join(outfile,'.template'))
+    template = join(template,'Index')
+    outfile  = join(outfile,'Index')
+    text     = copy_file(template, outfile, title)
+    path = join(docname,'Index','edit')
+    print 'redirect:'+remove_user(path)
+else:
+    text = copy_file(template,outfile, title)
+    path = join(docname,'edit')
+    print 'redirect:'+remove_user(path)
+
+#print '\n\nfile:\n', docname
+#print 'template:\n' + template
+#print 'text:\n', text % title
+#print text
+
+

@@ -1,0 +1,10 @@
+#!/bin/bash
+# Enable all available apps for the staging user
+
+echo 'List of hammer applications'
+
+hammer-apps |
+while read a
+do
+    echo hammer-app-enable staging $a
+done
