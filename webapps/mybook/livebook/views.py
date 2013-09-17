@@ -31,7 +31,7 @@ def show_forms(request, topic, data):
 def livebook (request, topic):
     template='livebook.html'
     page = loader.get_template (template)
-    data =  Context (gather_page_data (request, topic))
+    data =  Conctext (gather_page_data (request, topic))
     #show_forms(request, topic, data)
     #data ['form'] = EmailForm()
     return HttpResponse (page.render (data))
