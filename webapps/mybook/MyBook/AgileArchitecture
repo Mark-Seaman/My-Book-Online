@@ -1,0 +1,124 @@
+* Agile Software Architecture *
+<a href='images/title.jpg' target='_blank'><img width=100% height=100% src=images/title.jpg></a>
+
+**Agile Software Architecture**
+ Mark Seaman
+ Shrinking World Solution
+ http://shrinking-world.org
+
+Bio
+ 32 years as a professional developer
+ 27 years at HP (software and firmware for consumers)
+ 5 years as a consultant (real-time control & web dev)
+ 50 product cycles & million lines of code
+
+Recently Discovered
+ Current projects and learning
+ Patterns for faster development
+ Also useful for greater flexibility
+
+Customize to your context
+ Types of knowledge
+ Scalability
+ Evaluate and apply
+
+Balanced development
+ Extend, Fix, Test, Improve
+
+**A. Test**
+
+Script your actions
+ Text in/text out
+ One line test cases
+ Encapsulated knowledge
+
+Set expected results
+ Run the program and see what happens
+ Decide if the answer is acceptable
+
+Report the unexpected
+ Diff the results vs. expected
+ Summary of all failing tests
+
+Develop a test library
+ One command to run all tests
+ Easy to get a top level understanding in seconds
+
+**B. Extend**
+
+Fail a test
+ Test non-existant features
+ Test known failures
+ Cause failures
+
+Pass a test
+ Create one line of code to pass
+ Do not go any further with the feature
+
+Test before commit
+ Hook up a test as part of the commit script
+
+Design a development loop
+ Run full test in several seconds
+ Reduce context on failure
+ Enlarge context on success
+
+**C. Fix**
+
+Test continuously
+ All tests are automatic
+ Use system scheduler
+ Run from scratch
+
+Verify assumptions
+ Select things to test each day
+ Learn about anything that changes
+
+Review all failures
+ Review failed tests
+ Review details of each failure
+ Accept results
+
+Fix test or product
+ Each failure indicates an unanticipated result
+ Improve noisy tests with filters
+ Fix product flaws ASAP
+
+**D. Improve**
+
+Find duplication
+ Look for similar logic blocks
+ Isolate the common parts
+ Create a new common part
+
+Invoke common part
+ Make sure that you have tests
+ Convert to invoke the common part
+ Remove the old code
+
+One thing at a time
+ Feature, Test, Refactoring
+ 
+Leave behind assets
+ Libraries of reusable parts emerge naturally
+ Postpone standardizing interfaces until needed
+
+**Summary**
+
+Balanced activities
+
+Testing framework
+ Automatic
+ Continuous
+ Robust
+
+Fast dev loop
+ Minimum context for each task
+ Quick debugging
+ Automatic error detection
+
+Flexible system
+ Confidence to make radical restruturing changes
+ Lower cost through higher quality
+
+Thank You!

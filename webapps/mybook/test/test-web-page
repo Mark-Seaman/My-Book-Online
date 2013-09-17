@@ -1,0 +1,5 @@
+#!/bin/bash
+# Get the page from the web site
+
+mb-page shrinking-world.org Home  2>/dev/null
+

@@ -1,0 +1,30 @@
+Never ignore errors
+
+When you run the software an get an unexpected result, stop whatever
+you are doing and fix it.  This often occurs when you are trying to
+work on another problem.  There is a feeling that you are better off
+to ignore this issue to focus on the original task.
+
+The downside of ignoring issues is that they accumulate. I've worked
+on projects where the developers were constantly creating new features
+while the existing features had serious design flaws that were
+extremely hard to fix.  After creating a huge building on a bad
+foundation it may be cheaper to demolish the whole structure and start
+over.
+
+You should start with the assumption that everything you have created
+so far work properly.  It may have limited features but each feature
+that exists should be defect free.  If it is not then fix it.  Now
+will be cheaper than later.
+
+When your software is required to work properly then any unexpected
+result is a flag highlighting some error in the system.  It is best to
+investigate the issue immediately while you still have the exact
+context.  There is no value in creating new features when the ones
+that you have don't work.
+
+Recording the issue for later may introduce a delay of a month.  At
+that point you are very unlikely to even duplicate the issue.  Also
+defects left to themselves tend to breed.  By the time you get around
+to resolving old issues you may have grand-bug and great-grand-bugs to
+deal with.

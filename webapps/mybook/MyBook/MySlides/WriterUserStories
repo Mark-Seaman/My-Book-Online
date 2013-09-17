@@ -1,0 +1,10 @@
+* Writer User Stories *                 -*-muse-*-
+
+The writing features are protected by a password. The author must be
+logged in to edit any of the online content.
+
+There is a view that allows the order of all the topics to be
+modified. It is a customized version of the table of contents. The
+current topic can be moved up and down in the reading order. The
+effect of this operation is to change the which topic is considered
+the parent of the topic in question.

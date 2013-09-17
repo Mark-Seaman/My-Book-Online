@@ -1,0 +1,73 @@
+* Stragtegic Version Control *                 -*-muse-*-
+
+Few developers use version control as a stratigic tool.  Instead they
+use it as a tactic to keep from having code loss and coordinate
+changes between several people.  This is a little like using your car
+only to store household items.
+
+A change in how you use a version control system could facilitate a
+major upgrade in your development model as a whole.   It can change
+how you coordinate work, perform automated testing, and manage your
+project planning.
+
+Over the last several years I have been thoroughly studying my
+development practices. Examining each aspect of my daily routine has
+yielded some surprises.  I found that I was spending a lot of mind
+share on my files.
+
+Where are they and what are they doing?  Where have they been and
+where are they going?  Have any of my files fallen on hard times?  How
+does each part of the system fit with the whole?  These are the
+questions that you need a version control system to manage for you.
+
+Files can no longer be managed as individuals.  There are way too many
+for that.  They must be treated with policies.  The first step in the
+strategic use of version control, is to make sure that your software
+supports change sets.
+
+You should never think about an individual file version.  It should
+always be a collective set of file versions that are built into a
+single change set.  Each change set is a working snapshot of your
+system.  It is tested, and to the best of your knowledge, it is
+working properly.  Whether you changed one or ten thousand files, your
+change set is all that you really trust.
+
+When you commit a set of changes to version control, you are making a
+statement that the new thing is better than the old.  Only commit what
+you trust to version control.
+
+To share your changes with others you will periodically push.  Only
+push your changes when you are ready to defend them in the court of
+peer review.  Why would you want to push bad things?
+
+Develop everything with a session model.  Create your work products,
+test it, and commit your changes.  While you are working you will have
+many files with pending changes.  At the end of your session you will
+have committed all of your pending changes. 
+
+This provides a point of closure for your work.  It also lets you
+focus on one thing until it is done.  This is vitally important while
+programming because most programming errors are the result of
+distractions. 
+
+A work session begins when you desire to fullfill a goal on your
+project.  Try to limit your session to an hour.  Make your commits
+match your specific goals.  This will mean that you are creating a new
+commit each hour and that your pending files should be very fresh.
+Constantly push for done.
+
+To gather changes from others you should pull their changes.  If the
+code does not work with yours you need to stop everything else and
+troubleshoot the issue.  Enlist the help of the person that caused the
+problem so that they can be trained not to in the future.
+
+There are four essential operations in a strategic version control:
+ * **changes** - show the pending changes
+ * **commit** - commit the pending changes
+ * **pull** - get changes from others
+ * **push** - share changes with others
+
+Make sure that these essential operations are promenant in the sea of
+commands that you use for managing branches, labeling version,
+merging, etc..
+

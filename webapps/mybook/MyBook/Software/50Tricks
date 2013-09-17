@@ -1,0 +1,107 @@
+* 50 Programming Tricks *                 -*-muse-*-
+*Best practices for developing a web application*
+
+Developing a web site is easy if you know how to do it.  Programming involves a high level
+understanding about how to do software engineering coupled with a catalog of tricks for your specific
+technology.  This book focuses on the top 50 tricks that you will need to develop a web site.  
+
+I've selected a web development project using Django written in Python.  This will allow us to be
+real specific about the tricks we will use.  This same template can be applied to any technology
+stack.  I recommend that you use this approach for the specific technology that you use in your
+everyday life.
+
+**What is a trick?**
+ * A pattern for programming, design, or process
+ * Resolves a design problem using a standard solution
+ * Understood best practice
+ * Build a catalog that fits your world
+
+**Fastest way to learn**
+ * Design the pattern once and apply many times
+ * Automate the frequently used patterns
+ * Resolve issues on an actual project
+ * Refine continuously
+ * Share your patterns
+
+**Understand your project**
+ * Every project is different
+ * Every project is the same
+ * Planning is developing the tricks you need to use
+
+**Understand your skills**
+ * Which tricks have you applied less than five times?
+ * All learning is spent on new tricks
+ * Project speed and predictability is driven by new tricks
+ * Capture knowledge of new tricks you acquire
+
+**Estimating effort**
+ * You can apply any trick you totally know in 1 hour
+ * You can learn a new trick in a day
+ * Each time you do a task it takes half the learning time
+ * A project is the sum of the task time
+
+**Never assume anything**
+ * It does not run until you see it run
+ * Automation is the only way to get predictable results
+ * Three levels of automated testing - system, feature, unit
+ * Development speed is determined by testing 
+
+**Keeping score**
+ * Make a plan at the beginning
+ * Update your plan daily
+ * Track your progress daily
+ * Pay for the learning first to reduce uncertainty
+
+**Build your own catalog**
+ * Your world is different
+ * You need a guidebook
+ * A place for all your best thinking
+ * Share your catalog with others
+ * Use your knowledge to drive business results
+
+**Catalog of Patterns**
+
+**1. Planning**
+ * Focus
+ * Break it down
+ * Update plan daily
+ * Compare actual to expected results
+ * Address blocking issues
+   
+**2. Learning**
+ * Identify tricks needed
+ * Invest in hardest trick first
+ * Record tutorial info
+
+**3. Design**
+ * Write everything three times (experiement, feature, structure)
+ * Constantly refactor
+ * Make it simpler
+ * Never duplicate
+
+**4. Programming**
+ * Know your language
+ * Use a world class text editor
+ * Build tools
+ * Eliminate context switch to preserve concentration
+ * Never duplicate code
+ * Say it in code
+ * Remove dead code
+
+**5. Testing**
+ * Automatically test everything
+ * System test runs everyday
+ * Feature tests run every hour
+ * Development testing can be run every minute
+ * Testing is development
+ * Only test what needs to work
+
+**6. Deployment**
+ * Automate deployment
+ * Version control reigns
+ * Personal automation (5 seconds to create a command)
+
+**7. Coordinating**
+ * Communicate daily and weekly
+ * Seek to align expectations with reality
+ * Constantly be evaluating the project scope

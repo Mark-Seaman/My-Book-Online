@@ -1,0 +1,74 @@
+* Fundamental Operations *
+
+A complex system can be decomposed into a collection of objects.  Each
+object in a system has a role to play. Every object in the system
+should only do one thing.  If an object is doing more than one thing
+then it can always be decomposed into the specific tasks that it is
+responsible for along with a container to hold the different parts.
+
+This may seem like overkill, but it is much easier to deal with a
+large number of extremely simple objects than it is to work with a
+small number of complex ones.  Always decompose objects until they are
+embarrassingly simple.  Trust me, you won't be embarrassed three
+months from now when your system just works.
+
+Every object in your system should do one thing.  There will be a
+small number of operations needed to accomplish this task.  This is
+typically around four.  You may have a need for a few other operations
+but try to keep the number as small as possible.
+
+Consider the following example.  We need a customer record in a
+database table.  The fundamental operations are create a new customer,
+search for customer that already exist, update the data in existing
+records, and delete records that are not needed.  Other operations are
+just variations on the fundamental ones.
+
+To build a new system always start with the fundamental operations for
+each object. Your first action should be to create a unit test to
+illustrate your expectations for each of the fundamental operations.
+Let's continue with our example.
+
+def test_customer():
+    add_customer("Bob")
+
+    bob = search_for_customer("Bob")
+    if not bob: print "No Bob found"
+
+    update_customer(bob, "Bill")
+    bob = search_for_customer("Bob")
+    if bob: print "There should not be a Bob"
+    bill = search_for_customer("Bill")
+    if not bill: print "No Bill found"
+
+    delete_customer(bill)
+    if bill: print "There should not be a Bill"
+
+Even if you have never seen Python code before you can read this test
+code and know what is supposed to happen with a customer.  Notice how
+dense this code is.  There are a lot of ideas expressed here that
+capture the fundamental operations of customer.
+
+You can write the test before you even define the customer class.
+Sometimes you already have a class.  That's no problem.  You work the
+same way.  Start with the fundamental operations and define a test
+that executes one example of each.
+
+Tests should be illustrative not exhaustive.  This is the most
+significant mistake programmers make with unit testing.  Don't try to
+test every boundary condition.  Instead, pick one case that you care
+about for each operation. Later if you discover an undetected problem
+you can upgrade your test case.
+
+Most problems that you catch will be catastropic, not subtle.  This
+business value of one test case for each operation is huge, two is a
+small gain.  Beyond two, you are paying more for the development and
+maintenance of the test code than it warrants.
+
+Three months this code will still check the fundamental integrity of
+your code.  Full unit testing of your code can be accomplished with
+two lines of code for each operation.  Each test should be "call this
+function", and "check the return value against what I expected".
+
+Imagine a system that has a complete self test that can be run in
+seconds.  Once you work this way you will never do it any other way.
+Why would you want to build a system that you could not verify?

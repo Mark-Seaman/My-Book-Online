@@ -1,0 +1,37 @@
+#!/bin/bash
+# Create a new mybook Django application
+
+basedir=/home/seaman/Documents/Code/mybook
+project=$1
+projdir=$basedir/$project/mybook
+
+echo "Creating the files for $project MyBook"
+mkdir -p $basedir/$project
+mkdir -p $projdir
+
+# Go to the application directory
+cd $projdir
+
+
+# Create the start_application
+cat  >apache_application <<END_CREATE
+#!/bin/bash
+# Setup the web server to run this application
+
+sudo su <<SU
+cat <<EOF >>/etc/apache2/httpd.conf
+<Location "/$project">
+    PythonDebug On
+    PythonHandler django.core.handlers.modpython
+    PythonOption django.root /$project
+    PythonPath "['$projdir/'] + sys.path"
+    SetEnv DJANGO_SETTINGS_MODULE mybook.settings
+    SetHandler python-program
+</Location>
+EOF
+
+/etc/init.d/apache2 restart
+SU
+END_CREATE
+
+

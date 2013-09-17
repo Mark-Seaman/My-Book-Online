@@ -1,0 +1,17 @@
+* What Is Bit Rot ? *                 -*-muse-*-
+
+Software is almost always created with high quality.   But it lives in a constantly changing world.
+As software ages it must constantly be changed to match the new world.  If this does not occur then
+the software stop working properly.
+
+Many of the problems are subtle at first. But over time, become catastopic. These problems result
+from changes to the outside system, platform that this system runs on, or the functionality of the
+system itself.  All three of these sources gather to form the problem of bit rot.
+
+If the software changes cannot keep up with the changing environment then problems grow and multiply
+within the software.  Bit rot grows dramatically with time.
+
+The other problem with aging software is that the original team members slowly fade away and the
+knowledge required to keep the system updated is lost.  As this happens the system becomes more
+brittle and fragile.  Eventually the system becomes so unstable that it no longer performs the
+function that it was created for.

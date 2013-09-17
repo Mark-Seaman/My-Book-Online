@@ -1,0 +1,7 @@
+* Change the Reading Order *                 -*-muse-*-
+
+
+The order that the topics are presented to the user is determined by
+the nesting of the topics. All topics are arranged in a
+hierarchy. Each topic has a single parent. You can select this parent
+anytime you are editing a topic.

@@ -1,0 +1,77 @@
+* Deliver Value in Two Days *     -*-muse-*-
+
+When "Just in Time Manufacturing" became popular in the mid-eighties
+the standard practice was to have warehouses filled with parts
+inventory and finished goods.  It was unthinkable to believe that
+trucks would pull up on one side of the factory and products would be
+loaded into truck on the other side.
+
+But as soon as companies demonstrated the ability to reduce inventory
+it became the new accepted practice.  What is unthinkable becomes the
+only accepted practice once it has been done.
+
+Traditional software projects were unwieldy beasts that never ended.
+They required large teams and long schedules.  They cost millions or
+dollars and took years.  The first software project that I worked on
+took 4 1/2 years, with a team of 10 engineers.  How would you like to
+pay for that one?
+
+There are proven methods that can get you to deliver software faster
+and more reliably to your customers.   There are many companies that
+use these practices and deliver software that rocks, every time!
+
+Anyone can learn these techniques.  They are really quite simple.  But
+not everyone can embrace them because they require a high degree of
+discipline. It is easier to be sloppy in the short-term, and them pay
+the price in the long-term.
+
+One revolutionary idea that you can put in practice today is to
+deliver value faster.  In our manufacturing example, people began to
+view inventory as bad.  It was something that they had paid for
+without getting any value in return.
+
+In software development, uncompleted work is like that.  You paid for
+the development, but you are not yet ready to get business value from
+it. How long will you wait?  In my first project we waited for about
+40 man years at $100,000 a pop.  Wow, that is a lot of dollars waiting
+for a return.
+
+There are three serious problems with having lots of uncompleted work.
+
+  1. You are not getting cash for your effort.  This usually makes the
+     scope increase to get a bigger payoff.
+
+  2. You don't get feedback from customers about what they really
+     want. You try to guess, but you will guess wrong.
+
+  3. You fail to practice the ruthless prioritization that is needed
+     for a short-term payback.
+
+Here is the challenge.  Cut your project schedule in half.  If you
+work on yearly project consider six months until you get your software
+deployed.  I've been moving toward shorter-and-shorter payoff cycles
+for several years.
+
+At some point you stop calling them project as you view the value
+delivered as a stream, rather than as a block of functionality.  You
+will have to develop your own methods of delivery that match your
+customer needs.
+
+The key thing you should always be asking is how can you deliver value
+to real customers faster.  A personal goal that I have is to deliver
+value within two days of working on it.
+
+This forces me into a work mode where I constantly test everything and
+deliver small incremental improvements on a stable foundation.  I
+think about every feature that gets added to try to reduce it to a
+step that can be fully completed within a couple of days.
+
+If you do this you will steer away from massive development tasks.  At
+the same time you will become excellent at refactoring and unit
+testing.  These are essential skills for rapid development.  Imagine
+asking your customer (or your boss) to describe one feature that want
+the most, then coming back with a working implementation of this
+tomorrow. 
+
+Once you do development this way you will never look back.  Everything
+else is unacceptably wasteful.

@@ -1,0 +1,26 @@
+BOOK: /SuperPower/Home
+Domain:    Ideas
+Domain:    Brain
+Domain:    SuperPower
+Domain:    .
+Domain:    .
+Domain:    .
+Directory: Ideas/Home
+page_url(url)
+is_private(url)
+books()
+pages(url)
+page_name(url)
+BOOK: /home/seaman/Documents/MyBook/Ideas/Home
+Domain:    Ideas
+Domain:    Brain
+Domain:    SuperPower
+Domain:    .
+Domain:    .
+Domain:    .
+Directory: Ideas/Home
+page_url(url)
+is_private(url)
+books()
+pages(url)
+page_name(url)

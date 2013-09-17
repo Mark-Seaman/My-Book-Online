@@ -1,0 +1,25 @@
+#header {
+    background-image:url('http://shrinking-world.org/media/mybook/images/WaterBanner1000.jpg');
+    background-color:white;
+    margin: 12px;
+    border: 2px solid gray;
+    width: 100%;
+    padding: 0 px;
+}
+
+div {
+    padding: 5px;
+    max-width: 80em;
+}
+
+p {
+    line-height: 140%;
+    font-size: 12pt;
+    color: #444;
+}
+
+li {
+    line-height: 100%;
+    font-size: 12pt;
+    color: #444;
+}

@@ -1,0 +1,46 @@
+* World-class Development *                 -*-muse-*-
+
+*Build incrementally*
+---
+
+**Never lose stability - take baby steps**
+
+ * Make sure your code always runs, never let it break
+ * Every change is shared using version control
+ * Merge changes every day, remove merge-debt
+ * If the system can't run them nothing else matters
+
+
+**Never compromise quality - if it is broken fix it**
+
+ * Every action should be followed by confirmation
+ * Investigate every surprise (don't save them for later)
+ * Features only get added to a high-quality base
+ * If you have not seen it run it doesn't
+
+
+**Get business value sooner - cut your time in half**
+
+ * Work on one feature (for each brain you have)
+ * Finish one action before starting the next
+ * Continuous integration and testing
+ * Use feedback to select the next actions
+
+
+**Protect your structure - experiment, features, structure**
+
+ * Write code to experiment with the technology
+ * Fully implement every feature before moving on
+ * Use refactoring to be constantly fixing the structure
+ * All code must be written for readability
+ * Duplication is the major source of errors
+
+
+**Create a catalog of essential best practices**
+
+ * Every team should adopt a coding and design style
+ * Violation of the rules is writing bad code
+ * The rules should concentrate on important issues
+ * You should have around fifty rules 
+ * Train new team members
+

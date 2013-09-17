@@ -1,0 +1,4 @@
+#!/bin/bash
+
+mb book /SuperPower/Home 
+mb book $y/Ideas/Home 

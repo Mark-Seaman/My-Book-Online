@@ -1,0 +1,64 @@
+#!/bin/bash
+# Test the MyBook code
+
+# Run all the unit tests
+#manage.py test book
+
+# Make sure that the live pages are correct
+function test_page
+{
+    match=`wget -O  - $1 2>/dev/null  | tee /tmp/test.html | grep "$2"`
+    if [ "$match" == "" ]
+    then
+        echo "Missing Pattern in $1: $2"
+        e /tmp/test.html  
+        exit 1
+    else
+        echo "$match"
+    fi 
+}
+
+
+# Shrinking-world.org
+
+page='http://shrinking-world.org'
+pattern='.h1 id="site-name"..a href=.http://shrinking-world.org...Shrinking World Guides..a...h1.'
+test_page "$page" "$pattern"
+
+page='http://shrinking-world.org'
+pattern='Shrinking World Guide  - Shrinking World Guides'
+test_page "$page" "$pattern"
+
+page='http://shrinking-world.org/book0/index'
+pattern='.h1.Table of Conxtents./h1.'
+test_page "$page" "$pattern"
+
+
+# Technology
+
+page='http://technology.shrinking-world.org'
+pattern='.h1 id="site-name"..a href=.http://technology.shrinking-world.org...Shrinking World Guides..a...h1.'
+test_page "$page" "$pattern"
+
+
+# Leadership
+
+page='http://leadership.shrinking-world.org'
+pattern='.h1 id="site-name"..a href=.http://leadership.shrinking-world.org...Shrinking World Guides..a...h1.'
+test_page "$page" "$pattern"
+
+page='http://leadership.shrinking-world.org/book5/index'
+pattern='.h1.Table of Conxtents./h1.'
+test_page "$page" "$pattern"
+
+page='http://leadership.shrinking-world.org/book5/index'
+pattern='Principles of Effectiveness  - Shrinking World Guides'
+test_page "$page" "$pattern"
+   
+
+# MyBookOnline
+
+page='http://mybookonline.org'
+pattern='.h1 id="site-name"..a href=.http://mybookonline.org/..Shrinking World Guides..a...h1.'
+test_page "$page" "$pattern"
+

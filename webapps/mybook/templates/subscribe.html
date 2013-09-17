@@ -1,0 +1,37 @@
+{% extends "mybook_page.html" %}
+
+{% block title %}Subscribe to Seaman's Log{% endblock %}
+{% block branding %}
+    <!-- -->
+    {{ debug }}
+    <h1 id="site-name">
+       <a href='/'>{{ site }}</a>
+    </h1>
+    <p style='color:yellow;margin-left:50px'>
+       {{ subtitle }}
+    </p>
+{% endblock %}
+
+{% block content %}
+<blockquote>
+  <div style='background-color:#ddd'>
+      <br/>
+      <p><strong>Subscribe to Seaman's Log.</strong></p>
+      <p>Updates are published about once a week.</p>
+      <p>Unsubscribe at any time.</p>
+      <p>You can look forward to getting fresh tips for how to thrive in the 
+        modern world.</p>
+      <hr/>
+
+      <form action="subscribe" method="post">
+        <br/>
+        <hr/>
+        <table>
+          <tr><td>Email</td><td>{{ form.email  }}</td></tr>
+        </table>
+        <input type="submit" value="Subscribe" />
+      </form>
+
+  </div>
+</blockquote>
+{% endblock %}

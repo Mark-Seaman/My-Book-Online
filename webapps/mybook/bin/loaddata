@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Load the database from a SQL file
+
+. ~/.bashrc
+
+project=mybook
+projectdir=/home/seaman/webapps/$project
+database=seaman_$project
+user=seaman_$project
+password=mds959SQ
+datafile=$projectdir/data/$database.sql
+
+cd $projectdir
+
+# Reload the data from a SQL file
+mysql -u$user -p$password $database < $datafile

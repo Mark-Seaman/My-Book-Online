@@ -1,0 +1,113 @@
+* Fight Bit Rot *                 -*-muse-*-
+
+How to keep software entropy from destroying your project.
+
+**The crisis**
+
+Everyone wants a software system to be flexible, but this does not naturally occur.  The only way to
+make a system flexible, is to constantly flex it.
+
+Have you ever worked in a shared space and noticed how messy it becomes over time?  This is because
+no one feels a sense of ownership. As code has many authors it becomes more like a messy public
+space than a sign of craftsmanship.
+
+Different people have different goals for a system.  They also have different programming and design
+styles that they inflict upon the overall system.  The more authors that a software system has, then
+the more dramatic the mess becomes.
+
+Eventually, the code takes on so much technical debt that it can not be maintained for a reasonable
+cost.   At this point the entire system is scrapped and a new one is built to replace it. 
+
+There are a variety of reasons given for replacing the old system, but the actual cause is that the
+system has been taken over by "bit rot".  
+
+Software neglect can result in enormous costs to a business. This problem is incredibly pervasive in
+all industries.  Bit rot threatens to destroys our core business value.
+
+
+**The cure**
+
+Fortunately, there are very effective methods for fighting bit rot.  There are principles and
+practices that that guarantee a longer life for existing software system.  Learning these techniques
+can protect a large software investment.
+
+These four areas will dramatically extend the useful life of your software.
+
+ 1. Automate your testing
+ 2. Refactor ruthlessly
+ 3. Fix all known problems
+ 4. Make changes incrementally
+
+Automate your testing
+
+If your test cannot be run automatically then they will not be run very often.  Only automatic
+testing can be used to give you the confidence that your code is running properly.  Hiring an army
+of people to push buttons and right down results is a very bad business decision.  Your full battery
+of tests should run at least once a day.
+
+Refactor ruthlessly
+
+Once you have tests in place you can confidently modify your code.  Your tests will tell you when
+anything breaks in your code.  This lets you make very dramatic changes to the structure of your
+code without introducing any new defects.  The design and functionality of your code can be changed
+to match the changes in the environment.
+
+Fix all known problems
+
+The longer problems are in a system the greater the damage will be.  Bugs breed!  Every effort
+should be made to address design and coding flaws as quickly as they are discovered.  Set goals and
+track metrics for how long it takes to remove problems.
+
+Make changes incrementally
+
+Start with a baseline of functionality.  Create tests to ensure that the system always remains
+running.  If the system ever gets worse then revert the changes and try again. Every change that you
+make to the system should improve both the structure and the functionality of your system.
+Constantly be adding tests to the areas that you are working in to ensure that any problems that you
+introduce are discovered quickly.
+
+
+**Core practices**
+
+Automatic system test
+
+You should have a text-based language of some kind that you can use to stimulate your system.  By
+using this you can exercise all of the features within your software. The text lets you develop a
+collection of source code scripts that can easily be merged together.  
+
+To test your entire system all you need to do is run this collection of scripts and look for the
+familiar output.  This technique scales very well to large and complex systems.  Many specific tests
+can be written as a single line of code.
+
+Unit testing
+
+A unit test is written to test how a function behaves in isolation.  These are typically written at
+the same time that the product code is turned on.  A typical function of four lines should have two
+test cases that excercise a couple of paths through the function.  Each test case should be a single
+line of code.  Most people don't use unit tests because they make them too complex.  Keep it simple,
+but do it every time.
+
+Development loop
+
+How you construct your development loop, determines how maintainable your code will be three years
+from now.  A proper development loop starts with designing the test.  How will you verify that the
+feature works? 
+
+Thinking of the test first does two things for you.  It guarantees that your code works properly
+now. It also guarantees that you will know when you accidently break this function in the future. If
+you build this type of testing as you go then you can ensure that your whole system is testable.
+
+Strategic version control
+
+Version control is one of the most underutilized tools in the toolbox.  Every engineer should be
+able to work on many branches of code simultaneously without confusing them.  Choose a best-in-class
+version control system like Git and make sure that every engineer is well trained on how to use
+it. Configuration management issues can easily eat up 25% of the time for your development team.
+
+
+**Summary**
+
+If you pay attention to your software development process then bit rot will be replaced by a
+software that just gets better over time.
+
+

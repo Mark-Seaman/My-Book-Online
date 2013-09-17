@@ -1,0 +1,54 @@
+* Testing is Central to Development *      -*-muse-*-
+
+I know a lot of professional software developers that write a lot of
+code and then try to debug it.  This is slow way to develop software
+for three primary reasons.
+
+It is easier to get a small amount of code working.  Complexity is not
+linear in its impact, it is closer to the square.  It is around nine
+times harder to turn on a piece of code that is three times the
+size.
+
+If you test and fix everything as you go then the bug is in the piece
+of code that you just modified.  If this is limited to three lines of
+code then you don't have to hunt to find the problem.
+
+You cannot possibly remember all of the nuances of your systen and how
+it is supposed to work.  Automated tests encapsulate all of this
+inportant knowlege so that you don't have to remember it.  Running
+your tests often ensures that everything is still in working order.
+
+The speed of development is limited by the speed of your testing.  How
+fast will you discover the bug that you are about to introduce 15
+minutes from now?  If you answer is 15 seconds you are on the right
+track.  If it is fifteen hours, or fifteen days you are in serious
+trouble.
+
+Defect breed.  A bug that lives in your system for days will have
+grand children with major consequences to your stability.  You will
+start writing defensive programs because your can not longer trust the
+basic system integrity.
+
+Consider three levels of automated testing.  Build up a test that
+verifies the full operation of your system.  This test ensures that
+the core value of your complete system is always entact.  This test
+may run overnight and should be run each night.
+
+Next each subsystem of your top level system should have an automated
+test that verifies all of the nuances of the system under
+development.  This guarantees that none of the interfaces have been
+broken.  This test should run within the context of the entire
+application but focus on a particular subsystem.  This test should run
+in less that 15 minutes.
+
+The third level of automated testing that you should have allows you
+to experiment with an isolated piece of your system.  While the first
+two levels use the code in the context of the whole system this type
+of testing lets you run parts of your system in isolation.
+
+When a problem appears you should immediately switch to this type of
+testing to find out why the failure is occurring.  It is much more
+difficult to diagnose problems when the whole system could be at
+fault.  Use the data flow through the system to pinpoint the failing
+part and then run that part in isolation to closely observe its
+behavior.

@@ -1,0 +1,11 @@
+{% extends "mybook_page.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }}{% trans 'MyBookOnline.org' %}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">{% trans 'MyBookOnline.org' %}</h1>
+<hr>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

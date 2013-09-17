@@ -1,0 +1,20 @@
+{% extends "mybook_page.html" %}
+
+{% block title %}New Message{% endblock %}
+
+{% block content %}
+<blockquote>
+  <div style='background-color:#ddd'>
+    <form action="/message" method="post">
+      <br/>
+      <p><strong>New Message</strong></p>
+      <hr/>
+      <table>
+        <tr><td>Name</td><td>{{ form.subject  }}</td></tr>
+        <tr><td>Description</td><td>{{ form.body }}</td></tr>
+      </table>
+      <input type="submit" value="Send" />
+    </form>
+  </div>
+</blockquote>
+{% endblock %}

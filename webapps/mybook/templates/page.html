@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ LANGUAGE_CODE }}" xml:lang="{{ LANGUAGE_CODE }}" 
+    {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" 
+          href="{% block stylesheet %}{% load adminmedia %}{% admin_media_prefix %}css/base.css{% endblock %}" />
+    <link rel="stylesheet" type="text/css" href="/media/mybook/css/shrinking-world.css" />
+    {% block extrastyle %}{% endblock %}
+    <!--[if lte IE 7]>
+        <link rel="stylesheet" type="text/css" 
+            href="{% block stylesheet_ie %}{% load adminmedia %}{% admin_media_prefix %}css/ie.css{% endblock %}" />
+        <![endif]
+    -->
+    {% if LANGUAGE_BIDI %}
+        <link rel="stylesheet" type="text/css" 
+            href="{% block stylesheet_rtl %}{% admin_media_prefix %}css/rtl.css{% endblock %}" />
+    {% endif %}
+    {% block extrahead %}{% endblock %}
+    {% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE" />{% endblock %}
+        <!-- Update your html tag to include the itemscope and itemtype attributes -->
+    <html itemscope itemtype="http://schema.org/Blog">
+
+      <!-- Add the following three tags inside head -->
+      <meta itemprop="name" content="Seaman's Log">
+      <meta itemprop="description" content="Helping you thrive in the modern world.">
+      <meta itemprop="image" content="http://markseaman.org/media/mybook/images/Mark.Seaman.200.jpg">
+</head>
+{% load i18n %}
+
+<body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}">
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Container -->
+    <div id="container">
+        {% if not is_popup %}
+
+        <!-- Header -->
+        <div id="header">
+            <div id="branding">
+                {% block branding %}{% endblock %}
+            </div>
+            {% if user.is_authenticated and user.is_staff %}
+                <div id="user-tools">
+                    {% trans 'Welcome,' %}
+                    <strong>{% firstof user.first_name user.username %}</strong>.
+                    {% block userlinks %}
+                        {% url django-admindocs-docroot as docsroot %}
+                        {% if docsroot %}
+                            <a href="{{ docsroot }}">{% trans 'Documentation' %}</a> /
+                        {% endif %}
+                        {% url admin:password_change as password_change_url %}
+                        {% if password_change_url %}
+                            <a href="{{ password_change_url }}">
+                        {% else %}
+                            <a href="{{ root_path }}password_change/">
+                        {% endif %}
+                        {% trans 'Change password' %}</a> /
+                        {% url admin:logout as logout_url %}
+                        {% if logout_url %}
+                            <a href="{{ logout_url }}">
+                        {% else %}
+                            <a href="{{ root_path }}logout/">
+                        {% endif %}
+                        {% trans 'Log out' %}</a>
+                    {% endblock %}
+                </div>
+            {% endif %}
+            {% block nav-global %}{% endblock %}
+            {% block breadcrumbs %}{% endblock %}
+        </div>
+        <!-- END Header -->
+        {% endif %}
+
+        {% if messages %}
+        <ul class="messagelist">{% for message in messages %}<li>{{ message }}</li>{% endfor %}</ul>
+        {% endif %}
+
+        <!-- Content -->
+        <div id="content" class="{% block coltype %}colM{% endblock %}">
+            {% block content %}{{ content }}{% endblock %}
+            <br class="clear" />
+        </div>
+        <div class="fb-like" data-href="" data-send="false" data-width="225"
+        data-show-faces="false"></div>
+        <!-- Place this tag where you want the +1 button to render -->
+        <g:plusone annotation="inline"></g:plusone>
+
+        <!-- Place this render call where appropriate -->
+        <script type="text/javascript">
+          (function() {
+          var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+          po.src = 'https://apis.google.com/js/plusone.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+        <!-- END Content -->
+
+        {% block footer %}{% endblock %}
+    </div>
+    <!-- END Container -->
+
+</body>
+</html>

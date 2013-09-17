@@ -1,0 +1,22 @@
+#!/bin/bash
+
+mb file http://shrinking-world.org SuperPower/Home 
+mb file http://guide.shrinking-world.org Guides
+mb file http://super.shrinking-world.org SuperPower
+mb file http://effectiveness.shrinking-world.org SuperPower
+mb file http://leadership.shrinking-world.org Leadership
+mb file http://organization-building.com Leadership
+mb file http://mybookonline.org MyBookOnline
+mb file http://travel.shrinking-world.org Travel
+mb file http://gallery.shrinking-world.org Gallery
+mb file http://markseaman.org MarkSeaman
+mb file http://ideas.shrinking-world.org Ideas
+mb file http://dr-prof.com DrProf
+mb file http://software.shrinking-world.org Software
+mb file http://harborwalk.shrinking-world.org Private/HarborWalk
+mb file http://acttolearn.org Ideas
+mb file http://exteriorbrain.com Brain
+mb file http://seamanslog.com SeamansLog
+mb file http://spiritual-things.org SpiritualLog
+mb file http://ourinwardjourney.com SpiritualLog
+mb file http://patterns.shrinking-world.org Patterns

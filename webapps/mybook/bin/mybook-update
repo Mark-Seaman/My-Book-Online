@@ -1,0 +1,20 @@
+#!/bin/bash
+# Create a new mybook Django application
+
+basedir=/home/seaman/Documents/Code/mybook
+project=$1
+
+echo "Updating the files for $project MyBook"
+
+# Go to the application directory
+cd $basedir
+
+# Select the right book
+mb select $project
+
+# Deploy the site
+mb deploy
+
+# Save the files from the remote site
+mb save
+

@@ -1,0 +1,42 @@
+* Fundamental Objects *
+
+Every system is composed of objects.  These are the things that a
+business person identifies when you discuss the system with them. An
+ideal system architecture is built around these objects.  This enables
+the engineer to reason about the system in the same way that a
+business person would.
+
+Some of the objects in a system are fundamental to the operation of
+the system itself.  If you remove a fundamental object from the system
+it can no longer perform the tasks that are central to the business
+needs.
+
+A system architecture should be built around these foundational
+objects in the system.  These objects should have a presence in the
+underlying data storage, the presentation views, and the underlying
+object models that run the system.
+
+Architecture begins with defining the core abstractions which must
+match the fundamental objects of the system.  Other objects can be
+added on later.  But the fundamental objects of the system must be the
+backbone of the architecture.
+
+Other objects are like muscle tissue on the skeleton.  They help solve
+certain problems and keep the fundamental objects in the correct
+relationship with each other.  An architecture is nothing more than a
+model of how the fundamental objects relate to each other.
+
+This model is mapped into the implementation constraints to show how
+the interfaces fullfill these needed connections between objects.  For
+example, in a business application a transaction interface is the
+way to allow customers to place orders for products and pay for
+them. This type of application has fundamental objects that include,
+Customer, Order, Payment Method, Payment Status, Shipping Method,
+etc..
+
+The architecture is just a map of how the objects connect to each
+other.  Each of the key connections becomes an interface that is
+governed by a set of business rules.  Each rule expresses a constraint
+of what is allowed in a given business situation.
+
+

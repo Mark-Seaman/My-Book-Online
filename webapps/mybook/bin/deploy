@@ -1,0 +1,10 @@
+#!/bin/bash
+# Show the pipe scan home page
+
+echo 'Deploy code for $p to joy'
+
+cd $p                               &&
+pwd                                 &&
+rsync -auv $p/ $joy:Projects        &&
+scp bin/joy-bashrc $joy:.bashrc     &&
+ssh $joy '. .bashrc && Projects/bin/run'

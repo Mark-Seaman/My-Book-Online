@@ -1,0 +1,22 @@
+#!/bin/bash
+# Create a new mybook Django application
+
+projdir=/home/seaman/Documents/Code/mybook
+project=$1
+projectdb=$2
+
+# Go to the application directory
+cd $projdir
+
+# Copy the starter files
+echo "Creating the files for $project MyBook"
+cp settings-shrinkingworld.py   settings-$project.py
+sed -i "s/webapps\/shrinkingworld/webapps\/$project/" settings-$project.py
+sed -i "s/seaman_shrinking/seaman_$project/"          settings-$project.py
+
+# Link to /usr/local/bin/python2.5 for server simulation
+sudo ln -s /usr/bin/python /usr/local/bin/python2.5
+
+# Create the database
+cp data/newbook.sql data/seaman_$projectdb.sql
+mybook-load $projectdb

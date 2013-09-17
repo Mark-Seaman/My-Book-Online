@@ -1,0 +1,79 @@
+* Brain Performance *                 -*-muse-*-
+
+Think seriously about the performanc of your brain.  There is a huge
+difference between brains that work and ones that don't.  Time your
+tasks and make changes if your goals are met.
+
+I use computers all day long and frequently watch other people do it.
+I am astounded to watch someone flail around for a minute or two
+trying to find a piece of information.  This can easily total a
+couple of hours a day for just clicking around and trying to remember
+things from before.
+
+I definitly don't see the enjoyment in doing this.  I want a system
+that is ready to accept new items instantly and can produce the info
+that is needed in a few seconds.  The system must be designed around
+these performance goals or you will not be able to achieve them.
+
+Essential Goals:
+ * 2 seconds - Record an idea
+ * 5 seconds - Update existing information
+ * 15 seconds - Add new informaition or structure or search for keywords
+ * 0 seconds - Backups & version control (fully automatic)
+
+Your system must be able to achieve these results to give you the
+support you need.  If it can not then you will find yourself working
+around the system rather than within it.
+
+When I work everything is done within my exterior brain.  Occasionally I
+visit web sites, create documents, write code, watch videos, search
+the internet. But all of these activities are based in activities
+within the brain system.
+
+If I search for a new programming trick, or a new recipe for quiche,
+the result is summarized in a paragraph of text for use later.  Why
+would I want to lose information that I may have spent minutes
+aquiring when it only costs me 15 seconds to summarize it.
+
+When your system is fast enough you will use it for purposes that you
+can not even imagine today.  How do these goals work in practical
+terms?  When I get an idea the following command can capture it:
+    idea Write about brain performance
+
+This is how I capture an idea within 2 seconds when I am sitting at my
+keyboard.  Otherwise I carry a pad and paper in my pocket to go
+mobile.  This lets me avoid the destraction of using my phone to
+capture the same idea.
+
+If you are looking at your information on your computer and want to
+fix a typo, or add a link to the current topic.  This should be a
+simple matter of: Edit topic, Type changes, Save topic.  If it is that
+easy then you will do these operations 100 times per hour.
+
+Imagine having a giant recording of living data that is constantly
+evolving and growing.  No sooner do you get an idea than it is already
+captured. Everytime you look at something, it gets edited and refined.
+
+But where the system really shines, is in the ability to find things.
+It is great to be able to record everything. However the real goal is
+to be able to retrieve things when you need them.  It is tragic that
+most people do not make their computer find things for them.  Instead
+many prefer to scroll through endless file lists, and paragraphs
+looking for what they remember.
+
+You can go a long way with simple word searches. A search for
+"Taxes" should get you to all related topics.  Because I'm a geek,
+regular expressions are even better.  I can search my whole brain for
+complex patterns in several seconds.  The search itself requires less
+than a second of computer time.  Here's how I use regular expressions
+to search for my tax topics:
+    brain Taxes
+
+Here's how I edit all of my tax topics:
+    brain-edit Taxes
+
+You can see from these examples that it does not have to be hard.
+Simple problems require simple solutions; more complex problems require
+a little more sophisicated solutions.  Never accept complex solutions
+to simple problems because you think that you may face an complex
+problem later.

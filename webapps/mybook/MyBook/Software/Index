@@ -1,0 +1,32 @@
+* Table of Contents *                 -*-muse-*-
+
+Learn the secrets of world-class developers
+
+---
+
+**Project Planning** 
+
+    [[WhyProjectsFail][Why Software Projects Fail]]
+    [[WaterLine][Work Below the Water Line]]
+    [[ReduceProblem][Reduce the Problem]]
+    [[FundamentalOperations][Fundamental Operations]]
+    [[FundamentalObjects][Fundamental Objects]]
+    [[EssentialDevelopment][Four Essential Areas of Development]]
+    [[EssentialFrameworks][Essential Frameworks]]
+
+**Development Skills** 
+
+    [[FightBitRot][Fight Bit Rot]]
+    [[VersionControl][Strategic Version Control]]
+    [[DeliverValueSoon][Deliver Value Sooner]]
+    [[MasterProgrammer][Become a Master Programmer]]
+    [[AgileSoftware][Agility Wins]]
+    [[Duplication][Duplication Kills]]
+    [[RepeatSteps][Do Not Repeat Steps]]
+    [[BigMistakes][Biggest Programmer Mistakes]]
+    [[ProvenPractices][Use Proven Practices]]
+    [[TestEverything][Test Everything]]
+    [[IgnoreErrors][Fix All Errors]]
+    [[TestDriven][Test Driven]]
+
+

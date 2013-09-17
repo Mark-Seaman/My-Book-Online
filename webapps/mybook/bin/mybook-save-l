@@ -1,0 +1,22 @@
+#!/bin/bash
+# Create a new mybook Django application
+
+projectdir=/home/seaman/Documents/Code/mybook
+
+echo "Save the data for MyBook"
+
+# Save the database as a JSON file
+cd $projectdir
+datafile=data/mybook.json
+manage.py dumpdata            --indent=4 > $datafile
+ls -l $datafile
+echo "`wc -l $datafile` lines in file"
+
+# Save the database as a SQL file
+cd data
+sqlsave mybook mds959SQ
+datafile=seaman_mybook.sql
+ls -l $datafile
+echo "`wc -l $datafile` lines in file"
+
+

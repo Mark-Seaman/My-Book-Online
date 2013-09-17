@@ -1,0 +1,4 @@
+#!/bin/bash
+
+mb page $y/SuperPower/Home 
+mb page $y/Ideas/Home 

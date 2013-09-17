@@ -1,0 +1,27 @@
+{% extends "mybook_page.html" %}
+
+{% block title %}Unsubscribe to Seaman's Log{% endblock %}
+{% block branding %}
+    <!-- -->
+    {{ debug }}
+    <h1 id="site-name">
+       <a href='/'>{{ site }}</a>
+    </h1>
+    <p style='color:yellow;margin-left:50px'>
+       {{ subtitle }}
+    </p>
+{% endblock %}
+
+{% block content %}
+<blockquote>
+  <div style='background-color:#ddd'>
+      <br/>
+      <p><strong>Thank you for trying Seaman's Log.</strong></p>
+      <p>We hope you enjoyed the information.</p>
+      <p>Feel free to subscribe at any time in the future.</p>
+      <hr/>
+
+      <a href='unsubscribed'>Unubscribe Now</a>
+  </div>
+</blockquote>
+{% endblock %}

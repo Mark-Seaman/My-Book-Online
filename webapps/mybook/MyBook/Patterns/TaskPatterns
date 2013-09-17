@@ -1,0 +1,33 @@
+* Task Patterns *                 -*-muse-*-
+*How to do things faster by seeing the underlying pattern*
+
+1. What is a task pattern?
+
+ * Design patterns
+ * Key parts of a pattern
+ * It depends on context
+ * How to apply a specific pattern
+
+2. Why do patterns work?
+
+ * Things tend to repeat
+ * Sharpens the focus
+ * Preset options
+ * No rediscovery needed; experimentation is built in
+
+3. How do you create a new pattern?
+
+ * Recognition
+ * Key tradeoffs
+ * Proving a pattern takes 4 tries (Explore,Design,Verify,Tune)
+ * Say it in code
+
+4. Catalog of patterns
+
+ * Create specific patterns
+ * Group related areas
+ * Form a cononical list to fill in gaps
+ * Share with others
+
+
+See also [[Index]]

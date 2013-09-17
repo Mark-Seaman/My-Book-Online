@@ -1,0 +1,17 @@
+* Searching MyBook *                 -*-muse-*-
+
+Each MyBook can be searched to find keywords. This makes it a perfect
+format for reference materials. You can quickly jump to the topics
+that you need and bypass the labor of thumbing through many pages of
+material looking for the needle in your haystack.
+
+Currently the browsers search capability is used to find the content
+that you are interested in. The best way to search is to go to the
+"Entire book" page. This creates an HTML page that shows all of the
+content for the book.
+
+Next you use the "Ctrl-F" key to let you set the phrase to search
+for. You can use the "Next" button to select other matches. Once you
+find the topic in the "Entire book" page you can use the links of the
+topic titles to go the topic display for that page. This lets you find
+other topics that are connected to this one.

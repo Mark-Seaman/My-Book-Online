@@ -1,0 +1,5 @@
+#!/bin/bash
+# Show the remote web page
+
+#w 8.19.35.121:8080
+w localhost:8080

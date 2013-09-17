@@ -1,0 +1,10 @@
+#!/bin/bash
+# Show the pipe scan home page
+echo 'Show the app in a browser'
+
+echo "Running $*"
+cd $pa
+
+rbg manage.py runserver 8051
+
+rbg firefox localhost:8051/doc

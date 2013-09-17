@@ -1,0 +1,40 @@
+* Strategic version control *                 -*-muse-*-
+
+ * version control is not often understood
+ * a modern tool must provide minimum requirements
+ * navigating through versions must be easy
+ * bit rot can be prevented by understanding how the code behaves over time
+
+Version control is one of the most underutilized tools in the toolbox. Countless hours are spend on
+most projects due to problems of configuration management.  Every modern project uses some form of
+version control. But most development teams do not come close to realizing the full power of these
+tools.
+
+A modern version control must prevent each engineer from getting a combination of files that do not
+work properly together.  It must be very easy to support multiple parallel development branches and
+merge the results together.  It also must be easy to setup a new archive, add engineers, and
+troubleshoot problems with the version history.
+
+Every engineer should be able to work on many branches of code simultaneously without confusing
+them.  It should be possible to flip back and forth between two branches of code within a few
+seconds.  This makes it effective to track down where particular changes were introduced.
+
+I have used around 15-20 version control systems over the years, and Git is clearly the best one
+available.  I recommend migration from your current tools into Git to protect your most valuable
+asset (your engineers' time).
+
+Choose a best-in-class version control system like Git and make sure that every engineer is well
+trained on how to use it.  Dealing with version control and configuration management issues can
+easily eat up 25% of the time for your development team.
+
+Version control is an important tool in the fight against bit rot.  It allows you to quickly
+investigates which versions of the code exhibit a particular defect or behavior.  By systematically
+bisecting a version tree you can isolate the lines of code responsible for a specific problem.
+
+Without strategic version control, many problems go unresolved.  The cost of investigating an issue
+is deemed to be much larger than the cost of living with the problem.  This makes for sloppy
+engineering. It creates an incentive to pave over problems rather than fix them.
+
+Over time, software gets steadily worse.  Layers of problems are accumulated as patches are
+applied.  Bugs are created withing the system, that eventually compound.  Some systems get so bad
+that no one can understand the system well enough to fix new problems.

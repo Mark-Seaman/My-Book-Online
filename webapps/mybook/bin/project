@@ -1,0 +1,32 @@
+#!/bin/bash
+# Start working on the project
+
+export p=~/Documents/Code/mybook
+
+export ph='xxx'
+export pb=$p/bin
+export pa=$p
+export pd=$p/doc
+export pt=$p/test
+
+alias proot="cd $p"
+alias pbin="cd $pb"
+alias papp="cd $pa"
+alias pdoc="cd $pd"
+alias ptest="cd $pt"
+
+# Path
+export PATH=\
+$pb:\
+$pt:\
+$PYTHONPATH:\
+/usr/bin:\
+/bin:\
+~/bin:\
+.
+
+reset
+figlet 'mybook'
+
+cd $p
+

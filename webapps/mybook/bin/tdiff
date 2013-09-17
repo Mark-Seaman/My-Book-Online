@@ -1,0 +1,9 @@
+#!/bin/bash
+# Compare the last output with the correct output
+
+# Go to directory
+cd $p/test
+
+f=${1/.tst/}
+diff $f.out $f.correct
+

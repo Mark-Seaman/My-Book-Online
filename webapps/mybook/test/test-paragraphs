@@ -1,0 +1,8 @@
+#!/bin/bash
+# Lookup the path that corresponds with each host/page pair
+
+cat           $y/SuperPower/Home
+paragraphs    $y/SuperPower/Home
+paragraphs -v $y/SuperPower/Home
+paragraphs -l $y/SuperPower/Home
+

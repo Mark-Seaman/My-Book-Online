@@ -1,0 +1,43 @@
+* Reduce the Problem *                 -*-muse-*-
+
+To excel in software development you must develop incrementally.  A
+large goal can be viewed as a series of smaller projects that can be
+bundled together for delivery. This is essential to effectively manage
+the progress throughout the development.
+
+A large goal must be broken into a set of goals that make sense.  Give
+some thought to your problem.  Figure out where the natural break
+points are in the system.  Then identify the primary goal of each of
+the building blocks.
+
+The very act of doing this step will lead you to a system architecture
+that is much more maintainable than it would be without it.  Each part
+of your system can be developed and tested independently of the
+others.
+
+Subdividing a system that will require 5 engineering years to build it
+in two separate pieces will yield parts that should take less than 2
+engineering years each.  This is because of the increased focus and
+the reduced communication overhead that is required.
+
+This same technique works for teams or individuals.  It is easier to
+work on a complex design that has been subdivided.  Each part can be
+fully developed and tested serially.  This allows the full atention to
+be placed on one thing at a time.  This will easily save you 20% in
+project effort wasted on context switching.
+
+The second area of problem reduction is to solve a smaller problem.
+Instead of solving the full problem, consider how to solve the problem
+that will yield 80% of the value.  This is likely to take only 20% of
+the effort.  This is an extremely well-studied phenomenon.
+
+When you have solved the 80% problem you often find that the rest of
+the problem does not even warrant the extra effort at all.  Instead other
+more pressing design concerns surface that provide a bigger return on
+investment.
+
+Being able to reduce any problem by subdividing and pruning will make
+you a master at project planning.  Expect and strive for a 100%
+performance boost in your project outcomes by mastering this important
+skill set.
+

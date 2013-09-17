@@ -1,0 +1,10 @@
+#!/bin/bash
+# Restart the apache web server hosting MyBook 
+
+if [ `hostname` == 'seaman-hummer' ]
+then
+    sudo /etc/init.d/apache2 restart
+else
+    /home/seaman/webapps/mybook/apache2/bin/restart
+fi
+

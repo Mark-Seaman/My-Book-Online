@@ -1,0 +1,22 @@
+* The Crisis of Bit Rot *                 -*-muse-*-
+
+
+Everyone wants a software system to be flexible, but this does not naturally occur.  The only way to
+make a system flexible, is to constantly flex it.
+
+Have you ever worked in a shared space and noticed how messy it becomes over time?  This is because
+no one feels a sense of ownership. As code has many authors it becomes more like a messy public
+space than a sign of craftsmanship.
+
+Different people have different goals for a system.  They also have different programming and design
+styles that they inflict upon the overall system.  The more authors that a software system has, then
+the more dramatic the mess becomes.
+
+Eventually, the code takes on so much technical debt that it can not be maintained for a reasonable
+cost.   At this point the entire system is scrapped and a new one is built to replace it. 
+
+There are a variety of reasons given for replacing the old system, but the actual cause is that the
+system has been taken over by "bit rot".  
+
+Software neglect can result in enormous costs to a business. This problem is incredibly pervasive in
+all industries.  Bit rot threatens to destroys our core business value.

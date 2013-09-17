@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Save the database as a JSON file
+
+. ~/.bashrc
+cd /home/seaman/webapps/$1
+./wf-manage.py dumpdata --indent=4 > data/$1.json
+
+database=seaman_mybook
+user=seaman_mybook
+password=mds959SQ
+
+echo "Database: $database"
+echo "User:     $user"
+
+echo mysqldump -u$user -p$password $database '>' data/$database.sql
+mysqldump -u$user -p$password $database > data/$database.sql
+

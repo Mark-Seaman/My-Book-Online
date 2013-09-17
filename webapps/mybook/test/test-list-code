@@ -1,0 +1,4 @@
+#!/bin/bash
+# Test the lister
+
+mb-list-code | sort

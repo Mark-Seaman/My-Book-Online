@@ -1,0 +1,26 @@
+#!/bin/bash
+# Lookup the path that corresponds with each host/page pair
+
+mb file http://goofy Gallery/Home 
+mb file http://localhost Gallery/Home 
+mb file http://shrinking-world.org Gallery/Home 
+mb file http://shrinking-world.org Home 
+mb file http://guide.shrinking-world.org Home
+mb file http://super.shrinking-world.org Home
+mb file http://effectiveness.shrinking-world.org Home
+mb file http://leadership.shrinking-world.org Home
+mb file http://organization-building.com Home
+mb file http://mybookonline.org Home
+mb file http://travel.shrinking-world.org Home
+mb file http://gallery.shrinking-world.org Home
+mb file http://markseaman.org Home
+mb file http://ideas.shrinking-world.org Home
+mb file http://dr-prof.com Home
+mb file http://software.shrinking-world.org Home
+mb file http://harborwalk.shrinking-world.org Home
+mb file http://acttolearn.org Home
+mb file http://exteriorbrain.com Home
+mb file http://seamanslog.com Home
+mb file http://spiritual-things.org Home
+mb file http://ourinwardjourney.com Home
+mb file http://patterns.shrinking-world.org Home

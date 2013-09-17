@@ -1,0 +1,27 @@
+* My Book for the Publisher *                 -*-muse-*-
+
+Publishing involves the administration of the site, authors, and
+content. As a publisher you can create a new site to be used to
+display your online book. Creating a new book means that you create a
+place for the book on the server and create a database that holds all
+of your content. It also displays the content of your book using a web
+address (know as a URL) that is unique to your book.
+
+Sometimes
+you will want to delete topic completely from the database. Note that
+this is different than deleting the text within a topic. MyBook
+provides tools for deleting the records that hold topics that you no
+longer want. Go to the "Change topics" link in the authoring tools to
+remove unwanted topics.
+
+As a publisher you can grant permission
+to other authors. This allows them to collaborate with you on a MyBook
+project. It is a great way to jointly develop an online book
+together.
+
+As a publisher you can download a copy of the entire
+web site as a data file. This gives you an electronic form of the book
+in a single file. You can backup your copy of the book and restore it
+later if you wish. This gives you full control over your MyBook
+content. The web site is then nothing more than a display vehicle for
+your content.

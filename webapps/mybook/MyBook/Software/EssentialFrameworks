@@ -1,0 +1,149 @@
+* Essential Frameworks *
+
+There are many tasks that a programmer must be able to due effectively
+to become a world-class software developer. But there are a few skills
+that demand mastery in order to acheive success.  There are seven
+areas of skill that every software craftsman must attain.
+
+A tool is a mechanical solution that can be applied to a given problem
+with a moderate amount of skill to get the desired result.  Learning
+how to use a new tool is typically fairly easy.  Each person using the
+same tool is likely to produce similar results, since much of the
+capability lies within the tool itself, rather than the skill of the
+weilder.
+
+A framework, by contrast, is the general outline of a class of tools.
+It contains components from which solutions can be crafted.  It does
+not contain the solution itself.  It is more of a tool kit that lets
+you efficiently create a wide range of solutions.
+
+In order to effectively use a framework you must master the details of
+the tools, components, and models that it provides.  But beyond this
+you must understand the process that will make you effective.  This is
+about truly grasping the capabilities and limitations of the framework
+being used.
+
+A true software craftsman understands how to get the most from the
+frameworks that they use.  You can use this knowledge to decide what
+framework fits a given task and when to switch to a new one.
+
+
+**Essential Frameworks**
+
+A software craftsman must have a thorough understanding of the
+following frameworks:
+  *  Editing
+  *  Scripting
+  *  Version control
+  *  Testing
+  *  Web application
+  *  Planning
+  *  Documentation
+
+
+**Editing**
+
+Anyone can run a text editor.  But mastering a framework for editing
+is lightyears beyond that.  An editing framework lets you have
+extremely high performance on small edits.  You should be able to
+think of commands like 'jump over three words and delete the following
+sentence'. These commands should jump out of your fingers without
+having to think of them.
+
+Editing frameworks really shine in tasks that require a lot of
+iteration or are complex.  You should have at your disposal a complete
+set of programmable editing tools.
+
+It should never take you longer than 2 seconds to reach your text
+editor with a file.  Otherwise you will often forget what you wanted
+to do by the time you get there.  I recommend that you alias 'e file'
+to edit your desired file.
+
+
+**Scripting**
+
+All modern operating system provide first-class support for automation
+from the command line.  Use this to build your own highly customized
+commands. The commands that you do all day long should be short (I
+recommend one letter).  Complex commands should have descriptive names
+(based on the goal).
+
+Set up your framework so that you can create a new command in 30
+seconds.  This will greatly accelerate how many commands you create.
+At last count I had about 500. 
+
+Don't try to remember how to do things.  Instead, create a command.
+If the context changes you can always infer the steps by reading the
+script. 
+
+
+**Version control**
+
+I can't imaging working without a great version control system.  This
+is probably the most important framework for you to master.  It will
+save you from untold confusion, and endless hours of trying to figure
+out which file is related to which other file.
+
+There are three essential operations in a version control:  What
+changed? Show history. Commit these changes.  This implies that you
+need three easy-to-remember commands.  Everything else is
+optional.
+
+I recommend that every file you have should be under version control.
+All other files should be purged nightly to keep your system clean.
+Why would you want to keep a file but not care about its content.
+
+
+**Testing**
+
+I try to test at three different time intervals: Minute, Hour,
+Day. When writing code it is best to test the small fragment you are
+working on about once per minute. Each hour you can run your unit
+tests which should take about a minute to execute.
+
+Each day you should run every test that you have to ensure that
+nothing outside of your immediate areas of development was
+accidentally broken.
+
+If you have a test that fails then no other progress is more important
+than fixing it.  All of this requires a suite of automatic test tools
+and a framework to run them.
+
+
+**Web application**
+
+Most applications these days are web-based applications.  This means
+that every developer should excel and fielding web applications.
+Choose a web framework that allows you to deploy an application in the
+first hour and keep it running online for the rest of the project.
+
+Every new feature should be added incrementally and tested on a
+staging server.  Never take down your production server, or push
+untested code.  
+
+Consider deploying to your staging server at least daily.  Push to the
+production server when it is right for your business.  Use your
+version control system to do deployment unless you need more automation.
+
+
+**Planning**
+
+Refuse to give in to heavyweight planning system.  Try to make your
+plans as simple and flexible as possible.  Big, complicated plans are
+never kept up to date.
+
+This goes for all the planning that you do: Requirements, Schedules,
+Dependencies, Test planning, Defect tracking.   Don't use a big tool
+when a one-page document will suffice.
+
+
+**Documentation**
+
+It is good to have a lightweight system that lets people easily add
+information.  Everyone in your organization should be able to see it.
+Steer away from complex tools because or the learning, setup, and
+maintenance cost. 
+
+Text based tools are always future-proof.  It is easy to provide great
+searching tools for text stored in files.  This also works great with
+all of your files under version control.

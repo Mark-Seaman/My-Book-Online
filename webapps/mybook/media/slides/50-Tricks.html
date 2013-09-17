@@ -1,0 +1,1162 @@
+<!--
+Shrinking World Solutions Slide Template
+based on Google IO 2012 HTML5 Slide Template
+
+Authors: Mark Seaman <mark.seaman@shrinking-world.com>
+         Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shrinking World Solutions</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="title-slide segue nobackground" style="background-image: url(./images/water2.jpg)">
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 class="black" data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 class="black" data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p class="black" data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+  </slide>
+
+<slide>
+<pre><h1>Presentation Goals</h1>
+
+ * Overview of Django
+
+ * Fifty Most Useful Tricks
+
+ * Running Web Application
+
+
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>What is Django ?</h1>
+
+<b>Language/Framework</b>
+C#/ASP
+Ruby/Rails
+Java/JSP
+Python/Django
+
+
+
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Why Django ?</h1>
+
+Created by refactoring real applications
+
+Excellent docs
+
+Easy hosting solutions (1 hour + $10/month)
+
+Build your first app in hours
+
+Great for automation
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Learn By Doing</h1>
+
+Pick a project and technology
+
+Go for it!
+
+Our project: build a wiki from scratch
+
+
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Fifty Tricks</h1>
+
+<b>Types of Knowledge</b>
+Engineering - Definition, Design, Development, Debugging, Testing
+Technology - Catalog of tricks
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Trick Groups</h1>
+Developing a web application requires 50 tricks.
+
+Server
+Data
+Views
+Formatting
+Documents
+Users
+Projects
+
+</pre> </slide>
+
+<slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
+    <hgroup class="auto-fadein">
+      <h2 class="white">Server  (5 Tricks)</h2>
+      <h3 class="white"></h3>
+    </hgroup>
+  </slide>
+
+<slide>
+<pre><h1>Server Start</h1>
+
+<b>Development Server</b>
+python ./manage.py runserver
+
+<b>Production Server</b>
+ssh $sa webapps/simpleapps/apache2/bin/restart
+
+<b>browse</b>
+w localhost:8000
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Create Project</h1>
+
+ $ django-admin.py startproject mystore
+
+ $ tree mystore
+
+    mystore/
+    ├── __init__.py
+    ├── settings.py
+    ├── urls.py
+    └── wsgi.py
+
+ $ cd mystore
+
+ $ manage.py runserver
+
+ $ w localhost:8000
+
+
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Hello World</h1>
+
+Map each URL to a view
+
+_________________________________ <b>urls.py</b>  ______________________________
+
+from django.http import HttpResponse
+from django.conf.urls import patterns,url
+
+def home_page(request):
+    return HttpResponse('My Store')
+
+urlpatterns = patterns('',
+    url(r'^$', home_page),
+)
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Create App</h1>
+ $ manage.py startapp buymore
+ $ tree
+    .
+    ├── buymore
+    │   ├── __init__.py
+    │   ├── models.py
+    │   ├── tests.py
+    │   └── views.py
+    ├── manage.py
+    └── mystore
+        ├── __init__.py
+        ├── settings.py
+        ├── urls.py
+        └── wsgi.py
+_________________________________ <b>settings.py</b>  ______________________________
+
+INSTALLED_APPS = (
+    'buymore',
+)
+
+
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Home view</h1>
+Map each URL to a view
+_________________________________ <b>urls.py</b>  ______________________________
+
+from django.conf.urls import patterns,url
+urlpatterns = patterns('',
+    url(r'^$', 'buymore.views.home_page'),
+)
+
+_________________________________ <b>views.py</b> ______________________________
+
+from django.http import Http Response
+def home_page(request):
+    return Http Response('My Store Contents')
+
+
+</pre> </slide>
+
+<slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
+    <hgroup class="auto-fadein">
+      <h2 class="white">Data (9 Tricks)</h2>
+      <h3 class="white"></h3>
+    </hgroup>
+  </slide>
+
+<slide>
+<pre><h1>Data Base - Development</h1>
+
+<b>SQLite</b>
+_________________________________ <b>settings.py</b> ______________________________
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'hammer.db',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
+        }
+    }
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Data Base - Production</h1>
+
+<b>Post Gres</b>
+_________________________________ <b>settings.py</b> ______________________________
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'simpleapps',
+        'USER': 'simpleapps',
+        'PASSWORD': 'abcd,
+        'HOST': '',
+        'PORT': '',
+        }
+    }
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>New Data Model</h1>
+Define a new data type using models
+
+class Note (models.Model):
+    title = models.CharField (max_length=200)
+    body  = models.TextField ()
+
+
+
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Create Database</h1>
+Automatically create data base tables for all data types
+
+ $ manage.py syncdb
+
+No SQL required
+
+ $ manage.py dumpData
+
+ $ manage.py loadData
+
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Add Record</h1>
+Use a model add record
+
+_________________________________ <b>models.py</b> ______________________________
+
+class Note (models.Model):
+    title = models.CharField (max_length=200)
+    body  = models.TextField ()
+
+def add_note(title,body):
+    n = Note()
+    n.title = title
+    n.body = body
+    n.save()
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Save Record</h1>
+Lookup a record and modify its contents
+
+
+class Note (models.Model):
+    title = models.CharField (max_length=200)
+    body  = models.TextField ()
+
+
+def modify_note(title,body):
+    n = Note.objects.get(title=title)
+    n.body = body
+    n.save()
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Query Records</h1>
+Find record in the database
+
+
+class Note (models.Model):
+    title = models.CharField (max_length=200)
+    body  = models.TextField ()
+
+
+def list_notes(title):
+    return Note.objects.all()
+
+def lookup_note(title):
+    return Note.objects.get(title='Lost Worlds')
+
+def find_notes(title):
+    return Note.objects.filter(title__gt='R')
+
+
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Show Results</h1>
+Walk through a list of results from a query
+
+class Note (models.Model):
+    title = models.CharField (max_length=200)
+    body  = models.TextField ()
+
+
+def print_notes(title):
+    for n in Note.objects.all():
+        print 'Title:', n.title, 'Text:', n.body
+
+def notes_table(title):
+    return [ [n.title, n.body] for n in Note.objects.all() ]
+
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Delete Record</h1>
+Delete one or more objects
+
+class Note (models.Model):
+    title = models.CharField (max_length=200)
+    body  = models.TextField ()
+
+def delete_all_notes():
+    for n in Note.objects.all():
+        n.delete()
+
+def delete_note(title):
+    n = Note.objects.get(title='Lost Worlds')
+    n.delete()
+
+def delete__notes(title):
+    for n in Note.objects.filter(title__gt='R'):
+        n.delete()
+
+
+
+</pre> </slide>
+
+<slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
+    <hgroup class="auto-fadein">
+      <h2 class="white">Views (7 Tricks)</h2>
+      <h3 class="white"></h3>
+    </hgroup>
+  </slide>
+
+<slide>
+<pre><h1>Home view</h1>
+Map each URL to a view
+_________________________________ <b>urls.py</b>  ______________________________
+
+from django.conf.urls import patterns,url
+urlpatterns = patterns('',
+    url(r'^$', 'buymore.views.home_page'),
+)
+
+_________________________________ <b>views.py</b> ______________________________
+
+from django.http import Http Response
+def home_page(request):
+    return Http Response('My Store Contents')
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>List View</h1>
+Use a template to show a list
+_________________________________ <b>urls.py</b>  ______________________________
+
+from django.conf.urls import patterns,url
+
+urlpatterns = patterns('',
+    url(r'^$', 'buymore.views.home_page'),
+    url(r'list^$', 'buymore.views.list_page'),
+)
+
+</pre> </slide>
+
+<slide>
+<pre><h1>List View</h1>
+Use a template to show a list
+_________________________________ <b>views.py</b> ______________________________
+
+from django.shortcuts import render
+
+my_products = [ 'diapers', 'clocks', 'zombie repelent' ]
+
+def list_page(request):
+    return render(request, 'list.html', {'products': my_products})
+
+_________________________________ <b>list.html</b> ______________________________
+
+<img src='images/ListView.png' />
+
+
+<code>
+<h1>Products</h1>
+<ul>
+    {% for p in products %}
+        <li><a href="{{ p }}">{{ p }}</a></li>
+    {% endfor %}
+</ul>
+</code>
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Details View</h1>
+Pass Parms on the URL
+_________________________________ <b>urls.py</b>  ______________________________
+
+urlpatterns = patterns('',
+    url(r'^(?P< id >[\d]+)$',      'buymore.views.item'),
+)
+_________________________________ <b>views.py</b> ______________________________
+
+def item(request,id):
+    return render(request, 'details.html', {'p': my_product})
+
+_________________________________ <b>list.html</b> ______________________________
+
+<img src='images/DetailsView.png' />
+
+
+
+
+
+
+
+<h1>Details</h1>
+<a href="{{ p.pk }}">{{ p.pk }}</a>
+<a href="{{ p.title }}">{{ p.title }}</a>
+<a href="{{ p.description }}">{{ p.description }}</a>
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Form Model</h1>
+Use a form template to edit records
+
+_________________________________ <b>models.py</b> ______________________________
+
+class Note (models.Model):
+    path  = models.CharField (max_length=200)
+    body  = models.TextField ()
+
+class NoteForm (ModelForm):
+    class Meta:
+        model=Note
+_________________________________ <b>add.html</b> ______________________________
+
+<img src='images/FormModel.png' />
+
+
+
+<form enctype='multipart/form-data' action="/add" method="post">{% csrf_token %}
+    <table>{{ form.as_table }}</table>
+    <button type="submit" value="Save">Save</button>
+    <button type="cancel" value="Cancel" name="cancel">Cancel</button>
+</form>
+
+
+
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Add Record View</h1>
+Use a form template to add records
+
+_________________________________ <b>views.py</b> ______________________________
+
+def add_form (request):
+     if request.method == 'POST':
+        form = NoteForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('Home')
+    else:
+        form = NoteForm()
+    data =  { 'form': form }
+    return render(request, 'add.html', data)
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Edit View</h1>
+Use a form template to edit records
+
+_________________________________ <b>views.py</b> ______________________________
+
+def edit_form (request, title):
+    if request.method != 'POST':
+        note = Note.objects.get(title=title)
+        form =  NoteForm(instance=note)
+    else:
+        form = NoteForm(request.POST)
+        if form.is_valid():
+            o = Obj.objects.get(form.cleaned_data['pk'])
+            return HttpResponseRedirect('Home')
+    return render(request, 'edit.html',  { 'form': form })
+
+
+
+
+
+
+
+_________________________________ <b>edit.html</b> ______________________________
+
+
+<form enctype='multipart/form-data' action="/edit" method="post">{% csrf_token %}
+    <table>{{ form.as_table }}</table>
+    <button type="submit" value="Save">Save</button>
+    <button type="cancel" value="Cancel" name="cancel">Cancel</button>
+</form>
+
+
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Delete View</h1>
+_________________________________ <b>urls.py</b>  ______________________________
+
+from django.conf.urls import patterns,url
+
+urlpatterns = patterns('',
+    url(r'^(?P< id >[\d]+)/delete$', 'buymore.views.delete),
+)
+_________________________________ <b>views.py</b> ______________________________
+
+def delete_view (request, id):
+    o = Obj.objects.get(pk=id)
+    if o:
+        o.delete()
+    return HttpResponseRedirect('Home')
+
+_________________________________ <b>list.html</b> ______________________________
+
+<img src='images/DeleteView.png' />
+
+</pre> </slide>
+
+<slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
+    <hgroup class="auto-fadein">
+      <h2 class="white">Formatting (4 Tricks)</h2>
+      <h3 class="white"></h3>
+    </hgroup>
+  </slide>
+
+<slide>
+<pre><h1>Page Layout</h1>
+Use Twitter Bootstrap for an industry standard appearance
+
+_________________________________ <b>layout.html</b> ______________________________
+
+<img src='images/PageLayout.png' />
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hammer Technology</title>
+    <link href="{{ STATIC_URL }}bootstrap.min.css" rel="stylesheet" />
+    <script src="{{ STATIC_URL }}bootstrap.min.js"></script>
+</head>
+<body>
+      <div class='page'>
+        {% block content %} {% endblock %}
+      <div>
+</body>
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Page Template</h1>
+Every page on your site has the same structure
+
+_________________________________ <b>page.html</b> ______________________________
+
+<img src='images/PageTemplate.png' />
+
+
+
+
+
+
+
+
+
+
+
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Topics</h1>
+    <ul>
+        {% for f in directory %}
+            <li><a href="{{ f }}">{{ f }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+
+
+
+
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Standard Navigation</h1>
+Create a reusable menu bar with Twitter Bootstrap
+
+<img src='images/Navigation.png' />
+
+
+
+
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <ul class="nav">
+          <li><a href="{{ base }}">Home</a></li>
+          <li><a href="{{ base }}mill/">Mills</a></li>
+          <li><a href="{{ base }}notes/info">Information</a></li>
+          <li><a href="{{ base }}alert">Alerts</a></li>
+          <li><a href="{{ base }}money">Money</a></li>
+          <li><a href="{{ base }}money/prices">Unit prices</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Js Support</h1>
+Use industry standard JavaScript libraries
+
+<img src='images/JavaScript.png' />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="{{ STATIC_URL }}jquery-latest.js"></script>
+    </head>
+    <body>
+
+    </body>
+</html>
+
+
+
+
+</pre> </slide>
+
+<slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
+    <hgroup class="auto-fadein">
+      <h2 class="white">Document (6 Tricks)</h2>
+      <h3 class="white"></h3>
+    </hgroup>
+  </slide>
+
+<slide>
+<pre><h1>Browse Directory</h1>
+Show a list of links for each file in a directory
+_________________________________ <b>urls.py</b>  ______________________________
+urlpatterns = patterns('',
+    url(r'^(?P<path>[\w]+)$',      'buymore.views.list_view'),
+)
+_________________________________ <b>views.py</b> ______________________________
+from os import listdir
+
+def list_view (request,path):
+    return render(request, 'list.html', {'files': listdir(path)})
+
+_________________________________ <b>list.html</b> ______________________________
+<img src='images/ListDirectory.png' />
+
+
+
+
+<h1>Files</h1>
+<ul>
+    {% for f in files %}
+        <li><a href="{{ f }}">{{ f }}</a></li>
+    {% endfor %}
+</ul>
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Read File</h1>
+Display text from a file
+
+_________________________________ <b>urls.py</b>  ______________________________
+
+urlpatterns = patterns('',
+    url(r'^(?P< path >[\w]+)$',      'buymore.views.read_view'),
+)
+_________________________________ <b>views.py</b> ______________________________
+
+def read_view (request,path):
+    return render(request, 'text.html', {'text': open(path).read()})
+
+_________________________________ <b>text.html</b> ______________________________
+
+<img src='images/ReadFile.png' />
+
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Write File</h1>
+Write a log of page hits to a file
+_________________________________ <b>urls.py</b>  ______________________________
+
+urlpatterns = patterns('',
+    url(r'^(?P< path >[\w]+)$',      'buymore.views.record_view'),
+)
+_________________________________ <b>views.py</b> ______________________________
+
+from django.http        import HttpResponseRedirect
+from datetime           import datetime
+
+def log(user,page):
+    f=open(path,'a')
+    f.write(str(datetime.now())+', '+user+', '+page)
+    f.close()
+
+def record_view (request, path):
+    log (request.user, path)
+    return HttpResponseRedirect('Home')
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Execute</h1>
+Execute some system command
+
+_________________________________ <b>urls.py</b>  ______________________________
+urlpatterns = patterns('',
+    url(r'^(?P< command >[\w]+)$',      'buymore.views.execute_view'),
+)
+_________________________________ <b>views.py</b> ______________________________
+def do_command (command):
+    return  Popen(command.split(),stdout=PIPE).stdout.read()
+
+def execute_view (request, command):
+    results = do_command(command)
+    return render(request, 'text.html', {'command': command, 'text': results})
+
+_________________________________ <b>text.html</b> ______________________________
+<img src='images/ExecuteScript.png' />
+
+
+
+
+
+<h1>Results of {{ command }}</h1>
+{{ text }}
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Text To Html</h1>
+
+from subprocess         import Popen,PIPE
+from django.shortcuts   import render
+
+def format_doc(title):
+    pipe = Popen (['wiki-html-content', title], stdout=PIPE)
+    return pipe.stdout.read()
+
+def doc(request,title):
+    text = format_doc(title)
+    return render (request, 'doc.html', {'title': title, 'text': text})
+
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Search Text</h1>
+
+# Find all people with Bill in their name
+
+def search(request,name):
+    people = User.objects.filter(name_contains='Bill')
+    return render(request, 'doc.html', {'people': people})
+
+
+
+</pre> </slide>
+
+<slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
+    <hgroup class="auto-fadein">
+      <h2 class="white">Users (7 Tricks)</h2>
+      <h3 class="white"></h3>
+    </hgroup>
+  </slide>
+
+<slide>
+<pre><h1>UserAuthorization</h1>
+<img src='images/Admin.jpg'/>
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Admin Interface</h1>
+
+from django.conf.urls import patterns, include, url
+from django.contrib import admin
+
+admin.autodiscover()
+
+urlpatterns = patterns(
+    '',
+    url(r'^admin/',   include(admin.site.urls)),
+)
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Login/Logout</h1>
+
+from django.conf.urls import patterns, include, url
+
+urlpatterns = patterns(
+    '',
+
+    url(r'^login$',   'django.contrib.auth.views.login'),
+    url(r'^logout$',  'django.contrib.auth.views.logout'),
+)
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Show Model Details</h1>
+<img src='images/Details.jpg'/>
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Edit User</h1>
+<img src='images/EditUser.jpg'/>
+
+
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>List Users</h1>
+
+
+<img src='images/User.jpg'/>
+
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Enforcing Security</h1>
+
+from django.contrib.auth.decorators import login_required
+
+@login_required(login_url='/login')
+
+def home(request):
+    return doc(request, 'Index')
+
+
+
+
+</pre> </slide>
+
+<slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
+    <hgroup class="auto-fadein">
+      <h2 class="white">Project (5 Tricks)</h2>
+      <h3 class="white"></h3>
+    </hgroup>
+  </slide>
+
+<slide>
+<pre><h1>Build an Inventory  of Tricks</h1>
+
+Analyze your next project
+Decompose the larger tasks into tricks
+How many times have you done each trick?
+</pre> </slide>
+
+<slide>
+<pre><h1>Estimate Cost</h1>
+
+<b>A trick can be ...</b>
+    applied in an hour
+    learned in a day
+
+<b>Typical Project</b>
+
+40 old tricks = 40 hours
+
+10 new tricks = 80 hours
+
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Test Driven Development</h1>
+
+Accelerate your development
+Write tests before code
+Test hourly, daily, weekly
+Deploy when the tests pass
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Host Your App</h1>
+First time with take a day
+With experience it takes an hour
+
+<b>Web Faction</b>
+http://webfaction.com
+Specialize in Django
+
+<b>Control Panel Actions</b>
+Register your domain
+Create a static server
+Create a django web app
+Bind the web app to the domain
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Deploy App</h1>
+
+ $ git init
+
+ $ git commit -A -m'Add everything'
+
+ $ git push
+
+ $ ssh $host 'git pull'
+
+
+
+</pre> </slide>
+
+<slide class="fill nobackground" style="background-image: url(images/water2.jpg)">
+    <hgroup class="auto-fadein">
+      <h2 class="white">Follow Up</h2>
+      <h3 class="white"></h3>
+    </hgroup>
+  </slide>
+
+<slide>
+<pre><h1>Source Code</h1>
+
+Clone my project
+http://github.com/Mark-Seaman/Django-Hammer
+
+mark.seaman@shrinking-world.com
+
+
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Help Me</h1>
+
+Help me build something great!
+
+ * New languages & frameworks
+ * New features
+ * User Guide
+ * Developers Guide
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Django Docs</h1>
+
+
+djangoproject.com
+
+djangobook.com
+
+Test Driven Web Development with Python - Harry Percival
+
+
+
+
+</pre> </slide>
+
+<slide>
+<pre><h1>Related Topics</h1>
+
+Git - Version Control
+
+Refactoring - Martin Fowler
+
+Test Driven Development - Kent Beck
+
+Pragmatic Thinking & Learning - Andy Hunt
+
+</pre> </slide>
+
+  <slide class="thank-you-slide segue nobackground">
+    <aside class="gdbar right"><img src="images/sws_logo_300.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2>Thank You!</h2>
+      <p>Mark Seaman</p>
+      <p>Shrinking World Solutions</p>
+      <p>http://Mark.Seaman@Shrinking-World.com</p>
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+  <slide  class="fill nobackground" style="background-image: url(images/water2.jpg)">
+    <article class="flexbox vcenter">
+      <img  class="reflect" src="images/sws_logo_300.png">
+    </article>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
+

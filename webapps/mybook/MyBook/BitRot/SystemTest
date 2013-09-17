@@ -1,0 +1,24 @@
+* Automatic system test *                 -*-muse-*-
+
+ * exercise each function of the application
+ * use text for input and output
+ * filter the output
+ * compare output to the correct output 
+
+The purpose of an automatic system test is to give you a great feeling that your entire system is
+working properly.  The best way to do this is exercise the system as completely as possible.  If
+your system does twenty different things then you should have twenty different system tests.  Each
+test should run as close to the real production context as possible.
+
+You should have a text-based language of some kind that you can use to stimulate your system.  By
+using this you can exercise all of the features within your software. The text lets you develop a
+collection of source code scripts that can easily be merged together.  
+
+Each test asks your system to perform a function.  Every test should create an output text file.
+This file can be compared to the expected response.  An output filter with just a few lines of code
+can be used to eliminate expected differences in the output for each run.  Then the output can be
+compare with the expected output using a diff utility.
+
+To test your entire system all you need to do is run this collection of scripts and look for the
+familiar output.  This technique scales very well to large and complex systems.  Many specific tests
+can be written as a single line of code.

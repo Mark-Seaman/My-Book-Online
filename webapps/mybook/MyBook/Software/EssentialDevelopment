@@ -1,0 +1,63 @@
+Four Essential Areas of Development
+
+World-class software developers share a core philosophical outlook.
+There is a commitment to learn, experiment, evaluate and perfect.
+Many people are just logging time in their jobs.  But a few are driven
+to become craftsmen.
+
+Becoming an artist takes focus and a healthy amount of
+introspection. These are four key areas that are essential for you to
+develop.  Mastery in each of these areas will greatly extend your
+contribution.
+
+ * People and Projects 
+ * Programming Practices 
+ * Testing Strategies 
+ * Tools and Process
+
+Most programmers are happier talking to their computers than people.
+That just tends to be the psychological profile.  But software
+development as a discipline is completely tied to the expectations of
+others.  You must become adept at dealing with others in order to
+excel as a programmer.
+
+Project planning is the ability to prioritize the work required to
+deliver the maximum results.  It is about clearly understanding the
+business need and developing a technical solution that matches.
+
+When it is time to create your masterpiece you need to be using the
+best software development practices available.  You need to learn how
+others are doing things.  You should be constantly experimenting and
+evaluating.  Reject what does not work for what works better in your
+context.  Success depends on selecting what is most effective for your
+exact situation.
+
+Develop your own catalog of best practices.  It can be a simple
+outline of one-line commitments that have proven to work for you.  For
+example, "Test before committing changes".
+
+Keep it short in order to keep it in play.  No one will read a
+fifty-page doc on coding standards.  Consider constraining your gems
+of wisdom to Twitter-style posts.  Why not use Twitter to share your
+wisdom with others.
+
+Your initial goal is to capture what works.  Later you can use this
+information to influence others on your team.  But first you must
+develop an arsenal of wisdom that you intend to utilize personally.
+Without that you cannot expect to gain much influence.  Avoid passing
+on ideas that you read but are not fully committed to yourself.
+
+Another key philosophy involves developing a testing mindset.  This
+means that you are actively reconciling your assumptions with reality.
+You constantly measure your assumptions to find discrepancies.
+
+Testing is nothing more than making sure that what you believe is
+correct.  Each time we are surprised, it reveals a deficiency in our
+thinking.
+
+Junior programmers make lots of assumptions; experienced ones do not.
+"I assume that report ran last night", gets replaced with, "Let's find
+it."  If you haven't verified it, then it does not exist.  Your
+default assumption must be nothing works.  Evidence must be used to
+overturn your default view.
+

@@ -1,0 +1,6 @@
+#!/bin/bash
+# Check the links
+
+mb-links SuperPower/Index 
+mb-links Ideas/Index 
+mb-links xxx 

@@ -1,0 +1,6 @@
+#!/bin/bash
+# Load a new database for mybook from a datafilegs
+
+
+cd /home/seaman/Documents/Code/mybook
+manage.py loaddata data/mybook.json

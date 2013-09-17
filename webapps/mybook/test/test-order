@@ -1,0 +1,3 @@
+#!/bin/bash
+# Test the reading order from the Home page
+mb order $y/SuperPower/Home 

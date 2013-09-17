@@ -1,0 +1,55 @@
+* Automate Your World *                 -*-muse-*-
+
+How to make computers simplify your life.
+ by Mark Seaman
+
+
+**3. Ready, Set, Synchronize!**
+
+Most people these days are using multiple computers.  Whether it is
+home and work, or different types of computers for different types of
+tasks.  This creates some new problems that must be solved.
+
+You want to be able to access the same files from multiple computers.
+Once you can access them, you want to modify them. The main problem is
+that is difficult to know which is the most recent version of the same
+file.
+
+There are two main ways to solve this problem:
+    1. You access the same physical file from each computer
+    2. You modify the file and synchronize it with the other computers
+
+Each of these primary solutions has different advantages and
+limitations.  Using the same exact file eliminates any questions about
+the version of the file.  There is only one file.  
+
+But this technique constrains you to having all of the computers
+connected to the file server at all times.  This is not very practical
+in the internet/mobile device world that we have today.
+
+The second alternative is to create a method for synchronizing all of
+the files from whatever computer was used to modify them to all of the
+others where they can be modified.  This solution also creates some
+new challenges for us.
+
+There are several free (or in-expensive) tools that perform this job
+nicely.  On Windows I recommend Sync Back by Two Bright Sparks.  For a
+web tool use "DropBox.com".  On Linux use rsync.  All three of these
+tools let you copy the most recent copy from any computer to the rest.
+
+The key problem that remains to be solved is how to handle deleted
+files.  Typically it is very useful to setup your sync tool so that it
+does not prompt you for what to do with files.  In general it is
+better to have tools that run periodically in the background.
+
+When a file is deleted it reappears automatically from another
+computer.  I have found that the best way to resolve this issue is to
+have a script that lists specific files that have been deleted.  This
+script keeps removing the deleted files each time it sees them.
+Eventually the file is completely purged from all the computers.
+
+The reason that I like this solution is that you can fully automate
+it. When you remove the file you add it to the 'prune' script. Every time
+after that, the file is automatically removed.  Later on you may not
+remember which files you intended to delete and which ones you wish to
+retain.

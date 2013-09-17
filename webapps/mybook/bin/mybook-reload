@@ -1,0 +1,33 @@
+#!/bin/bash
+# Reload the local database from a SQL file
+
+dir=/home/seaman/Documents/Code/mybook
+database=seaman_mybook
+user=seaman_mybook
+password=mds959SQ
+datafile=data/seaman_mybook.sql
+rootpasswd=wm-SQL-root
+
+# Output the results      
+echo "Directory:$dir"
+echo "Database: $database"
+echo "User:     $user"
+echo "Password: $password"
+echo "SQL file: $datafile"
+
+cd $dir
+
+# Create a file containing the SQL statements
+cat <<EOF >/tmp/sqlreload$$
+    DROP DATABASE IF EXISTS \`$database\` ;
+EOF
+
+# Execute the SQL
+cat /tmp/sqlreload$$
+cat /tmp/sqlreload$$ | mysql -uroot -p$rootpasswd
+
+# Create the database
+mybook-newdb
+
+# Reload the data from a SQL file
+mysql -u$user -p$password $database < $datafile

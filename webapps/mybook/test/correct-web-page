@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="" 
+    >
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title>  Welcome to Shrinking World On-line  - * Shrinking World Solutions * </title>
+    <link rel="stylesheet" type="text/css" 
+          href="http://shrinking-world.org/media/admin/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="http://shrinking-world.org/media/mybook/css/shrinking-world.css" />
+    
+    <!--[if lte IE 7]>
+        <link rel="stylesheet" type="text/css" 
+            href="http://shrinking-world.org/media/admin/css/ie.css" />
+        <![endif]
+    -->
+    
+    
+    <meta name="robots" content="NONE,NOARCHIVE" />
+        <!-- Update your html tag to include the itemscope and itemtype attributes -->
+    <html itemscope itemtype="http://schema.org/Blog">
+
+      <!-- Add the following three tags inside head -->
+      <meta itemprop="name" content="Seaman's Log">
+      <meta itemprop="description" content="Helping you thrive in the modern world.">
+      <meta itemprop="image" content="http://markseaman.org/media/mybook/images/Mark.Seaman.200.jpg">
+</head>
+
+
+<body class="">
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Container -->
+    <div id="container">
+        
+
+        <!-- Header -->
+        <div id="header">
+            <div id="branding">
+                
+    <div  style='float:left'>
+      
+      <h1 id="site-name">
+        <a href='http://shrinking-world.org/'>* Shrinking World Solutions *</a>
+      </h1>
+      <p style='color:yellow;margin-left:50px'>
+         Tips to help you thrive in the modern world
+      </p>
+    </div>
+
+       
+    <div style='float:right'>
+      <form action="/subscribe" method="post">
+        <div>
+          <a href='http://shrinking-world.org/subscribe'>Sign up for email updates</a>
+          <p><input id="id_email" type="text" name="email" maxlength="100" />
+          <input type="submit" value="Update me" /></p>
+          <a href='http://shrinking-world.org/unsubscribe'>Unsubscribe</a>
+        </div>
+      </form>
+    </div>
+    
+
+
+            </div>
+            
+            
+            
+        </div>
+        <!-- END Header -->
+        
+
+        
+
+        <!-- Content -->
+        <div id="content" class="colM">
+            
+    <!--
+      -->
+    <div>
+          
+        <h1> Welcome to Shrinking World On-line </h1> 
+         
+              </p><p> 
+         
+              This web site is dedicated to providing you with high quality 
+         
+              information to help you be more effective in the modern world 
+         
+              </p><p> 
+         
+              <b>Seaman's Log</b> 
+         
+              </p><p> 
+         
+               <a href="http://SeamansLog.com">How to thrive in the modern world</a>  -- Deep thoughts by   <a href="http://markseaman.org/">Mark Seaman</a>  
+         
+              </p><p> 
+         
+              <hr> 
+         
+              </p><p> 
+         
+              <b>Shrinking World Guides</b> 
+         
+              <br/>&nbsp;&nbsp;&nbsp;&nbsp; by  <a href="http://markseaman.org/">Mark Seaman</a>  
+         
+              </p><p> 
+         
+              This series of microbooks is published by Shrinking World Solutions. 
+         
+              Each series of articles is really a small book covering a single 
+         
+              topic.  This information is available to you as a personal resource. 
+         
+              Enjoy the content, use it however you like, and pass it on to someone 
+         
+              else. 
+         
+              </p><p> 
+         
+              <ul><li> <a href="http://patterns.shrinking-world.org">Best Practices</a> </li></ul> 
+         
+              <ul><li> <a href="http://exteriorbrain.com">How to build an exterior brain</a> </li></ul> 
+         
+              <ul><li> <a href="http://gallery.shrinking-world.org">Photos from the World</a> </li></ul> 
+         
+              <ul><li> <a href="http://super.shrinking-world.org">Super-power Handbook</a> </li></ul> 
+         
+              <ul><li> <a href="http://shrinking-world.org/Automate/AutomateYourWorld">Automate Your World</a> </li></ul> 
+         
+              <ul><li> <a href="http://leadership.shrinking-world.org">Leadership</a> </li></ul> 
+         
+              <ul><li> <a href="http://ideas.shrinking-world.org">Ideas</a> </li></ul> 
+         
+              <ul><li> <a href="http://software.shrinking-world.org">World-class Software</a> </li></ul> 
+         
+              </p><p> 
+         
+              </p><p> 
+        
+        <p></p><p></p>
+        
+    </div>
+
+    
+
+
+            <br class="clear" />
+        </div>
+        <!-- Facebook -->
+        <div class="fb-like" data-href="http://shrinking-world.org/" data-send="false" data-width="225"
+        data-show-faces="false"></div>
+        <!-- Place this tag where you want the +1 button to render -->
+        <g:plusone annotation="inline"></g:plusone>
+
+        <!-- Google Plus
+        <script type="text/javascript">
+          (function() {
+          var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+          po.src = 'https://apis.google.com/js/plusone.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+        -->
+        <!-- END Content -->
+
+        
+    <center>
+      <div id="footer">        
+        <a href='http://shrinking-world.org'>
+          <img src="/media/mybook/images/sws_logo_150.png" />
+          <div>Sponsored by Shrinking World Solutions</div>
+        </a>
+      </div>
+    </center>
+
+    </div>
+    <!-- END Container -->
+
+</body>
+</html>

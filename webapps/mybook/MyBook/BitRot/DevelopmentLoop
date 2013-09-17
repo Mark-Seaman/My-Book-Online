@@ -1,0 +1,37 @@
+* Development loop *                 -*-muse-*-
+
+ * measure the edit/run/test cycle
+ * big loop and small loop
+ * simple test to invoke single function
+ * save for regression testing
+
+How you construct your development loop, determines how maintainable your code will be three years
+from now.  A proper development loop lets you exercise a single function in your code within 5
+seconds.  This allows you to write one line of code and try it out.  
+
+If it does exactly what you want them write another.  Every other line that you write can be a test
+case and the remaining code is product code.  At least once a minute you make progress toward the
+product goal.   
+
+As a byproduct, you will have a collection of unit tests that can be used later.  A regression test
+can be performed on the entire code base just by running all of these tests.  After you write 200
+lines of product code you will have around 200 lines of test code that guarantee that the product is
+running properly.
+
+A proper development loop starts with designing the test.  How will you verify that the feature
+works?  Simply asking this question, will give you higher quality code.  Building and running a test
+will ensure that this code never suffers bit rot.
+
+Thinking of the test first does two things for you.  It guarantees that your code works properly
+now. It also guarantees that you will know when you accidentally break this function in the
+future. If you build this type of testing as you go then you can ensure that your whole system is
+testable.
+
+Something will happen that will break the code at some later time.  The primary question is how this
+error will be detected.  Bit rot is the result of having a growing number of undetected errors in
+your system.
+
+You can prevent bit rot by having the unit tests act as guardians over the integrity of each
+function that you write.  By running tests daily and fixing every resulting problem you maintain a
+high level of quality throughout the lifecycle.  This allows you to survive through many context,
+structural, and behavioral changes.

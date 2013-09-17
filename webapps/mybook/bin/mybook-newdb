@@ -1,0 +1,19 @@
+#!/bin/bash
+# Create a new mybook Django application
+
+projectdir=/home/seaman/webapps
+project=mybook
+
+cd $projectdir
+echo "Creating database for $project MyBook"
+
+# Create the database
+sqlrmdb  seaman_$project wm-SQL-root
+sqlnewdb seaman_$project seaman_$project mds959SQ wm-SQL-root
+
+# Sync the database
+manage.py syncdb
+
+# Load the database with a good initial value
+manage.py loaddata data/book.topic.json
+

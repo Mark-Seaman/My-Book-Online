@@ -1,0 +1,13 @@
+#!/bin/bash
+# Run a single test case for the copy program
+
+cd $p/test                  && 
+f=${1/\.tst/}               &&
+$f.tst > $f.out
+
+[[ ! -f "$f.correct" ]]     && 
+echo "Missing $f.correct"   && 
+tout $f                     &&
+exit 0
+
+diff $f.out $f.correct  

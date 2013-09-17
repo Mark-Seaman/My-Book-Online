@@ -1,0 +1,16 @@
+{% extends "mybook_page.html" %}
+{% block content %}
+    <div>
+        {% autoescape off %}  
+        <h1>{{ quote }}</h1> 
+        <p>{{ headline }}<p>
+        <hr>
+        {% for line in text %} 
+              {{ line }} 
+        {% endfor %}
+        {% endautoescape %}
+    </div>
+{% endblock %}
+{% block footer %}
+{% endblock %}
+

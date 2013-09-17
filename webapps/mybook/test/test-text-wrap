@@ -1,0 +1,25 @@
+#!/bin/bash
+# Test the text wrapping tool
+
+cat <<EOF | text-wrap
+Maximize the most fulfilling experiences that
+you have.  
+This book will step you through the process of evaluating
+and optimizing the things that matter most in your life.
+
+New paragraph starts here -
+This is not a new paragraph so the text should continue to wrap here.
+This is not a new paragraph so the text should continue to wrap here.
+This is not a new paragraph so the text should continue to wrap here.
+
+Paragraphs
+
+P1
+
+P2
+
+P3
+EOF
+
+
+

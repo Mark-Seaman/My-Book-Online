@@ -1,0 +1,68 @@
+* Seven Principles of Automation *                 -*-muse-*-
+
+Your success at automating major aspects of your life depends on how
+well you apply the following core principles. It is possible to spend
+a lot of effort and see very little return.
+
+ * Incremental development
+ * Long-term return on investment
+ * Test everything
+ * Embedded knowledge
+ * Follow the pain
+ * Focus on one thing
+ * Minimum planning
+
+**Incremental development**
+
+Take small steps.  No, take smaller steps.  Ok, take baby steps.  But
+take a lot of them.  Don't ever embark on a glorious project to
+overhaul everything. Make a small adjustment, keeping everything else
+the same.  Observe the result and do it again.  Small changes always
+win over big ones.
+
+**Long-term return on investment**
+
+Your plans should always be built to maximize your value over the long
+term.  Because you are going to build in small steps you are protected
+in the short term.  But you will have to make a small investment in
+the short term.  Pick things to automate that have a great payoff for
+the rest of your life.
+
+**Test everything**
+
+When you make changes don't trust them right off.  Make sure that the
+automatic thing is doing exactly what you want.  After you see it work
+several times then you can fully trust it.  Things don't typically
+break themselves.  However, if you change something related then you
+have to test that whole area around it.
+
+**Capture embedded knowledge**
+
+If you have to spend time figuring something out then why not write a
+script to record what you learned.  If it is a computer task then
+consider writing an executable script to do anything that you spend
+time learning.  Even if the script needs to be adjusted before it will
+work later, then it is still a good basis of future learning.
+
+**Follow the pain**
+
+If it hurts you fix it!  Automation is tremendously empowering.  If
+you spend to much time finding emails, then fix it.  If you find
+yourself editing the same type of text files, over and over, then fix
+it. If you spend time worrying about replicating files between
+computers, then fix it.
+
+**Focus on one thing**
+
+Change one thing at a time.  If you change multiple things then you
+may not know what caused the change.  Also bigger changes may make
+your overall work output decrease.  Our goal is to keep the work
+flowing and always be changing something to make it better.  Don't
+risk shutting the system down.
+
+**Minimum planning**
+
+It is better to make small plans than large ones.  Big changes imply
+big plans and big risk.  Focus on implementing small changes rather
+than entertaining grandiose ideas of a new world order.  You will get
+there faster with stable incremental change.
