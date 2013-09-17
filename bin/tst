@@ -2,16 +2,10 @@
 # Run all system tests
 
 # Go to test directory
-cd $1
-tests=`ls $1.tst`
-[ -z "$tests" ] && cd $pt
+cd $p/test
 
 # Remove temp files
-find $p -name '*~' -exec rm '{}' \;
-
-# Run the frame buffer server
-rbg Xvfb :99 -ac
-export DISPLAY=:99
+find . -name '*~' -exec rm '{}' \;
 
 # Run every test
 echo "Run all tests"
@@ -24,6 +18,3 @@ done
 
 echo "Results:"
 tfail
-
-# Stop the framebuffer server
-killall Xvfb
