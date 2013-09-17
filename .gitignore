@@ -28,6 +28,7 @@ webapps/mybook/apache2
 webapps/mybook/lib
 webapps/mybook/myproject
 webapps/mybook/app/user_doc
+webapps/mybook_media
 .bash_logout
 .bash_profile
 .bashrc-old
