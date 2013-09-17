@@ -1,48 +1,10 @@
-13,14c13
-< t=/tmp/$f
-< $f.tst > $t
----
-> $f.tst > $f.tmp
-17,19c16,18
-< [ -x $f.display   ] && $f.display < $t > $f.out
-< [ ! -x $f.display ] && mv $t $f.out
-< rm -f $t
----
-> [ -x $f.display   ] && $f.display < $f.tmp > $f.out
-> [ ! -x $f.display ] && mv $f.tmp $f.out
-> rm -f $f.tmp
-22a22,23
-> 
-> exit 0
-1,16d0
-< 13,14c13
-< < t=/tmp/$f
-< < $f.tst > $t
-< ---
-< > $f.tst > $f.tmp
-< 17,19c16,18
-< < [ -x $f.display   ] && $f.display < $t > $f.out
-< < [ ! -x $f.display ] && mv $t $f.out
-< < rm -f $t
-< ---
-< > [ -x $f.display   ] && $f.display < $f.tmp > $f.out
-< > [ ! -x $f.display ] && mv $f.tmp $f.out
-< > rm -f $f.tmp
-< 22a22,23
-< > 
-< > exit 0
-0a1,14
-> 4d3
-> < 
-> 9,13c8
-> < find $p -name '*~' -exec rm '{}' \;
-> < 
-> < # Run the frame buffer server
-> < rbg Xvfb :99 -ac
-> < export DISPLAY=:99
-> ---
-> > find . -name '*~' -exec rm '{}' \;
-> 26,28d20
-> < 
-> < # Stop the framebuffer server
-> < killall Xvfb
+update-test bin/trun
+update-test bin/tlike
+update-test bin/tdiff
+update-test bin/tfail
+update-test bin/tresults
+update-test bin/tst
+update-test bin/tout
+update-test test/docs.tst
+update-test test/git.tst
+update-test test/files.tst

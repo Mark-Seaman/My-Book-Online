@@ -16,7 +16,8 @@ def create_test(d1,d2,fn):
     chmod (path, S_IEXEC|S_IREAD|S_IWRITE)
 
 def do_test(filename):
-    system ('update-test '+filename)
+#    system ('update-test '+filename)
+    print 'update-test '+filename
 
 def execute_test(d1,d2,f):
     create_test(d1,d2,f)
