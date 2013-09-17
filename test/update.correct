@@ -1,0 +1,11 @@
+update-test bin/trun
+update-test bin/tlike
+update-test bin/tdiff
+update-test bin/tfail
+update-test bin/tresults
+update-test bin/tst
+update-test bin/tout
+update-test test/docs
+update-test test/git
+update-test test/files
+update-test test/update

@@ -86,6 +86,11 @@ tresults
 trun
 tshow
 tst
+update-diff
+update-like
+update-pull
+update-push
+update-test
 w
 web
 wiki.py
@@ -100,9 +105,14 @@ user
 docs.correct
 docs.tst
 files.correct
+files.tmp
 files.tst
 git.correct
 git.tst
+trun.correct
+update
+update.correct
+update.tst
 
 /home/seaman/Projects/mybook/webapps:
 mybook
