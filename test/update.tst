@@ -6,7 +6,9 @@ from os import environ,chmod,system
 from stat import S_IEXEC,S_IREAD,S_IWRITE
 
 def create_test(d1,d2,fn):
-    tfile = fn+'.tst'
+    tfile=fn
+    if not fn.endswith('.tst'):
+        tfile = fn+'.tst'
     path = join(environ['pt'],'update',tfile)
     f = open(path, 'w')
     f.write('filediff %s %s %s -v\n'%(fn,d1,d2))
@@ -31,8 +33,7 @@ tout'''
 
 test_files = '''docs
 git
-files
-update'''
+files'''
 
 #print 'Bin  Files:', bin_files.split('\n')
 #print 'Test Files:', test_files.split('\n')

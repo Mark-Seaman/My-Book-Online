@@ -1,11 +1,127 @@
-update-test bin/trun
-update-test bin/tlike
-update-test bin/tdiff
-update-test bin/tfail
-update-test bin/tresults
-update-test bin/tst
-update-test bin/tout
-update-test test/docs
-update-test test/git
-update-test test/files
-update-test test/update
+0a1,14
+> 4d3
+> < 
+> 9,13c8
+> < find $p -name '*~' -exec rm '{}' \;
+> < 
+> < # Run the frame buffer server
+> < rbg Xvfb :99 -ac
+> < export DISPLAY=:99
+> ---
+> > find . -name '*~' -exec rm '{}' \;
+> 26,28d20
+> < 
+> < # Stop the framebuffer server
+> < killall Xvfb
+2c2
+< # Watch for changes in the docs
+---
+> # Make sure that the docs are managed correctly
+4,5c4,5
+< cd $pd
+< find | sort | grep -v '\.out'
+---
+> cd $sud/wmd                      &&
+> tree 
+2c2
+< # Test the checked out files
+---
+> # Test the branches used on the staging server
+4,6c4,20
+< cd $p
+< echo $p | sed 's/seaman\/Projects\///'
+< git status
+---
+> # Only run on the production server
+> [[ `hostname` != `sc-production-host` ]]  && 
+> cd      && git status >  $sud/git-staging &&
+> cd $sud && git status >> $sud/git-staging &&
+> cat $sut/git-branches.correct             && 
+> exit
+> 
+> # Check branches used on staging server
+> cd
+> scp $wm2:data/git-staging data/git-staging
+> 
+> # Update the status and cache the result
+> cd      && git status >  $sud/git        &&
+> cd $sud && git status >> $sud/git        &&
+> 
+> # Check the gathered results for the correct branches
+> cat $sud/git* | grep branch  
+47a48,87
+> 
+> # # bin 
+> # cd $x
+> # for f in 'bin/trun bin/tlike bin/tout'
+> # do
+> #     echo "filediff $p/$f $x/$f -v"
+> #     #echo 'echo "filediff $p/$f $x/$f -v" > $d/$f.tst'
+> #     #echo 'chmod +x $d/$f.tst'
+> # done
+> 
+> # # bin 
+> # cd $x
+> # for f in `ls bin/*`
+> # do
+> #     echo "filediff $p/$f $x/$f -v" > $d/$f.tst
+> #     chmod +x $d/$f.tst
+> # done
+> 
+> # # test
+> # cd $x
+> # for f in `ls test/*.tst`
+> # do
+> #     echo "filediff $p/$f $x/$f -v" > $d/$f
+> #     chmod +x $d/$f
+> # done
+> 
+> # Do comparisons for the update
+> # cd $pt
+> # ls update/test/*.tst |
+> # while read f
+> # do 
+> #     a=${f/.tst/}.correct
+> #     #rm $a;touch $a
+> 
+> #     # Compare each file
+> #     trun  $f
+> 
+> #     # Accept all answers
+> #     #tlike $f
+> # done
+2,13d1
+< Only in /home/seaman/Projects/mybook/test/update: docs.correct
+< Only in /home/seaman/Projects/mybook/test/update: docs.diff
+< Only in /home/seaman/Projects/mybook/test/update: docs.out
+< Only in /home/seaman/Projects/mybook/test/update: files.correct
+< Only in /home/seaman/Projects/mybook/test/update: files.diff
+< Only in /home/seaman/Projects/mybook/test/update: files.out
+< Only in /home/seaman/Projects/mybook/test/update: git.correct
+< Only in /home/seaman/Projects/mybook/test/update: git.diff
+< Only in /home/seaman/Projects/mybook/test/update: git.out
+< Only in /home/seaman/Projects/mybook/test/update: tdiff.correct
+< Only in /home/seaman/Projects/mybook/test/update: tdiff.diff
+< Only in /home/seaman/Projects/mybook/test/update: tdiff.out
+15,35d2
+< Only in /home/seaman/Projects/mybook/test/update: tfail.correct
+< Only in /home/seaman/Projects/mybook/test/update: tfail.diff
+< Only in /home/seaman/Projects/mybook/test/update: tfail.out
+< Only in /home/seaman/Projects/mybook/test/update: tlike.correct
+< Only in /home/seaman/Projects/mybook/test/update: tlike.diff
+< Only in /home/seaman/Projects/mybook/test/update: tlike.out
+< Only in /home/seaman/Projects/mybook/test/update: tout.correct
+< Only in /home/seaman/Projects/mybook/test/update: tout.diff
+< Only in /home/seaman/Projects/mybook/test/update: tout.out
+< Only in /home/seaman/Projects/mybook/test/update: tresults.correct
+< Only in /home/seaman/Projects/mybook/test/update: tresults.diff
+< Only in /home/seaman/Projects/mybook/test/update: tresults.out
+< Only in /home/seaman/Projects/mybook/test/update: trun.correct
+< Only in /home/seaman/Projects/mybook/test/update: trun.diff
+< Only in /home/seaman/Projects/mybook/test/update: trun.out
+< Only in /home/seaman/Projects/mybook/test/update: tst.correct
+< Only in /home/seaman/Projects/mybook/test/update: tst.diff
+< Only in /home/seaman/Projects/mybook/test/update: tst.out
+< Only in /home/seaman/Projects/mybook/test/update: update.correct
+< Only in /home/seaman/Projects/mybook/test/update: update.diff
+< Only in /home/seaman/Projects/mybook/test/update: update.out

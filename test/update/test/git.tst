@@ -1,1 +1,1 @@
-filediff /home/seaman/Projects/mybook/test/git.tst /home/seaman/Projects/jack-hammer/test/git.tst -v
+filediff test/git.tst $p ~/wme/support-git -v
