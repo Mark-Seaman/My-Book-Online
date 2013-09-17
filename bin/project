@@ -8,7 +8,7 @@ export pa=$p/webapps/mybook
 export pb=$p/bin
 export pd=$p/doc
 export pt=$p/test
-export port=8042
+export port=8054
 
 alias proot="cd $p"
 alias papp="cd $pa"
@@ -28,11 +28,10 @@ $pt:\
 
 
 # Show the banner
-#reset
-figlet 'My Book'
+[ -x `which figlet` ] && figlet 'My Book'
 
 # Switch to directory
 cd $p
 
 # Use virtualenv
-. ~/Tools/virtualenv/env27/bin/activate
+[ -d ~/Tools/virtualenv/env27/bin ] && . ~/Tools/virtualenv/env27/bin/activate
