@@ -32,7 +32,7 @@ if socket.gethostname().startswith('seaman-'):
     PYTHON_BASE         = '/usr/bin/python2.7'
     LOGIN_URL           = '/login'
     LOGOUT_URL          = '/login'
-    NOTES_DIR           = '/home/seaman/Documents/MyBook'
+    NOTES_DIR           = '/home/seaman/Projects/mybook/webapps/MyBook'
 else: 
     # Customizations for production server
     #print socket.gethostname()
@@ -71,7 +71,8 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
-    "/home/seaman/Documents/Code/mybook/templates",
+    "/home/seaman/webapps/mybook/templates",
+    "/home/seaman/Projects/mybook/webapps/mybook/templates",
 )
 
 INSTALLED_APPS = (
