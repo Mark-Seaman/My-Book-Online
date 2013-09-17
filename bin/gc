@@ -1,0 +1,5 @@
+#!/bin/bash
+# Commit staged changes
+
+git commit -m "$*"; git status
+

@@ -1,0 +1,5 @@
+#!/bin/bash
+# Staged selected changes
+
+git add $* && git status
+
