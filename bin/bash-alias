@@ -52,4 +52,5 @@ alias syncdb='manage.py syncdb'
 alias ta='tail -70'
 alias u='clear; cd ..; ls'             # go up a directory
 
+
 function d          { pushd "$1"; clear; ls; }  # Push a directory

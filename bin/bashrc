@@ -5,20 +5,14 @@
 [ -z "$PS1" ] && return
 echo 'Running bashrc'
 
-# Update the rc files
-alias rc='. ~/.bashrc'
-
 # Enable the bash prompt 
 [[ -f ~/bin/bash-prompt ]] && . ~/bin/bash-prompt
 
 # Enable the bash shell completion
 [[ -f /etc/bash_completion ]] && . /etc/bash_completion
 
-# Welcome message
-[[ -f ~/bin/welcome ]] && cat ~/bin/welcome
-
 # Alias definitions.
 [[ -f ~/bin/bash-alias ]] && . ~/bin/bash-alias
 
-# Start in home directory
-cd $p
+# Load the project vars
+. bin/project
