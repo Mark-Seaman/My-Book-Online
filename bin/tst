@@ -1,9 +1,10 @@
 #!/bin/bash
 # Run all system tests
 
-
 # Go to test directory
-cd $p/test
+cd $1
+tests=`ls $1.tst`
+[ -z "$tests" ] && cd $pt
 
 # Remove temp files
 find $p -name '*~' -exec rm '{}' \;

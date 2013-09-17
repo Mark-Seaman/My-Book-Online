@@ -1,0 +1,5 @@
+#!/bin/bash
+# Check the update status
+
+cat $p/update/$1.diff
+

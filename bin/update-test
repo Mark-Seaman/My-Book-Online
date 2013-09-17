@@ -1,0 +1,9 @@
+#!/bin/bash
+# Check the update status
+
+cd $pt
+tfile=$pt/update/$1
+$tfile.tst | tee $tfile.out
+
+# Show the differences
+tdiff  $pt/update/$1

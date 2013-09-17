@@ -1,0 +1,4 @@
+#!/bin/bash
+# Pull code from source
+
+cp $2/$1 $p/$1 

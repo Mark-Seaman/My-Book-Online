@@ -1,0 +1,5 @@
+#!/bin/bash
+# Check the update status
+
+tlike $pt/update/$1
+

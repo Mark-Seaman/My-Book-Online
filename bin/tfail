@@ -1,11 +1,14 @@
 #!/bin/bash
 # List the failed tests
 
-
-cd $p/test
+d="$1"
+cd $d
 {
-    for f in *.tst
+    files=`ls *.tst`
+    [ "$1" != "" ] && [ -d "$d" ] && files=`ls $d/*.tst`
+    for f in $files
     do 
+        #echo "tdiff $f"
         [[ ! -z `tdiff $f` ]] && echo FAILED: ${f/.tst/}
     done
 } | tee fail

@@ -1,8 +1,23 @@
 #!/bin/bash
 # Run a single test case for the copy program
 
-cd $p/test              && 
+# Execute in this directory or the project test directory
 f=${1/\.tst/}           &&
-$f.tst &> $f.out
+[ ! -x $f.tst ]  && cd $p/test 
 
+# Check for the test file
+[ ! -x $f.tst ]         && 
+echo "No test found, $f.tst" && 
+exit 0
+
+$f.tst > $f.tmp
+
+# Display the output
+[ -x $f.display   ] && $f.display < $f.tmp > $f.out
+[ ! -x $f.display ] && mv $f.tmp $f.out
+rm -f $f.tmp
+
+# Compare the results to expected
 tdiff $f
+
+exit 0
