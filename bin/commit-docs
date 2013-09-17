@@ -1,0 +1,9 @@
+#!/bin/bash
+# Commit all docs to version control
+
+cd $sad      &&
+git add -A . &&
+git commit -m'Auto doc commit'
+git pull     &&
+git push    
+

@@ -1,0 +1,45 @@
+#!/usr/bin/env python
+# Create the index for a given user
+from os.path import join
+from os      import environ
+from sys     import argv
+
+from files   import do_command
+
+
+intro_text = '''* %s Apps *                 -*-muse-*-
+
+Enable and disable apps to make them available for use.
+
+**My Apps**
+'''
+more_text = '''
+**Get More Apps**
+'''
+
+def app_links(text,files,action):
+    for x in files:
+        if len(x)>0:
+            text.append(' * [[%s/%s][%s]]'%(x,action,x))
+
+
+def index_text(user):
+    text = [ intro_text%user ]
+    myapps  = join(environ['pd'],user,'.apps') 
+    allapps = join(environ['pd'],'SimpleApps','.apps') 
+    myapps  = open(myapps).read().split('\n')
+    allapps = open(allapps).read().split('\n')
+    app_links(text,myapps,'disable')
+    text.append(more_text)
+    allapps = [ a for a in allapps if a not in myapps ]
+    app_links(text,allapps,'enable')
+    return text
+
+
+user = 'Anonymous'
+if len(argv)>1:
+    user = argv[1]
+
+text = index_text(user)
+text = '\n'.join(text)
+print do_command('hammer-wiki', text)

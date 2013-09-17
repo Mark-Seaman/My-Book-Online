@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+# Create a web page with a table
+
+from sys import stdin, argv
+
+def print_link(d,f):
+    print '<td>'
+    print '<a href="%s">%s</a>' % (d+'/'+f, f)
+    print '</td>'
+
+def print_row(d,r):
+    print '<tr>'
+    for c in r:
+        print_link(dir,c)
+    print '</tr>'
+
+def print_html(d,table):
+    print '<table>'
+    for r in table:
+        print_row(d,r)
+    print '</table>'
+
+# Pass in the directory
+if len(argv)<1:
+    print 'usage: hammer-table directory'
+    exit(0)
+
+dir = argv[1]
+lines = stdin.read().split('\n')
+table = map(lambda l:l.split(',') , lines)
+print_html(dir,table)
+   

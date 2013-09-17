@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+# Wiki text formatter
+
+from sys        import stdin
+from wiki       import convert_html
+
+# Create html file contents from stdin
+def page_html():
+    text = stdin.read().split('\n')
+    return convert_html(text)
+
+# Format the file as HTML
+print page_html()
+

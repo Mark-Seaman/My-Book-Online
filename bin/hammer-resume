@@ -1,0 +1,27 @@
+#!/bin/bash
+# Create a list of resumes
+
+d=$1
+{
+
+cat <<EOF 
+* Resume Advisor *                                                   -*- muse -*-
+
+Return to [[/jobs/resume/Index][Other resumes]]
+
+Each job can have its own resume.
+
+EOF
+
+echo "**Resume**"
+cat $pd/$d.res
+
+echo "**Keywords**"
+cat $pd/$d.phrases
+
+#echo "**Non-keys**"
+#cat $pd/$d.unknown
+
+} > $pd/$d.tabs
+
+hammer-tabs $pd/$d.tabs

@@ -1,0 +1,4 @@
+#!/bin/bash
+# Restart the remote server
+
+svr-do webapps/simpleapps/apache2/bin/restart

@@ -1,0 +1,20 @@
+#!/bin/bash
+# Find diffs between two files
+
+f=$1
+x=$2
+y=$3
+
+u=`echo $f | sed 's/\//-/g'`
+t="$p/test/update-$u.diff"
+#echo $u
+
+diff $x/$f $y/$f  &> $t
+
+count=`wc -l < $t`
+[ "$count" -gt 0 ]              && 
+echo '____________________'     &&
+echo "$f"                       &&
+echo  "$count differences"      &&
+[ "$4" == "-v" ] && cat $t
+

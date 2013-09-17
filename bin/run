@@ -1,0 +1,9 @@
+#!/bin/bash
+# Start the django server
+
+mkdir -p ~/logs/user
+
+cd $p/webapps/simpleapps/app
+server-start
+
+rbg firefox localhost:$port/$1

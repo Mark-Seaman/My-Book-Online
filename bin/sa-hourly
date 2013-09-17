@@ -1,0 +1,14 @@
+#!/bin/bash
+# Run these tasks frequently
+
+. $HOME/bin/bash-vars
+log=~/logs/user/sa-system.log
+{
+
+    echo "$0" `date` `id` ' -- Start'
+
+    echo 'Do nothing'
+
+    echo "$0" `date` `id` ' -- End'
+
+} >> $log

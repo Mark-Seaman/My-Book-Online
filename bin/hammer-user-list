@@ -1,0 +1,5 @@
+#!/bin/bash
+# List all hammer users
+
+cd $pd
+ls -d * | grep -v 'Anonymous\|template\|SimpleApps'

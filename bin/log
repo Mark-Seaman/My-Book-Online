@@ -1,0 +1,5 @@
+#!/bin/bash
+# Show the page log
+
+cat $pa/page.log
+

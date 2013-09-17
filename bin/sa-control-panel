@@ -1,0 +1,4 @@
+#!/bin/bash
+# Go to the web faction control panel
+
+w my.webfaction.com
