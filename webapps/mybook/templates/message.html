@@ -1,0 +1,41 @@
+{% extends "mybook_page.html" %}
+
+<!-- HEADING -->
+{% block title %}New Message{% endblock %}
+
+<!-- BANNER -->
+{% block branding %}
+    <div  style='float:left'>
+      {{ debug }}
+      <h1 id="site-name">
+        <a href='/'>{{ site }}</a>
+      </h1>
+      <p style='color:yellow;margin-left:50px'>
+        {{ subtitle }}
+      </p>
+    </div>
+{% endblock %}
+
+<!-- BODY -->
+{% block content %}
+<blockquote>
+  <div style='background-color:#ddd'>
+    <p>
+      Thank you for providing feedback to Shrinking World Solutions. This message system will send
+      email to Mark Seaman.  Your comments help me to make this site better.
+    </p>
+
+    <form action="message" method="post">
+      <br/>
+      <p><strong>New Message</strong></p>
+      <hr/>
+      <table>
+        <tr><td>Name</td><td>{{ form.subject  }}</td></tr>
+        <tr><td>Description</td><td>{{ form.body }}</td></tr>
+      </table>
+      <input type="submit" value="Send" />
+    </form>
+
+  </div>
+</blockquote>
+{% endblock %}

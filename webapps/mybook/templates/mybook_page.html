@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ LANGUAGE_CODE }}" xml:lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title>{% block title %}{% endblock %}</title>
+   
+    {% block extrastyle %}{% endblock %}
+
+    {% block stylesheet %}    
+    <link href="/media/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="/media/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% load adminmedia %}{% admin_media_prefix %}css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/media/mybook/css/shrinking-world.css" />
+    <link rel="stylesheet" type="text/css" href="/media/mybook/css/shrinking-world.css" />
+     {% endblock %}
+
+    {% block extrahead %}{% endblock %}
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33170601-1']);
+      _gaq.push(['_setDomainName', 'shrinking-world.org']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+</head>
+
+{% load i18n %}
+
+<body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}">
+
+  <!-- Facebook -->
+  <div id="fb-root"></div>
+  <script>
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Container -->
+  <div id="container">
+    {% if not is_popup %}
+
+    <!-- Header -->
+    <div id="header">
+      
+      <div id="branding">
+        {% block branding %}{% endblock %}
+      </div>
+      
+      <!-- User info -->
+      {% if user.is_authenticated and user.is_staff %}
+      <div id="user-tools">
+        {% trans 'Welcome,' %}
+        <strong>{% firstof user.first_name user.username %}</strong>.
+        {% block userlinks %}
+        {% url django-admindocs-docroot as docsroot %}
+        {% if docsroot %}
+        <a href="{{ docsroot }}">{% trans 'Documentation' %}</a> /
+        {% endif %}
+        {% url admin:password_change as password_change_url %}
+        {% if password_change_url %}
+           <a href="{{ password_change_url }}">
+        {% else %}
+           <a href="{{ root_path }}password_change/">
+        {% endif %}
+        {% trans 'Change password' %}</a> /
+        {% url admin:logout as logout_url %}
+        {% if logout_url %}
+           <a href="{{ logout_url }}">
+        {% else %}
+            <a href="{{ root_path }}logout/">
+        {% endif %}
+        {% trans 'Log out' %}</a>
+        {% endblock %}
+      </div>
+      {% endif %}
+
+      {% block nav-global %}{% endblock %}
+      {% block breadcrumbs %}{% endblock %}
+    </div>
+    <!-- END Header -->
+    {% endif %}
+    
+    {% if messages %}
+    <ul class="messagelist">{% for message in messages %}<li>{{ message }}</li>{% endfor %}</ul>
+    {% endif %}
+    
+    <!-- Content -->
+    <div id="content" class="{% block coltype %}colM{% endblock %}">
+      {% block content %}{{ content }}{% endblock %}
+      <br class="clear" />
+    </div>
+    
+    <!-- Facebook -->
+    <div class="fb-like" data-href="" data-send="false" data-width="225"
+         data-show-faces="false"></div>
+    <!-- Place this tag where you want the +1 button to render -->
+    <g:plusone annotation="inline"></g:plusone>
+    
+    <!-- Google Plus -->
+    <script type="text/javascript">
+      (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+    </script>
+    
+    <!-- END Content -->
+    
+    {% block footer %}{% endblock %}
+  </div>
+  <!-- END Container -->
+  
+</body>
+</html>

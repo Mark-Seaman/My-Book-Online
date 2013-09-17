@@ -1,0 +1,10 @@
+{% extends "mybook_page.html" %}
+{% block content %}
+<blockquote>
+    <h1>Edit Topic</h1>
+    <form action="{{ base }}book{{ book.id }}/topic{{ topic.id }}/edit" method="post">
+        {{ form.as_p }}
+        <input type="submit" value="Save" />
+    </form>
+{% endblock %}
+
