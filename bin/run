@@ -3,7 +3,7 @@
 
 mkdir -p ~/logs/user
 
-cd $p/webapps/simpleapps/app
+cd $pa
 server-start
 
 rbg firefox localhost:$port/$1

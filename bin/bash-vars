@@ -1,8 +1,0 @@
-#!/bin/bash
-# Set all the shell variables that are needed to run support center
-
-# Use mountain time
-export TZ='America/Denver'
-export GIT_USER=`id -un`
-
-. project
