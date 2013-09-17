@@ -1,10 +1,10 @@
 #!/bin/bash
 # Run all system tests
 
+
 # Go to test directory
 cd $1
-tests=`ls $1.tst`
-[ -z "$tests" ] && cd $pt
+[ -z `ls *.tst` ] && cd $pt
 
 # Remove temp files
 find $p -name '*~' -exec rm '{}' \;
@@ -23,7 +23,7 @@ do
 done
 
 echo "Results:"
-tfail
+tfail $1
 
 # Stop the framebuffer server
 killall Xvfb

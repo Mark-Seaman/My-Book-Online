@@ -2,10 +2,15 @@
 # List the failed tests
 
 d="$1"
+[ "$1" == "" ] && d=$pt
+
 cd $d
 {
-    files=`ls *.tst`
-    [ "$1" != "" ] && [ -d "$d" ] && files=`ls $d/*.tst`
+    
+    files=`ls $d/*.tst`
+    echo "Tests: $files"
+    [ -z "$files" ] && echo "ERROR: no tests found $d" && exit 1
+
     for f in $files
     do 
         #echo "tdiff $f"
