@@ -10,14 +10,13 @@ f=${1/\.tst/}           &&
 echo "No test found, $f.tst" && 
 exit 0
 
-$f.tst > $f.tmp
+t=/tmp/$f
+$f.tst > $t
 
 # Display the output
-[ -x $f.display   ] && $f.display < $f.tmp > $f.out
-[ ! -x $f.display ] && mv $f.tmp $f.out
-rm -f $f.tmp
+[ -x $f.display   ] && $f.display < $t > $f.out
+[ ! -x $f.display ] && mv $t $f.out
+rm -f $t
 
 # Compare the results to expected
 tdiff $f
-
-exit 0

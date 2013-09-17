@@ -5,6 +5,7 @@
 *.log
 *.orig
 *.out
+*.like
 *.pid
 *.pyc
 *.seed
