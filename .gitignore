@@ -19,6 +19,7 @@
 .lesshst
 .mysql_history
 .ssh/
+.viminfo
 .zshrc
 Desktop/
 Documents/
