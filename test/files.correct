@@ -3,6 +3,7 @@ Git orig files
 Git libpeerconnection files
 /home/seaman/Projects/mybook:
 bin
+doc
 logs
 test
 webapps
@@ -89,6 +90,8 @@ w
 web
 wiki.py
 words
+
+/home/seaman/Projects/mybook/doc:
 
 /home/seaman/Projects/mybook/logs:
 user
