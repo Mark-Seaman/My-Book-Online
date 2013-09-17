@@ -3,10 +3,6 @@
 
 echo 'Deploy code for $p to server'
 
-cd $p                               &&
-pwd                                 &&
-scp bin/bashrc $ph:.bashrc          &&
-scp bin/emacs.conf $ph:.emacs       &&
 cd $pa                              &&
 git add -A .                        &&
 git commit -m'Automatic deployment' ;
