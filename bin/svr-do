@@ -2,4 +2,4 @@
 # Run a remote command on the server
 
 echo 'Execute remote command: ' $*
-ssh $ph ". bin/bash-vars && $*"
+ssh $ph ". bin/project && $*"
