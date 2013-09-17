@@ -1,10 +1,10 @@
 #!/bin/bash
 # Start working on the simple project
 
-export p=~/Projects/thumper
+export p=~/Projects/mybook
 
-export ph=simpleapps@appthumper.com
-export pa=$p/webapps/simpleapps/app
+export ph=seaman@markseaman.org
+export pa=$p/webapps/mybook
 export pb=$p/bin
 export pd=$p/doc
 export pt=$p/test
@@ -29,7 +29,7 @@ $pt:\
 
 # Show the banner
 #reset
-figlet 'App Thumper'
+figlet 'My Book'
 
 # Switch to directory
 cd $p
