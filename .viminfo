@@ -50,39 +50,45 @@
 	[remote "origin"]
 		url = /home/seaman/Documents
 "1	LINE	0
-	.bashrc
+	dd[core]
+		repositoryformatversion = 0
+		filemode = true
+		bare = false
+		logallrefupdates = true
 "2	LINE	0
-	.gitconfig
+	.bashrc
 "3	LINE	0
-	.gitignore
+	.gitconfig
 "4	LINE	0
-	.welcome
+	.gitignore
 "5	LINE	0
-	.viminfo
+	.welcome
 "6	LINE	0
-	Documents/
+	.viminfo
 "7	LINE	0
-	
+	Documents/
 "8	LINE	0
-	webapps/
+	
 "9	LINE	0
-	bin
+	webapps/
 ""-	CHAR	0
-		
+	simpleapps
 
 # File marks:
-'0  31  0  ~/.gitignore
-'1  27  0  ~/.gitignore
-'2  1  0  ~/webapps/mybook/Index
-'3  128  4  ~/Documents/Code/mybook/livebook/contents.py
-'4  83  12  ~/Documents/Code/mybook/livebook/contents.py
-'5  59  0  ~/Documents/Code/mybook/livebook/views.py
-'6  697  0  ~/webapps/mybook/media/slides/50-Tricks.html
-'7  4  11  ~/Git/simpleapp.git/config
-'8  4  11  ~/Git/pipescan.git/config
-'9  1  0  ~/Documents/.git/config
+'0  8  25  ~/.git/config
+'1  31  0  ~/.gitignore
+'2  27  0  ~/.gitignore
+'3  1  0  ~/webapps/mybook/Index
+'4  128  4  ~/Documents/Code/mybook/livebook/contents.py
+'5  83  12  ~/Documents/Code/mybook/livebook/contents.py
+'6  59  0  ~/Documents/Code/mybook/livebook/views.py
+'7  697  0  ~/webapps/mybook/media/slides/50-Tricks.html
+'8  4  11  ~/Git/simpleapp.git/config
+'9  4  11  ~/Git/pipescan.git/config
 
 # Jumplist (newest first):
+-'  8  25  ~/.git/config
+-'  1  0  ~/.git/config
 -'  31  0  ~/.gitignore
 -'  43  0  ~/.gitignore
 -'  27  0  ~/.gitignore
@@ -181,9 +187,15 @@
 -'  1  0  ~/webapps/mybook/myblog/settings.py
 -'  1  0  ~/webapps/mybook/myproject/settings.py
 -'  41  22  /usr/local/lib/python2.6/site-packages/MySQLdb/__init__.py
--'  34  25  /usr/local/lib/python2.6/site-packages/MySQLdb/__init__.py
 
 # History of marks within files (newest to oldest):
+
+> ~/.git/config
+	"	8	25
+	^	8	26
+	.	8	25
+	+	15	0
+	+	8	25
 
 > ~/.gitignore
 	"	31	0
@@ -313,8 +325,3 @@
 	"	6	40
 	.	6	40
 	+	6	40
-
-> ~/webapps/mybook/wf-manage.py
-	"	1	25
-	.	1	25
-	+	1	25
