@@ -72,21 +72,23 @@
 "9	LINE	0
 	webapps/
 ""-	CHAR	0
-	simpleapps
+	389
 
 # File marks:
-'0  8  25  ~/.git/config
-'1  31  0  ~/.gitignore
-'2  27  0  ~/.gitignore
-'3  1  0  ~/webapps/mybook/Index
-'4  128  4  ~/Documents/Code/mybook/livebook/contents.py
-'5  83  12  ~/Documents/Code/mybook/livebook/contents.py
-'6  59  0  ~/Documents/Code/mybook/livebook/views.py
-'7  697  0  ~/webapps/mybook/media/slides/50-Tricks.html
-'8  4  11  ~/Git/simpleapp.git/config
-'9  4  11  ~/Git/pipescan.git/config
+'0  5  23  ~/bin/e
+'1  8  25  ~/.git/config
+'2  31  0  ~/.gitignore
+'3  27  0  ~/.gitignore
+'4  1  0  ~/webapps/mybook/Index
+'5  128  4  ~/Documents/Code/mybook/livebook/contents.py
+'6  83  12  ~/Documents/Code/mybook/livebook/contents.py
+'7  59  0  ~/Documents/Code/mybook/livebook/views.py
+'8  697  0  ~/webapps/mybook/media/slides/50-Tricks.html
+'9  4  11  ~/Git/simpleapp.git/config
 
 # Jumplist (newest first):
+-'  5  23  ~/bin/e
+-'  1  0  ~/bin/e
 -'  8  25  ~/.git/config
 -'  1  0  ~/.git/config
 -'  31  0  ~/.gitignore
@@ -185,10 +187,14 @@
 -'  21  100  ~/webapps/mybook/apache2/conf/httpd.conf
 -'  20  0  ~/webapps/mybook/apache2/conf/httpd.conf
 -'  1  0  ~/webapps/mybook/myblog/settings.py
--'  1  0  ~/webapps/mybook/myproject/settings.py
--'  41  22  /usr/local/lib/python2.6/site-packages/MySQLdb/__init__.py
 
 # History of marks within files (newest to oldest):
+
+> ~/bin/e
+	"	5	23
+	^	5	24
+	.	5	23
+	+	5	23
 
 > ~/.git/config
 	"	8	25
@@ -320,8 +326,3 @@
 	^	23	52
 	.	23	51
 	+	23	51
-
-> ~/webapps/mybook/myproject.wsgi
-	"	6	40
-	.	6	40
-	+	6	40

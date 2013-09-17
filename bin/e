@@ -2,7 +2,7 @@
 # Edit a file
 
 # Run vi on remote server
-[[ `hostname` == "web389.webfaction.com" ]] && vi $* && exit 0
+[[ `hostname` == "web126.webfaction.com" ]] && vi $* && exit 0
 
 # Use gedit by default  (comment these two lines to use emacs instead)
 #rbg emacs $* && exit 
