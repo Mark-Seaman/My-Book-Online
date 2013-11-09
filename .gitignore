@@ -26,7 +26,6 @@ Desktop/
 Documents/
 Git
 app.log
-doc/User/*/SimpleApps
 hammer.db
 junk/
 lib
@@ -39,7 +38,7 @@ pids
 results
 send-test
 webapps/mybook/apache2
-webapps/mybook/app/user_doc
+webapps/mybook/app/user_doc/
 webapps/mybook/lib
 webapps/mybook/myproject
 webapps/mybook_media
