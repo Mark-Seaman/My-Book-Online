@@ -30,17 +30,14 @@ if socket.gethostname().startswith('seaman-'):
     # Customizations for development servers
     #print "Development server"
     PYTHON_BASE         = '/usr/bin/python2.7'
-    LOGIN_URL           = '/login'
-    LOGOUT_URL          = '/login'
-    NOTES_DIR           = 'user_doc'
-    print 'host: local',NOTES_DIR
 else: 
     # Customizations for production server
     #print socket.gethostname()
     PYTHON_BASE         = '/home/seaman/webapps/'+project+'/lib/python2.6'
-    LOGIN_URL           = '/login'
-    LOGOUT_URL          = '/login'
-    NOTES_DIR           = '/home/seaman/webapps/'+project+'/MyBook'
+
+LOGIN_URL           = '/login'
+LOGOUT_URL          = '/login'
+NOTES_DIR           = 'user_doc'
 
 ADMIN_MEDIA_PREFIX  = '/media/admin/'
 MEDIA_URL           = '/media/'
