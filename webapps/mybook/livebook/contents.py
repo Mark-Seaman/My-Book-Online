@@ -80,12 +80,14 @@ def get_site_title(site):
 
 # Lookup the headline for this page
 def  get_headline(page):
-    text = read_file(page)
-    if len(text)>0: return convert_line(text[0]).replace('*','')
+    #text = read_file(page)
+    #if len(text)>0: return convert_line(text[0]).replace('*','')
     return 'Shrinking World Guides'
     
 # Return the contents to display
 def get_contents(filename):
+    return listdir(filename)
+    return 'listdir(%s)'%filename
     #print 'get_contents:', filename
     if not isfile(filename): return ''
     #print 'get_contents:2', filename
@@ -138,7 +140,7 @@ def gather_page_data(request, topic):
 
     path        = get_doc_path(bookdir+topic)
     sitetitle   = titles[0] + get_dev_site(request)
-    pagetitle   = get_headline(path) +' - '+ titles[0] + get_dev_site(request)
+    pagetitle   = "get_headline(path)" #'get_headline(path) +' - '+ titles[0] + get_dev_site(request)'
     headline    = get_headline(path)
     text        = page_body(request,bookdir+topic,path) 
     navlinks    = convert_line(navigation_text(NOTES_DIR+'/'+bookdir+topic))

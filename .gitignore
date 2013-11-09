@@ -37,8 +37,8 @@ npm-debug.log
 pids
 results
 send-test
+user_doc
 webapps/mybook/apache2
-webapps/mybook/app/user_doc/
 webapps/mybook/lib
 webapps/mybook/myproject
 webapps/mybook_media
