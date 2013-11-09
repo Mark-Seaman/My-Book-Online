@@ -32,7 +32,8 @@ if socket.gethostname().startswith('seaman-'):
     PYTHON_BASE         = '/usr/bin/python2.7'
     LOGIN_URL           = '/login'
     LOGOUT_URL          = '/login'
-    NOTES_DIR           = '/home/seaman/Projects/mybook/webapps/MyBook'
+    NOTES_DIR           = 'user_doc'
+    print 'host: local',NOTES_DIR
 else: 
     # Customizations for production server
     #print socket.gethostname()

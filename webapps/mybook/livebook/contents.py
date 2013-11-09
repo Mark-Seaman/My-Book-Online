@@ -1,6 +1,7 @@
 from files              import read_file, exists, list_dirs, list_files
 from hyperlink          import convert_links
 from os                 import listdir, path
+import os.path
 from os.path            import isfile, isdir, dirname, join, basename
 from settings           import NOTES_DIR
 from wiki               import convert_line, text_to_html
@@ -12,8 +13,11 @@ import re
 # Select one random quote
 def select_quote():
     quotes = read_file(join(NOTES_DIR,"SeamansLog/LifeLessons"))
-    n = randint(0, len(quotes)-1)
-    return  quotes[n]
+    if len(quotes)>1:
+        n = randint(0, len(quotes)-1)
+        return  quotes[n]
+    else:
+        return 'No quote'
 
 # Take off any trailing '/'
 def remove_slash(path):
@@ -24,15 +28,17 @@ def remove_slash(path):
 
 # Get the file system directory matching this request
 def get_directory(note):
-    path = get_path(note)
+    path = get_doc_path(note)
     if isdir(path):
        return remove_slash(path)
     else:
         return dirname(path)
 
 # Get the file system path name to the notes file or directory
-def get_path(note):
-    return join(NOTES_DIR,note)
+def get_doc_path(note):
+    d = NOTES_DIR+note
+    #print 'get_doc_path:',d
+    return d
 
 # Find the starting directory for this domain
 def get_site_directory(request, title):
@@ -57,7 +63,7 @@ def get_domain_directory(host):
 # Read the mapping from a file on the server
 def domain_map():
     domains = {}
-    for b in read_file(get_path('Domains')):
+    for b in read_file(get_doc_path('/Domains')):
         (domain,directory) = b.split(' ')
         domains[domain] = directory
     return domains
@@ -67,7 +73,7 @@ def get_site_title(site):
     if site=='': site = '/'
     #file path:/home/seaman/webapps/mybook/Private/HarborWalk/EmailNeighbors 
     #site: ../Private/HarborWalk/
-    content = read_file(get_path(site+'Title'))
+    content = read_file(get_doc_path(site+'Title'))
     if len(content)>0: 
         return [ convert_line(content[0]), content[1] ]
     return [ 'Shrinking World Guides', 'Tips for thriving in the modern world' ]
@@ -80,7 +86,9 @@ def  get_headline(page):
     
 # Return the contents to display
 def get_contents(filename):
+    #print 'get_contents:', filename
     if not isfile(filename): return ''
+    #print 'get_contents:2', filename
     return text_to_html(read_file(filename)[1:])
 
 # Get the path for the page requested
@@ -100,9 +108,9 @@ def is_wisdom (request, topic):
 
 # Format debug info
 def debug_info(request, topic, site):
-    return ''
+    #return ''
     return 'page:%s, --  file path:%s, -- site:%s' % \
-        (page_name(request), get_path(mybook_dir(request)+topic), site)
+        (page_name(request), get_doc_path(mybook_dir(request)+topic), site)
 
 # Create a list of details for possible display
 def details(request, page, filepath):
@@ -128,11 +136,11 @@ def gather_page_data(request, topic):
     else:
         titles      = get_site_title (bookdir)
 
-    path        = get_path(bookdir+topic)
+    path        = get_doc_path(bookdir+topic)
     sitetitle   = titles[0] + get_dev_site(request)
     pagetitle   = get_headline(path) +' - '+ titles[0] + get_dev_site(request)
     headline    = get_headline(path)
-    text        = page_body(request,bookdir+topic,path)  
+    text        = page_body(request,bookdir+topic,path) 
     navlinks    = convert_line(navigation_text(NOTES_DIR+'/'+bookdir+topic))
 
     data        =  { 

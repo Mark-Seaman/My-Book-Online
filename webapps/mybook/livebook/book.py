@@ -3,13 +3,13 @@ from settings           import NOTES_DIR
 from os.path            import join
 
 # Get the file system path name to the notes file or directory
-def get_path(note):
+def get_mybook_path(note):
     return join(NOTES_DIR,note)
 
 # Read the mapping from a file on the server
 def domain_map():
     domains = {}
-    for b in read_file(get_path('Domains')):
+    for b in read_file(get_mybook_path('Domains')):
         (domain,directory) = b.split(' ')
         domains[domain] = directory
     return domains
