@@ -23,12 +23,12 @@ urlpatterns = patterns(
     (r'^admin/',            include(admin.site.urls)),
     (r'^accounts/profile/', hoa_site),
     (r'^login$',            'django.contrib.auth.views.login'),
+    # url(r'^register$',                      'doc.views.register'),
+    # url(r'^(?P<title>[\w\-_./]+)/missing$', 'doc.views.missing'),
 
-    (r'unsubscribe$',      unsubscribe),
-    (r'subscribe$',        subscribe),
-
-    (r'^message$',          message),
-
+    #(r'unsubscribe$',      unsubscribe),
+    #(r'subscribe$',        subscribe),
+    #(r'^message$',          message),
 
     # old private view
     (r'^private$',          private_home),
@@ -38,11 +38,9 @@ urlpatterns = patterns(
     #(r'^livebook/(?P<topic>[A-Za-z0-9\-\/\_\.]+)$', livebook),
 
     # doc views
-    # url(r'^$',                                'doc.views.home'),
-    # url(r'^register$',                      'doc.views.register'),
-    # url(r'^(?P<title>[\w\-_./]+)/missing$', 'doc.views.missing'),
-    # url(r'^(?P<title>[\w\-_./]+)/(?P<template>[\w\-_./]+)/add$',  'doc.views.add'),
-    # url(r'^(?P<title>[\w\-_./]+)/edit$',    'doc.views.edit'),
-    # url(r'^(?P<title>[\w\-_./]+)/delete$',  'doc.views.delete'),
-    # url(r'^(?P<title>[\w\-_./]+)$',         'doc.views.doc'),
+    url(r'^Public$',                                'doc.views.home'),
+    # url(r'^Public/(?P<title>[\w\-_./]+)/(?P<template>[\w\-_./]+)/add$',  'doc.views.add'),
+    # url(r'^Public/(?P<title>[\w\-_./]+)/edit$',    'doc.views.edit'),
+    # url(r'^Public/(?P<title>[\w\-_./]+)/delete$',  'doc.views.delete'),
+    url(r'^Public/(?P<title>[\w\-_./]+)$',         'doc.views.doc'),
 )
