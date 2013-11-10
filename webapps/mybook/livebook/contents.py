@@ -106,9 +106,9 @@ def is_wisdom (request, topic):
 
 # Format debug info
 def debug_info(request, topic, site):
-    #return ''
-    return 'page:%s, --  file path:%s, -- site:%s' % \
-        (page_name(request), get_doc_path(mybook_dir(request)+topic), site)
+    return ''
+    #return 'page:%s, --  file path:%s, -- site:%s' % \
+    #    (page_name(request), get_doc_path(mybook_dir(request)+topic), site)
 
 # Create a list of details for possible display
 def details(request, page, filepath):
