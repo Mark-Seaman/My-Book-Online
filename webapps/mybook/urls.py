@@ -33,9 +33,6 @@ urlpatterns = patterns(
     # old private view
     (r'^private$',          private_home),
     (r'^private/(?P<topic>[A-Za-z0-9\-\/\_\.]+)$', private),
-    url(r'^$',                             guides),
-    (r'^(?P<topic>[A-Za-z0-9\-\/\_\.]+)$', livebook),
-    #(r'^livebook/(?P<topic>[A-Za-z0-9\-\/\_\.]+)$', livebook),
 
     # doc views
     url(r'^Public$',                                'doc.views.home'),
@@ -43,4 +40,9 @@ urlpatterns = patterns(
     # url(r'^Public/(?P<title>[\w\-_./]+)/edit$',    'doc.views.edit'),
     # url(r'^Public/(?P<title>[\w\-_./]+)/delete$',  'doc.views.delete'),
     url(r'^Public/(?P<title>[\w\-_./]+)$',         'doc.views.doc'),
+
+    # old views
+    url(r'^$',                             guides),
+    (r'^(?P<topic>[A-Za-z0-9\-\/\_\.]+)$', livebook),
+    #(r'^livebook/(?P<topic>[A-Za-z0-9\-\/\_\.]+)$', livebook),
 )
