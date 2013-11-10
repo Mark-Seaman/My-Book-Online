@@ -1,6 +1,6 @@
 from files              import read_file, exists, list_dirs, list_files
 from hyperlink          import convert_links
-from os                 import listdir, path
+from os                 import listdir, path, getcwd
 import os.path
 from os.path            import isfile, isdir, dirname, join, basename
 from settings           import NOTES_DIR
@@ -86,8 +86,8 @@ def  get_headline(page):
     
 # Return the contents to display
 def get_contents(filename):
-    return listdir(filename)
-    return 'listdir(%s)'%filename
+    #return listdir(filename)
+    return [ 'listdir(%s)'%filename, getcwd() ],  listdir(filename)
     #print 'get_contents:', filename
     if not isfile(filename): return ''
     #print 'get_contents:2', filename
