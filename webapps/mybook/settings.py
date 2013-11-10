@@ -37,11 +37,11 @@ else:
 
 LOGIN_URL           = '/login'
 LOGOUT_URL          = '/login'
-NOTES_DIR           = 'user_doc'
 
 ADMIN_MEDIA_PREFIX  = '/media/admin/'
 MEDIA_URL           = '/media/'
 ROOT_DIR            = dirname(abspath(__file__))
+NOTES_DIR           = ROOT_DIR+'/user_doc'
 
 
 TIME_ZONE           = 'America/Denver'
