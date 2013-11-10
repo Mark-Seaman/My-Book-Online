@@ -42,7 +42,7 @@ ADMIN_MEDIA_PREFIX  = '/media/admin/'
 MEDIA_URL           = '/media/'
 ROOT_DIR            = dirname(abspath(__file__))
 NOTES_DIR           = ROOT_DIR+'/user_doc'
-
+DOC_ROOT            = NOTES_DIR
 
 TIME_ZONE           = 'America/Denver'
 LANGUAGE_CODE       = 'en-us'
