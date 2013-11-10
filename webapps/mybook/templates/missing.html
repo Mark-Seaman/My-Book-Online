@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+      {% autoescape off %}
+
+<div ng-controller="HammerViewCtrl">
+
+  {{ text }}
+  <p> <a href='../{{default}}/add'>Create page: {{default}}</a> </p>
+
+   <!--
+       -->
+</div>
+
+      {% endautoescape %}
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>{{ title }}</h2>
+<style>input,textarea{width:90%}</style>
+<form enctype='multipart/form-data' action="/{{ title }}/edit" method="post">{% csrf_token %}
+  <div class='page'>
+    <table style='width:100%'>
+      {{ form.as_table }}
+    </table>
+    <a href='/{{ title }}/delete'>Delete</a>
+    <br>
+    <button type="submit" value="Save">Save</button>
+    <button type="cancel" value="Cancel" name="cancel">Cancel</button>
+  </div>
+</form>
+
+{% endblock %}

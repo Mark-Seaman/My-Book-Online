@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <!-- 
+         <script>
+           pages = {{pages}}
+         </script>
+      -->
+
+<div ng-controller="AccordionCtrl" >
+  
+  <h1>My Story</h1>
+  <button ng-hide='loaded' ng-click='set_content({{pages}})'>Load My Story</button>
+
+  <accordion close-others="true">
+    <accordion-group heading="{{gtitle}}" ng-repeat="group in groups">
+
+      <h2 ng-bind='group.title'></h2>
+      
+      <div ng-repeat='line in group.content'>
+        <p ng-bind='line'></p>
+      </div>
+
+    </accordion-group>
+  </accordion>
+
+</div>
+
+{% endblock %}

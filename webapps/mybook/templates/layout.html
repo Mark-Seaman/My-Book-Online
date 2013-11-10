@@ -1,0 +1,58 @@
+<!doctype html>
+<html ng-app="thumper">
+<head>
+    <!--
+        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.js"></script>
+        <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.4.0.js"></script>
+        <link  href="http://appthumper.com/media/thumper.css" rel="stylesheet" />
+        <script src="http://appthumper.com/media/thumper.js"></script>
+-->
+    
+    <link href="/media/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="/media/angular.js"></script>
+    <script src="/media/ui-bootstrap-tpls-0.4.0.js"></script>
+    <link  href="/media/thumper.css" rel="stylesheet" />
+    <script src="/media/thumper.js"></script>
+  </head>
+  <body>
+
+    {% block user %} {% endblock %}
+
+    {% block banner %}
+    <div>
+        <!--
+        -->
+
+        <img src="/media/App-Thumper-Logo.png" />
+        <hr>
+        {% if user.is_authenticated and user.is_staff %}
+           <div style='float:right'>
+            Logged in as,
+            <strong>{% firstof user.first_name user.username %}</strong>.
+            <!-- <a href="/password_change">Change password</a> -->
+            <a href="/logout">Log out</a>
+            </div>
+        {% endif %}
+
+        {% block navbar %}
+            <p>
+              <a href="/">Home</a>&nbsp;&nbsp;&nbsp;
+              {% if user.is_authenticated and user.is_staff %}
+              <a href='/{{ title }}/edit'>Edit</a>&nbsp;&nbsp;&nbsp;
+              {% endif %}
+            </p>
+        {% endblock %}
+
+    </div>
+    {% endblock %}
+
+    <div class='page'>
+      <div style="margin:6em">
+        {% block content %} 
+        {% endblock %}
+      </div>
+    </div>
+
+  </body>
+</html>

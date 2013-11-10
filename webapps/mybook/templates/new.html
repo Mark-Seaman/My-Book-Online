@@ -1,16 +1,13 @@
-{% extends "mybook_page.html" %}
-{% block breadcrumbs %}
-    <div class="breadcrumbs">
-        {% autoescape off %} {{ breadcrumbs }} {% endautoescape %}
-    </div>
-{% endblock %}
+{% extends "layout.html" %}
+
 {% block content %}
-<blockquote>
-    <h1>Add a new child topic</h1>
+      {% autoescape off %}
 
-    <form action="{{ base }}book{{ book.id }}/topic{{ topic.id }}/new" method="post">
-        {{ form.as_p }}
-        <input type="submit" value="Save new topic" />
-    </form>
+        <div>
+            {{ text }}
+            <p><input type="text" ng-model="newpage" ng-bind="newpage"/></p>
+            <p>Create page: <a href='{{newpage}}/add'>{{newpage}}</a> </p>
+        </div>
+
+      {% endautoescape %}
 {% endblock %}
-

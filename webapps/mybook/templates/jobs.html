@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    {% autoescape off %}
+
+    <h1>Your Job Results</h1>
+
+    <div ng-controller="TabbedViewCtrl">
+
+      <hr />
+
+      <tabset ng-show='true'>
+        <tab ng-repeat="tab in tabs" heading="{{tabtitle}}" 
+             active="tab.active" disabled="tab.disabled">
+          <pre>{{tabcontent}}</pre>
+        </tab>
+      </tabset>
+
+      <script>
+        var content = {{content}}
+      </script>
+
+    </div>
+
+    <!-- 
+      -->
+
+    {% endautoescape %}
+{% endblock %}
