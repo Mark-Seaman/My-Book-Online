@@ -80,17 +80,13 @@ def get_site_title(site):
 
 # Lookup the headline for this page
 def  get_headline(page):
-    #text = read_file(page)
-    #if len(text)>0: return convert_line(text[0]).replace('*','')
+    text = read_file(page)
+    if len(text)>0: return convert_line(text[0]).replace('*','')
     return 'Shrinking World Guides'
     
 # Return the contents to display
 def get_contents(filename):
-    #return listdir(filename)
-    #return [ 'listdir(%s)'%filename ] +  listdir(filename)
-    #print 'get_contents:', filename
     if not isfile(filename): return ''
-    #print 'get_contents:2', filename
     return text_to_html(read_file(filename)[1:])
 
 # Get the path for the page requested
