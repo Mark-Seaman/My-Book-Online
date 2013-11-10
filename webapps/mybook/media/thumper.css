@@ -1,0 +1,21 @@
+body {
+    background: #efefef;
+    margin: 1em;
+}
+
+div {
+}
+
+div.page {
+    background: #ffffff;
+    -webkit-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+    -moz-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+    padding: 1em;
+    margin: 1em;
+}
+
+hr {
+    border:2px solid red;
+}
+

@@ -3,10 +3,13 @@ from django.contrib     import admin
 from livebook.views     import *
 from livebook.message   import message
 
+from settings           import ROOT_DIR,MEDIA_URL
+
 admin.autodiscover()
 
-slides_dir = { 'document_root' : '/home/seaman/Documents/Slides/'  }
-media_dir  = { 'document_root' : '/home/seaman/Documents/Web/'     }
+slides_dir  = { 'document_root' : '/home/seaman/Documents/Slides/'  }
+#media_dir  = { 'document_root' : '/home/seaman/Documents/Web/'     }
+media_dir   = {'document_root': ROOT_DIR+MEDIA_URL}
 
 urlpatterns = patterns(
     '',
@@ -30,12 +33,12 @@ urlpatterns = patterns(
     # old private view
     (r'^private$',          private_home),
     (r'^private/(?P<topic>[A-Za-z0-9\-\/\_\.]+)$', private),
-    url(r'^$',                             guides),
+    #url(r'^$',                             guides),
     (r'^(?P<topic>[A-Za-z0-9\-\/\_\.]+)$', livebook),
     #(r'^livebook/(?P<topic>[A-Za-z0-9\-\/\_\.]+)$', livebook),
 
     # doc views
-    # url(r'^$',                              'doc.views.home'),
+    url(r'^$',                                'doc.views.home'),
     # url(r'^register$',                      'doc.views.register'),
     # url(r'^(?P<title>[\w\-_./]+)/missing$', 'doc.views.missing'),
     # url(r'^(?P<title>[\w\-_./]+)/(?P<template>[\w\-_./]+)/add$',  'doc.views.add'),
