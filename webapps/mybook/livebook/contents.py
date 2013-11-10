@@ -87,7 +87,7 @@ def  get_headline(page):
 # Return the contents to display
 def get_contents(filename):
     #return listdir(filename)
-    return [ 'listdir(%s)'%filename, getcwd() ],  listdir(filename)
+    return [ 'listdir(%s)'%filename, getcwd() ]#+  listdir(filename)
     #print 'get_contents:', filename
     if not isfile(filename): return ''
     #print 'get_contents:2', filename
