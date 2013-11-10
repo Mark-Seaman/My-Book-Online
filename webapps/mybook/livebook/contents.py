@@ -36,7 +36,7 @@ def get_directory(note):
 
 # Get the file system path name to the notes file or directory
 def get_doc_path(note):
-    d = NOTES_DIR+note
+    d = NOTES_DIR+'/'+note
     #print 'get_doc_path:',d
     return d
 
