@@ -7,7 +7,7 @@ export p=~/Projects/mybook
 export ph=seaman@markseaman.org
 export pa=$p/webapps/mybook
 export pb=$p/bin
-export pd=$p/doc
+export pd=$pa/user_doc
 export pt=$p/test
 export port=8054
 
