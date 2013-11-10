@@ -1,11 +1,14 @@
+from datetime           import datetime
 from django.contrib.auth.decorators import login_required
 from django.http        import HttpResponseRedirect, HttpResponse
 from django.shortcuts   import render
+from django.utils.html  import escape
 from os.path            import join, exists, dirname
 from os                 import system,environ
 
 from models             import *
 
+logFile=environ['p']+'/logs/user/page.log'
 
 def ip(request):
     '''
@@ -16,126 +19,186 @@ def ip(request):
     return request.META['HTTP_X_FORWARDED_FOR']
 
 
-def ip_ok(request):
+def user(request):
     '''
-    Check the IP address for the request
+    Name of requesting user
     '''
-    valid = [ '108.59.4.75', '50.134.243.56', '127.0.0.1' ]
-    return ip(request) in valid
+    if not request.user.is_anonymous():
+        return request.user.username
+    else:
+        return 'Anonymous'
+
+
+def user_doc(request,title):
+    '''
+    Return the document for this user.
+    '''
+    username = user(request).replace ('Anonymous','Public')
+    return join(username,title)
+    #return  title
+
+
+def log_page(request,title):
+    '''
+    Log the page hit in page.log  (time, ip, user, page, doc) 
+    '''
+    u   = user(request)
+    if ':' in title:
+        doc = title
+    else:
+        doc = join(u, title)
+    f=open(logFile,'a')
+    options = (str(datetime.now()), ip(request), u, request.path, doc)
+    f.write('%s, %s, %s, %s, %s\n'%options)
+    f.close()
+
+
+def new(request,title):
+    '''
+    Render the view for a missing document
+    '''
+    text = format_doc('Anonymous/NewPage') # % title
+    data = {'title':title, 'dir':dirname(title), 'text':text, 
+            'default':basename(title), 'newpage':'{{newpage}}'}
+    return render(request, 'new.html', data)
 
 
 def missing(request,title):
     '''
     Render the view for a missing document
     '''
-    text = format_doc('MissingFile')
-    template = doc_template(title)
-    link = '<a href="/doc/%s/%s/add">%s</a>'%(title,template,title)
-    #'banner':True, 
-    return render(request, 'doc.html', {'title': title, 'text': text%link })
+    if not permitted(request):
+        return redirect(request,'login')
+    text = format_doc('Anonymous/MissingFile') % title
+    data = {'title':title, 'dir':dirname(title), 'text':text, 
+            'default':basename(title), 'newpage':'{{newpage}}'}
+    return render(request, 'missing.html', data)
 
 
-def illegal(request):
-    title = 'IllegalMachine'
-    user = str(request.user)
-    text = user+format_doc(title)%ip(request)
-    return render(request, 'doc.html', {'title': title, 'text': text})
+def redirect(request,title):
+    '''
+    Go to a specific page
+    '''
+    log_page (request,'redirect:%s'%title)
+    return HttpResponseRedirect('/'+title) 
 
 
 def doc(request,title):
     '''
     Render the appropriate doc view
     '''
-    print 'doc: %s'%(title)
-    if ip_ok(request) or request.user.is_superuser:
-        if title.endswith('/'):
-            return redirect(title+'Index')
-        text = format_doc(title)
-        content =  {'title': title, 'text': text}
-        if request.user.is_superuser:
-            content['banner'] = True 
-        return render(request, 'doc.html', content)
-    else:
-        return illegal(request)
+    doc = user_doc(request,title)
+    log_page (request, title)
+    text = format_doc(doc)
+    #if text.startswith('redirect:'):
+    #    return redirect(request,text[len('redirect:'):-1])
+    #if not permitted(request, doc):
+    #    return redirect(request,'login')
+    content =  {'title': title, 'text': text}
+    return render(request, 'doc.html', content)
 
 
 def home(request):
     '''
     Render the home view
     '''
-    return doc(request, 'Index')
+    if request.user.is_anonymous():
+        doc = 'Anonymous/Index'
+        log_page (request, 'Index')
+        data = {'title': 'Index', 'text': format_doc(doc)}
+        return render(request, 'doc.html', data)
+    return redirect (request,'Index')
 
 
-def redirect(title):
+@login_required(login_url='/login')
+def store(request,title):
     '''
-    Go to a specific page
+    Get and put doc directly
     '''
-    print 'redirect: %s'%(title)
-    return HttpResponseRedirect('/doc/'+title) 
+    log_page (request, title)
+    doc  = user_doc(request,title)
+    text = read_doc(doc)
+    return HttpResponse(text)
 
 
-def edit_form (request, title=None):
+@login_required(login_url='/login')
+def edit_form (request, doc, title=None, text=None):
     '''
     Create a form for editing the object details
     '''
-    print 'form: %s'%(title)
+    log_page (request, 'form:%s'%title)
     if request.method == 'POST':
         form = NoteForm(request.POST)
         if request.POST.get('cancel', None):
-            title = form.data['path']
-            if not title:
-                title = 'Home'
-            return redirect(title)
+            return redirect(request,title)
         else:
             if form.is_valid():
-                title = form.data['path']
-                print 'save: %s'%(title)
+                log_page (request, 'save:%s'%title)
                 text =  form.cleaned_data['body']
+                text = text.encode('ascii', 'ignore')
                 text = text.replace('\r','')
-                write_doc(title,text)
-                return redirect(title)
+                write_doc(doc,text)
+                return redirect(request,title)
     else:
         note =  Note()
-        if  title:
-            note.path = title
-            if read_doc(title):
-                print 'read: %s'%(title)
-                note.body = read_doc(title)
+        note.path = title
+        log_page (request,'read:%s'%title)
+        if not text:
+            if is_doc(doc):
+                text = read_doc(doc)
+        note.body = text
         form =  NoteForm(instance=note)
-    #  'banner':True,
-    data =  { 'form': form, 'title': title  }
+    data =  { 'form': form, 'title': title, 'banner': True  }
     return render(request, 'docedit.html', data)
-
-
-def add(request,title,template):
-    '''
-    Render the add view
-    '''
-    print 'add: %s, %s'%(title,template)
-    clone_template(title)
-    return edit_form (request,title)
-   
 
 
 def edit(request,title):
     '''
     Render the add view
     '''
-    print 'edit: %s'%(title)
-    return edit_form (request,title)
+    doc = user_doc(request,title)
+    log_page (request, 'edit:%s'%title)
+    return edit_form (request, doc, title)
 
+
+def add(request,title):
+    '''
+    Render the add view
+    '''
+    log_page (request,'add:%s'%title)
+    text = add_doc(user_doc(request,title))
+    if text.startswith('redirect:'):
+        return redirect(request,text[len('redirect:'):-1])
+    return missing(request,title)
 
 def delete(request,title):
     '''
     Delete the record
     '''
-    print 'delete: %s'%(title)
-    delete_doc (title)
-    return redirect(dirname(title))
+    doc = user_doc(request,title)
+    log_page (request, 'delete: %s'%title)
+    delete_doc (doc)
+    return redirect(request,dirname(title))
 
 
-# Sample code:
-#    if request.user.is_anonymous(): return 0
-#    if not request.user.is_superuser:  return redirect('/NoAccess') 
-#    u = UserAccount.objects.get(pk=request.user.pk).pk
-#    if not u==user_id:    return redirect('/NoAccess')
+def permitted(request,title=''):
+    '''
+    Check for all security violations
+    '''
+    return title.startswith('Anonymous') or user(request)!='Anonymous'
+
+
+def illegal(request):
+    title = 'IllegalMachine'
+    log_page (request, 'illegal: %s'%title)
+    user = str(request.user)
+    text = user+format_doc(title)%ip(request)
+    return render(request, 'doc.html', {'title': title, 'text': text})
+
+
+def ip_ok(request):
+    '''
+    Check the IP address for the request
+    '''
+    valid = [ '108.59.4.75', '50.134.243.56', '127.0.0.1' ]
+    return ip(request) in valid
