@@ -94,8 +94,8 @@ def doc(request,title):
     doc = user_doc(request,title)
     log_page (request, title)
     text = format_doc(doc)
-    if text.startswith('redirect:'):
-        return redirect(request,text[len('redirect:'):-1])
+    #if text.startswith('redirect:'):
+    #    return redirect(request,text[len('redirect:'):-1])
     #if not permitted(request, doc):
     #    return redirect(request,'login')
     content =  {'title': title, 'text': text}
