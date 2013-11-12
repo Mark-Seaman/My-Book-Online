@@ -1,14 +1,18 @@
 from datetime           import datetime
 from django.contrib.auth.decorators import login_required
 from django.http        import HttpResponseRedirect, HttpResponse
-from django.shortcuts   import render
 from django.utils.html  import escape
 from os.path            import join, exists, dirname
 from os                 import system,environ
+from django.template    import loader, Context
 
 from models             import *
 
 logFile=environ['p']+'/logs/user/page.log'
+
+def render(request,template,data): 
+    page = loader.get_template (template)
+    return HttpResponse (page.render (Context(data)))
 
 def ip(request):
     '''
