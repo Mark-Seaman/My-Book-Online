@@ -20,12 +20,9 @@
     {% block user %} {% endblock %}
 
     {% block banner %}
-    <div>
-        <!--
-        -->
+    <div class='header'>
 
-        <img src="/media/mybook/images/WaterBanner1000.jpg" />
-        <hr>
+        <h1>{{ site }}</h1>
         {% if user.is_authenticated and user.is_staff %}
            <div style='float:right'>
             Logged in as,

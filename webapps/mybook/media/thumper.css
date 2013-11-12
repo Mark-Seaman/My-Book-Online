@@ -4,6 +4,8 @@ body {
 }
 
 div {
+    padding: 5px;
+    max-width: 80em;
 }
 
 div.page {
@@ -13,6 +15,32 @@ div.page {
     box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
     padding: 1em;
     margin: 1em;
+}
+
+div.header {
+    background-image: url('http:/media/WaterBanner1000.jpg');
+    color: white;
+    margin: 2em;
+    border: 2px solid yellow;
+    width:  900px;
+    height: 80px;
+    padding: 1em;
+}
+
+p a {
+    color: yellow;
+}
+
+p {
+    line-height: 140%;
+    font-size: 12pt;
+    color: #444;
+}
+
+li {
+    line-height: 100%;
+    font-size: 12pt;
+    color: #444;
 }
 
 hr {
