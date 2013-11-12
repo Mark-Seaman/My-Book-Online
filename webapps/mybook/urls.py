@@ -36,11 +36,11 @@ urlpatterns = patterns(
     url(r'^private/(?P<topic>[A-Za-z0-9\-\/\_\.]+)$', private),
 
     # doc views
-    url(r'^Public$',                                'doc.views.home'),
+    url(r'^$',                                'doc.views.home'),
     # url(r'^Public/(?P<title>[\w\-_./]+)/(?P<template>[\w\-_./]+)/add$',  'doc.views.add'),
     # url(r'^Public/(?P<title>[\w\-_./]+)/edit$',    'doc.views.edit'),
     # url(r'^Public/(?P<title>[\w\-_./]+)/delete$',  'doc.views.delete'),
-    url(r'^Public/(?P<title>[\w\-_./]+)$',         'doc.views.doc'),
+    url(r'^(?P<title>[\w\-_./]+)$',         'doc.views.doc'),
 
     # old views
     url(r'^$',                             guides),
