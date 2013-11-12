@@ -107,7 +107,7 @@ def home(request):
     Render the home view
     '''
     if request.user.is_anonymous():
-        doc = 'Anonymous/Index'
+        doc = 'Index'
         log_page (request, 'Index')
         data = {'title': 'Index', 'text': format_doc(doc)}
         return render(request, 'doc.html', data)
