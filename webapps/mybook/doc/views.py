@@ -106,12 +106,13 @@ def home(request):
     '''
     Render the home view
     '''
-    if request.user.is_anonymous():
-        doc = 'Index'
-        log_page (request, 'Index')
-        data = {'title': 'Index', 'text': format_doc(doc)}
-        return render(request, 'doc.html', data)
-    return redirect (request,'Index')
+    return  doc(request,'Index')
+    # if request.user.is_anonymous():
+    #     doc = 'Index'
+    #     log_page (request, 'Index')
+    #     data = {'title': 'Index', 'text': format_doc(doc)}
+    #     return render(request, 'doc.html', data)
+    # return redirect (request,'Index')
 
 
 #@login_required(login_url='/login')
