@@ -114,7 +114,7 @@ def home(request):
     return redirect (request,'Index')
 
 
-@login_required(login_url='/login')
+#@login_required(login_url='/login')
 def store(request,title):
     '''
     Get and put doc directly
@@ -125,7 +125,7 @@ def store(request,title):
     return HttpResponse(text)
 
 
-@login_required(login_url='/login')
+#@login_required(login_url='/login')
 def edit_form (request, doc, title=None, text=None):
     '''
     Create a form for editing the object details
