@@ -98,7 +98,7 @@ def doc(request,title):
         return redirect(request,text[len('redirect:'):-1])
     #if not permitted(request, doc):
     #    return redirect(request,'login')
-    content =  {'title': title, 'text': text}
+    content =  {'site':request.get_host(), 'title': title, 'text': text}
     return render(request, 'doc.html', content)
 
 

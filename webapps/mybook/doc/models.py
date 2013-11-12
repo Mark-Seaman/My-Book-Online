@@ -145,3 +145,26 @@ def disable_app(user, title):
     '''
     do_command('app-disable %s %s'%(user,title))
 
+
+def domain_map():
+    '''
+    Read the domain mapping from a file
+    '''
+    map = {}
+    for d in open(doc_file('Domains')).read().split('\n'):
+        d = d.replace('http://','').split(' ')
+        if len(d)==2:
+            map[d[0]] = d[1]
+            #print d[0], d[1]
+    return map
+
+
+def map_url(dirs):
+    '''
+    Convert a url to a directory
+    '''
+    m = domain_map()
+    if m.has_key(dirs[0]):
+        return '/'.join ([m[dirs[0]]]+dirs[1:])
+    else:
+        return '/'.join (dirs)
