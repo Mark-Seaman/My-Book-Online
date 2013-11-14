@@ -37,6 +37,7 @@ def user_doc(request,title):
     '''
     Return the document for this user.
     '''
+    host = request.get_host()
     username = user(request).replace ('Anonymous','Public')
     return join(username,title)
     #return  title
@@ -52,8 +53,8 @@ def log_page(request,title):
     else:
         doc = join(u, title)
     f=open(logFile,'a')
-    options = (str(datetime.now()), ip(request), u, request.path, doc)
-    f.write('%s, %s, %s, %s, %s\n'%options)
+    options = (str(datetime.now()), ip(request), request.get_host(), u, request.path, doc)
+    f.write(', '.join(options)+'\n')
     f.close()
 
 
@@ -71,8 +72,8 @@ def missing(request,title):
     '''
     Render the view for a missing document
     '''
-    if not permitted(request):
-        return redirect(request,'login')
+    #if not permitted(request):
+    #    return redirect(request,'login')
     text = format_doc('Anonymous/MissingFile') % title
     data = {'title':title, 'dir':dirname(title), 'text':text, 
             'default':basename(title), 'newpage':'{{newpage}}'}
