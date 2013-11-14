@@ -159,12 +159,12 @@ def domain_map():
     return map
 
 
-def map_url(dirs):
+def host_root(host):
     '''
-    Convert a url to a directory
+    Return the root of the doc tree
     '''
     m = domain_map()
-    if m.has_key(dirs[0]):
-        return '/'.join ([m[dirs[0]]]+dirs[1:])
+    if m.has_key(host):
+        return '/'+m[host]
     else:
-        return '/'.join (dirs)
+        return '/'
