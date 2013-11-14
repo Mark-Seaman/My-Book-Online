@@ -4,7 +4,7 @@
 cd $pa
 mkdir -p $p/logs $p/logs/user 
 rbg python manage.py runserver $port > $p/logs/user/app.log
-sleep 1
+sleep 2
 
 
 

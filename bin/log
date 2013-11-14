@@ -1,5 +1,5 @@
 #!/bin/bash
 # Show the page log
 
-cat $p/logs/user/app.log
+tail $p/logs/user/*.log
 
