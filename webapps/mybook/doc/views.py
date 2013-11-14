@@ -37,9 +37,9 @@ def user_doc(request,title):
     '''
     Return the document for this user.
     '''
-    host = host_root(request.get_host())
+    host = request.get_host()
     username = user(request).replace ('Anonymous','Public')
-    return join(host, username, title)
+    return join(username,title)
     #return  title
 
 
@@ -47,8 +47,11 @@ def log_page(request,title):
     '''
     Log the page hit in page.log  (time, ip, user, page, doc) 
     '''
-    doc = user_doc(request,title)
     u   = user(request)
+    if ':' in title:
+        doc = title
+    else:
+        doc = join(u, title)
     f=open(logFile,'a')
     options = (str(datetime.now()), ip(request), request.get_host(), u, request.path, doc)
     f.write(', '.join(options)+'\n')
