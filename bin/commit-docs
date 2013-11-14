@@ -1,7 +1,7 @@
 #!/bin/bash
 # Commit all docs to version control
 
-cd $sad      &&
+cd $pd       &&
 git add -A . &&
 git commit -m'Auto doc commit'
 git pull     &&

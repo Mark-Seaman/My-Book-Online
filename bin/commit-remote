@@ -1,5 +1,5 @@
 #!/bin/bash
 # Commit all doc changes
 
-svr-do 'git add -A .; git commit -m"Document Changes"; git pull && git push'
+svr-do 'cd ~/Documents && git add -A .; git commit -m"Document Changes"; git pull && git push'
 

@@ -1,0 +1,6 @@
+#!/bin/bash
+# Publish local docs to the web sites
+
+commit-docs && commit-remote
+
+wf shrinking-world.org
