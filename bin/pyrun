@@ -1,0 +1,9 @@
+#!/bin/bash
+# Run a single function in a python module
+
+cd $1 && python <<EOF
+from $2 import $3
+$3()
+EOF
+
+

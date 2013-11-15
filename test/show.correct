@@ -1,0 +1,68 @@
+redirect:/./Index
+hammer-show /.
+redirect:./Index
+hammer-show Public/.
+redirect:./app/dir/file/missing
+hammer-show user/./app/dir/file
+redirect:./Index
+hammer-show Public/.
+<br/> <h1>Table of Contents</h1>
+<br/> 
+<br/> 
+<br/>  <a href="BuildAPerfectBrain">Build a perfect brain</a> 
+<br/> 
+<br/>  <a href="YouNeedABrain">Why you need a brain</a> 
+<br/> 
+<br/>  <a href="BrainIngredients">Essential ingredients</a> 
+<br/> 
+<br/>  <a href="BrainStorage">What to store</a> 
+<br/> 
+<br/>  <a href="BrainFreshness">Keep it fresh</a> 
+<br/> 
+<br/>  <a href="BrainPerformance">Boost performance of your brain</a> 
+<br/> 
+<br/> 
+<br/> 
+<br/> 
+<br/> 
+<br/> 
+hammer-show Public/./Brain/Index
+redirect:./Index
+hammer-show Public/.
+redirect:./app/dir/file/missing
+hammer-show Public/./app/dir/file
+redirect:Brain/Index
+hammer-show Public/Brain
+<br/> <h1>Table of Contents</h1>
+<br/> 
+<br/> 
+<br/>  <a href="BuildAPerfectBrain">Build a perfect brain</a> 
+<br/> 
+<br/>  <a href="YouNeedABrain">Why you need a brain</a> 
+<br/> 
+<br/>  <a href="BrainIngredients">Essential ingredients</a> 
+<br/> 
+<br/>  <a href="BrainStorage">What to store</a> 
+<br/> 
+<br/>  <a href="BrainFreshness">Keep it fresh</a> 
+<br/> 
+<br/>  <a href="BrainPerformance">Boost performance of your brain</a> 
+<br/> 
+<br/> 
+<br/> 
+<br/> 
+<br/> 
+<br/> 
+hammer-show Public/Brain/Index
+redirect:./missing
+hammer-show user/.
+redirect:./Brain/Index/missing
+hammer-show user/./Brain/Index
+redirect:./missing
+hammer-show user/.
+redirect:./app/dir/file/missing
+hammer-show user/./app/dir/file
+redirect:Brain/missing
+hammer-show user/Brain
+redirect:Brain/Index/missing
+hammer-show user/Brain/Index
