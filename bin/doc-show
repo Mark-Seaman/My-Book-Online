@@ -4,6 +4,16 @@
 from os import system,environ
 from os.path import join
 from sys import argv
+from datetime           import datetime
+
+def log_page(doc):
+    '''
+    Log the page hit in page.log  (time, ip, user, page, doc) 
+    '''
+    logFile=environ['p']+'/logs/user/doc.log'
+    f=open(logFile,'a')
+    f.write(str(datetime.now())+',  '+doc+'\n')
+    f.close()
 
 
 def doc_file(path):
@@ -50,7 +60,8 @@ path   = ['','']
 if len(argv)>1: 
     path = argv[1].split('/')
 
-#print 'hammer-show '+doc_path(path)
-system('hammer-show '+doc_path(path))
+doc = doc_path(path)
+log_page(doc)
+system('hammer-show '+doc)
 
 
