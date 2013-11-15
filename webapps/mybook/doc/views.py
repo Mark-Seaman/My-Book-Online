@@ -74,7 +74,7 @@ def missing(request,title):
     '''
     #if not permitted(request):
     #    return redirect(request,'login')
-    text = format_doc('Anonymous/MissingFile') % title
+    text = "format_doc('Anonymous/MissingFile') % title"
     data = {'title':title, 'dir':dirname(title), 'text':text, 
             'default':basename(title), 'newpage':'{{newpage}}'}
     return render(request, 'missing.html', data)
