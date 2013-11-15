@@ -84,15 +84,13 @@ def format_doc(title):
     '''
     Run the wiki formatter on the document
     '''
-    #return 'hammer-show %s'%title
-    return do_command('hammer-show %s'%title)
+    return do_command('doc-show %s'%title)
 
 
 def read_doc(title):
     '''
     Run the wiki formatter on the document
     '''
-    #return do_command('hammer-read %s'%title)
     return do_command('doc-get %s'%title)
 
 
@@ -100,7 +98,6 @@ def add_doc(title):
     '''
     Create the document using a template
     '''
-    #return do_command('hammer-add %s'%title)
     return do_command('hammer-add %s'%title)
 
 
@@ -109,7 +106,6 @@ def write_doc(title,body):
     Save the document file
     '''
     body = body.replace('\r','')
-    #do_command('hammer-write %s'%title, body)
     do_command('doc-put %s'%title, body)
 
 
@@ -144,27 +140,3 @@ def disable_app(user, title):
     Disable an app for a user
     '''
     do_command('app-disable %s %s'%(user,title))
-
-
-def domain_map():
-    '''
-    Read the domain mapping from a file
-    '''
-    map = {}
-    for d in open(doc_file('Domains')).read().split('\n'):
-        d = d.replace('http://','').split(' ')
-        if len(d)==2:
-            map[d[0]] = d[1]
-            #print d[0], d[1]
-    return map
-
-
-def map_url(dirs):
-    '''
-    Convert a url to a directory
-    '''
-    m = domain_map()
-    if m.has_key(dirs[0]):
-        return '/'.join ([m[dirs[0]]]+dirs[1:])
-    else:
-        return '/'.join (dirs)

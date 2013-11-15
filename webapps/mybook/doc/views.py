@@ -38,8 +38,8 @@ def user_doc(request,title):
     Return the document for this user.
     '''
     host = request.get_host()
-    username = user(request).replace ('Anonymous','Public')
-    return join(username,title)
+    username = user(request)
+    return join(host,username,title)
     #return  title
 
 
