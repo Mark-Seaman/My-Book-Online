@@ -20,6 +20,8 @@ console
 control-panel
 create
 deploy
+doc-get
+doc-put
 doc-show
 e
 elapsed
@@ -42,7 +44,6 @@ hammer-execute
 hammer-generate
 hammer-index
 hammer-list
-hammer-read
 hammer-resume
 hammer-show
 hammer-table
@@ -52,7 +53,6 @@ hammer-title
 hammer-user-add
 hammer-user-list
 hammer-wiki
-hammer-write
 hammer-years
 ignore
 log
@@ -128,8 +128,6 @@ user
 /home/seaman/Projects/mybook/test:
 docs.correct
 docs.tst
-domain.correct
-domain.tst
 files.correct
 files.tst
 git.correct
