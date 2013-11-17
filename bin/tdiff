@@ -16,5 +16,5 @@ rm -f $f.tmp
 diff $f.out $f.correct | tee $f.diff 
 
 # Create the like file if error
-[[   -s $f.diff ]] && echo "cd $pt && tlike $f">$f.like && chmod +x $f.like
+[[   -s $f.diff ]] && tmklike $f
 [[ ! -s $f.diff ]] && rm -f $f.like
