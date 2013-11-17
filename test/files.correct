@@ -17,9 +17,12 @@ commit
 commit-docs
 commit-remote
 console
+control-panel
 create
 deploy
+doc-show
 e
+elapsed
 emacs.conf
 filediff
 files.py
@@ -51,6 +54,7 @@ hammer-user-list
 hammer-wiki
 hammer-write
 hammer-years
+ignore
 log
 mkexe
 mklinks
@@ -59,6 +63,8 @@ old
 page
 page-log
 project
+publish
+pyrun
 rbg
 rmas
 run
@@ -97,6 +103,24 @@ wiki.py
 words
 
 /home/seaman/Projects/mybook/doc:
+AgileArchitecture
+AgileArchitectureDemo
+Anonymous
+domain.py
+Domains
+Home
+HtmlFoot
+HtmlHead
+Index
+NewTopic
+Public
+Sent
+Subscribe
+Subscribed
+Title
+ToDo
+Unsubscribe
+Unsubscribed
 
 /home/seaman/Projects/mybook/logs:
 user
@@ -104,10 +128,14 @@ user
 /home/seaman/Projects/mybook/test:
 docs.correct
 docs.tst
+domain.correct
+domain.tst
 files.correct
 files.tst
 git.correct
 git.tst
+show.correct
+show.tst
 trun.correct
 update
 update.correct

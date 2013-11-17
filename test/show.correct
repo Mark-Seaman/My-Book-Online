@@ -1,11 +1,7 @@
 redirect:/./Index
-hammer-show /.
 redirect:./Index
-hammer-show Public/.
 redirect:./app/dir/file/missing
-hammer-show user/./app/dir/file
 redirect:./Index
-hammer-show Public/.
 <br/> <h1>Table of Contents</h1>
 <br/> 
 <br/> 
@@ -26,13 +22,9 @@ hammer-show Public/.
 <br/> 
 <br/> 
 <br/> 
-hammer-show Public/./Brain/Index
 redirect:./Index
-hammer-show Public/.
 redirect:./app/dir/file/missing
-hammer-show Public/./app/dir/file
 redirect:Brain/Index
-hammer-show Public/Brain
 <br/> <h1>Table of Contents</h1>
 <br/> 
 <br/> 
@@ -53,16 +45,9 @@ hammer-show Public/Brain
 <br/> 
 <br/> 
 <br/> 
-hammer-show Public/Brain/Index
 redirect:./missing
-hammer-show user/.
 redirect:./Brain/Index/missing
-hammer-show user/./Brain/Index
 redirect:./missing
-hammer-show user/.
 redirect:./app/dir/file/missing
-hammer-show user/./app/dir/file
 redirect:Brain/missing
-hammer-show user/Brain
 redirect:Brain/Index/missing
-hammer-show user/Brain/Index
