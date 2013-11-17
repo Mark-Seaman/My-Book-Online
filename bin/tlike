@@ -1,10 +1,10 @@
 #!/bin/bash
 # Accept the currect results as the correct answer
 
-# Choose the correct directory
-cd $p
-[[ -d test ]] && cd test
+# Choose the correct directory (default to test)
 f=${1/\.tst/}   
+[ ! -f $f.out ] && f=$pt/$f
+
 echo Accept results from $f.tst
 cp $f.out $f.correct
 rm $f.diff

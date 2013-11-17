@@ -2,11 +2,12 @@
 # Compare the last output with the correct output
 
 # Go to directory
-cd $p/test
+d="$1"
+[ "$1" == "" ] && cd && d=test
 
 # Loop over all of the tests
 {
-for f in *.tst
+for f in $d/*.tst
 do 
     x=`tdiff $f`
     [[ ! -z "$x" ]]                                             &&
