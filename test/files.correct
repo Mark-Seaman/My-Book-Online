@@ -23,6 +23,7 @@ create
 deploy
 doc-get
 doc-put
+doc-random
 doc-show
 e
 elapsed
