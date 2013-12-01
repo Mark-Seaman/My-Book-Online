@@ -35,6 +35,7 @@ d = argv[1]
 base = environ['pd']+'/'
 f = pick_random(recursive_list(d))
 f = f.replace(base,'')
-f = f[f.find('/')+1:]
-f = f[f.find('/')+1:]
-print 'redirect:'+f
+#f = f[f.find('/')+1:]
+#f = f[f.find('/')+1:]
+#print 'redirect:'+f
+system('hammer-show '+f)
