@@ -3,7 +3,7 @@
 
 # Go to directory
 d="$1"
-[ "$1" == "" ] && cd && d=test
+[ "$1" == "" ] && cd $p && d=test
 
 # Loop over all of the tests
 {
