@@ -21,6 +21,7 @@ console
 control-panel
 create
 deploy
+doc-content
 doc-get
 doc-put
 doc-random
@@ -57,6 +58,7 @@ hammer-user-list
 hammer-wiki
 hammer-years
 ignore
+lc
 log
 mb-doc
 mkexe
@@ -68,6 +70,7 @@ page-log
 project
 publish
 pyrun
+range
 rbg
 rmas
 run
@@ -119,12 +122,16 @@ ToDo
 user
 
 /home/seaman/Projects/mybook/test:
+content.correct
+content.tst
 docs.correct
 docs.tst
 files.correct
 files.tst
 git.correct
 git.tst
+random.correct
+random.tst
 show.correct
 show.tst
 trun.correct
