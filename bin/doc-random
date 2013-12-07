@@ -23,12 +23,19 @@ def ok_choice(f):
 
 if len(argv)<1:
     print 'usage: ',argv[0],'directory'
-    exit(1)
+    exit(0)
 
 d = argv[1]
 base = environ['pd']+'/'
+if not exists(base):
+    print 'No doc directory exists: ',base
+    exit(0)
+
 lines = list_files(base+d)
 lines = filter(ok_choice, lines)
 f = './'+d+'/'+pick_random(lines)
-#print 'select:'+f
+if not exists(base+f):
+    print 'No doc exists: ',base+f
+    exit(0)
+
 system('doc-show '+f)
