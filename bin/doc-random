@@ -38,4 +38,6 @@ if not exists(base+f):
     print 'No doc exists: ',base+f
     exit(0)
 
+print '<a href="Index">Index</a>'
+print '<a href=".random">Next</a>'
 system('doc-show '+f)
