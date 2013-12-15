@@ -1,0 +1,10 @@
+#!/bin/bash
+# Push the current docs as a template
+
+user=$1
+app=$2
+for f in `cat $pd/$user/.apps`
+do
+    echo doc-push $user $app
+done
+

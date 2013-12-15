@@ -1,0 +1,9 @@
+#!/bin/bash
+# Pull the current template as a user app 
+
+user=$1
+app=$2
+for f in `cat $pd/$user/.apps`
+do
+    echo doc-pull $user $app
+done
