@@ -36,7 +36,6 @@ doc-random
 doc-recent
 doc-search
 doc-show
-doc-template
 e
 elapsed
 emacs.conf
@@ -119,23 +118,30 @@ wiki.py
 words
 
 /home/seaman/Projects/mybook/doc:
+AgileArchitecture
+AgileArchitectureDemo
 Anonymous
+domain.py
 Domains
 Home
+HtmlFoot
+HtmlHead
 Index
 NewTopic
 Public
-seaman
+Sent
+Subscribe
+Subscribed
 Title
 ToDo
+Unsubscribe
+Unsubscribed
 
 /home/seaman/Projects/mybook/logs:
 user
 
 /home/seaman/Projects/mybook/test:
 docs.correct
-doc-show.correct
-doc-show.tst
 docs.tst
 domain.correct
 domain.tst
@@ -143,11 +149,8 @@ files.correct
 files.tst
 git.correct
 git.tst
-hammer-add.correct
-hammer-add.tst
 show.correct
 show.tst
-test
 trun.correct
 update
 update.correct

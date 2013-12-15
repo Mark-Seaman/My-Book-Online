@@ -1,6 +1,6 @@
 #!/usr/local/bin/python2.7
 # Utilities for scripts
-from os import remove, path, getcwd, system, listdir,  environ
+from os import remove, path, getcwd, system, listdir,   walk, environ
 from os.path import isfile, isdir, join, dirname, exists, getsize
 from subprocess import Popen,PIPE
 
@@ -26,6 +26,15 @@ def write_file(filename, lines):
 # Delete a relative path name   
 def delete_file(filename):  
     remove(filename)
+
+# Recursive list
+def recursive_list(d):
+    matches = []
+    for root, dirnames, filenames in walk(d):
+        for filename in filenames:
+            matches.append(join(root, filename))
+    return matches
+
 
 # Return the files as a list
 def list_files(directory):

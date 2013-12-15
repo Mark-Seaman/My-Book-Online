@@ -1,21 +1,12 @@
-#!/usr/bin/env python
-# Put the doc in storage
+#!/bin/bash
+# Save the wiki text for the requested file
 
-from sys        import argv, stdin
-from os.path    import exists,join,dirname
-from os         import environ
+# Set the file path
+f=$pd/$1
 
-if len(argv)<2:
-    print 'usage: doc-put doc < text'
-    exit(1)
+# Make directory if needed
+mkdir -p `dirname $f` 
 
-f = join(environ['pd'],argv[1])
-d = dirname(f)
-if not exists(d):
-    print 'No dir found, %s'%d
-    mkdir(d)
-
-o = open(f,'w')
-o.write(stdin.read())
-o.close()
+# Put stdin into file
+cat > $f
 

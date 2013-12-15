@@ -1,16 +1,11 @@
 #!/bin/bash
 # Accept the currect results as the correct answer
 
-# Choose the correct directory
-cd $p
-[[ -d test ]] && cd test
+# Choose the correct directory (default to test)
 f=${1/\.tst/}   
+[ ! -f $f.out ] && f=$pt/$f
+
 echo Accept results from $f.tst
-
-# Filter the output
-[ -x $f.filter   ] && $f.filter < $f.out > $f.correct
-[ ! -x $f.filter ] && cp $f.out $f.correct
-
-rm -f $f.like
-rm -f $f.diff
+cp $f.out $f.correct
+rm $f.diff
 touch $f.diff
