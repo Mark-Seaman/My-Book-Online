@@ -1,14 +1,9 @@
-seaman/xxx
-/home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/xxx
-xxx
-<br/> <h1>Missing page</h1>
-<br/> [[seaman/xxx/edit][Create page seaman/xxx]]
-<br/> 
-<br/> 
-seaman/xxxuserstory
-/home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/xxxuserstory
-xxx
-<br/> <h1>Missing page</h1>
-<br/> [[seaman/xxxuserstory/edit][Create page seaman/xxxuserstory]]
-<br/> 
-<br/> 
+* seaman/xxx * 
+[/seaman/xxx/edit][Create page seaman/xxx]
+
+* seaman/xxxuserstory * 
+[/seaman/xxxuserstory/edit][Create page seaman/xxxuserstory]
+
+  3 /home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/xxx
+  3 /home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/xxxuserstory
+  6 total

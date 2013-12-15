@@ -1,6 +1,8 @@
 Remove automatically saved files from this directory tree
 Git orig files
+/home/seaman/Projects/mybook/bin/doc-random.orig /home/seaman/Projects/mybook/test/docs.correct.orig /home/seaman/Projects/mybook/test/files.correct.orig
 Git libpeerconnection files
+
 /home/seaman/Projects/mybook:
 bin
 doc
@@ -22,6 +24,7 @@ create
 deploy
 doc-commit
 doc-container
+doc-content
 doc-get
 doc-index
 doc-list
@@ -36,6 +39,7 @@ doc-random
 doc-recent
 doc-search
 doc-show
+doc-template
 e
 elapsed
 emacs.conf
@@ -57,7 +61,6 @@ hammer-execute
 hammer-generate
 hammer-index
 hammer-list
-hammer-read
 hammer-resume
 hammer-show
 hammer-table
@@ -67,10 +70,11 @@ hammer-title
 hammer-user-add
 hammer-user-list
 hammer-wiki
-hammer-write
 hammer-years
 ignore
+lc
 log
+mb-doc
 mkexe
 mklinks
 mkpy
@@ -80,6 +84,7 @@ page-log
 project
 publish
 pyrun
+range
 rbg
 rmas
 run
@@ -118,39 +123,37 @@ wiki.py
 words
 
 /home/seaman/Projects/mybook/doc:
-AgileArchitecture
-AgileArchitectureDemo
 Anonymous
-domain.py
 Domains
 Home
-HtmlFoot
-HtmlHead
 Index
 NewTopic
 Public
-Sent
-Subscribe
-Subscribed
+seaman
 Title
 ToDo
-Unsubscribe
-Unsubscribed
 
 /home/seaman/Projects/mybook/logs:
 user
 
 /home/seaman/Projects/mybook/test:
+content.correct
+content.tst
 docs.correct
+doc-show.correct
+doc-show.tst
 docs.tst
-domain.correct
-domain.tst
 files.correct
 files.tst
 git.correct
 git.tst
+hammer-add.correct
+hammer-add.tst
+random.correct
+random.tst
 show.correct
 show.tst
+test
 trun.correct
 update
 update.correct
