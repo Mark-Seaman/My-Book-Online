@@ -1,0 +1,6 @@
+#!/bin/bash
+# Approve all document changes
+
+trun docs
+tlike docs
+commit-docs

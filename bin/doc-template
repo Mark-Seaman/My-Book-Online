@@ -1,0 +1,6 @@
+#!/bin/bash
+# Create a new document template
+
+#Create the index file
+echo "* $1: %s *" > $pd/template/$1
+

@@ -1,0 +1,14 @@
+#!/bin/bash
+# Show the docs in the given account
+
+cd $pb
+d="$pd/$1"
+
+python <<EOF | sort
+from files import  time_sort_file,recursive_list
+
+for f in recursive_list("$d"):
+    print f
+EOF
+
+

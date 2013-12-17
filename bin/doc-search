@@ -1,0 +1,6 @@
+#!/bin/bash
+# Find text in the docs
+
+grep -ir $1 $pd/$2
+
+

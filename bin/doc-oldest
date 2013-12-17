@@ -1,0 +1,14 @@
+#!/bin/bash
+# List files by time
+
+cd $pb
+d="$pd/$1"
+
+python <<EOF | sort
+from files import  time_sort_file
+
+for f in time_sort_file("$d")[:10]:
+    print f
+EOF
+
+
