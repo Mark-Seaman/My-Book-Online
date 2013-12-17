@@ -1,9 +1,5 @@
-* seaman/xxx * 
-[/seaman/xxx/edit][Create page seaman/xxx]
-
-* seaman/xxxuserstory * 
-[/seaman/xxxuserstory/edit][Create page seaman/xxxuserstory]
-
-  3 /home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/xxx
-  3 /home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/xxxuserstory
-  6 total
+redirect:xxx/edit
+redirect:xxxuserstory/edit
+ 3 /home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/xxx
+ 3 /home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/xxxuserstory
+ 6 total
