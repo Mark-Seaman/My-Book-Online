@@ -23,14 +23,16 @@
     <div class='header'>
 
         <h1>{{ site }}</h1>
+        <div style='float:right'>
         {% if user.is_authenticated and user.is_staff %}
-           <div style='float:right'>
             Logged in as,
             <strong>{% firstof user.first_name user.username %}</strong>.
             <!-- <a href="/password_change">Change password</a> -->
             <a href="/logout">Log out</a>
-            </div>
+        {% else %}
+           <a href="/login">Log In</a>
         {% endif %}
+        </div>
 
         {% block navbar %}
             <p>
@@ -40,9 +42,9 @@
               {% endif %}
             </p>
         {% endblock %}
+    {% endblock %}
 
     </div>
-    {% endblock %}
 
     <div class='page'>
       <div style="margin:6em">

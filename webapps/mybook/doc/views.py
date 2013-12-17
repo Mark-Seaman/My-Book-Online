@@ -99,7 +99,7 @@ def doc(request,title):
         return redirect(request,text[len('redirect:'):-1])
     #if not permitted(request, doc):
     #    return redirect(request,'login')
-    content =  {'site':request.get_host(), 'title': title, 'text': text}
+    content =  {'site':request.get_host(), 'user':request.user, 'title': title, 'text': text}
     return render(request, 'doc.html', content)
 
 
@@ -108,12 +108,6 @@ def home(request):
     Render the home view
     '''
     return  doc(request,'Index')
-    # if request.user.is_anonymous():
-    #     doc = 'Index'
-    #     log_page (request, 'Index')
-    #     data = {'title': 'Index', 'text': format_doc(doc)}
-    #     return render(request, 'doc.html', data)
-    # return redirect (request,'Index')
 
 
 #@login_required(login_url='/login')
