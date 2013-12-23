@@ -181,6 +181,7 @@
 ./Public/BitRot/UnitTest
 ./Public/BitRot/VersionControl
 ./Public/BitRot/WhatIsBitRot
+./Public/BizPlan
 ./Public/Brain
 ./Public/Brain/BrainFreshness
 ./Public/Brain/BrainIngredients
@@ -769,11 +770,14 @@
 ./seaman/BizPlan/Meetings/2013-12-12
 ./seaman/BizPlan/Meetings/2013-12-13
 ./seaman/BizPlan/Meetings/2013-12-17
+./seaman/BizPlan/Meetings/2013-12-18
 ./seaman/BizPlan/Meetings/Index
+./seaman/BizPlan/Meetings/Template
 ./seaman/BizPlan/PipeScan
 ./seaman/BizPlan/PipeScan/Index
 ./seaman/BizPlan/SWS
 ./seaman/BizPlan/SWS/50Tricks
+./seaman/BizPlan/SWS/AppLab
 ./seaman/BizPlan/SWS/BestPractices
 ./seaman/BizPlan/SWS/BizPlan
 ./seaman/BizPlan/SWS/Brain
@@ -782,6 +786,7 @@
 ./seaman/BizPlan/SWS/ComputerCloner
 ./seaman/BizPlan/SWS/DjangoHammer
 ./seaman/BizPlan/SWS/DocumentsToWrite
+./seaman/BizPlan/SWS/Functionality
 ./seaman/BizPlan/SWS/Index
 ./seaman/BizPlan/SWS/JackHammer
 ./seaman/BizPlan/SWS/MyBookOnline
@@ -794,6 +799,7 @@
 ./seaman/BizPlan/SWS/SystemTesting
 ./seaman/BizPlan/SWS/Technology
 ./seaman/BizPlan/SWS/TextEditor
+./seaman/BizPlan/SWS/Training
 ./seaman/BizPlan/Watermill
 ./seaman/BizPlan/Watermill/Billing
 ./seaman/BizPlan/Watermill/DashboardProject
@@ -806,6 +812,7 @@
 ./seaman/BizPlan/Watermill/OldNotes
 ./seaman/BizPlan/Watermill/Projects
 ./seaman/BizPlan/Watermill/.template
+./seaman/BizPlan/Watermill/Time
 ./seaman/BizPlan/Watermill/ToDo
 ./seaman/Index
 ./template

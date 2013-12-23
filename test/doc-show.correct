@@ -6,6 +6,7 @@
 <br/> 
 <br/> <h1>Biz Plan</h1>
 <br/> Shrinking World Solutions master plan for your business
+<br/> _____________________________________________________________________________
 <br/> 
 <br/> 
 <div ng-controller="TabbedViewCtrl">
@@ -27,7 +28,7 @@
 <br/> 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="Watermill/Index">Watermill</a> 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="PipeScan/Index">Pipe Scan</a> 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="SWS/Index">Shrinking World Solutions</a> 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="SWS/Index">SWS Projects</a> 
 <br/> 
 <br/> 
 <br/> 

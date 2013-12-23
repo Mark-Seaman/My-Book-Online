@@ -14,6 +14,7 @@ add-testing
 bash-alias
 bash-prompt
 bashrc
+chromedriver
 commit
 commit-docs
 commit-remote
@@ -149,6 +150,14 @@ git.correct
 git.tst
 hammer-add.correct
 hammer-add.tst
+page-50-Tricks-Index.correct
+page-50-Tricks-Slides.correct
+page-index.correct
+page-Index.correct
+page-resume-Sample.correct
+pages.correct
+pages.tst
+page_test.py
 random.correct
 random.tst
 show.correct
