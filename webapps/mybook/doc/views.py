@@ -110,6 +110,21 @@ def home(request):
     return  doc(request,'Index')
 
 
+@login_required(login_url='/admin/')
+def login(request):
+    '''
+    Render the home view
+    '''
+    return  doc(request,'Index')
+
+
+@login_required(login_url='/login')
+def logout(request):
+    '''
+    Render the home view
+    '''
+    return  doc(request,'Index')
+
 #@login_required(login_url='/login')
 def store(request,title):
     '''
