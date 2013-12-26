@@ -5,7 +5,8 @@ from os.path  import join
 from os import environ,chdir,system
 from platform import node
 
-host = 'localhost:8054'
+port = environ['port']
+host = 'localhost:'+port
 
 pages = '''Index
 50-Tricks/Index
