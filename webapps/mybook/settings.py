@@ -36,7 +36,7 @@ else:
     PYTHON_BASE         = '/home/seaman/webapps/'+project+'/lib/python2.6'
 
 LOGIN_URL           = '/login'
-LOGOUT_URL          = '/login'
+LOGOUT_URL          = '/logout'
 
 ADMIN_MEDIA_PREFIX  = '/media/admin/'
 MEDIA_URL           = '/media/'

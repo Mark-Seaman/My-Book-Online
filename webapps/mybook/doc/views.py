@@ -77,7 +77,10 @@ def missing(request,title):
     text = "format_doc('Anonymous/MissingFile') % title"
     data = {'title':title, 'dir':dirname(title), 'text':text, 
             'default':basename(title), 'newpage':'{{newpage}}'}
-    return render(request, 'missing.html', data)
+    #return render(request, 'missing.html', data)
+    content =  {'site':request.get_host(), 'user':request.user, 'title': 'Missing doc:'+title, 
+                'text': text}
+    return render(request, 'doc.html', content)
 
 
 def redirect(request,title):
@@ -110,20 +113,44 @@ def home(request):
     return  doc(request,'Index')
 
 
-@login_required(login_url='/admin/')
-def login(request):
-    '''
-    Render the home view
-    '''
-    return  doc(request,'Index')
+#-----------------------------------------------------------------------------
+# Login
+
+from django.contrib.auth import authenticate, login, logout
+
+#  <!-- {% url 'django.contrib.auth.views.login' %}"> -->
+
+# def login(request):
+#     if request.method == 'POST':
+#         username = request.POST['username']
+#         password = request.POST['password']
+#         user = authenticate(username=username, password=password)
+#         if user is not None:
+#             if user.is_active:
+#                 login(request, user)
+#                 return redirect(request,'Welcome')
+#             else:
+#                 return redirect(request,'NoPermission')
+#         else:
+#             return redirect(request,'BadUser')
+#     else:
+#         content =  {'site':request.get_host(), 'user':request.user, 'title': 'Login'}
+#         return render(request, 'login.html', content)
+
+
+# def logout_view(request):
+#     return logout(request,'./Public/Index')
+#     #return  doc(request,'Index')
 
 
 @login_required(login_url='/login')
-def logout(request):
-    '''
-    Render the home view
-    '''
-    return  doc(request,'Index')
+def private(request,title):
+    return doc(request,title)
+
+
+#-----------------------------------------------------------------------------
+# Login
+
 
 #@login_required(login_url='/login')
 def store(request,title):

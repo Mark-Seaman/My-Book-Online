@@ -30,17 +30,19 @@
         <div style='float:right'>
           <p>
             {% if user.is_authenticated and user.is_staff %}
-            <span style='color:white'>Logged in as,
-            <strong>{% firstof user.first_name user.username %}</strong>.
-            </span>
-            <a href="/password_change">Change password</a>
-            <!-- -->
-            <a href="/logout">Log out</a>
+                <span style='color:white'>Logged in as,
+                <strong>{% firstof user.first_name user.username %}</strong>.
+                </span>
+                <a href="/password_change">Change password</a>
+                <!-- -->
+                <a href="/logout">Log out</a>
             {% else %}
-             <span style='color:white'>Not logged in</span>
-             <span style='color:white'>{{ user }}</span>
-            <a href="/login">Log In</a>
+                 <span style='color:white'>Not logged in</span>
+                 <span style='color:white'>{{ user }}</span>
+                <a href="/login">Log In</a>
             {% endif %}
+        </div>
+
           </p>
         </div>
 

@@ -13,8 +13,8 @@ urlpatterns = patterns(
     url(r'^(?P<title>[\w\-_./]+)/disable$', 'doc.thumper.disable'),
 
     # Hammer views
-    url('Login',                            'doc.views.login'),
-    url('Logout',                           'doc.views.logout'),
+    #url('login',                            'doc.views.login'),
+    #url('logout',                           'doc.views.logout_view'),
 
     url(r'^$',                              'doc.views.home'),
     url(r'^store/(?P<title>[\w\-_./]+)$',   'doc.views.store'),

@@ -22,7 +22,7 @@ urlpatterns = patterns(
     url(r'^slides/(?P<path>.*)$',   'django.views.static.serve', slides_dir),
 
     # Users
-    url(r'^admin/',                 include(admin.site.urls)),
+    #url(r'^admin/',                 include(admin.site.urls)),
     url(r'^login$',                 'django.contrib.auth.views.login'),
     url(r'^logout$',                'django.contrib.auth.views.logout'),
     url(r'^register$',              'doc.thumper.register'),
