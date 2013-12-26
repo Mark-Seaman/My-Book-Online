@@ -562,6 +562,7 @@
 ./Public/SpiritualGrowth/LifeApps/2013-12-01
 ./Public/SpiritualGrowth/LifeApps/2013-12-08
 ./Public/SpiritualGrowth/LifeApps/2013-12-15
+./Public/SpiritualGrowth/LifeApps/2013-12-22
 ./Public/SpiritualGrowth/LifeApps/Index
 ./Public/SpiritualGrowth/LifeApps/.random
 ./Public/SpiritualGrowth/Passages
@@ -638,6 +639,7 @@
 ./Public/SpiritualGrowth/Practices/Brokenness
 ./Public/SpiritualGrowth/Practices/CharacterAndCompetence
 ./Public/SpiritualGrowth/Practices/ContentSimpleGenerous
+./Public/SpiritualGrowth/Practices/CorePractices
 ./Public/SpiritualGrowth/Practices/DreamsAndFears
 ./Public/SpiritualGrowth/Practices/FamiliarityBreedsComplacency
 ./Public/SpiritualGrowth/Practices/GodIsTheSource
@@ -654,6 +656,7 @@
 ./Public/SpiritualGrowth/Practices/ThoughtsOnPrayer
 ./Public/SpiritualGrowth/Practices/Title
 ./Public/SpiritualGrowth/Practices/TryingHarder
+./Public/SpiritualGrowth/Practices/Virtues
 ./Public/SpiritualGrowth/Practices/WorkingAndPraying
 ./Public/SpiritualGrowth/Prayers
 ./Public/SpiritualGrowth/Prayers/HandsPrayer
@@ -758,6 +761,7 @@
 ./seaman
 ./seaman/BizPlan
 ./seaman/BizPlan/Clients
+./seaman/BizPlan/CompanyServices
 ./seaman/BizPlan/History
 ./seaman/BizPlan/History/2013-12-Done
 ./seaman/BizPlan/History/2013-12-Time
@@ -781,17 +785,20 @@
 ./seaman/BizPlan/SWS/BestPractices
 ./seaman/BizPlan/SWS/BizPlan
 ./seaman/BizPlan/SWS/Brain
-./seaman/BizPlan/SWS/BusinessDevelopment
 ./seaman/BizPlan/SWS/Communications
 ./seaman/BizPlan/SWS/ComputerCloner
 ./seaman/BizPlan/SWS/DjangoHammer
 ./seaman/BizPlan/SWS/DocumentsToWrite
 ./seaman/BizPlan/SWS/Functionality
+./seaman/BizPlan/SWS/HammerScripts
+./seaman/BizPlan/SWS/HammerScripts~
 ./seaman/BizPlan/SWS/Index
 ./seaman/BizPlan/SWS/JackHammer
 ./seaman/BizPlan/SWS/MyBookOnline
 ./seaman/BizPlan/SWS/NodeHammer
 ./seaman/BizPlan/SWS/Organize
+./seaman/BizPlan/SWS/PageTest
+./seaman/BizPlan/SWS/PageTest~
 ./seaman/BizPlan/SWS/Planner
 ./seaman/BizPlan/SWS/SecureDocs
 ./seaman/BizPlan/SWS/ShrinkingWorldOrg
