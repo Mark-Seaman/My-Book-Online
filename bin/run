@@ -1,9 +1,13 @@
 #!/bin/bash
 # Start the django server
 
-mkdir -p ~/logs/user
+# Create a place for logs
+mkdir -p $p/logs/user
 
+# Restart the server
 cd $pa
+server-stop 
 server-start
 
+# Browse to requested page
 rbg firefox localhost:$port/$1

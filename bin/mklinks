@@ -6,4 +6,4 @@ ln -sf `pwd`/SimpleApps seaman
 ln -sf `pwd`/SimpleApps ronz@codegeek.net
 ln -sf `pwd`/SimpleApps mark.sluss48@gmail.com
 ln -sf `pwd`/SimpleApps sofar1121@gmail.com
-ln -sf `pwd`/seaman/50-Tricks stacie@seamanfamily.org
+ln -sf `pwd`/__Staging__ SimpleApps

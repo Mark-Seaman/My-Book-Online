@@ -1,0 +1,6 @@
+#!/bin/bash
+# Django Hammer source code
+
+. ~/Projects/django-hammer/bin/project
+src-django | grep -v '^bin/project$\|^bin/src-django$'
+

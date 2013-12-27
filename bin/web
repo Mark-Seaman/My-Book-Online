@@ -2,4 +2,4 @@
 # Show the remote web page
 
 echo Show the remote web page
-rbg firefox shrinking-world.org/$1
+rbg firefox appthumper.com

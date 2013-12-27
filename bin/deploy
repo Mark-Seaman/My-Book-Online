@@ -3,13 +3,20 @@
 
 echo 'Deploy code for $p to server'
 
-cd $pa                              &&
+sac=webapps/simpleapps
+
+cd $p                               &&
+pwd                                 &&
+scp bin/bashrc $sa:.bashrc          &&
+scp bin/emacs.conf $sa:.emacs       &&
+cd $sac                             &&
 git add -A .                        &&
 git commit -m'Automatic deployment' ;
 git pull                            &&
 git push                            &&
-svr-do 'git pull'                   &&
-svr-restart                         &&
+sa-do 'git pull'                    &&
+sa-restart                          &&
 web  
 
+# ssh $sa
 

@@ -1,18 +1,29 @@
 #!/bin/bash
 # Run all system tests
 
-# Go to directory directory
-d=$1
-[ "$d" == "" ] && cd $p && d=test
+# Go to test directory
+cd $1
+x=`ls *.tst` 2>/dev/null
+[ -z "$x" ] && cd $pt
 
-# Must have some test files
-ls $d/*.tst > /tmp/tst$$ 2> /dev/null
+# Remove temp files
+find $p -name '*~' -exec rm '{}' \;
 
-# Run each test
+# Run the frame buffer server
+rbg Xvfb :99 -ac
+export DISPLAY=:99
+
+# Run every test
 {
-    for f in $d/*.tst 
+    for f in *.tst 
     do
+        f=${f/.tst/}
         trun $f
     done
-    tfail $d
 } | tee tst.out
+
+echo "Results:"
+tfail $1
+
+# Stop the framebuffer server
+killall Xvfb

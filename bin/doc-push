@@ -1,7 +1,10 @@
 #!/bin/bash
-# Push the current docs as a template
+# Push the docs to another project
 
-user=$1
-app=$2
-cptree $pd/$user/$app $pd/template/$app
+[ $# -lt 2 ] && echo 'usage: doc-pull $jack src-jack' && exit
 
+cd $p
+for f in `$2`
+do
+   cp $f $1/$f
+done

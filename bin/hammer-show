@@ -27,6 +27,12 @@ exit 0
 hammer-execute $d                   &&
 exit 0
 
+# Handle random
+x=`basename $d`
+[ "$x" == "random" ]                &&
+doc-random `dirname $d`             &&
+exit 0
+
 # Handle missing page
 [ ! -f "$doc/$d" ]                  && 
 d=`echo $d|sed 's/^.[^\/]*\///'`    &&

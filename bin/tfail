@@ -2,17 +2,21 @@
 # List the failed tests
 
 d="$1"
-[ "$1" == "" ] && cd && d=test
+[ "$1" == "" ] && d=$pt
 
+cd $d
 {
+    
     files=`ls $d/*.tst`
+    #echo "Tests: $files"
     [ -z "$files" ] && echo "ERROR: no tests found $d" && exit 1
+
     for f in $files
     do 
-        tdiff $f  &> /dev/null
-        [ -s ${f/.tst/}.diff ] && echo FAILED: ${f/.tst/}
+        #echo "tdiff $f"
+        [[ ! -z `tdiff $f` ]] && echo FAILED: ${f/.tst/}
     done
-}  | tee fail
+} | tee fail
 
 echo `wc -l  fail` tests failed
 rm fail
