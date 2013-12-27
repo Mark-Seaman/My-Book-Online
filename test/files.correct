@@ -27,6 +27,8 @@ deploy
 doc-commit
 doc-container
 doc-content
+doc-diff
+doc-diff-all
 doc-get
 doc-index
 doc-list
@@ -112,6 +114,7 @@ svr-control-panel
 svr-do
 svr-restart
 t
+tab-view
 tdiff
 te
 tfail
