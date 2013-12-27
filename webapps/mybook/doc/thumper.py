@@ -53,7 +53,7 @@ def register(request):
             return HttpResponseRedirect("/ThankYou")
     else:
         form = UserCreationForm()
-    return render(request, "registration/register.html", {
+    return render(request, "register.html", {
         'form': form,
     })
 
