@@ -112,7 +112,6 @@ mb-doc
 mkexe
 mklinks
 mkpy
-old
 page
 page-log
 project
@@ -128,6 +127,7 @@ search
 server-start
 server-stop
 show
+src
 src-django
 src-jack
 staging-pending

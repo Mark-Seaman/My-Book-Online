@@ -94,7 +94,6 @@ bin/trun
 bin/tshow
 bin/tst
 bin/web
-bin/welcome
 bin/wiki.py
 bin/words
 app/doc/__init__.py
