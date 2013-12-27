@@ -34,11 +34,12 @@
                 <strong>{% firstof user.first_name user.username %}</strong>.
                 </span>
                 <a href="/password_change">Change password</a>
-                <!-- -->
                 <a href="/logout">Log out</a>
             {% else %}
-                 <span style='color:white'>Not logged in</span>
-                 <span style='color:white'>{{ user }}</span>
+                    <span style='color:white'>Not logged in</span>
+                    <span style='color:white'>{{ user }}</span>
+                <!--
+                    -->
                 <a href="/login">Log In</a>
             {% endif %}
         </div>

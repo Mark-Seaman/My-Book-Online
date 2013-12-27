@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.http        import HttpResponseRedirect, HttpResponse
 from django.shortcuts   import render
@@ -49,14 +50,18 @@ def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            new_user = form.save()
-            return HttpResponseRedirect("/ThankYou")
+            username = form.clean_username()
+            password = form.clean_password2()
+            form.save()
+            user = authenticate(username=username, password=password)
+            user.is_staff = True
+            user.save()
+            return HttpResponseRedirect("/login")
     else:
         form = UserCreationForm()
     return render(request, "register.html", {
         'form': form,
     })
-
 
 def enable(request,title):
     '''
