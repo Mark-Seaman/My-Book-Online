@@ -1,5 +1,4 @@
 Remove automatically saved files from this directory tree
-/home/seaman/Projects/mybook/bin/src-django~
 Git orig files
 Git libpeerconnection files
 
@@ -15,6 +14,7 @@ add-testing
 bash-alias
 bash-prompt
 bashrc
+bash-vars
 chromedriver
 commit
 commit-docs
@@ -22,6 +22,7 @@ commit-remote
 console
 control-panel
 create
+demote
 deploy
 doc-commit
 doc-container
@@ -46,6 +47,7 @@ elapsed
 emacs.conf
 filediff
 files.py
+fix-lines
 ga
 gc
 hammer-add
@@ -57,11 +59,14 @@ hammer-app-info
 hammer-apps
 hammer-clone
 hammer-data
+hammer-dj-new
+hammer-dj-project
 hammer-edit
 hammer-execute
 hammer-generate
 hammer-index
 hammer-list
+hammer-read
 hammer-resume
 hammer-show
 hammer-table
@@ -71,7 +76,9 @@ hammer-title
 hammer-user-add
 hammer-user-list
 hammer-wiki
+hammer-write
 hammer-years
+hourly
 ignore
 lc
 log
@@ -83,10 +90,12 @@ old
 page
 page-log
 project
+promote
 publish
 pyrun
 range
 rbg
+release
 rmas
 run
 search
@@ -94,9 +103,11 @@ server-start
 server-stop
 show
 src-django
+src-jack
 staging-pending
 staging-release
 staging-test
+start-server
 svr-control-panel
 svr-do
 svr-restart
@@ -106,6 +117,7 @@ te
 tfail
 tlike
 tlist
+tmklike
 tnew
 todo
 tout
@@ -133,6 +145,7 @@ NewTopic
 Public
 seaman
 template
+test
 Title
 ToDo
 
@@ -152,6 +165,12 @@ git.correct
 git.tst
 hammer-add.correct
 hammer-add.tst
+hammer-show.correct
+hammer-show.tst
+hammer-wiki.correct
+hammer-wiki.tst
+hammer-write.correct
+hammer-write.tst
 page-50-Tricks-Index.correct
 page-50-Tricks-Slides.correct
 page-index.correct
@@ -164,6 +183,8 @@ random.correct
 random.tst
 show.correct
 show.tst
+src.correct
+src.tst
 trun.correct
 update
 update.correct

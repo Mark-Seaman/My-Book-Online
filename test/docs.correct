@@ -908,5 +908,7 @@
 ./template/Years
 ./template/Years/Index
 ./template/Years/.template
+./test
+./test/Index
 ./Title
 ./ToDo
