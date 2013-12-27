@@ -3,11 +3,35 @@ Git orig files
 Git libpeerconnection files
 
 /home/seaman/Projects/mybook:
+app
 bin
 doc
 logs
 test
 webapps
+
+/home/seaman/Projects/mybook/app:
+app.log
+bin
+data
+doc
+httpd.conf
+index.html
+__init__.py
+livebook
+manage.py
+media
+mybook.wsgi
+Private
+scripts
+settings.py
+slides
+templates
+test
+thoughts
+urls.py
+user_doc
+wsgi.py
 
 /home/seaman/Projects/mybook/bin:
 add-testing
@@ -174,6 +198,7 @@ hammer-wiki.correct
 hammer-wiki.tst
 hammer-write.correct
 hammer-write.tst
+page-50-Tricks-HostYourApp.correct
 page-50-Tricks-Index.correct
 page-50-Tricks-Slides.correct
 page-index.correct
