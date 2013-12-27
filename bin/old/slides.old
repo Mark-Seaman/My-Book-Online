@@ -1,4 +1,0 @@
-#!/bin/bash
-# Go to the slides for 50 Tricks
-
-e $p/app/user_doc/User/MarkSeaman/slides

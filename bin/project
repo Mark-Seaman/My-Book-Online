@@ -17,6 +17,9 @@ alias pbin="cd $pb"
 alias pdoc="cd $pd"
 alias ptest="cd $pt"
 
+alias s=search
+alias g=grep
+
 # Regular Path
 export PATH=\
 $pb:\
