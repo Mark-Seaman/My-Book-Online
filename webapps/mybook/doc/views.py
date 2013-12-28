@@ -39,6 +39,7 @@ def user_doc(request,title):
     '''
     host = request.get_host()
     username = user(request)
+    #return join(username,title)
     return join(host,username,title)
     #return  title
 
@@ -113,36 +114,6 @@ def home(request):
     return  doc(request,'Index')
 
 
-#-----------------------------------------------------------------------------
-# Login
-
-from django.contrib.auth import authenticate, login, logout
-
-#  <!-- {% url 'django.contrib.auth.views.login' %}"> -->
-
-# def login(request):
-#     if request.method == 'POST':
-#         username = request.POST['username']
-#         password = request.POST['password']
-#         user = authenticate(username=username, password=password)
-#         if user is not None:
-#             if user.is_active:
-#                 login(request, user)
-#                 return redirect(request,'Welcome')
-#             else:
-#                 return redirect(request,'NoPermission')
-#         else:
-#             return redirect(request,'BadUser')
-#     else:
-#         content =  {'site':request.get_host(), 'user':request.user, 'title': 'Login'}
-#         return render(request, 'login.html', content)
-
-
-# def logout_view(request):
-#     return logout(request,'./Public/Index')
-#     #return  doc(request,'Index')
-
-
 @login_required(login_url='/login')
 def private(request,title):
     return doc(request,title)
@@ -168,14 +139,14 @@ def edit_form (request, doc, title=None, text=None):
     '''
     Create a form for editing the object details
     '''
-    log_page (request, 'form:%s'%title)
+    log_page (request, 'form:%s'%doc)
     if request.method == 'POST':
         form = NoteForm(request.POST)
         if request.POST.get('cancel', None):
             return redirect(request,title)
         else:
             if form.is_valid():
-                log_page (request, 'save:%s'%title)
+                log_page (request, 'save:%s'%doc)
                 text =  form.cleaned_data['body']
                 text = text.encode('ascii', 'ignore')
                 text = text.replace('\r','')
@@ -184,10 +155,9 @@ def edit_form (request, doc, title=None, text=None):
     else:
         note =  Note()
         note.path = title
-        log_page (request,'read:%s'%title)
+        log_page (request,'read:%s'%doc)
         if not text:
-            if is_doc(doc):
-                text = read_doc(doc)
+            text = read_doc(doc)
         note.body = text
         form =  NoteForm(instance=note)
     data =  { 'form': form, 'title': title, 'banner': True  }
@@ -199,7 +169,7 @@ def edit(request,title):
     Render the add view
     '''
     doc = user_doc(request,title)
-    log_page (request, 'edit:%s'%title)
+    log_page (request, 'edit:%s'%doc)
     return edit_form (request, doc, title)
 
 

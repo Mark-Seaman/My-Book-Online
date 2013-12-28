@@ -49,3 +49,54 @@
      </tab>
   </tabset>
 </div>
+<br/> <h1>Mark Seaman Home</h1>
+<br/> 
+<br/> You are currently logged in as 'seaman'.
+<br/> 
+<br/>  <a href="BizPlan">BizPlan</a> 
+<br/> 
+<br/> <h1>Biz Plan</h1>
+<br/> Shrinking World Solutions master plan
+<br/> _____________________________________________________________________________
+<br/> 
+<br/> 
+<div ng-controller="TabbedViewCtrl">
+  <tabset ng-show="true">
+     <tab heading="Practices">
+        <div class="page">
+        <b>Practices</b>
+<br/> Things that drive our business
+<br/> 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="SWS/DocumentsToWrite">Documents</a> 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="CompanyServices">CompanyServices</a> 
+<br/> 
+<br/> 
+        </div>
+     </tab>
+     <tab heading="Clients">
+        <div class="page">
+        <b>Clients</b>
+<br/> 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="Watermill/Index">Watermill</a> 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="PipeScan/Index">Pipe Scan</a> 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="SWS/Index">SWS Projects</a> 
+<br/> 
+<br/> 
+<br/> 
+        </div>
+     </tab>
+     <tab heading="History">
+        <div class="page">
+        <b>History</b>
+<br/> 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="Meetings/Index">Meetings</a> 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="History/2013-12-Done">Done</a> 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="History/2013-12-WorkLog">Work log</a> 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="History/2013-12-Time">Time</a> 
+<br/> 
+<br/> 
+<br/> 
+        </div>
+     </tab>
+  </tabset>
+</div>
