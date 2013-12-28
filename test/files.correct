@@ -53,6 +53,7 @@ doc-container
 doc-content
 doc-diff
 doc-diff-all
+doc-file
 doc-get
 doc-index
 doc-list

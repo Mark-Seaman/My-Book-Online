@@ -1,15 +1,15 @@
-4,5c4,5
+4c4
 < Shrinking-World.Org
-< Not logged in AnonymousUser Log In
 ---
 > localhost:8054
-> Log In
-4,5c4,5
+4c4
 < Shrinking-World.Org
-< Not logged in AnonymousUser Log In
 ---
 > localhost:8054
-> Log In
+5c5
+< Log In
+---
+> Not logged in AnonymousUser Log In
 Testing Host: localhost:8054
 localhost:8054 Index
 Testing Index ...
