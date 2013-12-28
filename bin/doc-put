@@ -2,7 +2,7 @@
 # Save the wiki text for the requested file
 
 # Set the file path
-f=$pd/$1
+f=$pd/`doc-file $1`
 
 # Make directory if needed
 mkdir -p `dirname $f` 

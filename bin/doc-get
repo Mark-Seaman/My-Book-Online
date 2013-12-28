@@ -2,5 +2,6 @@
 # Read the text for a specific document
 
 doc="$pd"
-[[ -f "$doc/$1" ]] && cat  $doc/$1 && exit 0
-echo "No file found: $doc/$1"
+f=`doc-file $1`
+[[ -f "$doc/$f" ]] && cat  $doc/$f && exit 0
+echo "No file found: $doc/$f"
