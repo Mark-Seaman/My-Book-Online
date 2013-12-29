@@ -4,6 +4,10 @@
 from os.path    import isfile, exists
 from sys        import argv, stdin
 from re         import compile, IGNORECASE, DOTALL
+from random     import choice
+
+#-----------------------------------------------------------------------------
+# Formatting
 
 # Create bold text if needed
 def make_heading(line):
@@ -54,6 +58,9 @@ def format_bullets(line):
         return "<ul><li>"+line[i+4:]+"</li></ul>"
     return line
 
+#-----------------------------------------------------------------------------
+# Links
+
 # Convert the url in a string to an HTML anchor
 def muse_double_anchor(url):
     s = r"\[\[([\/\w\.\:\-\_]*)\]\[([ \w\.\-\_\,\?\%]*)\]\]"
@@ -98,50 +105,27 @@ def convert_links(text1):
     if text==text1: text = wiki_words(text)
     return text
 
-# Convert a single text line to html
-def convert_line(line):
-    line = remove_muse(line).rstrip()
-    line = space_breaks(line)
-    line = format_rules(line)
-    line = format_bullets(line)
-    line = break_paragraphs(line)
-    line = convert_links(line)
-    line = preserve_spaces(line)
-    line = make_heading(line)
-    line = make_bold(line)
-    return make_italic(line)
 
-# Convert array of strings to html body text
-def convert_html(text):
-    text = map(convert_line, text)
-    return '\n'.join(text)
+#-----------------------------------------------------------------------------
+# Quote
 
-# The first line holds the page title
-def get_title(text):
-    if len(text)>0: 
-        return remove_muse(text[0]).rstrip()[2:][:-2]
-    return 'No title'
+# Feature a single line of the input stream
+def select_quote(line, lines):
+    t = filter(lambda l:len(l)>4, lines)
+    t = filter(lambda l:not '**' in l, t)
+    t = filter(lambda l:not '[[QUOTE]]' in l, t)
+    return '<b>'+choice(t)+'</b><br>'
 
 
-def do_command(cmd, input=None):
-    '''
-    Run the command as a process and capture stdout & print it
-    '''
-    try:
-        if input:
-            p = Popen(cmd.split(), stdin=PIPE, stdout=PIPE)
-            p.stdin.write(input)
-            p.stdin.close()
-        else:
-            p = Popen(cmd.split(), stdout=PIPE)
-            return  p.stdout.read()
-    except:
-        return '<h1>Command Error</h1>'+\
-            '<p>An error occurred while trying to execute the command:</p>'+\
-            '<p>COMMAND: %s</p>'%cmd +\
-            '<p>INPUT: %s</p>'%input
+# Select a line of text to feature
+def convert_quote(lines):
+    for i,line in enumerate(lines):
+        if '[[QUOTE]]' in line:
+            return lines[:i] + [ select_quote(line, lines[i:]) ]
+    return lines
 
-
+#-----------------------------------------------------------------------------
+# Tabs
 
 def group_tabs(text):
     results = []
@@ -190,6 +174,8 @@ def print_all_tabs(text, format_lines=True):
         print '  </tabset>'
         print '</div>'
 
+#-----------------------------------------------------------------------------
+# Read text file
 
 def read_text(f):
     '''
@@ -198,3 +184,56 @@ def read_text(f):
     if exists(f):
         return open(f).read()
     return 'No file found, '+f
+
+
+def get_title(text):
+    '''
+    The first line holds the page title
+    '''
+    if len(text)>0: 
+        return remove_muse(text[0]).rstrip()[2:][:-2]
+    return 'No title'
+
+
+def convert_line(line):
+    '''
+    Convert a single text line to html
+    '''
+    line = remove_muse(line).rstrip()
+    line = space_breaks(line)
+    line = format_rules(line)
+    line = format_bullets(line)
+    line = break_paragraphs(line)
+    line = convert_links(line)
+    line = preserve_spaces(line)
+    line = make_heading(line)
+    line = make_bold(line)
+    return make_italic(line)
+
+
+def convert_html(text):
+    '''
+   Convert array of strings to html body text
+    '''
+    text = convert_quote(text)
+    text = map(convert_line, text)
+    return '\n'.join(text)
+
+
+def do_command(cmd, input=None):
+    '''
+    Run the command as a process and capture stdout & print it
+    '''
+    try:
+        if input:
+            p = Popen(cmd.split(), stdin=PIPE, stdout=PIPE)
+            p.stdin.write(input)
+            p.stdin.close()
+        else:
+            p = Popen(cmd.split(), stdout=PIPE)
+            return  p.stdout.read()
+    except:
+        return '<h1>Command Error</h1>'+\
+            '<p>An error occurred while trying to execute the command:</p>'+\
+            '<p>COMMAND: %s</p>'%cmd +\
+            '<p>INPUT: %s</p>'%input
