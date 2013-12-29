@@ -40,5 +40,5 @@ echo "redirect:$d/missing"          &&
 exit 0
 
 #Formatter is written in python
-hammer-tabs "$doc/$d" 
+hammer-wiki < "$doc/$d" 
 
