@@ -237,3 +237,9 @@ def do_command(cmd, input=None):
             '<p>An error occurred while trying to execute the command:</p>'+\
             '<p>COMMAND: %s</p>'%cmd +\
             '<p>INPUT: %s</p>'%input
+
+
+# Create html file contents from stdin
+def print_page_html():
+    text = stdin.read().split('\n')
+    print_all_tabs(convert_html(text))
