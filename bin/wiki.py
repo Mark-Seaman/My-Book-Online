@@ -125,56 +125,6 @@ def convert_quote(lines):
     return lines
 
 #-----------------------------------------------------------------------------
-# Tabs
-
-def group_tabs(text):
-    results = []
-    groups = text.split('**')
-    for i,g in enumerate(groups):
-        if i%2>0:
-            if i+1<len(groups):
-                results.append(groups[i]+groups[i+1])
-            else:
-                results.append(groups[i])
-    return results
-
-
-def print_tab_text(lines, format_lines):
-    if format_lines:
-        print '           ', convert_html(lines)
-    else:
-        print '           ', '\n'.join(lines)
-
-
-def print_tab(text, format_lines):
-    '''
-    Print one tab of text
-    '''
-    lines = text.split('\n')
-    heading = lines[0]
-    print '     <tab heading="%s">'%heading
-    print '        <div class="page">'
-    #print '        <b>'+heading+'</b>'
-    print_tab_text(lines[1:], format_lines)
-    print '        </div>'
-    print '     </tab>'
-
-
-def print_all_tabs(text, format_lines=True):
-    '''
-    Print all the tabs of text from the file
-    '''
-    tab_groups = group_tabs(text)
-    print convert_html(text.split('**')[0].split('\n'))
-    if len(tab_groups)>1:
-        print '<div ng-controller="TabbedViewCtrl">'
-        print '  <tabset ng-show="true">'
-        for g in tab_groups:
-            print_tab(g, format_lines)
-        print '  </tabset>'
-        print '</div>'
-
-#-----------------------------------------------------------------------------
 # Read text file
 
 def read_text(f):
@@ -218,6 +168,60 @@ def convert_html(text):
     text = convert_quote(text)
     text = map(convert_line, text)
     return '\n'.join(text)
+#-----------------------------------------------------------------------------
+# Tabs
+
+def group_tabs(text):
+    results = []
+    groups = text.split('**')
+    for i,g in enumerate(groups):
+        if i%2>0:
+            if i+1<len(groups):
+                results.append(groups[i]+groups[i+1])
+            else:
+                results.append(groups[i])
+    return results
+
+
+def print_tab_text(lines, format_lines):
+    if format_lines:
+        print '           ', convert_html(lines)
+    else:
+        print '           ', '\n'.join(lines)
+
+
+def print_tab(text, format_lines):
+    '''
+    Print one tab of text
+    '''
+    lines = text.split('\n')
+    heading = lines[0]
+    print '     <tab heading="%s">'%heading
+    print '        <div class="page">'
+    #print '        <b>'+heading+'</b>'
+    print_tab_text(lines[1:], format_lines)
+    #print 'LINES:', '\n'.join(lines)
+    print '        </div>'
+    print '     </tab>'
+
+
+def print_all_tabs(text, format_lines=False):
+    '''
+    Print all the tabs of text from the file
+    '''
+
+    tab_groups = group_tabs(text)
+    print convert_html(text.split('**')[0].split('\n'))
+    if len(tab_groups)>1:
+        print '<div ng-controller="TabbedViewCtrl">'
+        print '  <tabset ng-show="true">'
+        for g in tab_groups:
+            print_tab(g, True)
+        print '  </tabset>'
+        print '</div>'
+
+
+
 
 
 def do_command(cmd, input=None):
@@ -241,5 +245,6 @@ def do_command(cmd, input=None):
 
 # Create html file contents from stdin
 def print_page_html():
-    text = stdin.read().split('\n')
-    print_all_tabs(convert_html(text))
+    text = stdin.read() 
+    print_all_tabs(text)
+    #print '\n'.join(lines)
