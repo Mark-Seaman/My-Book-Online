@@ -200,7 +200,7 @@ def convert_line(line):
     Convert a single text line to html
     '''
     line = remove_muse(line).rstrip()
-    line = space_breaks(line)
+    #line = space_breaks(line)
     line = format_rules(line)
     line = format_bullets(line)
     line = break_paragraphs(line)
