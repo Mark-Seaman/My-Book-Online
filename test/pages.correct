@@ -2,18 +2,40 @@
 < Shrinking-World.Org
 ---
 > localhost:8054
-4c4
-< Shrinking-World.Org
+6a7
+> 
+8c9,13
+< This web site is dedicated to providing you with high quality information to help you be more effective in the modern world
 ---
-> localhost:8054
-5c5
-< Log In
+> 
+> 
+> This web site is dedicated to providing you with high quality
+> information to help you be more effective in the modern world
+> 
+10,11d14
+< Presentations      ShrinkingWorld /FCIP">Ft. Collins Internet Pros      ShrinkingWorld / PythonWebDev ">Python Web Developers
+< Services      ShrinkingWorld / OpenSource ">Open Source Projects      ShrinkingWorld / SoftwareTraining "> SoftwareTraining      ShrinkingWorld / SoftwareEngineering "> SoftwareEngineering
+13,16c16,26
+<     SeamansLog ">How to thrive in the modern world -- Deep thoughts by MarkSeaman /">Mark Seaman
+< Shrinking World Guides     by Mark Seaman
+< This series of microbooks is published by Shrinking World Solutions. Each series of articles is really a small book covering a single topic. This information is available to you as a personal resource. Enjoy the content, use it however you like, and pass it on to someone else.
+<      BitRot ">Fight Bit Rot - Join the fight against software decay!      World-class Software      SuperPower ">Super-power Handbook      How to build an exterior brain      Ideas
 ---
-> Not logged in AnonymousUser Log In
+> Shrinking World Guides
+> Software Engineering
+> 
+> Presentations
+>      Ft. Collins Internet Pros
+>      Python Web Developers
+> 
+> Services
+>      Open Source Projects
+>      SoftwareTraining
+>      SoftwareEngineering
 Testing Host: localhost:8054
 localhost:8054 Index
 Testing Index ...
-localhost:8054 50-Tricks/Index
-Testing 50-Tricks/Index ...
-localhost:8054 50-Tricks/HostYourApp
-Testing 50-Tricks/HostYourApp ...
+localhost:8054 test/TestDoc
+Testing test/TestDoc ...
+localhost:8054 
+Testing  ...
