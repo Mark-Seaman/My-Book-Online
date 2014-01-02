@@ -1,53 +1,62 @@
-redirect:/./Index
-redirect:./Index
-redirect:./app/dir/file/missing
-redirect:./Index
-<br/> <h1>Table of Contents</h1>
-<br/> 
-<br/> 
-<br/>  <a href="BuildAPerfectBrain">Build a perfect brain</a> 
-<br/> 
-<br/>  <a href="YouNeedABrain">Why you need a brain</a> 
-<br/> 
-<br/>  <a href="BrainIngredients">Essential ingredients</a> 
-<br/> 
-<br/>  <a href="BrainStorage">What to store</a> 
-<br/> 
-<br/>  <a href="BrainFreshness">Keep it fresh</a> 
-<br/> 
-<br/>  <a href="BrainPerformance">Boost performance of your brain</a> 
-<br/> 
-<br/> 
-<br/> 
-<br/> 
-<br/> 
-<br/> 
-redirect:./Index
-redirect:./app/dir/file/missing
-redirect:Brain/Index
-<br/> <h1>Table of Contents</h1>
-<br/> 
-<br/> 
-<br/>  <a href="BuildAPerfectBrain">Build a perfect brain</a> 
-<br/> 
-<br/>  <a href="YouNeedABrain">Why you need a brain</a> 
-<br/> 
-<br/>  <a href="BrainIngredients">Essential ingredients</a> 
-<br/> 
-<br/>  <a href="BrainStorage">What to store</a> 
-<br/> 
-<br/>  <a href="BrainFreshness">Keep it fresh</a> 
-<br/> 
-<br/>  <a href="BrainPerformance">Boost performance of your brain</a> 
-<br/> 
-<br/> 
-<br/> 
-<br/> 
-<br/> 
-<br/> 
-redirect:./missing
-redirect:./Brain/Index/missing
-redirect:./missing
-redirect:./app/dir/file/missing
-redirect:Brain/missing
-redirect:Brain/Index/missing
+<h1>Test User Home</h1>
+This is a test page for the test user.
+</p><p>
+<b>Tab 1</b>
+ This is some text
+</p><p>
+<b>Tab 2</b>
+</p><p>
+This is some more text
+</p><p>
+</p><p>
+<h1>Test User Home</h1>
+This is a test page for the test user.
+</p><p>
+<b>Tab 1</b>
+ This is some text
+</p><p>
+<b>Tab 2</b>
+</p><p>
+This is some more text
+</p><p>
+</p><p>
+<h1>Welcome to Shrinking World On-line</h1>
+</p><p>
+This web site is dedicated to providing you with high quality
+information to help you be more effective in the modern world
+</p><p>
+<b>Software Engineering</b>
+</p><p>
+Presentations
+&nbsp;&nbsp;&nbsp;&nbsp; <a href=" <a href="ShrinkingWorld">ShrinkingWorld</a> /FCIP">Ft. Collins Internet Pros</a>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href=" <a href="ShrinkingWorld">ShrinkingWorld</a> / <a href="PythonWebDev">PythonWebDev</a> ">Python Web Developers</a>
+</p><p>
+Services
+&nbsp;&nbsp;&nbsp;&nbsp; <a href=" <a href="ShrinkingWorld">ShrinkingWorld</a> / <a href="OpenSource">OpenSource</a> ">Open Source Projects</a>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href=" <a href="ShrinkingWorld">ShrinkingWorld</a> / <a href="SoftwareTraining">SoftwareTraining</a> "> <a href="SoftwareTraining">SoftwareTraining</a> </a>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href=" <a href="ShrinkingWorld">ShrinkingWorld</a> / <a href="SoftwareEngineering">SoftwareEngineering</a> "> <a href="SoftwareEngineering">SoftwareEngineering</a> </a>
+</p><p>
+<b>Seaman's Log</b>
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href=" <a href="SeamansLog">SeamansLog</a> ">How to thrive in the modern world</a>  -- Deep thoughts by   <a href=" <a href="MarkSeaman">MarkSeaman</a> /">Mark Seaman</a>
+</p><p>
+</p><p>
+<b>Shrinking World Guides</b>
+&nbsp;&nbsp;&nbsp;&nbsp;by  <a href="http://markseaman.org/">Mark Seaman</a>
+</p><p>
+This series of microbooks is published by Shrinking World Solutions.
+Each series of articles is really a small book covering a single
+topic.  This information is available to you as a personal resource.
+Enjoy the content, use it however you like, and pass it on to someone
+else.
+</p><p>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href=" <a href="BitRot">BitRot</a> ">Fight Bit Rot</a>  - Join the fight against software decay!
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="Software">World-class Software</a>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href=" <a href="SuperPower">SuperPower</a> ">Super-power Handbook</a>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="Brain">How to build an exterior brain</a>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="Ideas">Ideas</a>
+</p><p>
+<h1>Test Document</h1>
+</p><p>
+This is a test.
+</p><p>

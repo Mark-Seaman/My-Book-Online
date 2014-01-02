@@ -238,7 +238,6 @@
 ./Public/Gallery/castle/27
 ./Public/Gallery/castle/28
 ./Public/Gallery/castle/29
-./Public/Gallery/castle/images
 ./Public/Gallery/castle/Index
 ./Public/Gallery/.gitignore
 ./Public/Gallery/hawaii
@@ -257,7 +256,6 @@
 ./Public/Gallery/hawaii/23
 ./Public/Gallery/hawaii/24
 ./Public/Gallery/hawaii/25
-./Public/Gallery/hawaii/images
 ./Public/Gallery/hawaii/Index
 ./Public/Gallery/hoa
 ./Public/Gallery/hoa/10
@@ -265,7 +263,6 @@
 ./Public/Gallery/hoa/12
 ./Public/Gallery/hoa/14
 ./Public/Gallery/hoa/15
-./Public/Gallery/hoa/images
 ./Public/Gallery/hoa/Index
 ./Public/Gallery/Index
 ./Public/Gallery/japan
@@ -291,7 +288,6 @@
 ./Public/Gallery/japan/30
 ./Public/Gallery/japan/31
 ./Public/Gallery/japan/32
-./Public/Gallery/japan/images
 ./Public/Gallery/japan/Index
 ./Public/Gallery/Title
 ./Public/Gallery/volcano
@@ -311,7 +307,6 @@
 ./Public/Gallery/volcano/1014
 ./Public/Gallery/volcano/1015
 ./Public/Gallery/volcano/1016
-./Public/Gallery/volcano/images
 ./Public/Gallery/volcano/Index
 ./Public/Guides
 ./Public/Guides/BuildCommunity
@@ -372,6 +367,7 @@
 ./Public/MarkSeaman/Title
 ./Public/MarkSeaman/ToolsProcess
 ./Public/MarkSeaman/WebSites
+./Public/MyBook
 ./Public/MyBookOnline
 ./Public/MyBookOnline/AboutMyBookOnline
 ./Public/MyBookOnline/BuildingUserStories
@@ -632,6 +628,15 @@
 ./Public/SpiritualGrowth/Passages/67
 ./Public/SpiritualGrowth/Passages/68
 ./Public/SpiritualGrowth/Passages/69
+./Public/SpiritualGrowth/Passages/70
+./Public/SpiritualGrowth/Passages/71
+./Public/SpiritualGrowth/Passages/72
+./Public/SpiritualGrowth/Passages/73
+./Public/SpiritualGrowth/Passages/74
+./Public/SpiritualGrowth/Passages/75
+./Public/SpiritualGrowth/Passages/76
+./Public/SpiritualGrowth/Passages/77
+./Public/SpiritualGrowth/Passages/78
 ./Public/SpiritualGrowth/Passages/Index
 ./Public/SpiritualGrowth/Passages/.random
 ./Public/SpiritualGrowth/Practices
@@ -758,9 +763,10 @@
 ./Public/SuperPower/YourInformationSystem
 ./Public/SuperPower/YourLearningSystem
 ./Public/SuperPower/YourPlanningSystem
+./Public/test
+./Public/test/TestDoc
 ./seaman
 ./seaman/BizPlan
-./seaman/BizPlan/Clients
 ./seaman/BizPlan/CompanyServices
 ./seaman/BizPlan/History
 ./seaman/BizPlan/History/2013-12-Done
