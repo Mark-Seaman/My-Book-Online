@@ -185,7 +185,6 @@ content.correct
 content.tst
 docs.correct
 doc-show.correct
-doc-show.tst
 docs.tst
 files.correct
 files.tst
@@ -208,12 +207,16 @@ page-resume-Sample.correct
 pages.correct
 pages.tst
 page_test.py
+quote.correct
+quote.tst
+quote.txt
 random.correct
 random.tst
 show.correct
 show.tst
 src.correct
 src.tst
+test
 trun.correct
 update
 update.correct
