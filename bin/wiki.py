@@ -117,6 +117,12 @@ def select_quote(line, lines):
     return '<b>'+choice(t)+'</b><br>'
 
 
+# Feature a single line of the input stream
+def select_content(directory):
+    return  [ directory.replace('[[PICK]]','PICK LINE') ]
+    #return '<b>'+choice(lines)+'</b><br>'
+
+
 # Select a line of text to feature
 def convert_quote(lines):
     for i,line in enumerate(lines):
@@ -124,6 +130,13 @@ def convert_quote(lines):
             return lines[:i] + [ select_quote(line, lines[i:]) ]
     return lines
 
+def convert_pick(lines):
+    for i,line in enumerate(lines):
+        if '[[PICK]]' in line:
+            #return lines[:i] + [ select_quote(line, lines[i:]) ]
+            return lines[:i] +  select_content(line) +  lines[i+1:]
+    return lines
+   
 #-----------------------------------------------------------------------------
 # Read text file
 
@@ -166,6 +179,7 @@ def convert_html(text):
     '''
    Convert array of strings to html body text
     '''
+    text = convert_pick(text)
     text = convert_quote(text)
     text = map(convert_line, text)
     return '\n'.join(text)
