@@ -1,0 +1,125 @@
+DIFF bin/wiki.py:
+120,125d119
+< # Feature a single line of the input stream
+< def select_content(directory):
+<     return  [ directory.replace('[[PICK]]','PICK LINE') ]
+<     #return '<b>'+choice(lines)+'</b><br>'
+< 
+< 
+133,185d126
+< def convert_pick(lines):
+<     for i,line in enumerate(lines):
+<         if '[[PICK]]' in line:
+<             #return lines[:i] + [ select_quote(line, lines[i:]) ]
+<             return lines[:i] +  select_content(line) +  lines[i+1:]
+<     return lines
+<    
+< #-----------------------------------------------------------------------------
+< # Read text file
+< 
+< def read_text(f):
+<     '''
+<     Return the text from the file
+<     '''
+<     if exists(f):
+<         return open(f).read()
+<     return 'No file found, '+f
+< 
+< 
+< def get_title(text):
+<     '''
+<     The first line holds the page title
+<     '''
+<     if len(text)>0: 
+<         return remove_muse(text[0]).rstrip()[2:][:-2]
+<     return 'No title'
+< 
+< 
+< def convert_line(line, breaks=True):
+<     '''
+<     Convert a single text line to html
+<     '''
+<     line = remove_muse(line).rstrip()
+<     if breaks:
+<         line = space_breaks(line)
+<     line = format_rules(line)
+<     line = format_bullets(line)
+<     line = break_paragraphs(line)
+<     line = convert_links(line)
+<     line = preserve_spaces(line)
+<     line = make_heading(line)
+<     line = make_bold(line)
+<     return make_italic(line)
+< 
+< 
+< def convert_html(text):
+<     '''
+<    Convert array of strings to html body text
+<     '''
+<     text = convert_pick(text)
+<     text = convert_quote(text)
+<     text = map(convert_line, text)
+<     return '\n'.join(text)
+218d158
+<     #print 'LINES:', '\n'.join(lines)
+223c163
+< def print_all_tabs(text, format_lines=False):
+---
+> def print_all_tabs(text, format_lines=True):
+227d166
+< 
+234c173
+<             print_tab(g, True)
+---
+>             print_tab(g, format_lines)
+237a177,195
+> #-----------------------------------------------------------------------------
+> # Read text file
+> 
+> def read_text(f):
+>     '''
+>     Return the text from the file
+>     '''
+>     if exists(f):
+>         return open(f).read()
+>     return 'No file found, '+f
+> 
+> 
+> def get_title(text):
+>     '''
+>     The first line holds the page title
+>     '''
+>     if len(text)>0: 
+>         return remove_muse(text[0]).rstrip()[2:][:-2]
+>     return 'No title'
+239a198,220
+> def convert_line(line):
+>     '''
+>     Convert a single text line to html
+>     '''
+>     line = remove_muse(line).rstrip()
+>     #line = space_breaks(line)
+>     line = format_rules(line)
+>     line = format_bullets(line)
+>     line = break_paragraphs(line)
+>     line = convert_links(line)
+>     line = preserve_spaces(line)
+>     line = make_heading(line)
+>     line = make_bold(line)
+>     return make_italic(line)
+> 
+> 
+> def convert_html(text):
+>     '''
+>    Convert array of strings to html body text
+>     '''
+>     text = convert_quote(text)
+>     text = map(convert_line, text)
+>     return '\n'.join(text)
+263,265c244,245
+<     text = stdin.read() 
+<     print_all_tabs(text)
+<     #print '\n'.join(lines)
+---
+>     text = stdin.read().split('\n')
+>     print_all_tabs(convert_html(text))
