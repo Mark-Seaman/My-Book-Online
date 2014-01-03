@@ -177,13 +177,25 @@ DIFF bin/wiki.py:
 >     return '\n'.join(text)
 323a242
 > # Create html file contents from stdin
-325,330c244,245
+325,342c244,245
 <     '''
 <     Create html file contents from stdin
 <     '''
 <     text = stdin.read() 
 <     print_all_tabs(text)
 <     #print '\n'.join(lines)
+< 
+< from os import system
+< from sys import argv
+< 
+< def show_doc():
+<     path   = ['','']
+<     if len(argv)>1: 
+<         path = argv[1].split('/')
+< 
+<     doc = doc_path(path)
+<     log_page(doc)
+<     system('hammer-show '+doc)
 ---
 >     text = stdin.read().split('\n')
 >     print_all_tabs(convert_html(text))

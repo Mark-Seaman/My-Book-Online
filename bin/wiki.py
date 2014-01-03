@@ -328,3 +328,15 @@ def print_page_html():
     text = stdin.read() 
     print_all_tabs(text)
     #print '\n'.join(lines)
+
+from os import system
+from sys import argv
+
+def show_doc():
+    path   = ['','']
+    if len(argv)>1: 
+        path = argv[1].split('/')
+
+    doc = doc_path(path)
+    log_page(doc)
+    system('hammer-show '+doc)
