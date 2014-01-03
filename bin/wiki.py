@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 # Wiki text formatter
 
-from os.path    import isfile, exists
-from sys        import argv, stdin
+from datetime   import datetime
+from os         import system,environ
+from os.path    import isfile, exists,join
 from re         import compile, IGNORECASE, DOTALL
 from random     import choice
+from sys        import argv, stdin
+
 
 #-----------------------------------------------------------------------------
 # Formatting
@@ -130,9 +133,10 @@ def convert_quote(lines):
             return lines[:i] + [ select_quote(line, lines[i:]) ]
     return lines
 
-def convert_pick(lines):
+def convert_pick(lines,path):
     for i,line in enumerate(lines):
         if '[[PICK]]' in line:
+            print 'Path:',path
             #return lines[:i] + [ select_quote(line, lines[i:]) ]
             return lines[:i] +  select_content(line) +  lines[i+1:]
     return lines
@@ -166,14 +170,17 @@ def convert_line(line, breaks=True):
     return make_italic(line)
 
 
-def convert_html(text):
+def convert_html(text,path=None):
     '''
    Convert array of strings to html body text
     '''
-    text = convert_pick(text)
+    if path: 
+        text = convert_pick(text, path)
     text = convert_quote(text)
     text = map(convert_line, text)
     return '\n'.join(text)
+
+
 #-----------------------------------------------------------------------------
 # Tabs
 
@@ -225,15 +232,6 @@ def print_all_tabs(text, format_lines=False):
             print_tab(g, True)
         print '  </tabset>'
         print '</div>'
-
-#-----------------------------------------------------------------------------
-# Doc files
-
-from os import system,environ
-from os.path import join
-from sys import argv
-from datetime           import datetime
-
 
 
 #-----------------------------------------------------------------------------
@@ -329,14 +327,14 @@ def print_page_html():
     print_all_tabs(text)
     #print '\n'.join(lines)
 
-from os import system
-from sys import argv
 
 def show_doc():
     path   = ['','']
     if len(argv)>1: 
         path = argv[1].split('/')
 
-    doc = doc_path(path)
+    doc = join(environ['pd'], doc_path(path))
+    #print 'doc:', doc
     log_page(doc)
-    system('hammer-show '+doc)
+    text = read_text(doc)
+    print_all_tabs(text)

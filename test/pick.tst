@@ -3,7 +3,7 @@
 
 mkdir -p $pd/Public/test
 
-echo $pd/Public/test/Pick
+#echo $pd/Public/test/Pick
 
 cat <<EOF > $pd/Public/test/Pick
 * Pick File *

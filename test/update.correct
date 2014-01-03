@@ -1,15 +1,26 @@
 DIFF bin/wiki.py:
-120,125d119
+4,6c4,5
+< from datetime   import datetime
+< from os         import system,environ
+< from os.path    import isfile, exists,join
+---
+> from os.path    import isfile, exists
+> from sys        import argv, stdin
+9,10d7
+< from sys        import argv, stdin
+< 
+123,128d119
 < # Feature a single line of the input stream
 < def select_content(directory):
 <     return  [ directory.replace('[[PICK]]','PICK LINE') ]
 <     #return '<b>'+choice(lines)+'</b><br>'
 < 
 < 
-133,176d126
-< def convert_pick(lines):
+136,183d126
+< def convert_pick(lines,path):
 <     for i,line in enumerate(lines):
 <         if '[[PICK]]' in line:
+<             print 'Path:',path
 <             #return lines[:i] + [ select_quote(line, lines[i:]) ]
 <             return lines[:i] +  select_content(line) +  lines[i+1:]
 <     return lines
@@ -43,39 +54,36 @@ DIFF bin/wiki.py:
 <     return make_italic(line)
 < 
 < 
-< def convert_html(text):
+< def convert_html(text,path=None):
 <     '''
 <    Convert array of strings to html body text
 <     '''
-<     text = convert_pick(text)
+<     if path: 
+<         text = convert_pick(text, path)
 <     text = convert_quote(text)
 <     text = map(convert_line, text)
 <     return '\n'.join(text)
-209d158
+< 
+< 
+216d158
 <     #print 'LINES:', '\n'.join(lines)
-214c163
+221c163
 < def print_all_tabs(text, format_lines=False):
 ---
 > def print_all_tabs(text, format_lines=True):
-218d166
+225d166
 < 
-225c173
+232c173
 <             print_tab(g, True)
 ---
 >             print_tab(g, format_lines)
-230,252c178
-< # Doc files
+236d176
 < 
-< from os import system,environ
-< from os.path import join
-< from sys import argv
-< from datetime           import datetime
-< 
-< 
-< 
-< #-----------------------------------------------------------------------------
+238c178
 < # Domains
-< 
+---
+> # Read text file
+240,252c180
 < def domain_map():
 <     '''
 <     Read the domain mapping from a file
@@ -87,17 +95,15 @@ DIFF bin/wiki.py:
 <             map[d[0]] = d[1]
 <     return map
 < 
----
-> # Read text file
-254c180
+< 
 < def doc_path(path):
 ---
 > def read_text(f):
-256c182
+254c182
 <     Convert a url to a directory
 ---
 >     Return the text from the file
-258,276c184,186
+256,274c184,186
 <     m = domain_map()
 < 
 <     domain = path[0]
@@ -121,15 +127,15 @@ DIFF bin/wiki.py:
 >     if exists(f):
 >         return open(f).read()
 >     return 'No file found, '+f
-279c189
+277c189
 < def log_page(doc):
 ---
 > def get_title(text):
-281c191
+279c191
 <     Log the page hit in page.log  (time, ip, user, page, doc) 
 ---
 >     The first line holds the page title
-283,286c193,195
+281,284c193,195
 <     logFile=environ['p']+'/logs/user/doc.log'
 <     f=open(logFile,'a')
 <     f.write(str(datetime.now())+',  '+doc+'\n')
@@ -138,15 +144,15 @@ DIFF bin/wiki.py:
 >     if len(text)>0: 
 >         return remove_muse(text[0]).rstrip()[2:][:-2]
 >     return 'No title'
-289c198
+287c198
 < def doc_file(path):
 ---
 > def convert_line(line):
-291c200
+289c200
 <     Path to doc in file system
 ---
 >     Convert a single text line to html
-293c202,211
+291c202,211
 <     return join(environ['pd'],path)
 ---
 >     line = remove_muse(line).rstrip()
@@ -159,15 +165,15 @@ DIFF bin/wiki.py:
 >     line = make_heading(line)
 >     line = make_bold(line)
 >     return make_italic(line)
-296c214
+294c214
 < def read_text(f):
 ---
 > def convert_html(text):
-298c216
+296c216
 <     Return the text from the file
 ---
 >    Convert array of strings to html body text
-300,302c218,220
+298,300c218,220
 <     if exists(f):
 <         return open(f).read()
 <     return 'No file found, '+f
@@ -175,9 +181,9 @@ DIFF bin/wiki.py:
 >     text = convert_quote(text)
 >     text = map(convert_line, text)
 >     return '\n'.join(text)
-323a242
+321a242
 > # Create html file contents from stdin
-325,342c244,245
+323,340c244,245
 <     '''
 <     Create html file contents from stdin
 <     '''
@@ -185,17 +191,17 @@ DIFF bin/wiki.py:
 <     print_all_tabs(text)
 <     #print '\n'.join(lines)
 < 
-< from os import system
-< from sys import argv
 < 
 < def show_doc():
 <     path   = ['','']
 <     if len(argv)>1: 
 <         path = argv[1].split('/')
 < 
-<     doc = doc_path(path)
+<     doc = join(environ['pd'], doc_path(path))
+<     #print 'doc:', doc
 <     log_page(doc)
-<     system('hammer-show '+doc)
+<     text = read_text(doc)
+<     print_all_tabs(text)
 ---
 >     text = stdin.read().split('\n')
 >     print_all_tabs(convert_html(text))
