@@ -532,6 +532,7 @@
 ./Public/Software/WhyProjectsFail
 ./Public/SpiritualGrowth
 ./Public/SpiritualGrowth/Index
+./Public/SpiritualGrowth/Introduction
 ./Public/SpiritualGrowth/LifeApps
 ./Public/SpiritualGrowth/LifeApps/2012
 ./Public/SpiritualGrowth/LifeApps/2013-01-13
@@ -764,6 +765,7 @@
 ./Public/SuperPower/YourLearningSystem
 ./Public/SuperPower/YourPlanningSystem
 ./Public/test
+./Public/test/Pick
 ./Public/test/TestDoc
 ./seaman
 ./seaman/BizPlan
