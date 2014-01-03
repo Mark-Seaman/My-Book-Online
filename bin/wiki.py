@@ -138,16 +138,7 @@ def convert_pick(lines):
     return lines
    
 #-----------------------------------------------------------------------------
-# Read text file
-
-def read_text(f):
-    '''
-    Return the text from the file
-    '''
-    if exists(f):
-        return open(f).read()
-    return 'No file found, '+f
-
+# Line convertion
 
 def get_title(text):
     '''
@@ -235,8 +226,80 @@ def print_all_tabs(text, format_lines=False):
         print '  </tabset>'
         print '</div>'
 
+#-----------------------------------------------------------------------------
+# Doc files
+
+from os import system,environ
+from os.path import join
+from sys import argv
+from datetime           import datetime
 
 
+
+#-----------------------------------------------------------------------------
+# Domains
+
+def domain_map():
+    '''
+    Read the domain mapping from a file
+    '''
+    map = {}
+    for d in open(doc_file('Domains')).read().split('\n'):
+        d = d.split(' ')
+        if len(d)==2:
+            map[d[0]] = d[1]
+    return map
+
+
+def doc_path(path):
+    '''
+    Convert a url to a directory
+    '''
+    m = domain_map()
+
+    domain = path[0]
+    if m.has_key(domain):
+        domain = m[domain]
+    else:
+        domain = '.'
+
+    if len(path)>1:
+        user = path[1].replace('Anonymous', 'Public')
+    else:
+        user = 'Public'
+
+    file = path[2:]
+    return '/'.join([user,domain] + file)
+
+
+#-----------------------------------------------------------------------------
+# File processing
+
+
+def log_page(doc):
+    '''
+    Log the page hit in page.log  (time, ip, user, page, doc) 
+    '''
+    logFile=environ['p']+'/logs/user/doc.log'
+    f=open(logFile,'a')
+    f.write(str(datetime.now())+',  '+doc+'\n')
+    f.close()
+
+
+def doc_file(path):
+    '''
+    Path to doc in file system
+    '''
+    return join(environ['pd'],path)
+
+
+def read_text(f):
+    '''
+    Return the text from the file
+    '''
+    if exists(f):
+        return open(f).read()
+    return 'No file found, '+f
 
 
 def do_command(cmd, input=None):
@@ -258,8 +321,10 @@ def do_command(cmd, input=None):
             '<p>INPUT: %s</p>'%input
 
 
-# Create html file contents from stdin
 def print_page_html():
+    '''
+    Create html file contents from stdin
+    '''
     text = stdin.read() 
     print_all_tabs(text)
     #print '\n'.join(lines)

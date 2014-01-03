@@ -6,7 +6,7 @@ DIFF bin/wiki.py:
 <     #return '<b>'+choice(lines)+'</b><br>'
 < 
 < 
-133,185d126
+133,176d126
 < def convert_pick(lines):
 <     for i,line in enumerate(lines):
 <         if '[[PICK]]' in line:
@@ -15,16 +15,7 @@ DIFF bin/wiki.py:
 <     return lines
 <    
 < #-----------------------------------------------------------------------------
-< # Read text file
-< 
-< def read_text(f):
-<     '''
-<     Return the text from the file
-<     '''
-<     if exists(f):
-<         return open(f).read()
-<     return 'No file found, '+f
-< 
+< # Line convertion
 < 
 < def get_title(text):
 <     '''
@@ -60,43 +51,104 @@ DIFF bin/wiki.py:
 <     text = convert_quote(text)
 <     text = map(convert_line, text)
 <     return '\n'.join(text)
-218d158
+209d158
 <     #print 'LINES:', '\n'.join(lines)
-223c163
+214c163
 < def print_all_tabs(text, format_lines=False):
 ---
 > def print_all_tabs(text, format_lines=True):
-227d166
+218d166
 < 
-234c173
+225c173
 <             print_tab(g, True)
 ---
 >             print_tab(g, format_lines)
-237a177,195
-> #-----------------------------------------------------------------------------
+230,252c178
+< # Doc files
+< 
+< from os import system,environ
+< from os.path import join
+< from sys import argv
+< from datetime           import datetime
+< 
+< 
+< 
+< #-----------------------------------------------------------------------------
+< # Domains
+< 
+< def domain_map():
+<     '''
+<     Read the domain mapping from a file
+<     '''
+<     map = {}
+<     for d in open(doc_file('Domains')).read().split('\n'):
+<         d = d.split(' ')
+<         if len(d)==2:
+<             map[d[0]] = d[1]
+<     return map
+< 
+---
 > # Read text file
-> 
+254c180
+< def doc_path(path):
+---
 > def read_text(f):
->     '''
+256c182
+<     Convert a url to a directory
+---
 >     Return the text from the file
->     '''
+258,276c184,186
+<     m = domain_map()
+< 
+<     domain = path[0]
+<     if m.has_key(domain):
+<         domain = m[domain]
+<     else:
+<         domain = '.'
+< 
+<     if len(path)>1:
+<         user = path[1].replace('Anonymous', 'Public')
+<     else:
+<         user = 'Public'
+< 
+<     file = path[2:]
+<     return '/'.join([user,domain] + file)
+< 
+< 
+< #-----------------------------------------------------------------------------
+< # File processing
+---
 >     if exists(f):
 >         return open(f).read()
 >     return 'No file found, '+f
-> 
-> 
+279c189
+< def log_page(doc):
+---
 > def get_title(text):
->     '''
+281c191
+<     Log the page hit in page.log  (time, ip, user, page, doc) 
+---
 >     The first line holds the page title
->     '''
+283,286c193,195
+<     logFile=environ['p']+'/logs/user/doc.log'
+<     f=open(logFile,'a')
+<     f.write(str(datetime.now())+',  '+doc+'\n')
+<     f.close()
+---
 >     if len(text)>0: 
 >         return remove_muse(text[0]).rstrip()[2:][:-2]
 >     return 'No title'
-239a198,220
+289c198
+< def doc_file(path):
+---
 > def convert_line(line):
->     '''
+291c200
+<     Path to doc in file system
+---
 >     Convert a single text line to html
->     '''
+293c202,211
+<     return join(environ['pd'],path)
+---
 >     line = remove_muse(line).rstrip()
 >     #line = space_breaks(line)
 >     line = format_rules(line)
@@ -107,16 +159,28 @@ DIFF bin/wiki.py:
 >     line = make_heading(line)
 >     line = make_bold(line)
 >     return make_italic(line)
-> 
-> 
+296c214
+< def read_text(f):
+---
 > def convert_html(text):
->     '''
+298c216
+<     Return the text from the file
+---
 >    Convert array of strings to html body text
->     '''
+300,302c218,220
+<     if exists(f):
+<         return open(f).read()
+<     return 'No file found, '+f
+---
 >     text = convert_quote(text)
 >     text = map(convert_line, text)
 >     return '\n'.join(text)
-263,265c244,245
+323a242
+> # Create html file contents from stdin
+325,330c244,245
+<     '''
+<     Create html file contents from stdin
+<     '''
 <     text = stdin.read() 
 <     print_all_tabs(text)
 <     #print '\n'.join(lines)
