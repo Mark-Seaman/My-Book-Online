@@ -1,53 +1,102 @@
-redirect:/./Index
-redirect:./Index
-redirect:./app/dir/file/missing
-redirect:./Index
-<br/> <h1>Table of Contents</h1>
+<br/> <h1>Test User Home</h1>
+<br/> This is a test page for the test user.
 <br/> 
 <br/> 
-<br/>  <a href="BuildAPerfectBrain">Build a perfect brain</a> 
-<br/> 
-<br/>  <a href="YouNeedABrain">Why you need a brain</a> 
-<br/> 
-<br/>  <a href="BrainIngredients">Essential ingredients</a> 
-<br/> 
-<br/>  <a href="BrainStorage">What to store</a> 
-<br/> 
-<br/>  <a href="BrainFreshness">Keep it fresh</a> 
-<br/> 
-<br/>  <a href="BrainPerformance">Boost performance of your brain</a> 
+<div ng-controller="TabbedViewCtrl">
+  <tabset ng-show="true">
+     <tab heading="Tab 1">
+        <div class="page">
+            <br/>  This is some text
 <br/> 
 <br/> 
+        </div>
+     </tab>
+     <tab heading="Tab 2">
+        <div class="page">
+            <br/> 
+<br/> This is some more text
+<br/> 
+<br/> 
+        </div>
+     </tab>
+  </tabset>
+</div>
+<br/> <h1>Test User Home</h1>
+<br/> This is a test page for the test user.
+<br/> 
+<br/> 
+<div ng-controller="TabbedViewCtrl">
+  <tabset ng-show="true">
+     <tab heading="Tab 1">
+        <div class="page">
+            <br/>  This is some text
+<br/> 
+<br/> 
+        </div>
+     </tab>
+     <tab heading="Tab 2">
+        <div class="page">
+            <br/> 
+<br/> This is some more text
+<br/> 
+<br/> 
+        </div>
+     </tab>
+  </tabset>
+</div>
+<br/> <h1>Welcome to Shrinking World On-line</h1>
+<br/> 
+<br/> This web site is dedicated to providing you with high quality
+<br/> information to help you be more effective in the modern world
+<br/> 
+<br/> 
+<div ng-controller="TabbedViewCtrl">
+  <tabset ng-show="true">
+     <tab heading="Software Engineering">
+        <div class="page">
+            <br/> 
+<br/> Presentations
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="ShrinkingWorld/FCIP">Ft. Collins Internet Pros</a> 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="ShrinkingWorld/PythonWebDev">Python Web Developers</a> 
+<br/> 
+<br/> Services
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="ShrinkingWorld/OpenSource">Open Source Projects</a> 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="ShrinkingWorld/SoftwareTraining">SoftwareTraining</a> 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="ShrinkingWorld/SoftwareEngineering">SoftwareEngineering</a> 
+<br/> 
+<br/> 
+        </div>
+     </tab>
+     <tab heading="Seaman's Log">
+        <div class="page">
+            <br/> 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; <a href="SeamansLog">How to thrive in the modern world</a>  -- Deep thoughts by   <a href="MarkSeaman/">Mark Seaman</a> 
 <br/> 
 <br/> 
 <br/> 
+        </div>
+     </tab>
+     <tab heading="Shrinking World Guides">
+        <div class="page">
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp; by  <a href="http://markseaman.org/">Mark Seaman</a> 
 <br/> 
-redirect:./Index
-redirect:./app/dir/file/missing
-redirect:Brain/Index
-<br/> <h1>Table of Contents</h1>
+<br/> This series of microbooks is published by Shrinking World Solutions.
+<br/> Each series of articles is really a small book covering a single
+<br/> topic.  This information is available to you as a personal resource.
+<br/> Enjoy the content, use it however you like, and pass it on to someone
+<br/> else.
 <br/> 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="BitRot">Fight Bit Rot</a>  - Join the fight against software decay!
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="Software">World-class Software</a> 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="SuperPower">Super-power Handbook</a> 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="Brain">How to build an exterior brain</a> 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="Ideas">Ideas</a> 
 <br/> 
-<br/>  <a href="BuildAPerfectBrain">Build a perfect brain</a> 
+        </div>
+     </tab>
+  </tabset>
+</div>
+<br/> <h1>Test Document</h1>
 <br/> 
-<br/>  <a href="YouNeedABrain">Why you need a brain</a> 
+<br/> This is a test.
 <br/> 
-<br/>  <a href="BrainIngredients">Essential ingredients</a> 
-<br/> 
-<br/>  <a href="BrainStorage">What to store</a> 
-<br/> 
-<br/>  <a href="BrainFreshness">Keep it fresh</a> 
-<br/> 
-<br/>  <a href="BrainPerformance">Boost performance of your brain</a> 
-<br/> 
-<br/> 
-<br/> 
-<br/> 
-<br/> 
-<br/> 
-redirect:./missing
-redirect:./Brain/Index/missing
-redirect:./missing
-redirect:./app/dir/file/missing
-redirect:Brain/missing
-redirect:Brain/Index/missing

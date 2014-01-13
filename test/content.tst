@@ -1,6 +1,5 @@
 #!/bin/bash
 # Format a document as HTML
 
-doc-show ./Public/SpiritualGrowth/Prayers/WorkPrayer
+doc-show ./Public/test/TestDoc
 
-doc-show ./Public/SpiritualGrowth/Index

@@ -16,12 +16,6 @@ d=`echo $d|sed 's/^.[^\/]*\///'`    &&
 echo "redirect:$d/Index"            && 
 exit 0
 
-# Handle directory without Index
-[ -d "$doc/$d" ]                    && 
-[ ! -f "$doc/$d/Index" ]            &&
-hammer-list "$1" | hammer-wiki      && 
-exit 0
-
 # Handle scripts
 [ -x "$doc/$d" ]                    && 
 hammer-execute $d                   &&
@@ -40,5 +34,5 @@ echo "redirect:$d/missing"          &&
 exit 0
 
 #Formatter is written in python
-hammer-tabs "$doc/$d" 
+hammer-wiki < "$doc/$d" 
 

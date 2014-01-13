@@ -2,18 +2,19 @@
 < Shrinking-World.Org
 ---
 > localhost:8054
-4c4
-< Shrinking-World.Org
+17c17
+< 
 ---
-> localhost:8054
-5c5
-< Log In
----
-> Not logged in AnonymousUser Log In
+> Software Engineering
+7d6
+< 
+9,10d7
+< 
+< 
 Testing Host: localhost:8054
 localhost:8054 Index
 Testing Index ...
-localhost:8054 50-Tricks/Index
-Testing 50-Tricks/Index ...
-localhost:8054 50-Tricks/HostYourApp
-Testing 50-Tricks/HostYourApp ...
+localhost:8054 test/TestDoc
+Testing test/TestDoc ...
+localhost:8054 
+Testing  ...
