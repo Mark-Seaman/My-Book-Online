@@ -51,7 +51,6 @@ alias push='git pull && git push'
 alias r=reset
 alias rc='cp ~/bin/bashrc ~/.bashrc; . ~/.bashrc; cd -'
 alias recent='find . -mtime -1 -type f -exec ls -l {} \;'
-alias restart='~/webapps/simpleapps/apache2/bin/restart'
 alias scm='sc-money-show'
 alias space='du -h --max-depth=1'      # show disk space used
 alias sta='sc-test-accept'
