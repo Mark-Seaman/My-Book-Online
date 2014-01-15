@@ -31,6 +31,10 @@ $pt:\
 ~/bin:\
 .
 
+# Use mountain time
+export TZ='America/Denver'
+export GIT_USER=`id -un`
+
 # Show the host
 [ 'web126.webfaction.com' == `hostname` ]   && 
 echo 'Login to ' `hostname`                 && 

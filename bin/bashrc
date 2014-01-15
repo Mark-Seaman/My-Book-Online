@@ -13,4 +13,5 @@
 [ -f /etc/bash_completion ] && . /etc/bash_completion
 
 # Load the project context
-[ -f bin/project ] && . bin/project
+[ -f bin/bash-alias ] && . bin/bash-alias
+[ -f bin/project    ] && . bin/project
