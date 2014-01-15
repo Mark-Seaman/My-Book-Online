@@ -1,11 +1,11 @@
-4c4
-< Shrinking-World.Org
----
-> localhost:8054
 17c17
 < 
 ---
 > Software Engineering
+4c4
+< localhost:8054
+---
+> Shrinking-World.Org
 7d6
 < 
 9,10d7

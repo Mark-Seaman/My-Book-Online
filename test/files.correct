@@ -5,7 +5,6 @@ Git libpeerconnection files
 /home/seaman/Projects/mybook:
 app
 bin
-doc
 logs
 test
 webapps
@@ -38,7 +37,6 @@ add-testing
 bash-alias
 bash-prompt
 bashrc
-bash-vars
 chromedriver
 commit
 commit-docs
@@ -51,7 +49,6 @@ deploy
 doc-commit
 doc-container
 doc-content
-doc-diff
 doc-diff-all
 doc-file
 doc-get
@@ -72,7 +69,6 @@ doc-template
 e
 elapsed
 emacs.conf
-filediff
 files.py
 fix-lines
 ga
@@ -140,22 +136,16 @@ svr-do
 svr-restart
 t
 tab-view
-tdiff
 te
 tfail
-tlike
 tlist
-tmklike
 tnew
 todo
-tout
 track-time
 tresults
 trun
 tshow
 tst
-update-diff
-update-like
 update-pull
 update-push
 update-test
@@ -163,19 +153,6 @@ w
 web
 wiki.py
 words
-
-/home/seaman/Projects/mybook/doc:
-Anonymous
-Domains
-Home
-Index
-NewTopic
-Public
-seaman
-template
-test
-Title
-ToDo
 
 /home/seaman/Projects/mybook/logs:
 user
@@ -219,7 +196,6 @@ show.correct
 show.tst
 src.correct
 src.tst
-test
 trun.correct
 update
 update.correct
