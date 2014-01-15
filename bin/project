@@ -17,6 +17,7 @@ alias pbin="cd $pb"
 alias pdoc="cd $pd"
 alias ptest="cd $pt"
 
+alias rc='cp ~/bin/bashrc ~/.bashrc'
 alias s=search
 alias g=grep
 
@@ -30,9 +31,13 @@ $pt:\
 ~/bin:\
 .
 
+# Show the host
+[ 'web126.webfaction.com' == `hostname` ]   && 
+echo 'Login to ' `hostname`                 && 
+[ -f .welcome ]                             && 
+cat .welcome                                &&
+return
 
-# Show the banner
-[ 'web126.webfaction.com' == `hostname` ] && return
 figlet 'My Book'
 
 # Use virtualenv
