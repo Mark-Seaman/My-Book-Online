@@ -12,7 +12,6 @@ pages = '''Index
 test/TestDoc
 '''
 
-system('server-start')
 chdir (join(environ['p'],'test'))
 
 if 'seaman-' not in node():
@@ -20,6 +19,7 @@ if 'seaman-' not in node():
     print open(f).read(),
 
 else:
+    system('server-start')
     from page_test import test_web_pages
     print 'Testing Host:',host
-    test_web_pages(host,pages)
+    test_web_pages(host,pages,False)

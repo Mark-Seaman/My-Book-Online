@@ -2,7 +2,7 @@
 # Run a python script to test support center web pages
 
 from os.path  import join,exists
-from os import system,environ,chdir
+from os import system,environ,chdir,mkdir
 from platform import node
 from subprocess import Popen,PIPE
 from time import sleep
@@ -24,7 +24,8 @@ def get_page_text(host,page):
         text = body.text.decode('ascii','ignore')
     except:
         text = 'File not found: '+join(host,page)
-    return '\n\nTitle:%s\n%s\n' % (browser.title, text )
+    text = '\n\nTitle:%s\n%s\n' % (browser.title, text )
+    return text.replace('localhost:8054','shrinking-world.org')
 
 
 def login(host,page):
@@ -64,7 +65,9 @@ def page_names(url):
     page=url.replace('/','-')
     if page=='': 
         page='index'
-    page = 'page-'+page
+    if not exists('pages'):
+        mkdir ('pages')
+    page = 'pages/'+page
     #print 'page_names:',  ( page+'.out', page+'.correct')
     return ( page+'.out', page+'.correct')
 
@@ -117,20 +120,23 @@ def test_web_page(host,page):
     show_page_diffs(page)
 
 
-def test_web_pages(host,pages,login_page=False):
+def test_web_pages(host,pages,login_page=True):
     '''
     Get the home page, Login, Read all pages
     '''
     global browser
     browser = webdriver.Chrome()
     try:
+        print 'browser'
         browser.implicitly_wait(5)
         if login_page:
             get_page_text(host,'logout')
             login(host,'xxx')
+            print 'login done'
         for page in pages.split('\n'):
             print host, page
             test_web_page(host,page)
+            print 'page done'
     except:
         print 'Test web pages failed'
 
