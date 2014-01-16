@@ -114,6 +114,11 @@ def test_web_page(host,page):
     Test a single page from the requested host
     '''
     #print 'Testing', page, '...'
+    if page=='login':
+        #get_page_text(host,'logout')
+        login(host,'login')
+        print 'Login done'
+        return 
     test_page(host,page)
     if accept_all_pages: 
         accept_page_text(page)
@@ -128,9 +133,9 @@ def test_web_pages(host,pages,login_page=True):
     browser = webdriver.Chrome()
     try:
         browser.implicitly_wait(5)
-        if login_page:
-            get_page_text(host,'logout')
-            login(host,'xxx')
+        #if login_page:
+        #    get_page_text(host,'logout')
+        #    login(host,'xxx')
         for page in pages.split('\n'):
             print host, page
             test_web_page(host,page)
