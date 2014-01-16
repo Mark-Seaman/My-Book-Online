@@ -127,16 +127,13 @@ def test_web_pages(host,pages,login_page=True):
     global browser
     browser = webdriver.Chrome()
     try:
-        print 'browser'
         browser.implicitly_wait(5)
         if login_page:
             get_page_text(host,'logout')
             login(host,'xxx')
-            print 'login done'
         for page in pages.split('\n'):
             print host, page
             test_web_page(host,page)
-            print 'page done'
     except:
         print 'Test web pages failed'
 

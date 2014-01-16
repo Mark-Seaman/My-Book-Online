@@ -1,10 +1,7 @@
 Testing Host: localhost:8054
 localhost:8054 Index
 Testing Index ...
-Accept text from  Index
 localhost:8054 test/TestDoc
 Testing test/TestDoc ...
-Accept text from  test/TestDoc
 localhost:8054 
 Testing  ...
-Accept text from  
