@@ -1,20 +1,10 @@
-17c17
-< 
----
-> Software Engineering
-4c4
-< localhost:8054
----
-> Shrinking-World.Org
-7d6
-< 
-9,10d7
-< 
-< 
 Testing Host: localhost:8054
 localhost:8054 Index
 Testing Index ...
+Accept text from  Index
 localhost:8054 test/TestDoc
 Testing test/TestDoc ...
+Accept text from  test/TestDoc
 localhost:8054 
 Testing  ...
+Accept text from  
