@@ -173,6 +173,7 @@ git.correct
 git.tst
 hammer.correct
 hammer.tst
+pages
 pages.correct
 pages.tst
 page_test.py
