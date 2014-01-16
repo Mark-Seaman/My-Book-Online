@@ -113,7 +113,7 @@ def test_web_page(host,page):
     '''
     Test a single page from the requested host
     '''
-    print 'Testing', page, '...'
+    #print 'Testing', page, '...'
     test_page(host,page)
     if accept_all_pages: 
         accept_page_text(page)
