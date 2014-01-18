@@ -160,6 +160,8 @@ user
 /home/seaman/Projects/mybook/test:
 content.correct
 content.tst
+doc-file.correct
+doc-file.tst
 docs.correct
 docs.tst
 files.correct
