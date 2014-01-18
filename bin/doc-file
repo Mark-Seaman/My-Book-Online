@@ -5,55 +5,7 @@ from os import system,environ
 from os.path import join
 from sys import argv
 from datetime           import datetime
-
-def log_page(doc):
-    '''
-    Log the page hit in page.log  (time, ip, user, page, doc) 
-    '''
-    logFile=environ['p']+'/logs/user/doc.log'
-    f=open(logFile,'a')
-    f.write(str(datetime.now())+',  '+doc+'\n')
-    f.close()
-
-
-def doc_file(path):
-    '''
-    Path to doc in file system
-    '''
-    return join(environ['pd'],path)
-
-
-def domain_map():
-    '''
-    Read the domain mapping from a file
-    '''
-    map = {}
-    for d in open(join(environ['pd'],'Domains')).read().split('\n'):
-        d = d.split(' ')
-        if len(d)==2:
-            map[d[0]] = d[1]
-    return map
-
-
-def doc_path(path):
-    '''
-    Convert a url to a directory
-    '''
-    m = domain_map()
-
-    domain = path[0]
-    if m.has_key(domain):
-        domain = m[domain]
-    else:
-        domain = '.'
-
-    if len(path)>1:
-        user = path[1].replace('Anonymous', 'Public')
-    else:
-        user = 'Public'
-
-    file = path[2:]
-    return '/'.join([user,domain] + file).replace('/./','/')
+from wiki import doc_path, log_page
 
 
 path   = ['','']

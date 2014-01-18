@@ -295,8 +295,11 @@ def read_text(f):
     '''
     Return the text from the file
     '''
-    if exists(f):
+    if exists(f) and isfile(f):
         return open(f).read()
+    else:
+        if  exists(f+'/Index'):
+            return open(f+'/Index').read()
     return 'No file found, '+f
 
 
