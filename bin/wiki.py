@@ -136,7 +136,7 @@ def convert_quote(lines):
 def convert_pick(lines,path):
     for i,line in enumerate(lines):
         if '[[PICK]]' in line:
-            print 'Path:',path
+            print 'Pick:',path
             #return lines[:i] + [ select_quote(line, lines[i:]) ]
             return lines[:i] +  select_content(line) +  lines[i+1:]
     return lines
@@ -196,14 +196,14 @@ def group_tabs(text):
     return results
 
 
-def print_tab_text(lines, format_lines):
+def print_tab_text(lines, format_lines, path):
     if format_lines:
-        print '           ', convert_html(lines)
+        print '           ', convert_html(lines,path)
     else:
         print '           ', '\n'.join(lines)
 
 
-def print_tab(text, format_lines):
+def print_tab(text, format_lines, path):
     '''
     Print one tab of text
     '''
@@ -212,24 +212,24 @@ def print_tab(text, format_lines):
     print '     <tab heading="%s">'%heading
     print '        <div class="page">'
     #print '        <b>'+heading+'</b>'
-    print_tab_text(lines[1:], format_lines)
+    print_tab_text(lines[1:], format_lines, path)
     #print 'LINES:', '\n'.join(lines)
     print '        </div>'
     print '     </tab>'
 
 
-def print_all_tabs(text, format_lines=False):
+def print_all_tabs(text, format_lines=False, path=None):
     '''
     Print all the tabs of text from the file
     '''
 
     tab_groups = group_tabs(text)
-    print convert_html(text.split('**')[0].split('\n'))
+    print convert_html(text.split('**')[0].split('\n'),path)
     if len(tab_groups)>1:
         print '<div ng-controller="TabbedViewCtrl">'
         print '  <tabset ng-show="true">'
         for g in tab_groups:
-            print_tab(g, True)
+            print_tab(g, True,path)
         print '  </tabset>'
         print '</div>'
 
@@ -337,4 +337,4 @@ def show_doc():
     #print 'doc:', doc
     log_page(doc)
     text = read_text(doc)
-    print_all_tabs(text)
+    print_all_tabs(text,doc)
