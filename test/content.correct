@@ -1,4 +1,4 @@
-redirect:Public/./Index
+redirect:/Index
 <br/> <h1>Welcome to Shrinking World On-line</h1>
 <br/> 
 <br/> This web site is dedicated to providing you with high quality
@@ -51,11 +51,11 @@ redirect:Public/./Index
      </tab>
   </tabset>
 </div>
-redirect:seaman/./Index
+redirect:/Index
 <br/> <h1>Mark Seaman Home</h1>
 <br/> 
 <br/> You are currently logged in as 'seaman'.
 <br/> 
 <br/>  <a href="BizPlan">BizPlan</a> 
 <br/> 
-redirect:seaman/BizPlan/Index
+redirect:BizPlan/Index
