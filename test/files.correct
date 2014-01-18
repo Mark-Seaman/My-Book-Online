@@ -172,6 +172,7 @@ git.correct
 git.tst
 hammer.correct
 hammer.tst
+local_settings.py
 page_list
 pages
 pages.correct
