@@ -5,7 +5,6 @@ Git libpeerconnection files
 /home/seaman/Projects/mybook:
 app
 bin
-doc
 logs
 test
 webapps
@@ -155,8 +154,6 @@ web
 wiki.py
 words
 
-/home/seaman/Projects/mybook/doc:
-
 /home/seaman/Projects/mybook/logs:
 user
 
@@ -173,6 +170,7 @@ git.correct
 git.tst
 hammer.correct
 hammer.tst
+page_list
 pages
 pages.correct
 pages.tst
@@ -188,7 +186,9 @@ show.correct
 show.tst
 src.correct
 src.tst
+test
 trun.correct
+update
 update.correct
 update.tst
 
