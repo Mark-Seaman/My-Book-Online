@@ -297,10 +297,6 @@ def read_text(f):
     '''
     if exists(f) and isfile(f):
         return open(f).read()
-    else:
-        if  exists(f+'/Index'):
-            return open(f+'/Index').read()
-    return 'No file found, '+f
 
 
 def domain_map():
@@ -373,4 +369,10 @@ def show_doc():
     #print 'doc:', doc
     log_page(doc)
     text = read_text(doc)
-    print_all_tabs(text,doc)
+    if text:
+        print_all_tabs(text,doc)
+        return
+    if exists(doc+'/Index'):
+        print'redirect:%s/Index'%doc_path(path)
+        return
+    print 'No file found, '+doc

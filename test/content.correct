@@ -1,3 +1,4 @@
+redirect:Public/./Index
 <br/> <h1>Welcome to Shrinking World On-line</h1>
 <br/> 
 <br/> This web site is dedicated to providing you with high quality
@@ -50,122 +51,11 @@
      </tab>
   </tabset>
 </div>
-<br/> <h1>Welcome to Shrinking World On-line</h1>
-<br/> 
-<br/> This web site is dedicated to providing you with high quality
-<br/> information to help you be more effective in the modern world
-<br/> 
-<br/> 
-<div ng-controller="TabbedViewCtrl">
-  <tabset ng-show="true">
-     <tab heading="Software Engineering">
-        <div class="page">
-            <br/> 
-<br/> Presentations
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="ShrinkingWorld/FCIP">Ft. Collins Internet Pros</a> 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="ShrinkingWorld/PythonWebDev">Python Web Developers</a> 
-<br/> 
-<br/> Services
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="ShrinkingWorld/OpenSource">Open Source Projects</a> 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="ShrinkingWorld/SoftwareTraining">SoftwareTraining</a> 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="ShrinkingWorld/SoftwareEngineering">SoftwareEngineering</a> 
-<br/> 
-<br/> 
-        </div>
-     </tab>
-     <tab heading="Seaman's Log">
-        <div class="page">
-            <br/> 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp; <a href="SeamansLog">How to thrive in the modern world</a>  -- Deep thoughts by   <a href="MarkSeaman/">Mark Seaman</a> 
-<br/> 
-<br/> 
-<br/> 
-        </div>
-     </tab>
-     <tab heading="Shrinking World Guides">
-        <div class="page">
-            <br/>&nbsp;&nbsp;&nbsp;&nbsp; by  <a href="http://markseaman.org/">Mark Seaman</a> 
-<br/> 
-<br/> This series of microbooks is published by Shrinking World Solutions.
-<br/> Each series of articles is really a small book covering a single
-<br/> topic.  This information is available to you as a personal resource.
-<br/> Enjoy the content, use it however you like, and pass it on to someone
-<br/> else.
-<br/> 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="BitRot">Fight Bit Rot</a>  - Join the fight against software decay!
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="Software">World-class Software</a> 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="SuperPower">Super-power Handbook</a> 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="Brain">How to build an exterior brain</a> 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="Ideas">Ideas</a> 
-<br/> 
-        </div>
-     </tab>
-  </tabset>
-</div>
+redirect:seaman/./Index
 <br/> <h1>Mark Seaman Home</h1>
 <br/> 
 <br/> You are currently logged in as 'seaman'.
 <br/> 
 <br/>  <a href="BizPlan">BizPlan</a> 
 <br/> 
-<br/> <h1>Mark Seaman Home</h1>
-<br/> 
-<br/> You are currently logged in as 'seaman'.
-<br/> 
-<br/>  <a href="BizPlan">BizPlan</a> 
-<br/> 
-<br/> <h1>Biz Plan</h1>
-<br/> Shrinking World Solutions master plan
-<br/> _____________________________________________________________________________
-<br/> 
-<br/> 
-<div ng-controller="TabbedViewCtrl">
-  <tabset ng-show="true">
-     <tab heading="Actions">
-        <div class="page">
-            <br/>&nbsp;&nbsp;&nbsp;&nbsp; Business development ideas
-<br/>&nbsp;&nbsp;&nbsp;&nbsp; pay Todd
-<br/>&nbsp;&nbsp;&nbsp;&nbsp; clarify Todd's role
-<br/>&nbsp;&nbsp;&nbsp;&nbsp; Business Debt
-<br/>&nbsp;&nbsp;&nbsp;&nbsp; get EW & Todd on SWS Biz Plan
-<br/>&nbsp;&nbsp;&nbsp;&nbsp; sws tasks
-<br/>&nbsp;&nbsp;&nbsp;&nbsp; define core business systems
-<br/> 
-<br/> 
-        </div>
-     </tab>
-     <tab heading="Practices">
-        <div class="page">
-            <br/> Things that drive our business
-<br/> 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="SWS/DocumentsToWrite">Documents</a> 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="CompanyServices">CompanyServices</a> 
-<br/> 
-<br/> 
-        </div>
-     </tab>
-     <tab heading="Clients">
-        <div class="page">
-            <br/> 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="Watermill/Index">Watermill</a> 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="PipeScan/Index">Pipe Scan</a> 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="SWS/Index">SWS Projects</a> 
-<br/> 
-<br/> 
-<br/> 
-        </div>
-     </tab>
-     <tab heading="History">
-        <div class="page">
-            <br/> 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="Meetings/Index">Meetings</a> 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="History">History</a> 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="History/2014-01-Done">Done</a> 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="History/2014-01-Time">Time</a> 
-<br/> 
-<br/> 
-<br/> 
-        </div>
-     </tab>
-  </tabset>
-</div>
+redirect:seaman/BizPlan/Index

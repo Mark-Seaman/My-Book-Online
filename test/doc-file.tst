@@ -25,10 +25,3 @@ doc-file mybookonline.org/Public/Index
 doc-file mybookonline.org/seaman
 doc-file mybookonline.org/seaman/Index
 doc-file mybookonline.org/Public/test/TestDoc
-
-# Show docs as HTML
-doc-show localhost:8052/Public
-#doc-show localhost:8052/Public/Index
-#doc-show localhost:8052/seaman
-#doc-show localhost:8052/seaman/Index
-#doc-show localhost:8052/Public/test/TestDoc
