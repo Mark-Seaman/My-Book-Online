@@ -49,12 +49,12 @@ def log_page(request,title):
     Log the page hit in page.log  (time, ip, user, page, doc) 
     '''
     u   = user(request)
-    if ':' in title:
-        doc = title
-    else:
-        doc = join(u, title)
+    #if ':' in title:
+    #    doc = title
+    #else:
+    #    doc = join(u, title)
     f=open(logFile,'a')
-    options = (str(datetime.now()), ip(request), request.get_host(), u, request.path, doc)
+    options = (str(datetime.now()), ip(request), user_doc(request,title))
     f.write(', '.join(options)+'\n')
     f.close()
 
