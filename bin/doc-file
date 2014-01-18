@@ -28,7 +28,7 @@ def domain_map():
     Read the domain mapping from a file
     '''
     map = {}
-    for d in open(doc_file('Domains')).read().split('\n'):
+    for d in open(join(environ['pd'],'Domains')).read().split('\n'):
         d = d.split(' ')
         if len(d)==2:
             map[d[0]] = d[1]
@@ -53,7 +53,7 @@ def doc_path(path):
         user = 'Public'
 
     file = path[2:]
-    return '/'.join([user,domain] + file)
+    return '/'.join([user,domain] + file).replace('/./','/')
 
 
 path   = ['','']

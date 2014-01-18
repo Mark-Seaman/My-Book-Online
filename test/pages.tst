@@ -7,7 +7,7 @@ from platform import node
 
 port = environ['port']
 host = 'localhost:'+port
-pages = open('page_list').read()
+pages = open(environ['pt']+'/page_list').read()
 
 chdir (join(environ['p'],'test'))
 

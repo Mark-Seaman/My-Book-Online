@@ -300,6 +300,39 @@ def read_text(f):
     return 'No file found, '+f
 
 
+def domain_map():
+    '''
+    Read the domain mapping from a file
+    '''
+    map = {}
+    for d in open(join(environ['pd'],'Domains')).read().split('\n'):
+        d = d.split(' ')
+        if len(d)==2:
+            map[d[0]] = d[1]
+    return map
+
+
+def doc_path(path):
+    '''
+    Convert a url to a directory
+    '''
+    m = domain_map()
+
+    domain = path[0]
+    if m.has_key(domain):
+        domain = m[domain]
+    else:
+        domain = '.'
+
+    if len(path)>1:
+        user = path[1].replace('Anonymous', 'Public')
+    else:
+        user = 'Public'
+
+    file = path[2:]
+    return '/'.join([user,domain] + file).replace('/./','/')
+
+
 def do_command(cmd, input=None):
     '''
     Run the command as a process and capture stdout & print it
