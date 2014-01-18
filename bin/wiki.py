@@ -332,6 +332,13 @@ def doc_path(path):
     return '/'.join([user,domain] + file).replace('/./','/')
 
 
+def redirect_path(path):
+    '''
+    Return the new url to visit
+    '''
+    print 'redirect:%s/Index' % '/'.join(path[2:])
+
+
 def do_command(cmd, input=None):
     '''
     Run the command as a process and capture stdout & print it
@@ -372,7 +379,8 @@ def show_doc():
     if text:
         print_all_tabs(text,doc)
         return
+    #print 'LOOKING for %s/Index'%doc
     if exists(doc+'/Index'):
-        print'redirect:%s/Index'%doc_path(path)
+        redirect_path(path)
         return
     print 'No file found, '+doc
