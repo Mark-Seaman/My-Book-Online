@@ -71,6 +71,7 @@ e
 elapsed
 emacs.conf
 files.py
+filter-path
 fix-lines
 ga
 gc

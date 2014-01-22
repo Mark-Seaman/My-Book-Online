@@ -2,5 +2,5 @@
 # Test the checked out files
 
 cd $p
-echo $p | sed 's/seaman\/Projects\///'
+echo $p | filter-path
 git status
