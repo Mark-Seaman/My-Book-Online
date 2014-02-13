@@ -3,5 +3,10 @@
 
 doc="$pd"
 f=`doc-file $1`
-[[ -f "$doc/$f" ]] && cat  $doc/$f && exit 0
+
+[ -f "$doc/$f" ]    && 
+[ ! -x "$doc/$f" ]  && 
+cat  $doc/$f        && 
+exit 0
+
 echo "No file found: $doc/$f"

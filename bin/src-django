@@ -2,6 +2,6 @@
 # Django Hammer source code
 
 cd ~/Projects/django-hammer
-ls bin/* | grep -v '^bin/project$\|bin/Welcome'
+ls bin/* | grep -v '^bin/project$\|bin/Welcome\|pyc'
 ls app/*.py  app/*/*.py | tee
 ls test/*.tst | tee

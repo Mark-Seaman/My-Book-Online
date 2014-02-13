@@ -3,7 +3,7 @@
 
 cd $pa
 rbg python manage.py runserver $port > app.log
-sleep 1
+sleep 2
 
 
 

@@ -3,4 +3,4 @@
 
 cd $p
 echo $p | filter-path
-git status
+git status | grep -v 'nothing to commit'
