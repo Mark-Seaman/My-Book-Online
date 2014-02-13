@@ -52,10 +52,6 @@ redirect:/Index
   </tabset>
 </div>
 redirect:/Index
-<br/> <h1>Mark Seaman Home</h1>
-<br/> 
-<br/> You are currently logged in as 'seaman'.
-<br/> 
-<br/>  <a href="BizPlan">BizPlan</a> 
+<br/> No file found: /home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/Index
 <br/> 
 redirect:BizPlan/Index
