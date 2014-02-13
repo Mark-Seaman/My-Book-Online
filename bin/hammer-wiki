@@ -2,5 +2,5 @@
 # Wiki text formatter
 
 
-from wiki       import  print_page_html
+from doc       import  print_page_html
 print_page_html()

@@ -5,7 +5,7 @@ from os import system,environ
 from os.path import join
 from sys import argv
 from datetime           import datetime
-from wiki import doc_path, log_page
+from doc import doc_path, log_page
 
 
 path   = ['','']

@@ -3,35 +3,10 @@ Git orig files
 Git libpeerconnection files
 
 /home/seaman/Projects/mybook:
-app
 bin
-doc
 logs
 test
 webapps
-
-/home/seaman/Projects/mybook/app:
-app.log
-bin
-data
-doc
-httpd.conf
-index.html
-__init__.py
-livebook
-manage.py
-media
-mybook.wsgi
-Private
-scripts
-settings.py
-slides
-templates
-test
-thoughts
-urls.py
-user_doc
-wsgi.py
 
 /home/seaman/Projects/mybook/bin:
 add-testing
@@ -62,6 +37,7 @@ doc-pull-all
 doc-push
 doc-push-all
 doc-put
+doc.py
 doc-random
 doc-recent
 doc-search
@@ -141,12 +117,11 @@ tresults
 trun
 tshow
 tst
+util
 w
 web
 wiki.py
 words
-
-/home/seaman/Projects/mybook/doc:
 
 /home/seaman/Projects/mybook/logs:
 user
