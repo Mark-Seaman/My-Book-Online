@@ -25,3 +25,15 @@ doc-file mybookonline.org/Public/Index
 doc-file mybookonline.org/seaman
 doc-file mybookonline.org/seaman/Index
 doc-file mybookonline.org/Public/test/TestDoc
+
+# Public doc
+doc-file localhost:8052/Public/test/TestDoc
+cat $pd/Public/test/TestDoc
+
+# Private doc
+doc-file localhost:8052/test/Index
+cat $pd/test/Index
+
+doc-file $pd/test/TestDoc
+cat $pd/test/TestDoc
+

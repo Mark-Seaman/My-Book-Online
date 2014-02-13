@@ -18,3 +18,22 @@ Public/MyBookOnline/Index
 seaman/MyBookOnline
 seaman/MyBookOnline/Index
 Public/MyBookOnline/test/TestDoc
+Public/test/TestDoc
+* Test Document *
+
+This is a test.
+test/Index
+* Test User Home *
+This is a test page for the test user.
+
+**Tab 1**
+ This is some text
+
+**Tab 2**
+
+This is some more text
+ 
+home/seaman/Projects/mybook/webapps/mybook/user_doc/test/TestDoc
+* Private Test Document *
+
+This is a test.
