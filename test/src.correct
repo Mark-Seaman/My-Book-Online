@@ -98,6 +98,13 @@ bin/tst
 bin/web
 bin/wiki.py
 bin/words
+
+bin/util:
+files.py
+hammer.py
+__init__.py
+tabs.py
+wiki.py
 app/doc/__init__.py
 app/doc/models.py
 app/doc/tests.py
