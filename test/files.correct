@@ -76,12 +76,6 @@ fix-lines
 ga
 gc
 hammer-add
-hammer-app-clear
-hammer-app-config
-hammer-app-disable
-hammer-app-enable
-hammer-app-info
-hammer-apps
 hammer-clone
 hammer-data
 hammer-dj-new
@@ -92,7 +86,6 @@ hammer-generate
 hammer-index
 hammer-list
 hammer-read
-hammer-resume
 hammer-show
 hammer-table
 hammer-tabs

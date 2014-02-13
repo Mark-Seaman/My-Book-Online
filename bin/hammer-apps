@@ -1,8 +1,0 @@
-#!/bin/bash
-# List available apps
-
-user=$1
-[ "$1" == "" ] && user=SimpleApps
-
-cat $pd/$user/.apps
-

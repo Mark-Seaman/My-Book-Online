@@ -1,5 +1,0 @@
-#!/bin/bash
-# Display info aboutthe app
-
-echo "Name: `cat $pd/template/$1/.name`"
-cat $pd/template/$1/.description

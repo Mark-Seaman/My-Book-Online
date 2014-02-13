@@ -1,9 +1,0 @@
-#!/bin/bash
-# Enable a single application
-
-user=$1
-app=$2
-
-# Remove the app
-rm -f $pd/$user/.apps
-touch $pd/$user/.apps
