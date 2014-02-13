@@ -32,14 +32,14 @@ p a {
 }
 
 p {
-    line-height: 140%;
-    font-size: 12pt;
+    /* line-height: 140%; */
+    /* font-size: 12pt; */
     color: #444;
 }
 
 li {
     line-height: 100%;
-    font-size: 12pt;
+    /* font-size: 12pt; */
     color: #444;
 }
 
