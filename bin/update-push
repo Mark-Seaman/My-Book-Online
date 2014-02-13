@@ -1,4 +1,0 @@
-#!/bin/bash
-# Pull code from source
-
-cp  $p/$1  $2/$1
