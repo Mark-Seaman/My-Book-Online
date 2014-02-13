@@ -98,7 +98,7 @@ def add_doc(title):
     '''
     Create the document using a template
     '''
-    return do_command('hammer-add %s'%title)
+    return do_command('doc-add %s'%title)
 
 
 def write_doc(title,body):
@@ -112,31 +112,3 @@ def write_doc(title,body):
 def delete_doc(title):
     if is_doc(title):
         remove(doc_file(title))
-
-
-def list_tests(title):
-    '''
-    Generate a list of test files in CSV format
-    '''
-    return do_command('hammer-tests '+title)
-
-
-def generate(title):
-    '''
-    Generate a list of test files in CSV format
-    '''
-    return do_command('hammer-wmd '+title)
-
-
-def enable_app(user, title):
-    '''
-    Enable an app for a user
-    '''
-    do_command('app-enable %s %s'%(user,title))
-
-
-def disable_app(user, title):
-    '''
-    Disable an app for a user
-    '''
-    do_command('app-disable %s %s'%(user,title))
