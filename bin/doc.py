@@ -84,31 +84,31 @@ def map_doc_path(url):
 #-----------------------------------------------------------------------------
 # Page
 
-def do_command(cmd, input=None):
-    '''
-    Run the command as a process and capture stdout & print it
-    '''
-    try:
-        if input:
-            p = Popen(cmd.split(), stdin=PIPE, stdout=PIPE)
-            p.stdin.write(input)
-            p.stdin.close()
-        else:
-            p = Popen(cmd.split(), stdout=PIPE)
-            return  p.stdout.read()
-    except:
-        return '<h1>Command Error</h1>'+\
-            '<p>An error occurred while trying to execute the command:</p>'+\
-            '<p>COMMAND: %s</p>'%cmd +\
-            '<p>INPUT: %s</p>'%input
+# def do_command(cmd, input=None):
+#     '''
+#     Run the command as a process and capture stdout & print it
+#     '''
+#     try:
+#         if input:
+#             p = Popen(cmd.split(), stdin=PIPE, stdout=PIPE)
+#             p.stdin.write(input)
+#             p.stdin.close()
+#         else:
+#             p = Popen(cmd.split(), stdout=PIPE)
+#             return  p.stdout.read()
+#     except:
+#         return '<h1>Command Error</h1>'+\
+#             '<p>An error occurred while trying to execute the command:</p>'+\
+#             '<p>COMMAND: %s</p>'%cmd +\
+#             '<p>INPUT: %s</p>'%input
 
 
-def print_page_html():
-    '''
-    Create html file contents from stdin
-    '''
-    text = stdin.read() 
-    print_all_tabs(text)
+# def print_page_html():
+#     '''
+#     Create html file contents from stdin
+#     '''
+#     text = stdin.read() 
+#     print_all_tabs(text)
 
 
 def show_doc():
