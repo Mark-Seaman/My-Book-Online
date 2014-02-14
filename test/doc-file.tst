@@ -27,13 +27,17 @@ doc-file mybookonline.org/seaman/Index
 doc-file mybookonline.org/Public/test/TestDoc
 
 # Public doc
-doc-file localhost:8052/Public/test/TestDoc
-cat $pd/Public/test/TestDoc
+echo 
+echo Public/test/TestDoc:
+cat $pd/`doc-file localhost:8052/Public/test/TestDoc`
 
 # Private doc
-doc-file localhost:8052/test/Index
-cat $pd/test/Index
+echo
+echo test/Index:
+cat $pd/`doc-file localhost:8052/test/Index`
 
-doc-file $pd/test/TestDoc
-cat $pd/test/TestDoc
+echo
+echo test/TestDoc:
+cat $pd/`doc-file localhost:8052/test/TestDoc`
+
 

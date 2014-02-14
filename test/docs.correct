@@ -894,7 +894,6 @@
 ./seaman/MyPlan/People
 ./seaman/MyPlan/People/Index
 ./seaman/MyPlan/WellsFargo
-./seaman/xxx
 ./seaman/Years
 ./seaman/Years/1959
 ./seaman/Years/1960
@@ -1047,5 +1046,6 @@
 ./template/Years/.template
 ./test
 ./test/Index
+./test/TestDoc
 ./Title
 ./ToDo
