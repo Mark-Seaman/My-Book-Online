@@ -6,14 +6,16 @@
   <tabset ng-show="true">
      <tab heading="Tab 1">
         <div class="page">
-            <br/>  This is some text
+        <b>Tab 1</b>
+<br/>  This is some text
 <br/> 
 <br/> 
         </div>
      </tab>
      <tab heading="Tab 2">
         <div class="page">
-            <br/> 
+        <b>Tab 2</b>
+<br/> 
 <br/> This is some more text
 <br/> 
 <br/> 
@@ -29,14 +31,16 @@
   <tabset ng-show="true">
      <tab heading="Tab 1">
         <div class="page">
-            <br/>  This is some text
+        <b>Tab 1</b>
+<br/>  This is some text
 <br/> 
 <br/> 
         </div>
      </tab>
      <tab heading="Tab 2">
         <div class="page">
-            <br/> 
+        <b>Tab 2</b>
+<br/> 
 <br/> This is some more text
 <br/> 
 <br/> 
@@ -54,7 +58,8 @@
   <tabset ng-show="true">
      <tab heading="Software Engineering">
         <div class="page">
-            <br/> 
+        <b>Software Engineering</b>
+<br/> 
 <br/> Presentations
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="ShrinkingWorld/FCIP">Ft. Collins Internet Pros</a> 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;  <a href="ShrinkingWorld/PythonWebDev">Python Web Developers</a> 
@@ -69,7 +74,8 @@
      </tab>
      <tab heading="Seaman's Log">
         <div class="page">
-            <br/> 
+        <b>Seaman's Log</b>
+<br/> 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp; <a href="SeamansLog">How to thrive in the modern world</a>  -- Deep thoughts by   <a href="MarkSeaman/">Mark Seaman</a> 
 <br/> 
 <br/> 
@@ -78,7 +84,8 @@
      </tab>
      <tab heading="Shrinking World Guides">
         <div class="page">
-            <br/>&nbsp;&nbsp;&nbsp;&nbsp; by  <a href="http://markseaman.org/">Mark Seaman</a> 
+        <b>Shrinking World Guides</b>
+<br/>&nbsp;&nbsp;&nbsp;&nbsp; by  <a href="http://markseaman.org/">Mark Seaman</a> 
 <br/> 
 <br/> This series of microbooks is published by Shrinking World Solutions.
 <br/> Each series of articles is really a small book covering a single
