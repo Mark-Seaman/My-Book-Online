@@ -2,7 +2,7 @@
 # Format the requested document
 
 from sys import argv
-from doc import map_doc_path
+from util.domain import map_doc_path
 
 
 if len(argv)>1: 
