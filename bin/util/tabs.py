@@ -8,7 +8,8 @@ from re         import compile, IGNORECASE, DOTALL
 from subprocess import Popen,PIPE
 from random     import choice
 
-from util.wiki  import convert_html,do_command,read_text
+from util.wiki  import convert_html
+from util.files import do_command,read_text
 
 
 # Feature a single line of the input stream
@@ -39,10 +40,8 @@ def group_tabs(text):
     return results
 
 
+# Print one tab of text
 def print_tab(text):
-    '''
-    Print one tab of text
-    '''
     lines   = text.split('\n')
     heading = lines[0]
     body    = lines[1:]
@@ -54,10 +53,8 @@ def print_tab(text):
     print '     </tab>'
 
 
+# Print all the tabs of text from the file
 def print_all_tabs(text):
-    '''
-    Print all the tabs of text from the file
-    '''
     tab_groups = group_tabs(text)
     tabs = text.split('**')
     body = tabs[0].split('\n')

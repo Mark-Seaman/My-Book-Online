@@ -32,6 +32,12 @@ def path_name (relative_filename):
 def read_input():
     return stdin.read().split('\n')
 
+# Return the text from the file
+def read_text(f):
+    if exists(f):
+        return open(f).read()
+    return 'No file found, '+f
+
 # Read lines from a file and strip off the tailing newline
 def read_file(filename):
     if not exists(filename): return [ ]
@@ -83,15 +89,22 @@ def print_list2 (list):
 
 # Run the command as a process and capture stdout & print it
 def do_command(cmd, input=None):
-    if input:
-        p = Popen(cmd.split(), stdin=PIPE, stdout=PIPE)
-        p.stdin.write(input)
-        p.stdin.close()
-    else:
-        p = Popen(cmd.split(), stdout=PIPE)
-    return  p.stdout.read()[:-1]
+    try:
+        if input:
+            p = Popen(cmd.split(), stdin=PIPE, stdout=PIPE)
+            p.stdin.write(input)
+            p.stdin.close()
+        else:
+            p = Popen(cmd.split(), stdout=PIPE)
+            return  p.stdout.read()[:-1]
+    except:
+        return '<h1>Command Error</h1>'+\
+            '<p>An error occurred while trying to execute the command:</p>'+\
+            '<p>COMMAND: %s</p>'%cmd +\
+            '<p>INPUT: %s</p>'%input
 
 # Run a grep command and capture output
 def grep(pattern,file):
     p = Popen(["grep", pattern, file ], stdout=PIPE)
     return  p.stdout.read()
+

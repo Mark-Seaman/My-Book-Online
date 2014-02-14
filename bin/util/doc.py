@@ -2,7 +2,7 @@ from sys        import argv, stdin
 from os.path    import exists,join
 from os         import environ,system
 from util.tabs  import print_tab_doc, print_all_tabs
-from util.wiki  import page_html
+from util.wiki  import convert_html
 
 
 # Create html file contents from stdin
@@ -25,4 +25,11 @@ def doc_show(doc):
             print "redirect:%s/missing" % d
     else:
         system ('hammer-show '+doc)
+
+
+
+# Create html file contents from stdin
+def page_html():
+    text = stdin.read().split('\n')
+    return convert_html(text)
 

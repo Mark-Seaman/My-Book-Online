@@ -16,14 +16,16 @@ This is some more text
   <tabset ng-show="true">
      <tab heading="Tab 1">
         <div class="page">
-            <br/>  This is some text
+        <b>Tab 1</b>
+<br/>  This is some text
 <br/> 
 <br/> 
         </div>
      </tab>
      <tab heading="Tab 2">
         <div class="page">
-            <br/> 
+        <b>Tab 2</b>
+<br/> 
 <br/> This is some more text
 <br/> 
 <br/> 

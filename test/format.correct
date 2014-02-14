@@ -7,13 +7,15 @@
   <tabset ng-show="true">
      <tab heading="Bold text and so much more">
         <div class="page">
-            <br/> More plain text
+        <b>Bold text and so much more</b>
+<br/> More plain text
 <ul><li>Bullet</li></ul>
         </div>
      </tab>
      <tab heading="list item 1">
         <div class="page">
-            <ul><li>Bullet list item 2</li></ul>
+        <b>list item 1</b>
+<ul><li>Bullet list item 2</li></ul>
 <ul><li><i>Italic bullet</i></li></ul>
 <br/>  <a href="Home">Home</a> 
 <br/>  <a href="book/Home">book/Home</a> 
