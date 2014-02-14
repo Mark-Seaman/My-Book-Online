@@ -3,6 +3,7 @@
 
 from sys        import stdin,stdout
 paths = [ '/home/seaman/',  
+          'Projects/mybook/',
           'webapps/django/support/user_doc/', 'doc/' ]
 text = stdin.read()
 for p in paths:

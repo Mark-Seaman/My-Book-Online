@@ -1,7 +1,8 @@
 #!/bin/bash
 # List the source code files
 
-cd $p
-ls bin/* | tee
-find -name '*.py'
-ls test/*.tst | tee
+{
+ls $pb/*
+ls $pt/*.tst
+ls $pa/*/*.py 
+} | filter-path | grep  '/'
