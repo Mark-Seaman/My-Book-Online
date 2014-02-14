@@ -23,11 +23,11 @@ def log_page(doc):
     f.close()
 
 
-def doc_file(path):
-    '''
-    Path to doc in file system
-    '''
-    return join(environ['pd'],path)
+# def doc_file(path):
+#     '''
+#     Path to doc in file system
+#     '''
+#     return join(environ['pd'],path)
 
 
 def read_text(f):
@@ -37,6 +37,19 @@ def read_text(f):
     if exists(f) and isfile(f):
         return open(f).read()
 
+#-----------------------------------------------------------------------------
+# Domains
+
+# def domain_map():
+#     '''
+#     Read the domain mapping from a file
+#     '''
+#     map = {}
+#     for d in open(doc_file('Domains')).read().split('\n'):
+#         d = d.split(' ')
+#         if len(d)==2:
+#             map[d[0]] = d[1]
+#     return map
 
 def domain_map():
     '''
@@ -77,6 +90,17 @@ def redirect_path(path):
     '''
     print 'redirect:%s/Index' % '/'.join(path[2:])
 
+
+def map_doc_path(url):
+    '''
+    lookup the path for the doc for this url
+    '''
+    doc = doc_path(url.split('/'))
+    log_page(doc)
+    return doc
+
+#-----------------------------------------------------------------------------
+# Page
 
 def do_command(cmd, input=None):
     '''
@@ -124,47 +148,3 @@ def show_doc():
         return
     print 'No file found, '+doc
 
-
-#-----------------------------------------------------------------------------
-# Domains
-
-# def domain_map():
-#     '''
-#     Read the domain mapping from a file
-#     '''
-#     map = {}
-#     for d in open(doc_file('Domains')).read().split('\n'):
-#         d = d.split(' ')
-#         if len(d)==2:
-#             map[d[0]] = d[1]
-#     return map
-
-
-# def doc_path(path):
-#     '''
-#     Convert a url to a directory
-#     '''
-#     m = domain_map()
-
-#     domain = path[0]
-#     if m.has_key(domain):
-#         domain = m[domain]
-#     else:
-#         domain = '.'
-
-#     if len(path)>1:
-#         user = path[1].replace('Anonymous', 'Public')
-#     else:
-#         user = 'Public'
-
-#     file = path[2:]
-#     return '/'.join([user,domain] + file)
-
-
-def map_doc_path(url):
-    '''
-    lookup the path for the doc for this url
-    '''
-    doc = doc_path(url.split('/'))
-    log_page(doc)
-    return doc
