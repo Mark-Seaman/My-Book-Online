@@ -4,7 +4,8 @@
 from os.path    import join,exists
 from os         import listdir, environ
 from sys        import argv
-from wiki       import convert_html,read_text
+from util.wiki  import convert_html
+from util.files import read_text
 
 
 def list_index(dir):
