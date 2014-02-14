@@ -37,7 +37,6 @@ doc-pull-all
 doc-push
 doc-push-all
 doc-put
-doc.py
 doc-random
 doc-recent
 doc-search
