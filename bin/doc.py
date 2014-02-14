@@ -23,13 +23,6 @@ def log_page(doc):
     f.close()
 
 
-# def doc_file(path):
-#     '''
-#     Path to doc in file system
-#     '''
-#     return join(environ['pd'],path)
-
-
 def read_text(f):
     '''
     Return the text from the file
@@ -39,17 +32,6 @@ def read_text(f):
 
 #-----------------------------------------------------------------------------
 # Domains
-
-# def domain_map():
-#     '''
-#     Read the domain mapping from a file
-#     '''
-#     map = {}
-#     for d in open(doc_file('Domains')).read().split('\n'):
-#         d = d.split(' ')
-#         if len(d)==2:
-#             map[d[0]] = d[1]
-#     return map
 
 def domain_map():
     '''
@@ -127,7 +109,6 @@ def print_page_html():
     '''
     text = stdin.read() 
     print_all_tabs(text)
-    #print '\n'.join(lines)
 
 
 def show_doc():
@@ -136,13 +117,11 @@ def show_doc():
         path = argv[1].split('/')
 
     doc = join(environ['pd'], doc_path(path))
-    #print 'doc:', doc
     log_page(doc)
     text = read_text(doc)
     if text:
         print_all_tabs(text,doc)
         return
-    #print 'LOOKING for %s/Index'%doc
     if exists(doc+'/Index'):
         redirect_path(path)
         return
