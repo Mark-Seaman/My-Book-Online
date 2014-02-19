@@ -1,3 +1,4 @@
-No file found: /home/seaman/Projects/mybook/webapps/mybook/user_doc/usage: doc-file localhost:8080/seaman/Book/Index
-No file found: webapps/mybook/user_TestDoc/.
-No file found: /home/seaman/Projects/mybook/webapps/mybook/user_doc/TestDoc/.
+usage: doc-get doc
+No doc found, webapps/mybook/user_test/TestDoc
+My new doc
+

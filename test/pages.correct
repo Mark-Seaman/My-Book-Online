@@ -1,5 +1,5 @@
-17c17
-< Software Engineering
+10c10
+< xxx
 ---
 > 
 17c17
@@ -7,16 +7,34 @@
 ---
 > 
 10c10
-< 2014-02-19
+< xxx
 ---
+> 
+17c17
+< Software Engineering
+---
+> 
+3,5c3,19
+< Title:http://bizplan/Index is not available
+< This webpage is not available
+< MoreReload
+---
+> Title:http://shrinking-world.org/BizPlan/Index
+> shrinking-world.org
+> Log In
+> Home   
+> 
+> Biz Plan
+> 
 > 2014-02-14
-18,19d17
-< Done
-<      Feb 2014     Time
-21,22c19
-<      debug ssh $z
-<      fix $z
----
+> 
+> MyPlan     History     Directory     Meetings
+> _____________________________________________________________________________
+> 
+> Done
+> Actions
+> Roles
+> 
 >      Feb 2014     Time
 10c10
 < 2014-02-19

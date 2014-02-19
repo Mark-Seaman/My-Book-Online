@@ -1046,8 +1046,6 @@
 ./template/Years
 ./template/Years/Index
 ./template/Years/.template
-./test
-./test/Index
-./test/TestDoc
+./TestDoc
 ./Title
 ./ToDo

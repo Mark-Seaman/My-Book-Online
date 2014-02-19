@@ -3,7 +3,7 @@
 
 {
 cd $p
-find bin | grep -v '.pyc\|^bin$'
+find bin | grep -v '.pyc\|^bin$\|^bin/util$'
 find webapps/mybook -name '*.py' 
 find test -name '*.tst' 
 } | sort

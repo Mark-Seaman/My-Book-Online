@@ -1,5 +1,7 @@
-diff bin/doc-get /home/seaman/Projects/jack-hammer/bin/doc-get
-diff bin/doc-put /home/seaman/Projects/jack-hammer/bin/doc-put
 diff bin/doc-show /home/seaman/Projects/jack-hammer/bin/doc-show
+diff bin/project /home/seaman/Projects/jack-hammer/bin/project
 diff bin/src /home/seaman/Projects/jack-hammer/bin/src
+diff bin/util/doc.py /home/seaman/Projects/jack-hammer/bin/util/doc.py
+diff bin/util/tabs.py /home/seaman/Projects/jack-hammer/bin/util/tabs.py
+diff test/src.tst /home/seaman/Projects/jack-hammer/test/src.tst
 diff test/update.tst /home/seaman/Projects/jack-hammer/test/update.tst
