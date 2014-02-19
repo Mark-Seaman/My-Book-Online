@@ -9,10 +9,12 @@ bin/doc-pull
 bin/doc-push
 bin/doc-put
 bin/doc-show
+bin/e
 bin/elapsed
 bin/filter-path
 bin/lc
 bin/mkexe
+bin/project
 bin/range
 bin/rbg
 bin/rmas
@@ -25,23 +27,22 @@ bin/tlike
 bin/tlist
 bin/tmklike
 bin/tnew
+bin/todo
 bin/tout
 bin/tresults
 bin/trun
 bin/tshow
 bin/tst
-
-bin/util:
-date.py
-doc.py
-domain.py
-files.py
-hammer.py
-__init__.py
-list.py
-table.py
-tabs.py
-wiki.py
+bin/util/date.py
+bin/util/doc.py
+bin/util/domain.py
+bin/util/files.py
+bin/util/hammer.py
+bin/util/__init__.py
+bin/util/list.py
+bin/util/table.py
+bin/util/tabs.py
+bin/util/wiki.py
 test/content.tst
 test/doc-get.tst
 test/doc-put.tst
@@ -49,6 +50,7 @@ test/doc-show.tst
 test/docs.tst
 test/files.tst
 test/git.tst
+test/src.tst
 test/update.tst
 
 Django Hammer Source:
