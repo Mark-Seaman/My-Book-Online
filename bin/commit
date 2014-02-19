@@ -1,8 +1,9 @@
 #!/bin/bash
 # Commit all changes to the remote repo
 
-cd $p               && 
-git add -A .        && 
-git commit -m"$1"   &&
+cd $p                
+git add -A .         
+git commit -m"$1"   
+
 git pull            &&
 git push

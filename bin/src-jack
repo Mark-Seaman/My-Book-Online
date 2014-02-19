@@ -4,7 +4,7 @@
 [ -d "$jack" ] &&
 {
     cd $jack
-    find bin | grep -v '.pyc'
+    find bin | grep -v '.pyc\|^bin$'
     find test -name '*.tst' 
 } | sort
 

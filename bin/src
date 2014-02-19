@@ -1,5 +1,5 @@
 #!/bin/bash
-# List the source code files
+# List all the source code
 
 {
 cd $p
@@ -8,5 +8,3 @@ find webapps/mybook -name '*.py'
 find test -name '*.tst' 
 } | sort
 
-
-#| filter-path | grep  '/'
