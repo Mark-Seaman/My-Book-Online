@@ -2,7 +2,11 @@
 # List the source code files
 
 {
-ls $pb/*
-ls $pt/*.tst
-ls $pa/*/*.py 
-} | filter-path | grep  '/'
+cd $p
+find bin | grep -v '.pyc\|^bin$'
+find webapps/mybook -name '*.py' 
+find test -name '*.tst' 
+} | sort
+
+
+#| filter-path | grep  '/'
