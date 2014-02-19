@@ -4,8 +4,11 @@ bin/commit
 bin/create
 bin/doc-diff
 bin/doc-diff-all
+bin/doc-get
 bin/doc-pull
 bin/doc-push
+bin/doc-put
+bin/doc-show
 bin/elapsed
 bin/filter-path
 bin/lc
@@ -14,7 +17,7 @@ bin/range
 bin/rbg
 bin/rmas
 bin/show
-bin/src-jack
+bin/src
 bin/tdiff
 bin/te
 bin/tfail
@@ -27,10 +30,26 @@ bin/tresults
 bin/trun
 bin/tshow
 bin/tst
-bin/wiki.py
+
+bin/util:
+date.py
+doc.py
+domain.py
+files.py
+hammer.py
+__init__.py
+list.py
+table.py
+tabs.py
+wiki.py
+test/content.tst
+test/doc-get.tst
+test/doc-put.tst
+test/doc-show.tst
 test/docs.tst
 test/files.tst
 test/git.tst
+test/update.tst
 
 Django Hammer Source:
 bin/add-testing

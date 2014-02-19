@@ -1,0 +1,5 @@
+diff bin/doc-get /home/seaman/Projects/jack-hammer/bin/doc-get
+diff bin/doc-put /home/seaman/Projects/jack-hammer/bin/doc-put
+diff bin/doc-show /home/seaman/Projects/jack-hammer/bin/doc-show
+diff bin/src /home/seaman/Projects/jack-hammer/bin/src
+diff test/update.tst /home/seaman/Projects/jack-hammer/test/update.tst

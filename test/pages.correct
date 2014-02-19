@@ -6,14 +6,30 @@
 < Software Engineering
 ---
 > 
-18c18
-< Done
+10c10
+< 2014-02-19
 ---
-> 
-18c18
+> 2014-02-14
+18,19d17
 < Done
+<      Feb 2014     Time
+21,22c19
+<      debug ssh $z
+<      fix $z
 ---
-> 
+>      Feb 2014     Time
+10c10
+< 2014-02-19
+---
+> 2014-02-14
+18,19d17
+< Done
+<      Feb 2014     Time
+21,22c19
+<      debug ssh $z
+<      fix $z
+---
+>      Feb 2014     Time
 Testing Host: localhost:8054
 localhost:8054 Index
 localhost:8054 test/TestDoc
