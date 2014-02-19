@@ -72,7 +72,7 @@ def print_tab_doc(f):
     '''
     Formatter to add tabs to the HTML formatting
     '''
-    f = join(environ['pd'], f)
+    #f = join(environ['pd'], f)
     text = read_text(f)
     text = extract_random_line(text)
     print_all_tabs(text)

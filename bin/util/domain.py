@@ -8,7 +8,7 @@ from sys        import argv, stdin
 
 from wiki  import *
 from files import read_text
-from tabs  import print_all_tabs
+from tabs  import print_tab_doc
 
 
 #-----------------------------------------------------------------------------
@@ -62,7 +62,8 @@ def doc_path(path):
 
 # Return the new url to visit
 def redirect_path(path):
-    print 'redirect:%s/Index' % '/'.join(path[2:])
+    url = '/'.join(path[2:])
+    return 'redirect:/' + url
 
 
 # lookup the path for the doc for this url
@@ -74,19 +75,23 @@ def map_doc_path(url):
 #-----------------------------------------------------------------------------
 # Page
 
-def show_domain_doc():
-    path   = ['','']
-    if len(argv)>1: 
-        path = argv[1].split('/')
-
+# Either format the doc or return the redirect page
+def show_domain_doc(url):
+    path = url.split('/')
     doc = join(environ['pd'], doc_path(path))
     log_page(doc)
-    text = read_text(doc)
-    if text:
-        print_all_tabs(text)
-        return
-    if exists(doc+'/Index'):
-        redirect_path(path)
-        return
-    print 'No file found, '+doc
 
+    if exists(doc):
+        if isfile(doc):
+            #print 'DOCFILE='+doc
+            print_tab_doc(doc)
+        else:
+            #print 'DOCDIR='+doc
+            index = join(doc,'Index')
+            if exists(index):
+                #print 'INDEX='+index
+                print redirect_path(path) + '/Index'
+            else:
+                print redirect_path(path) + '/missing'
+    else:
+        print redirect_path(path) + '/missing' 
