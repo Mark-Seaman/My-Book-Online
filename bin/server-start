@@ -2,7 +2,7 @@
 # Start the local web server
 
 cd $pa
-rbg python manage.py runserver $port > app.log
+rbg python manage.py runserver $port > $p/logs/user/app.log
 sleep 2
 
 
