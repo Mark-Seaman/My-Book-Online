@@ -24,7 +24,6 @@ demote
 deploy
 doc-commit
 doc-container
-doc-content
 doc-diff-all
 doc-file
 doc-get
@@ -32,6 +31,7 @@ doc-index
 doc-list
 doc-new-page
 doc-oldest
+doc-page
 doc-pull
 doc-pull-all
 doc-push
@@ -142,7 +142,6 @@ hammer.tst
 local_settings.py
 page_list
 pages
-pages.correct
 pages.tst
 page_test.py
 pick.correct
@@ -152,8 +151,6 @@ quote.tst
 quote.txt
 random.correct
 random.tst
-show.correct
-show.tst
 src.correct
 src.tst
 trun.correct

@@ -40,22 +40,26 @@ doc-get Public/test/TestDoc2
 echo 
 echo 'Redirect to Index'
 echo '------------------'
-doc-show localhost:8052/Public/test
+doc-show Public/test
+doc-page localhost:8052/Public/test
 
 echo 
 echo 'Index'
 echo '------------------'
-doc-show localhost:8052/Public/test/Index
+doc-show Public/test/Index
+doc-page localhost:8052/Public/test/Index
 
 echo 
 echo 'Formatted output'
 echo '------------------'
-doc-show localhost:8052/Public/test/TestDoc1
+doc-show Public/test/TestDoc1
+doc-page localhost:8052/Public/test/TestDoc1
 
 echo 
 echo 'Test missing file'
 echo '------------------'
-doc-show localhost:8052/Public/test/xxx
+doc-show Public/test/xxx
+doc-page localhost:8052/Public/test/xxx
 
 # Clean up after test
 rm $pd/Public/test/*
