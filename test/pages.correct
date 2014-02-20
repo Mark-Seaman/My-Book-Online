@@ -6,6 +6,20 @@
 < Software Engineering
 ---
 > 
+3,5c3,11
+< Title:http://test/TestDoc/missing is not available
+< This webpage is not available
+< MoreReload
+---
+> Title:http://shrinking-world.org/test/TestDoc
+> shrinking-world.org
+> Log In
+> Home   
+> 
+> Test Document
+> 
+> 
+> This is a test.
 10c10
 < xxx
 ---

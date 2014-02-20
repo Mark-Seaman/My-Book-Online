@@ -2,6 +2,8 @@ diff bin/doc-show /home/seaman/Projects/jack-hammer/bin/doc-show
 diff bin/project /home/seaman/Projects/jack-hammer/bin/project
 diff bin/src /home/seaman/Projects/jack-hammer/bin/src
 diff bin/util/doc.py /home/seaman/Projects/jack-hammer/bin/util/doc.py
+diff bin/util/domain.py /home/seaman/Projects/jack-hammer/bin/util/domain.py
 diff bin/util/tabs.py /home/seaman/Projects/jack-hammer/bin/util/tabs.py
+diff test/doc-put.tst /home/seaman/Projects/jack-hammer/test/doc-put.tst
 diff test/src.tst /home/seaman/Projects/jack-hammer/test/src.tst
 diff test/update.tst /home/seaman/Projects/jack-hammer/test/update.tst

@@ -1,39 +1,20 @@
-Public/.
-Public/Index
-seaman/.
-seaman/Index
-Public/test/TestDoc
-Public/.
-Public/Index
-seaman/.
-seaman/Index
-Public/test/TestDoc
-Public/.
-Public/Index
-seaman/.
-seaman/Index
-Public/test/TestDoc
-Public/MyBookOnline
-Public/MyBookOnline/Index
-seaman/MyBookOnline
-seaman/MyBookOnline/Index
-Public/MyBookOnline/test/TestDoc
-
-Public/test/TestDoc:
-* Test Document *
-
-This is a test.
-
-test/Index:
-* Test User Home *
-This is a test page for the test user.
-
-**Tab 1**
- This is some text
-
-**Tab 2**
-
-This is some more text
- 
-
-test/TestDoc:
+/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/.
+/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/Index
+/home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/.
+/home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/Index
+/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/test/TestDoc
+/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/.
+/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/Index
+/home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/.
+/home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/Index
+/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/test/TestDoc
+/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/.
+/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/Index
+/home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/.
+/home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/Index
+/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/test/TestDoc
+/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/MyBookOnline
+/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/MyBookOnline/Index
+/home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/MyBookOnline
+/home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/MyBookOnline/Index
+/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/MyBookOnline/test/TestDoc
