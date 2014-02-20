@@ -1,13 +1,13 @@
 
 
-Title:http://shrinking-world.org/BizPlan/Index
+Title:http://shrinking-world.org/BizPlan/Index%0A
 shrinking-world.org
 Log In
 Home   
 
 Biz Plan
 
-2014-02-14
+2014-02-19
 
 MyPlan     History     Directory     Meetings
 _____________________________________________________________________________
@@ -15,5 +15,8 @@ _____________________________________________________________________________
 Done
 Actions
 Roles
-
+Done
      Feb 2014     Time
+
+     debug ssh $z
+     fix $z
