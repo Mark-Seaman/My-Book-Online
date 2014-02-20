@@ -60,6 +60,9 @@ def to_date(s):
 def date_str(t):
     return t.strftime("%Y-%m-%d")
 
+def date_str_with_time(t):
+    return t.strftime("%Y-%m-%d-%H-%M")
+
 # Return date today as a string
 def today_str():
     return date_str(datetime.today())  
@@ -95,6 +98,26 @@ def filename_time_string(time=datetime.now()):
 def filename_string_time(string):
      return to_date_time(string, "%Y-%m-%d_%H%M")
 
+# Function to test if a string is a Watermill formatted string
+def is_wm_date_string(s):
+    return (len(s) > 15 and s[0] == '2' and s[1] == '0' and s[8]== '-')
+
+# Funcion to test if a sring is YYYY-MM-DD or YY-MM-DD-hh-mm formatted
+def is_YYYY_MM_DD_date_string(s):
+    if not s.startswith('201'):
+        return False
+    if (len(s) == 10) and s[4] == '-' and s[7] == '-' : 
+        return True
+    if (len(s) == 16) and s[4] == '-' and s[7] == '-' and s[10] == '-' and s[13] == '-' : 
+        return True
+    return False
+
+def convert_YYYY_MM_DD_to_time(str_date):
+    if len(str_date) == 16:
+        return datetime.strptime(str_date,"%Y-%m-%d-%H-%M")
+    if len(str_date) == 10:
+        return datetime.strptime(str_date,"%Y-%m-%d")
+    return "<DATE_ERR>"
 
 #____________________________________________________
 # Fix the string if it is formatted as a new watermill date

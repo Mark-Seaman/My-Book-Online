@@ -846,6 +846,7 @@
 ./seaman/BizPlan/SWS/PageTest
 ./seaman/BizPlan/SWS/Planner
 ./seaman/BizPlan/SWS/PlanningMap
+./seaman/BizPlan/SWS/PythonTools
 ./seaman/BizPlan/SWS/SeamansLog
 ./seaman/BizPlan/SWS/SecureDocs
 ./seaman/BizPlan/SWS/ShrinkingWorldOrg
@@ -858,6 +859,8 @@
 ./seaman/BizPlan/SWS/TextEditor
 ./seaman/BizPlan/SWS/Time
 ./seaman/BizPlan/SWS/Tools
+./seaman/BizPlan/SWS/Training
+./seaman/BizPlan/SWS/TrainingBizPlan
 ./seaman/BizPlan/Watermill
 ./seaman/BizPlan/Watermill/DashboardProject
 ./seaman/BizPlan/Watermill/DataGitRepo
@@ -882,6 +885,7 @@
 ./seaman/MyPlan/Fun/Restaurants
 ./seaman/MyPlan/Fun/TV
 ./seaman/MyPlan/Grow
+./seaman/MyPlan/Grow/Beliefs
 ./seaman/MyPlan/Grow/BloodPressure
 ./seaman/MyPlan/Grow/Conversations
 ./seaman/MyPlan/Grow/DailyStartup
