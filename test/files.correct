@@ -39,6 +39,7 @@ doc-push-all
 doc-put
 doc-random
 doc-recent
+doc-redirect
 doc-search
 doc-show
 doc-template

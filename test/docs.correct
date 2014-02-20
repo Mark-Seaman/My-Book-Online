@@ -372,6 +372,7 @@
 ./Public/MarkSeaman/Title
 ./Public/MarkSeaman/ToolsProcess
 ./Public/MarkSeaman/WebSites
+./Public/MissingFile
 ./Public/MyBookOnline
 ./Public/MyBookOnline/AboutMyBookOnline
 ./Public/MyBookOnline/BuildingUserStories
@@ -401,6 +402,7 @@
 ./Public/MyBookOnline/Title
 ./Public/MyBookOnline/WriteANewArticle
 ./Public/MyBookOnline/WriterUserStories
+./Public/NewPage
 ./Public/NodeHammer
 ./Public/NodeHammer/Advantages
 ./Public/NodeHammer/BasicTricks
@@ -426,6 +428,7 @@
 ./Public/Patterns/Title
 ./Public/Patterns/Tools
 ./Public/Patterns/Writing
+./Public/Register
 ./Public/SeamansLog
 ./Public/SeamansLog/10000Days
 ./Public/SeamansLog/ActToLearn

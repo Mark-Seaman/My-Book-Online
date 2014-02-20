@@ -34,7 +34,7 @@ This is some more text
 Redirect to Index
 ------------------
 redirect:test/Index
-redirect:/test/Index
+test/Index
 
 Index
 ------------------
@@ -103,4 +103,4 @@ Formatted output
 Test missing file
 ------------------
 redirect:test/xxx/missing
-redirect:/test/xxx/missing
+test/xxx/missing
