@@ -129,10 +129,6 @@ content.correct
 content.tst
 doc-file.correct
 doc-file.tst
-doc-get.correct
-doc-get.tst
-doc-put.correct
-doc-put.tst
 docs.correct
 docs.tst
 files.correct

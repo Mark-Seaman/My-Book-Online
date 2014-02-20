@@ -2,6 +2,35 @@
 Create files
 ------------------
 
+Get files
+------------------
+No doc found, /home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/test/Missing
+* Test User Home *
+This is a test page for the test user.
+
+**Tab 1**
+ This is some text
+
+**Tab 2**
+
+This is some more text
+
+* Test Document *
+
+This is a test.
+
+
+* Test User Home *
+This is a test page for the test user.
+
+**Tab 1**
+ This is some text
+
+**Tab 2**
+
+This is some more text
+
+
 Redirect to Index
 ------------------
 redirect:/test/Index
