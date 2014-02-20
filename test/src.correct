@@ -46,7 +46,6 @@ bin/util/wiki.py
 test/content.tst
 test/doc-get.tst
 test/doc-put.tst
-test/doc-show.tst
 test/docs.tst
 test/files.tst
 test/git.tst
