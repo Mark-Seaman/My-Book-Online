@@ -27,6 +27,14 @@ doc-put Public/test/Index < /tmp/t2
 doc-put Public/test/TestDoc1 < /tmp/t1
 doc-put Public/test/TestDoc2 < /tmp/t2
 
+echo 
+echo 'Get files'
+echo '------------------'
+doc-get Public/test/Missing
+doc-get Public/test/Index
+doc-get Public/test/TestDoc1
+doc-get Public/test/TestDoc2
+
 
 # Show docs as HTML
 echo 
