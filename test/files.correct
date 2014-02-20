@@ -142,6 +142,7 @@ hammer.tst
 local_settings.py
 page_list
 pages
+pages.correct
 pages.tst
 page_test.py
 pick.correct
