@@ -20,14 +20,34 @@ This is a test page for the test user.
 This is some more text
 EOF
 
+echo 
+echo 'Create files'
+echo '------------------'
 doc-put Public/test/Index < /tmp/t2
 doc-put Public/test/TestDoc1 < /tmp/t1
 doc-put Public/test/TestDoc2 < /tmp/t2
 
 
 # Show docs as HTML
+echo 
+echo 'Redirect to Index'
+echo '------------------'
 doc-show localhost:8052/Public/test
+
+echo 
+echo 'Index'
+echo '------------------'
 doc-show localhost:8052/Public/test/Index
+
+echo 
+echo 'Formatted output'
+echo '------------------'
 doc-show localhost:8052/Public/test/TestDoc1
 
+echo 
+echo 'Test missing file'
+echo '------------------'
+doc-show localhost:8052/Public/test/xxx
+
+# Clean up after test
 rm $pd/Public/test/*

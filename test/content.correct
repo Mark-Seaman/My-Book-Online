@@ -1,4 +1,13 @@
+
+Create files
+------------------
+
+Redirect to Index
+------------------
 redirect:/test/Index
+
+Index
+------------------
 <br/> <h1>Test User Home</h1>
 <br/> This is a test page for the test user.
 <br/> 
@@ -23,8 +32,15 @@ redirect:/test/Index
      </tab>
   </tabset>
 </div>
+
+Formatted output
+------------------
 <br/> <h1>Test Document</h1>
 <br/> 
 <br/> This is a test.
 <br/> 
 <br/> 
+
+Test missing file
+------------------
+redirect:/test/xxx/missing
