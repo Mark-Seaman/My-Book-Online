@@ -122,3 +122,11 @@ def get_title(text):
         return remove_muse(text[0]).rstrip()[2:][:-2]
     return 'No title'
 
+
+# Turn a wiki work into a title
+def title_text(title):
+    '''
+    Format the title with spaces to break each word.
+    '''
+    title = title[0] + ''.join([ " "+c if c.isupper() else c  for c in title[1:] ])
+    return title 
