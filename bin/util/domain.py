@@ -3,16 +3,9 @@ from datetime   import datetime
 from os         import system,environ
 from os.path    import isfile, exists,join
 from re         import compile, IGNORECASE, DOTALL
-from random     import choice
-from sys        import argv, stdin
 
 from wiki  import *
-from files import read_text
 from tabs  import print_tab_doc
-
-
-#-----------------------------------------------------------------------------
-# File processing
 
 
 # Log the page hit in page.log  (time, ip, user, page, doc) 
@@ -22,14 +15,6 @@ def log_page(doc):
     f.write(str(datetime.now())+',  '+doc+'\n')
     f.close()
 
-
-# Return the text from the file
-def read_text(f):
-    if exists(f) and isfile(f):
-        return open(f).read()
-
-#-----------------------------------------------------------------------------
-# Domains
 
 # Read the domain mapping from a file
 def domain_map():
@@ -61,7 +46,8 @@ def doc_path(path):
 
 
 # Return the new url to visit
-def redirect_path(path):
+def redirect_path(doc):
+    path = doc.split('/')
     url = '/'.join(path[2:])
     return 'redirect:/' + url
 
@@ -70,17 +56,12 @@ def redirect_path(path):
 def map_doc_path(url):
     doc = doc_path(url.split('/'))
     log_page(doc)
-    return doc
+    return join(environ['pd'], doc)
 
-#-----------------------------------------------------------------------------
-# Page
 
 # Either format the doc or return the redirect page
 def show_domain_doc(url):
-    path = url.split('/')
-    doc = join(environ['pd'], doc_path(path))
-    log_page(doc)
-
+    doc = map_doc_path(url)
     if exists(doc):
         if isfile(doc):
             #print 'DOCFILE='+doc
@@ -90,8 +71,8 @@ def show_domain_doc(url):
             index = join(doc,'Index')
             if exists(index):
                 #print 'INDEX='+index
-                print redirect_path(path) + '/Index'
+                print redirect_path(url) + '/Index'
             else:
-                print redirect_path(path) + '/missing'
+                print redirect_path(url) + '/missing'
     else:
-        print redirect_path(path) + '/missing' 
+        print redirect_path(url) + '/missing' 
