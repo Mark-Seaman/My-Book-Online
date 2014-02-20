@@ -45,11 +45,11 @@ def doc_path(path):
     return '/'.join([user,domain] + file).replace('/./','/')
 
 
-# Return the new url to visit
+# Return the new url to visit  (Implied path host/user/doc)
 def redirect_path(doc):
     path = doc.split('/')
     url = '/'.join(path[2:])
-    return 'redirect:/' + url
+    return url
 
 
 # lookup the path for the doc for this url
@@ -60,19 +60,23 @@ def map_doc_path(url):
 
 
 # Either format the doc or return the redirect page
-def show_domain_doc(url):
+def doc_redirect (url):
     doc = map_doc_path(url)
     if exists(doc):
-        if isfile(doc):
-            #print 'DOCFILE='+doc
-            print_tab_doc(doc)
-        else:
+        if not isfile(doc):
             #print 'DOCDIR='+doc
             index = join(doc,'Index')
             if exists(index):
                 #print 'INDEX='+index
                 print redirect_path(url) + '/Index'
             else:
-                print redirect_path(url) + '/missing'
+                print redirect_path(url) + '/Index/missing'
     else:
         print redirect_path(url) + '/missing' 
+
+
+# Either format the doc or return the redirect page
+def show_domain_doc(url):
+    doc = map_doc_path(url)
+    if exists(doc) and isfile(doc):
+        print_tab_doc(doc)

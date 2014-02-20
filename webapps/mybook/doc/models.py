@@ -84,7 +84,14 @@ def format_doc(title):
     '''
     Run the wiki formatter on the document
     '''
-    return do_command('doc-show %s'%title)
+    return do_command('doc-page %s'%title)
+
+
+def redirect_page(title):
+    '''
+    Check to see if this doc causes a redirect
+    '''
+    return do_command('doc-redirect %s'%title)
 
 
 def read_doc(title):

@@ -59,7 +59,7 @@ def new(request,title):
     '''
     Render the view for a missing document
     '''
-    text = format_doc('Anonymous/NewPage') # % title
+    text = format_doc('./Public/NewPage') # % title
     data = {'title':title, 'dir':dirname(title), 'text':text, 
             'default':basename(title), 'newpage':'{{newpage}}'}
     return render(request, 'new.html', data)
@@ -71,7 +71,7 @@ def missing(request,title):
     '''
     #if not permitted(request):
     #    return redirect(request,'login')
-    text = "format_doc('Anonymous/MissingFile') % title"
+    text = format_doc('./Public/MissingFile') % title
     data = {'title':title, 'dir':dirname(title), 'text':text, 
             'default':basename(title), 'newpage':'{{newpage}}'}
     #return render(request, 'missing.html', data)
@@ -84,7 +84,7 @@ def redirect(request,title):
     '''
     Go to a specific page
     '''
-    log_page (request,'redirect:%s'%title)
+    log_page (request,title)
     return HttpResponseRedirect('/'+title) 
 
 
@@ -94,11 +94,16 @@ def doc(request,title):
     '''
     doc = user_doc(request,title)
     log_page (request, title)
+    
+    page = redirect_page(doc)
+    if len(page)>0:
+        return redirect(request,page)
+
     text = format_doc(doc)
-    if text.startswith('redirect:'):
-        return redirect(request,text[len('redirect:'):-1])
+          
     #if not permitted(request, doc):
     #    return redirect(request,'login')
+    
     content =  {'site_title':request.get_host(), 'user':request.user, 'title': title, 'text': text}
     return render(request, 'doc.html', content)
 
@@ -136,6 +141,7 @@ def edit_form (request, doc, title=None, text=None):
     Create a form for editing the object details
     '''
     log_page (request, 'form:%s'%doc)
+    return missing(request,title)
     if request.method == 'POST':
         form = NoteForm(request.POST)
         if request.POST.get('cancel', None):
@@ -174,6 +180,7 @@ def add(request,title):
     Render the add view
     '''
     log_page (request,'add:%s'%title)
+    return missing(request,title)
     text = add_doc(user_doc(request,title))
     if text.startswith('redirect:'):
         return redirect(request,text[len('redirect:'):-1])
@@ -185,6 +192,7 @@ def delete(request,title):
     '''
     doc = user_doc(request,title)
     log_page (request, 'delete: %s'%title)
+    return missing(request,title)
     delete_doc (doc)
     return redirect(request,dirname(title))
 
