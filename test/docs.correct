@@ -776,7 +776,6 @@
 ./Public/SuperPower/YourLearningSystem
 ./Public/SuperPower/YourPlanningSystem
 ./Public/test
-./Public/test/Pick
 ./seaman
 ./seaman/BizPlan
 ./seaman/BizPlan/AppThumper
@@ -1045,6 +1044,8 @@
 ./template/Years
 ./template/Years/Index
 ./template/Years/.template
+./test
 ./TestDoc
+./test/Index
 ./Title
 ./ToDo

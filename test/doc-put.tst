@@ -5,7 +5,7 @@
 doc-get test/TestDoc | filter-path
 
 
-# Create two test files
+# Create test files
 
 cat <<EOF > /tmp/t1
 * Test Document *

@@ -134,8 +134,6 @@ doc-get.tst
 doc-put.correct
 doc-put.tst
 docs.correct
-doc-show.correct
-doc-show.tst
 docs.tst
 files.correct
 files.tst
