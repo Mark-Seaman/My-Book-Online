@@ -780,6 +780,7 @@
 ./Public/SuperPower/YourLearningSystem
 ./Public/SuperPower/YourPlanningSystem
 ./Public/test
+./Public/TestIndex
 ./seaman
 ./seaman/BizPlan
 ./seaman/BizPlan/AppThumper
@@ -1055,6 +1056,9 @@
 ./test
 ./TestDoc
 ./test/Index
+./test/TestDoc1
+./test/TestIndex
+./test/TestPrivateDoc1
 ./Title
 ./ToDo
 ./vars-data
