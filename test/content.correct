@@ -83,3 +83,19 @@ Test missing file
 ------------------
 Public/test/xxx/missing
 test/xxx/missing
+
+Private files
+------------------
+* Test Document *
+This is a test.
+
+
+Public/Private files
+---------------------
+* Test User Home *
+This is a test page for the test user.
+**Tab 1**
+ This is some text
+**Tab 2**
+This is some more text
+

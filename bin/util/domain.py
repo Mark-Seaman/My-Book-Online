@@ -27,6 +27,11 @@ def domain_map():
     return map
 
 
+# Create a path from the dir parts
+def make_path(parts):
+    return '/'.join(parts)
+
+
 # Convert a url to a directory
 def doc_path(path):
     m = domain_map()
@@ -42,8 +47,15 @@ def doc_path(path):
     else:
         user = 'Public'
 
-    file = path[2:]
-    return '/'.join([user,domain] + file).replace('/./','/')
+    parts = [user,domain] + path[2:]
+    return make_path(parts)
+
+
+# Convert a url to a directory
+def public_doc_path(path):
+    path = doc_path(path.split('/'))
+    path[1] = 'Public'
+    return doc_path(path)
 
 
 # Return the new url to visit  (Implied path host/user/doc)
@@ -83,17 +95,13 @@ def show_domain_doc(url):
 
 # Put the document text in storage
 def put_domain_doc(doc):
-    print 'WRITE1:',doc
-    doc = map_doc_path(doc)
-    print 'WRITE2:',doc
-    write_file(doc, read_input())
+    write_file(map_doc_path(doc), read_input())
 
 
 # Get the document text from storage
 def get_domain_doc(doc):
     if not doc_redirect(doc):
-        doc = map_doc_path(doc)
-        print read_text(doc)
+        print read_text(map_doc_path(doc))
     else:
         print "redirect:%s/missing" % doc_redirect(doc)
 

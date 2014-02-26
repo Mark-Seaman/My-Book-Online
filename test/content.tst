@@ -24,8 +24,8 @@ echo
 echo 'Create files'
 echo '------------------'
 doc-put Public/test/Index    < /tmp/t2
-doc-put Public/test/TestDoc1 < /tmp/t1
 doc-put Public/test/TestDoc2 < /tmp/t2
+doc-page-put localhost:8052/Public/test/TestDoc1 < /tmp/t1
 
 echo 
 echo 'Get files'
@@ -65,6 +65,21 @@ echo '------------------'
 doc-show Public/test/xxx
 doc-redirect localhost:8052/Public/test/xxx
 doc-page     localhost:8052/Public/test/xxx
+
+echo 
+echo 'Private files'
+echo '------------------'
+doc-page-put localhost:8052/test/TestPrivateDoc1 < /tmp/t1
+doc-page-get localhost:8052/test/TestPrivateDoc1
+
+echo 
+echo 'Public/Private files'
+echo '---------------------'
+doc-page-put localhost:8052/test/TestIndex   < /tmp/t2
+doc-page-put localhost:8052/Public/TestIndex < /tmp/t1
+doc-page-get localhost:8052/test/TestIndex 
+#doc-page-get localhost:8052/Public/TestIndex 
+
 
 # Clean up after test
 rm $pd/Public/test/*
