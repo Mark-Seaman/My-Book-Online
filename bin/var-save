@@ -1,0 +1,8 @@
+#!/usr/bin/env python
+# Save a list of settings
+
+from sys  import stdin
+from util.vars import process_vars
+
+
+process_vars(stdin.read())

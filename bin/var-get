@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+# Set a variable
+
+from sys  import argv
+from util.vars import lookup
+
+
+# Set this var
+print "%s = %s" %(argv[1],lookup(argv[1]))
+
+

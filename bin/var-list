@@ -1,0 +1,8 @@
+#!/bin/bash
+# List all of the saved vars
+
+f=$pd/vars-data
+[ -f "$p/pipedata/ramdisk/vars-data" ] && f="$p/pipedata/ramdisk/vars-data"
+
+cat $f
+

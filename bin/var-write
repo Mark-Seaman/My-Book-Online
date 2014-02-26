@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+# Write this JSON data into the current state
+
+from sys  import stdin
+from util.vars import save_json
+#from json import dumps, loads
+
+json = stdin.read()
+#print 'JSON = ',json
+save_json(json)
+

@@ -1,0 +1,9 @@
+#!/bin/bash
+# Clear the system vars
+
+f=$pd/vars-data
+[ -f "$p/pipedata/ramdisk/vars-data" ] && f="$p/pipedata/ramdisk/vars-data"
+
+rm $f    
+touch $f
+
