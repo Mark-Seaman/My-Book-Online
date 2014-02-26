@@ -33,6 +33,8 @@ doc-list
 doc-new-page
 doc-oldest
 doc-page
+doc-page-get
+doc-page-put
 doc-pull
 doc-pull-all
 doc-push

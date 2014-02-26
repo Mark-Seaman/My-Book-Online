@@ -780,7 +780,6 @@
 ./Public/SuperPower/YourLearningSystem
 ./Public/SuperPower/YourPlanningSystem
 ./Public/test
-./Public/test/Pick
 ./seaman
 ./seaman/BizPlan
 ./seaman/BizPlan/AppThumper
@@ -1058,3 +1057,4 @@
 ./test/Index
 ./Title
 ./ToDo
+./vars-data
