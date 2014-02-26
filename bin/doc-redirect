@@ -6,6 +6,8 @@ from util.domain import  doc_redirect
 
 
 if len(argv)>1: 
-    doc_redirect(argv[1])
+    d = doc_redirect(argv[1])
+    if d:
+        print d
 else:
     print 'usage: ', argv[0], 'url'

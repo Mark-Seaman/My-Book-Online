@@ -8,6 +8,6 @@ if len(argv)<2:
     print 'usage: doc-page-get doc'
     exit(1)
  
-print get_domain_doc(argv[1])
+get_domain_doc(argv[1])
 
 

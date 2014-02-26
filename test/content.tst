@@ -50,6 +50,7 @@ echo '------------------'
 doc-show Public/test/Index
 doc-redirect localhost:8052/Public/test/Index
 doc-page     localhost:8052/Public/test/Index
+doc-page-get localhost:8052/Public/test/Index
 
 echo 
 echo 'Formatted output'
