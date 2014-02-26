@@ -4,7 +4,8 @@ Create files
 
 Get files
 ------------------
-No doc found, /home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/test/Missing
+redirect:Public/test/Missing/missing
+None
 * Test User Home *
 This is a test page for the test user.
 
@@ -15,11 +16,13 @@ This is a test page for the test user.
 
 This is some more text
 
+None
 * Test Document *
 
 This is a test.
 
 
+None
 * Test User Home *
 This is a test page for the test user.
 
@@ -30,10 +33,11 @@ This is a test page for the test user.
 
 This is some more text
 
+None
 
 Redirect to Index
 ------------------
-redirect:test/Index
+Public/test/Index
 test/Index
 
 Index
@@ -41,27 +45,13 @@ Index
 <br/> <h1>Test User Home</h1>
 <br/> This is a test page for the test user.
 <br/> 
-<br/> 
-<div ng-controller="TabbedViewCtrl">
-  <tabset ng-show="true">
-     <tab heading="Tab 1">
-        <div class="page">
-        <b>Tab 1</b>
+<br/> <b>Tab 1</b>
 <br/>  This is some text
 <br/> 
-<br/> 
-        </div>
-     </tab>
-     <tab heading="Tab 2">
-        <div class="page">
-        <b>Tab 2</b>
+<br/> <b>Tab 2</b>
 <br/> 
 <br/> This is some more text
 <br/> 
-        </div>
-     </tab>
-  </tabset>
-</div>
 <br/> <h1>Test User Home</h1>
 <br/> This is a test page for the test user.
 <br/> 
@@ -102,5 +92,5 @@ Formatted output
 
 Test missing file
 ------------------
-redirect:test/xxx/missing
+Public/test/xxx/missing
 test/xxx/missing
