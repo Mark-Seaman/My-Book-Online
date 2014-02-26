@@ -3,6 +3,8 @@ from os.path    import isfile, isdir, join, dirname, exists, getsize, getmtime
 from sys        import stdin
 from subprocess import Popen,PIPE
 from glob import glob
+from json import dumps,loads
+from string import rstrip
 
 
 # Check if this file is writable
@@ -28,9 +30,20 @@ def time_sort_file(d):
 def path_name (relative_filename):
     return join(getcwd(), relative_filename)
 
+# Read JSON from a file
+def read_json(filename):
+    if exists(filename):
+        return loads(open(filename).read())
+    return {}
+
 # Read the input as lines of text
 def read_input():
-    return stdin.read().split('\n')
+    text = stdin.read().split('\n')
+    return filter(lambda x:len(rstrip(x))>0, text)
+
+# Absolute path name from a relative path name
+def path_name (relative_filename):
+    return join(getcwd(), relative_filename)
 
 # Return the text from the file
 def read_text(f):
@@ -42,15 +55,27 @@ def read_text(f):
 def read_file(filename):
     if not exists(filename): return [ ]
     f=open(filename)
-    results = f.read().split('\n')[:-1]
+    results = f.read().split('\n')
     f.close()
     return results
 
 # Write lines of text to a file
-def write_file(filename, lines):
-    f=open(filename, "w")
+def write_file(filename, lines, append=None):
+    f=open(filename, 'a' if append else 'w')
     f.write("\n".join(lines)+"\n")
     f.close()
+
+# Gather new lines
+def accumulate_new_lines(accumulator,f2):
+    d = dirname(accumulator)
+    if not exists(d):
+        print 'Make directory', d
+        mkdir(d)
+    a1 = read_file(accumulator)
+    a2 = read_file(f2)
+    new_items = [a for a in a2 if not a in a1]
+    if new_items != []:
+        write_file(accumulator,new_items,True)
  
 # Delete a relative path name   
 def delete_file(filename):  
@@ -92,7 +117,7 @@ def do_command(cmd, input=None):
     try:
         if input:
             p = Popen(cmd.split(), stdin=PIPE, stdout=PIPE)
-            p.stdin.write(input)
+            p.stdin.write(input+'\n')
             p.stdin.close()
         else:
             p = Popen(cmd.split(), stdout=PIPE)

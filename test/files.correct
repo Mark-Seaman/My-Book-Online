@@ -118,6 +118,15 @@ trun
 tshow
 tst
 util
+var-clear
+var-get
+var-list
+var-read
+var-save
+vars-edit
+var-set
+vars-show
+var-write
 w
 web
 words
