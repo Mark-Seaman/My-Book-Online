@@ -13,6 +13,7 @@ add-testing
 bash-alias
 bash-prompt
 bashrc
+cache
 chromedriver
 commit
 commit-docs
@@ -167,6 +168,8 @@ src.tst
 trun.correct
 update.correct
 update.tst
+vars.correct
+vars.tst
 
 /home/seaman/Projects/mybook/webapps:
 mybook
