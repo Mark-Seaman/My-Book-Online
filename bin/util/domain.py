@@ -6,6 +6,7 @@ from re         import compile, IGNORECASE, DOTALL
 
 from wiki  import *
 from tabs  import print_tab_doc
+from files import read_input, write_file, is_writable
 
 
 # Log the page hit in page.log  (time, ip, user, page, doc) 
@@ -64,10 +65,8 @@ def doc_redirect (url):
     doc = map_doc_path(url)
     if exists(doc):
         if not isfile(doc):
-            #print 'DOCDIR='+doc
             index = join(doc,'Index')
             if exists(index):
-                #print 'INDEX='+index
                 print redirect_path(url) + '/Index'
             else:
                 print redirect_path(url) + '/Index/missing'
@@ -80,3 +79,21 @@ def show_domain_doc(url):
     doc = map_doc_path(url)
     if exists(doc) and isfile(doc):
         print_tab_doc(doc)
+
+
+# Put the document text in storage
+def put_domain_doc(doc):
+    print 'WRITE1:',doc
+    doc = map_doc_path(doc)
+    print 'WRITE2:',doc
+    write_file(doc, read_input())
+
+
+# Get the document text from storage
+def get_domain_doc(doc):
+    if not redirect_path(doc):
+        doc = map_doc_path(doc)
+        print read_text(doc)
+    else:
+        print "redirect:%s/missing" % doc
+

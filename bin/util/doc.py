@@ -11,7 +11,7 @@ from os.path    import exists, join, isfile
 from os         import environ,system
 from util.tabs  import print_tab_doc, print_all_tabs
 from util.wiki  import convert_html
-from util.files import read_text, read_file, write_file
+from util.files import read_input, read_text, read_file, write_file
 
 #-----------------------------------------------------------------------------
 # Add ins
@@ -119,11 +119,7 @@ def doc_show(doc):
 
 # Put the document text in storage
 def doc_put(doc):
-    if not redirect_path(doc):
-        path = doc_path(doc)
-        write_file(f, read_input())
-    else:
-        print "redirect:%s/missing" % doc
+    write_file(doc_path(doc), read_input())
 
 
 # Get the document text from storage

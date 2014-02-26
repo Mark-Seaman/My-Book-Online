@@ -23,7 +23,7 @@ EOF
 echo 
 echo 'Create files'
 echo '------------------'
-doc-put Public/test/Index < /tmp/t2
+doc-put Public/test/Index    < /tmp/t2
 doc-put Public/test/TestDoc1 < /tmp/t1
 doc-put Public/test/TestDoc2 < /tmp/t2
 
