@@ -1,12 +1,7 @@
 #!/bin/bash
-# Find text in source code
+# Search for strings in source code
 
-for f in `src`
-do 
-    x=`grep $* $p/$f`
-    [ ! -z "$x" ] && echo "$x" |
-    while read line
-    do
-        echo "$f: $line"
-    done
-done 
+cd $p
+grep $* `src`
+
+

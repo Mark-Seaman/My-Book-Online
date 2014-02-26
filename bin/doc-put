@@ -3,7 +3,9 @@
 
 from sys        import argv, stdin
 from os.path    import exists,join,dirname
-from os         import environ
+from os         import environ,mkdir
+from util.files import create_directory
+
 
 if len(argv)<2:
     print 'usage: doc-put doc < text'
@@ -11,9 +13,7 @@ if len(argv)<2:
 
 f = join(environ['pd'],argv[1])
 d = dirname(f)
-if not exists(d):
-    print 'No dir found, %s'%d
-    mkdir(d)
+create_directory(d)
 
 o = open(f,'w')
 o.write(stdin.read())

@@ -2,10 +2,17 @@
 # Remove all numbers in the output
 
 from sys        import stdin,stdout
-paths = [ '/home/seaman/',  
-          'Projects/mybook/',
-          'webapps/django/support/user_doc/', 'doc/' ]
+paths = '''/home/wmexpress/
+/home/wmexpress2/
+/home/seaman/
+/home/prs/
+webapps/django/support/user_doc/
+Projects/thumper/
+Projects/pipescan/
+Projects/mybook/
+'''
+
 text = stdin.read()
-for p in paths:
+for p in paths.split('\n'):
     text = text.replace(p,'')
 stdout.write(text)

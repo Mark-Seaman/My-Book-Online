@@ -5,15 +5,12 @@ from sys        import argv
 from os.path    import exists,join
 from os         import environ
 
+from util.doc import  doc_get
+
 if len(argv)<2:
     print 'usage: doc-get doc'
     exit(1)
-
-f = join(environ['pd'],argv[1])
-if not exists(f):
-    print 'No doc found, %s'%f
-    exit(1)
-
-print open(f).read()
+ 
+print doc_get(argv[1])
 
 

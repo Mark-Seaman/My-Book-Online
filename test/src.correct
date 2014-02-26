@@ -1,13 +1,16 @@
 
 Jack Hammer Source:
+bin/cache
 bin/commit
 bin/create
 bin/doc-diff
 bin/doc-diff-all
 bin/doc-get
+bin/doc-page
 bin/doc-pull
 bin/doc-push
 bin/doc-put
+bin/doc-redirect
 bin/doc-show
 bin/e
 bin/elapsed
@@ -18,6 +21,7 @@ bin/project
 bin/range
 bin/rbg
 bin/rmas
+bin/search
 bin/show
 bin/src
 bin/tdiff
@@ -41,13 +45,24 @@ bin/util/__init__.py
 bin/util/list.py
 bin/util/table.py
 bin/util/tabs.py
+bin/util/vars.py
 bin/util/wiki.py
+bin/var-clear
+bin/var-get
+bin/var-list
+bin/var-read
+bin/var-save
+bin/vars-edit
+bin/var-set
+bin/vars-show
+bin/var-write
 test/content.tst
 test/docs.tst
 test/files.tst
 test/git.tst
 test/src.tst
 test/update.tst
+test/vars.tst
 
 Django Hammer Source:
 bin/add-testing

@@ -4,10 +4,10 @@
 f=$1
 
 {
-echo "cd $pt &&"
-echo "tlike $f > /dev/null &&"
-echo "rm $f.like &&"
-echo "echo redirect:/test/Index" 
+    echo "cd `pwd` &&"
+    echo "tlike $f > /dev/null &&"
+    echo "rm $f.like &&"
+    echo "echo redirect:`dirname $f`/Index" 
 } > $f.like && 
 
 chmod +x $f.like

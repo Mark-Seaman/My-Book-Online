@@ -1,11 +1,13 @@
 #!/bin/bash
 # Compare the last output with the correct output
 
+
 # Go to directory
 f=${1/.tst/}
 [ ! -x $f.tst ]  && cd $p/test 
 
 # Accept any result the first time
+[ ! -f $f.out ] && rm -f $f.diff $f.like && exit 0
 [ ! -f $f.correct ] && cp $f.out $f.correct
 
 # Filter the output
@@ -16,5 +18,5 @@ rm -f $f.tmp
 diff $f.out $f.correct | tee $f.diff 
 
 # Create the like file if error
-[[   -s $f.diff ]] && tmklike $f
-[[ ! -s $f.diff ]] && rm -f $f.like
+[   -s $f.diff ] && tmklike $f
+[ ! -s $f.diff ] && rm -f $f.like $f.diff
