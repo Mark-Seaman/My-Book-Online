@@ -689,6 +689,8 @@
 ./Public/SpiritualGrowth/Reflection
 ./Public/SpiritualGrowth/Reflection/Index
 ./Public/SpiritualGrowth/Reflection/.random
+./Public/SpiritualGrowth/SignUp
+./Public/SpiritualGrowth/Subscribed
 ./Public/SuperPower
 ./Public/SuperPower/AchieverGrow
 ./Public/SuperPower/AchieverInfluence
@@ -866,6 +868,7 @@
 ./seaman/BizPlan/SWS/Tools
 ./seaman/BizPlan/SWS/Training
 ./seaman/BizPlan/SWS/TrainingBizPlan
+./seaman/BizPlan/Taxes
 ./seaman/BizPlan/Watermill
 ./seaman/BizPlan/Watermill/DashboardProject
 ./seaman/BizPlan/Watermill/DataGitRepo

@@ -1,11 +1,27 @@
 10c10
-< 2014-02-26
+< 2014-02-27
 ---
 > 2014-02-19
+16c16
+< Action Today
+---
+> Actions
+19a20,22
+> 
+>      debug ssh $z
+>      fix $z
 10c10
-< 2014-02-26
+< 2014-02-27
 ---
 > 2014-02-19
+16c16
+< Action Today
+---
+> Actions
+19a20,22
+> 
+>      debug ssh $z
+>      fix $z
 Testing Host: localhost:8054
 localhost:8054 Index
 localhost:8054 test/TestDoc

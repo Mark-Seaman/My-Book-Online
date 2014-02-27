@@ -1,3 +1,4 @@
+from re    import match
 
 #-----------------------------------------------------------------------------
 # Unique items
@@ -53,6 +54,20 @@ def split_lines(text):
 
 #-----------------------------------------------------------------------------
 # Tables
+
+# Filter empty lines
+def remove_empty_lines(lines):
+   return filter(lambda x: not match(r'^\s*$', x), lines)
+
+# Filter comment lines (lines that start with #)
+def remove_comment_lines(lines):
+   return filter(lambda x: not match(r'^\s*#.*$', x), lines)
+
+
+# Split the lines of text
+def csv_lines_to_table(text):
+   return map(csv_to_list, text)
+
 
 # Convert text to a table
 def text_to_table(text,sep=','):

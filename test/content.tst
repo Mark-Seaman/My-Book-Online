@@ -1,6 +1,9 @@
 #!/bin/bash
 # Format a document as HTML
 
+mkdir -p $pd/Public $pd/test $pd/Public/test $p/logs  $p/logs/user 
+touch $pd/Domains
+
 # Create test files
 cat <<EOF > /tmp/t1
 * Test Document *
