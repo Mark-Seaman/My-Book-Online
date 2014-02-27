@@ -1,4 +1,5 @@
 diff bin/project /home/seaman/Projects/jack-hammer/bin/project
 diff bin/src /home/seaman/Projects/jack-hammer/bin/src
+diff bin/todo /home/seaman/Projects/jack-hammer/bin/todo
 diff test/src.tst /home/seaman/Projects/jack-hammer/test/src.tst
 diff test/update.tst /home/seaman/Projects/jack-hammer/test/update.tst
