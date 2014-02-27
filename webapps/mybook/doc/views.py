@@ -33,6 +33,10 @@ def user(request):
         return 'Anonymous'
 
 
+def public_doc(request,title):
+    return join(request.get_host(),'Public',title)
+
+
 def user_doc(request,title):
     '''
     Return the document for this user.
@@ -92,12 +96,16 @@ def doc(request,title):
     '''
     Render the appropriate doc view
     '''
-    doc = user_doc(request,title)
+    doc = public_doc(request,title)
+    #doc = user_doc(request,title)
     log_page (request, title)
     
     page = redirect_page(doc)
     if len(page)>0:
-        return redirect(request,page)
+        doc = user_doc(request,title)
+        page = redirect_page(doc)
+        if len(page)>0:
+            return redirect(request,page)
 
     text = format_doc(doc)
           
