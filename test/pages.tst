@@ -1,22 +1,4 @@
-#!/usr/bin/env python
-# Run a python script to test the web pages
+#!/bin/bash
+# Get pages from the remote web server
 
-from os.path  import join
-from os import environ,chdir,system
-from platform import node
-
-port = environ['port']
-host = 'localhost:'+port
-pages = open(environ['pt']+'/page_list').read()
-
-chdir (join(environ['p'],'test'))
-
-if 'seaman-' not in node():
-    f = 'web-pages.correct'
-    print open(f).read(),
-
-else:
-    system('server-start')
-    from page_test import test_web_pages
-    print 'Testing Host:',host
-    test_web_pages(host,pages,False)
+page-grab 'http://shrinking-world.org' < $pt/page_list

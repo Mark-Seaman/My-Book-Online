@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+# Run a python script to test the web pages
+
+from os         import environ, chdir
+from platform   import node
+from sys        import argv
+
+from util.files import read_input
+
+
+chdir (environ['pt'])
+
+if len(argv)>2:
+    print 'usage: '+argv[0]+'< $pt/page_list'
+    exit (1)
+
+
+# The tester should only be run on seaman computers.
+# Otherwise the correct answer is automatically run.
+# Add your machine if you wish to run this code.
+
+if 'seaman-' not in node():
+    print read_text('web-pages.correct'),
+else:
+    from util.page_test import test_web_pages
+    test_web_pages(argv[1],read_input())
+
