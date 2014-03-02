@@ -1,33 +1,71 @@
 10c10
-< 2014-02-27
+< 
 ---
-> 2014-02-19
-16c16
-< Action Today
----
-> Actions
-19a20,22
-> 
->      debug ssh $z
->      fix $z
+> xxx
 10c10
-< 2014-02-27
+< 
 ---
-> 2014-02-19
-16c16
-< Action Today
+> xxx
+3,4c3,4
+< Title:http://shrinking-world.org/BizPlan/missing%0A
+< Shrinking-World.Org
 ---
+> Title:http://shrinking-world.org/BizPlan/Index%0A
+> shrinking-world.org
+8c8
+< Missing Page
+---
+> Biz Plan
+9a10
+> 2014-02-26
+11c12,13
+< The page that you requested is not present on the web server.
+---
+> MyPlan     History     Directory     Meetings
+> _____________________________________________________________________________
+13c15,22
+< Document: BizPlan
+---
+> Done
 > Actions
-19a20,22
+> Roles
+> Done
+>      Feb 2014     Time
 > 
 >      debug ssh $z
 >      fix $z
-Testing Host: localhost:8054
-localhost:8054 Index
-localhost:8054 test/TestDoc
-localhost:8054 login
+3,4c3,4
+< Title:http://shrinking-world.org/BizPlan/Index/missing%0A
+< Shrinking-World.Org
+---
+> Title:http://shrinking-world.org/BizPlan/Index
+> shrinking-world.org
+8c8
+< Missing Page
+---
+> Biz Plan
+9a10
+> 2014-02-26
+11c12,13
+< The page that you requested is not present on the web server.
+---
+> MyPlan     History     Directory     Meetings
+> _____________________________________________________________________________
+13c15,22
+< Document: BizPlan/Index
+---
+> Done
+> Actions
+> Roles
+> Done
+>      Feb 2014     Time
+> 
+>      debug ssh $z
+>      fix $z
+http://shrinking-world.org/Index
+http://shrinking-world.org/test/TestDoc
+http://shrinking-world.org/login
 Login done
-localhost:8054 Index
-localhost:8054 BizPlan
-localhost:8054 BizPlan/Index
-localhost:8054 
+http://shrinking-world.org/Index
+http://shrinking-world.org/BizPlan
+http://shrinking-world.org/BizPlan/Index

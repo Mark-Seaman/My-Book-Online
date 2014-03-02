@@ -181,7 +181,6 @@
 ./Public/BitRot/UnitTest
 ./Public/BitRot/VersionControl
 ./Public/BitRot/WhatIsBitRot
-./Public/BizPlan
 ./Public/Brain
 ./Public/Brain/BrainFreshness
 ./Public/Brain/BrainIngredients
@@ -894,13 +893,18 @@
 ./seaman/MyPlan/Fun/TV
 ./seaman/MyPlan/Grow
 ./seaman/MyPlan/Grow/Beliefs
+./seaman/MyPlan/Grow/BestPractices
 ./seaman/MyPlan/Grow/BloodPressure
 ./seaman/MyPlan/Grow/Conversations
 ./seaman/MyPlan/Grow/DailyStartup
 ./seaman/MyPlan/Grow/Goals
 ./seaman/MyPlan/Grow/HealthReview
 ./seaman/MyPlan/Grow/Index
+./seaman/MyPlan/Grow/Learn
+./seaman/MyPlan/Grow/PersonalGrowth
 ./seaman/MyPlan/Grow/Satisfaction
+./seaman/MyPlan/Grow/SpiritualGrowth
+./seaman/MyPlan/Grow/SpiritualThings
 ./seaman/MyPlan/Index
 ./seaman/MyPlan/People
 ./seaman/MyPlan/People/Index

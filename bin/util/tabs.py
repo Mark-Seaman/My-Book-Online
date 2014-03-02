@@ -6,26 +6,10 @@ from sys        import argv
 from os.path    import join,exists
 from re         import compile, IGNORECASE, DOTALL
 from subprocess import Popen,PIPE
-from random     import choice
 
 from util.wiki  import convert_html
 from util.files import do_command,read_text
-
-
-# Feature a single line of the input stream
-def lookup_quote(line, lines):
-    if '[[QUOTE]]' in line:
-        t = filter(lambda l:len(l)>4, lines[2:])
-        t = filter(lambda l:not '**' in l, t)
-        t = filter(lambda l:not '[[QUOTE]]' in l, t)
-        return '<b>'+choice(t)+'</b><br>'
-    return line
-
-
-# Select a line of text to feature
-def extract_random_line(text):
-    lines = text.split('\n')
-    return '\n'.join([ lookup_quote(line, lines) for line in lines ])
+from util.widgets import format_widgets
 
 
 def group_tabs(text):
@@ -68,11 +52,8 @@ def print_all_tabs(text):
         print '</div>'
 
 
+#  Formatter to add tabs to the HTML formatting
 def print_tab_doc(f):
-    '''
-    Formatter to add tabs to the HTML formatting
-    '''
-    #f = join(environ['pd'], f)
     text = read_text(f)
-    text = extract_random_line(text)
+    text = format_widgets(f,text)
     print_all_tabs(text)

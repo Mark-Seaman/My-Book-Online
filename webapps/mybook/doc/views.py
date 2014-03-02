@@ -43,9 +43,7 @@ def user_doc(request,title):
     '''
     host = request.get_host()
     username = user(request)
-    #return join(username,title)
     return join(host,username,title)
-    #return  title
 
 
 def log_page(request,title):
@@ -91,6 +89,20 @@ def redirect(request,title):
     log_page (request,title)
     return HttpResponseRedirect('/'+title) 
 
+# def handle_redirect(request,title):
+#     doc = public_doc(request,title)
+#     #doc = user_doc(request,title)
+#     log_page (request, title)
+    
+#     page = redirect_page(doc)
+#     if len(page)>0:
+#         if not page.endswith('missing'):
+#             return redirect(request,page)
+#         else:
+#             doc = user_doc(request,title)
+#             page = redirect_page(doc)
+#             if len(page)>0:
+#                 return redirect(request,page)
 
 def doc(request,title):
     '''
@@ -102,10 +114,13 @@ def doc(request,title):
     
     page = redirect_page(doc)
     if len(page)>0:
-        doc = user_doc(request,title)
-        page = redirect_page(doc)
-        if len(page)>0:
+        if not page.endswith('missing'):
             return redirect(request,page)
+        else:
+            doc = user_doc(request,title)
+            page = redirect_page(doc)
+            if len(page)>0:
+                return redirect(request,page)
 
     text = format_doc(doc)
           

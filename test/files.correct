@@ -84,6 +84,7 @@ mkexe
 mklinks
 mkpy
 page
+page-grab
 page-log
 project
 promote
