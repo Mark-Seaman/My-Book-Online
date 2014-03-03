@@ -573,9 +573,11 @@
 ./Public/SpiritualGrowth/LifeApps/2014-02-09
 ./Public/SpiritualGrowth/LifeApps/2014-02-16
 ./Public/SpiritualGrowth/LifeApps/2014-02-23
-./Public/SpiritualGrowth/LifeApps/2014-02-30
+./Public/SpiritualGrowth/LifeApps/2014-03-02
+./Public/SpiritualGrowth/LifeApps/2014-03-09
 ./Public/SpiritualGrowth/LifeApps/Index
 ./Public/SpiritualGrowth/LifeApps/.random
+./Public/SpiritualGrowth/LifeApps/Random
 ./Public/SpiritualGrowth/Passages
 ./Public/SpiritualGrowth/Passages/01
 ./Public/SpiritualGrowth/Passages/02
@@ -654,6 +656,7 @@
 ./Public/SpiritualGrowth/Passages/78
 ./Public/SpiritualGrowth/Passages/Index
 ./Public/SpiritualGrowth/Passages/.random
+./Public/SpiritualGrowth/Passages/Random
 ./Public/SpiritualGrowth/Practices
 ./Public/SpiritualGrowth/Practices/AvoidMidLifeCrisis
 ./Public/SpiritualGrowth/Practices/Brokenness
@@ -670,7 +673,7 @@
 ./Public/SpiritualGrowth/Practices/MoreListening
 ./Public/SpiritualGrowth/Practices/PeaceWithGod
 ./Public/SpiritualGrowth/Practices/PrayerPals
-./Public/SpiritualGrowth/Practices/.random
+./Public/SpiritualGrowth/Practices/Random
 ./Public/SpiritualGrowth/Practices/ReleaseControl
 ./Public/SpiritualGrowth/Practices/Solitude
 ./Public/SpiritualGrowth/Practices/ThoughtsOnPrayer
@@ -683,7 +686,7 @@
 ./Public/SpiritualGrowth/Prayers/Index
 ./Public/SpiritualGrowth/Prayers/LordsPrayer
 ./Public/SpiritualGrowth/Prayers/PrayerOfSurrender
-./Public/SpiritualGrowth/Prayers/.random
+./Public/SpiritualGrowth/Prayers/Random
 ./Public/SpiritualGrowth/Prayers/WorkPrayer
 ./Public/SpiritualGrowth/Reflection
 ./Public/SpiritualGrowth/Reflection/Index
@@ -825,6 +828,8 @@
 ./seaman/BizPlan/Meetings/Template
 ./seaman/BizPlan/PipeScan
 ./seaman/BizPlan/PipeScan/Index
+./seaman/BizPlan/Publishing
+./seaman/BizPlan/Publishing/Index
 ./seaman/BizPlan/SWS
 ./seaman/BizPlan/SWS/50Tricks
 ./seaman/BizPlan/SWS/AppLab
@@ -847,6 +852,7 @@
 ./seaman/BizPlan/SWS/Management
 ./seaman/BizPlan/SWS/Marketing
 ./seaman/BizPlan/SWS/MyBook
+./seaman/BizPlan/SWS/MyBookDone
 ./seaman/BizPlan/SWS/NodeHammer
 ./seaman/BizPlan/SWS/Organize
 ./seaman/BizPlan/SWS/PageTest
@@ -872,12 +878,14 @@
 ./seaman/BizPlan/Watermill/DashboardProject
 ./seaman/BizPlan/Watermill/DataGitRepo
 ./seaman/BizPlan/Watermill/HourlyData
-./seaman/BizPlan/Watermill/OldNotes
 ./seaman/BizPlan/Watermill/PromotionPath
 ./seaman/BizPlan/Watermill/.template
 ./seaman/BizPlan/Watermill/ToDo
 ./seaman/BizPlan/Watermill/UserManagement
 ./seaman/BizPlan/Watermill/WatermillTools
+./seaman/BizPlan/WorkGoals
+./seaman/BizPlan/WritersLog
+./seaman/BizPlan/Writing
 ./seaman/Index
 ./seaman/MyPlan
 ./seaman/MyPlan/BeilmanGroup

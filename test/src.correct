@@ -19,6 +19,7 @@ bin/elapsed
 bin/filter-path
 bin/lc
 bin/mkexe
+bin/page-grab
 bin/project
 bin/range
 bin/rbg
@@ -45,6 +46,7 @@ bin/util/domain.py
 bin/util/files.py
 bin/util/__init__.py
 bin/util/list.py
+bin/util/page_test.py
 bin/util/table.py
 bin/util/tabs.py
 bin/util/vars.py
@@ -54,9 +56,7 @@ bin/var-get
 bin/var-list
 bin/var-read
 bin/var-save
-bin/vars-edit
 bin/var-set
-bin/vars-show
 bin/var-write
 test/content.tst
 test/docs.tst

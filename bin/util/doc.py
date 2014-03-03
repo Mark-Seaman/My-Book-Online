@@ -111,8 +111,9 @@ def doc_show_tabs(doc):
 # Show the formatted document for the file
 def doc_show(doc):
     if not redirect_path(doc):
-        text = read_file(doc_path(doc))
-        print convert_html(text)
+        print_tab_doc(doc_path(doc))
+        #text = read_file(doc_path(doc))
+        #print convert_html(text)
     else:
         print redirect_path(doc)
 

@@ -38,10 +38,25 @@ def extract_random_line(lines):
     return [ lookup_quote(l, lines) for l in lines ]
 
 
+# Replace a single include
+def replace_include (dir,line):
+    if '[[INCLUDE:' in line:
+        filename = dir+'/'+line[10:-2]
+        return read_text(filename)
+    return line
+
+
+# Map all of the include lines to their file replacements
+def map_include_files(dir,lines):
+    return  [ replace_include(dir,l) for l in lines ] 
+
+
 # Format this text as a page with embedded widgets
 def format_widgets(filename, text):
     dir = dirname(filename)
-    lines =  split_lines(text)
+    lines = split_lines(text)
+    lines = map_include_files(dir,lines)
+    lines = split_lines(join_lines(lines))
     lines = insert_random_text(dir,lines)
     lines = extract_random_line(lines)
     return join_lines(lines)

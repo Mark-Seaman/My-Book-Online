@@ -36,11 +36,27 @@ Index
 ------------------
 <br/> <h1>Test User Home</h1>
 <br/> This is a test page for the test user.
-<br/> <b>Tab 1</b>
+<br/> 
+<div ng-controller="TabbedViewCtrl">
+  <tabset ng-show="true">
+     <tab heading="Tab 1">
+        <div class="page">
+        <b>Tab 1</b>
 <br/>  This is some text
-<br/> <b>Tab 2</b>
+<br/> 
+        </div>
+     </tab>
+     <tab heading="Tab 2">
+        <div class="page">
+        <b>Tab 2</b>
 <br/> This is some more text
 <br/> 
+<br/> 
+<br/> 
+        </div>
+     </tab>
+  </tabset>
+</div>
 <br/> <h1>Test User Home</h1>
 <br/> This is a test page for the test user.
 <br/> 
@@ -57,6 +73,8 @@ Index
         <div class="page">
         <b>Tab 2</b>
 <br/> This is some more text
+<br/> 
+<br/> 
 <br/> 
         </div>
      </tab>
@@ -75,8 +93,12 @@ Formatted output
 <br/> <h1>Test Document</h1>
 <br/> This is a test.
 <br/> 
+<br/> 
+<br/> 
 <br/> <h1>Test Document</h1>
 <br/> This is a test.
+<br/> 
+<br/> 
 <br/> 
 
 Test missing file
