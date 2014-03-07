@@ -1,5 +1,5 @@
 from random import choice
-from files  import list_files, read_text
+from files  import list_files, read_text, do_command
 from list   import split_lines,join_lines
 from os.path import dirname,join
 
@@ -14,7 +14,8 @@ def lookup_file(dir, line):
     if '[[PICK]]' in line:
         pick = directory_listing(dir)
         pick = choice(pick)
-        return 'selection:%s\n\n%s'%(pick,read_text(join(dir,pick)))
+        #return 'selection:%s\n\n%s'%(pick,read_text(join(dir,pick)))
+        return read_text(join(dir,pick))
     return line
 
 
@@ -46,15 +47,29 @@ def replace_include (dir,line):
     return line
 
 
+# Replace a single include
+def replace_scripts (line):
+    if '[[SCRIPT:' in line:
+        filename = line[9:-2]
+        return do_command(filename)
+    return line
+
+
 # Map all of the include lines to their file replacements
 def map_include_files(dir,lines):
     return  [ replace_include(dir,l) for l in lines ] 
+
+
+# Map all of the include lines to their file replacements
+def map_scripts(lines):
+    return  [ replace_scripts(l) for l in lines ] 
 
 
 # Format this text as a page with embedded widgets
 def format_widgets(filename, text):
     dir = dirname(filename)
     lines = split_lines(text)
+    lines = map_scripts(lines)
     lines = map_include_files(dir,lines)
     lines = split_lines(join_lines(lines))
     lines = insert_random_text(dir,lines)

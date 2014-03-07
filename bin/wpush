@@ -1,0 +1,5 @@
+#!/bin/bash
+# Push to watermill
+
+cp $1 ~/wme/support-git/$1
+
