@@ -36,10 +36,10 @@ def read_all_vars(file=None):
     for line in lines: 
         parts = line.split(' = ')
         if len(parts)>1:
-            vars[parts[0]] = parts[1]
+            vars[parts[0].strip()] = parts[1].strip()
         else:
-            if len(parts[0])>0:
-                vars[parts[0]] = 0
+            if len(parts[0].strip())>0:
+                vars[parts[0].strip()] = 0
 
 # Lookup if the key exists 
 def lookup(var):
@@ -73,14 +73,14 @@ def process_vars(text,var_file=None):
     save_all_vars(var_file)
 
 # Read the JSON output for all vars
-def print_json():
+def print_json(file=None):
     if vars=={}:
-        read_all_vars()
+        read_all_vars(file)
     print dumps(vars)
 
 # Save the JSON data as the current var state
-def save_json(json):
+def save_json(json,file=None):
     global vars
     vars = loads(json)
-    save_all_vars()
+    save_all_vars(file)
 
