@@ -134,6 +134,8 @@ var-write
 w
 web
 words
+wpull
+wpush
 
 /home/seaman/Projects/mybook/logs:
 user
@@ -168,8 +170,10 @@ quote.tst
 quote.txt
 random.correct
 random.tst
+script.tst
 src.correct
 src.tst
+table.tst
 trun.correct
 update.correct
 update.tst
