@@ -46,10 +46,12 @@ bin/util/domain.py
 bin/util/files.py
 bin/util/__init__.py
 bin/util/list.py
+bin/util/local_settings.py
 bin/util/page_test.py
 bin/util/table.py
 bin/util/tabs.py
 bin/util/vars.py
+bin/util/widgets.py
 bin/util/wiki.py
 bin/var-clear
 bin/var-get
