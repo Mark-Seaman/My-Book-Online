@@ -60,6 +60,11 @@ def to_date(s):
 def date_str(t):
     return t.strftime("%Y-%m-%d")
 
+# Format like   Tue, 03-11
+def day_str(t):
+    return t.strftime("%a, %m-%d")
+
+# Format with time
 def date_str_with_time(t):
     return t.strftime("%Y-%m-%d-%H-%M")
 
@@ -70,6 +75,11 @@ def today_str():
 # Return this date yesterday as a string
 def yesterday_str():
     return date_str(to_date(today_str())-timedelta(days=1)) 
+
+# Return this date yesterday as a string
+def someday_str(days):
+    return day_str(to_date(today_str())+timedelta(days=days)) 
+
 
 #____________________________________________________
 # Date & Time
