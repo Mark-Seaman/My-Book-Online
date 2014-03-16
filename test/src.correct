@@ -64,6 +64,7 @@ test/content.tst
 test/docs.tst
 test/files.tst
 test/git.tst
+test/projects.tst
 test/src.tst
 test/update.tst
 test/vars.tst

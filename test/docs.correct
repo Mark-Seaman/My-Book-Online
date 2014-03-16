@@ -237,7 +237,6 @@
 ./Public/Gallery/castle/27
 ./Public/Gallery/castle/28
 ./Public/Gallery/castle/29
-./Public/Gallery/castle/images
 ./Public/Gallery/castle/Index
 ./Public/Gallery/.gitignore
 ./Public/Gallery/hawaii
@@ -256,7 +255,6 @@
 ./Public/Gallery/hawaii/23
 ./Public/Gallery/hawaii/24
 ./Public/Gallery/hawaii/25
-./Public/Gallery/hawaii/images
 ./Public/Gallery/hawaii/Index
 ./Public/Gallery/hoa
 ./Public/Gallery/hoa/10
@@ -264,7 +262,6 @@
 ./Public/Gallery/hoa/12
 ./Public/Gallery/hoa/14
 ./Public/Gallery/hoa/15
-./Public/Gallery/hoa/images
 ./Public/Gallery/hoa/Index
 ./Public/Gallery/Index
 ./Public/Gallery/japan
@@ -290,7 +287,6 @@
 ./Public/Gallery/japan/30
 ./Public/Gallery/japan/31
 ./Public/Gallery/japan/32
-./Public/Gallery/japan/images
 ./Public/Gallery/japan/Index
 ./Public/Gallery/Title
 ./Public/Gallery/volcano
@@ -310,7 +306,6 @@
 ./Public/Gallery/volcano/1014
 ./Public/Gallery/volcano/1015
 ./Public/Gallery/volcano/1016
-./Public/Gallery/volcano/images
 ./Public/Gallery/volcano/Index
 ./Public/Guides
 ./Public/Guides/BuildCommunity
@@ -1095,7 +1090,6 @@
 ./template/Years/Index
 ./template/Years/.template
 ./test
-./TestDoc
 ./test/Index
 ./test/TestDoc1
 ./test/TestIndex

@@ -3,10 +3,34 @@ Git orig files
 Git libpeerconnection files
 
 /home/seaman/Projects/mybook:
+app
 bin
 logs
 test
 webapps
+
+/home/seaman/Projects/mybook/app:
+app.log
+bin
+data
+doc
+httpd.conf
+index.html
+__init__.py
+livebook
+manage.py
+media
+mybook.wsgi
+Private
+scripts
+settings.py
+slides
+templates
+test
+thoughts
+urls.py
+user_doc
+wsgi.py
 
 /home/seaman/Projects/mybook/bin:
 add-testing
@@ -165,6 +189,8 @@ pages.tst
 page_test.py
 pick.correct
 pick.tst
+projects.correct
+projects.tst
 quote.correct
 quote.tst
 quote.txt
@@ -175,7 +201,9 @@ script.tst
 src.correct
 src.tst
 table.tst
+test
 trun.correct
+update
 update.correct
 update.tst
 vars.correct
