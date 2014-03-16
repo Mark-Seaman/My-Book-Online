@@ -10,10 +10,9 @@ from util.files import read_input
 
 chdir (environ['pt'])
 
-if len(argv)>2:
-    print 'usage: '+argv[0]+'< $pt/page_list'
-    exit (1)
-
+host = ''
+if len(argv)>1:
+    host = argv[1]
 
 # The tester should only be run on seaman computers.
 # Otherwise the correct answer is automatically run.
@@ -23,5 +22,5 @@ if 'seaman-' not in node():
     print read_text('web-pages.correct'),
 else:
     from util.page_test import test_web_pages
-    test_web_pages(argv[1],read_input())
+    test_web_pages(host,read_input())
 

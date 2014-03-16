@@ -87,8 +87,8 @@ def diff(t1,t2):
 def show_page_diffs(url):
     output,correct = page_names(url)
     diffs = diff(output, correct)
-    if len(diffs)>1 and url!='': 
-        system('tdiff '+output[:-4])
+    #if len(diffs)>1 and url!='': 
+    #    system('tdiff '+output[:-4])
 
 
 # Test a single page from the requested host
