@@ -39,7 +39,6 @@ doc-pull-all
 doc-push
 doc-push-all
 doc-put
-doc-random
 doc-recent
 doc-redirect
 doc-search
@@ -64,7 +63,6 @@ hammer-generate
 hammer-index
 hammer-list
 hammer-read
-hammer-show
 hammer-table
 hammer-tabs
 hammer-tests
@@ -153,7 +151,6 @@ format.tst
 git.correct
 git.tst
 hammer.correct
-hammer.tst
 include.correct
 include.tst
 local_settings.py
@@ -170,7 +167,6 @@ quote.correct
 quote.tst
 quote.txt
 random.correct
-random.tst
 script.correct
 script.tst
 src.correct
