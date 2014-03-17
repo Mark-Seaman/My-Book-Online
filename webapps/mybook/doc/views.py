@@ -7,49 +7,45 @@ from os                 import system,environ
 from django.template    import loader, Context
 
 from models             import *
+from util.page          import show_page,put_page,get_page
+
 
 logFile=environ['p']+'/logs/user/page.log'
 
+# Render a web page
 def render(request,template,data): 
     page = loader.get_template (template)
     return HttpResponse (page.render (Context(data)))
 
+
+# Get the IP address for the request
 def ip(request):
-    '''
-    Get the IP address for the request
-    '''
     if request.META['REMOTE_ADDR']=='127.0.0.1':
         return request.META['REMOTE_ADDR']
     return request.META['HTTP_X_FORWARDED_FOR']
 
 
+# Name of requesting user
 def user(request):
-    '''
-    Name of requesting user
-    '''
     if not request.user.is_anonymous():
         return request.user.username
     else:
         return 'Anonymous'
 
-
+# Display the public document
 def public_doc(request,title):
     return join(request.get_host(),'Public',title)
 
 
+# Return the document for this user.
 def user_doc(request,title):
-    '''
-    Return the document for this user.
-    '''
     host = request.get_host()
     username = user(request)
     return join(host,username,title)
 
 
+# Log the page hit in page.log  (time, ip, user, page, doc) 
 def log_page(request,title):
-    '''
-    Log the page hit in page.log  (time, ip, user, page, doc) 
-    '''
     u   = user(request)
     f=open(logFile,'a')
     options = (str(datetime.now()), ip(request), user_doc(request,title))
@@ -57,20 +53,16 @@ def log_page(request,title):
     f.close()
 
 
+# Render the view for a missing document
 def new(request,title):
-    '''
-    Render the view for a missing document
-    '''
     text = format_doc('./Public/NewPage') # % title
     data = {'title':title, 'dir':dirname(title), 'text':text, 
             'default':basename(title), 'newpage':'{{newpage}}'}
     return render(request, 'new.html', data)
 
 
+# Render the view for a missing document
 def missing(request,title):
-    '''
-    Render the view for a missing document
-    '''
     #if not permitted(request):
     #    return redirect(request,'login')
     text = format_doc('./Public/MissingFile') % title
@@ -82,59 +74,26 @@ def missing(request,title):
     return render(request, 'doc.html', content)
 
 
+# Go to a specific page
 def redirect(request,title):
-    '''
-    Go to a specific page
-    '''
     log_page (request,title)
     return HttpResponseRedirect('/'+title) 
 
-# def handle_redirect(request,title):
-#     doc = public_doc(request,title)
-#     #doc = user_doc(request,title)
-#     log_page (request, title)
-    
-#     page = redirect_page(doc)
-#     if len(page)>0:
-#         if not page.endswith('missing'):
-#             return redirect(request,page)
-#         else:
-#             doc = user_doc(request,title)
-#             page = redirect_page(doc)
-#             if len(page)>0:
-#                 return redirect(request,page)
 
+# Render the appropriate doc view
 def doc(request,title):
-    '''
-    Render the appropriate doc view
-    '''
-    doc = public_doc(request,title)
-    #doc = user_doc(request,title)
-    log_page (request, title)
-    
-    page = redirect_page(doc)
-    if len(page)>0:
-        if not page.endswith('missing'):
-            return redirect(request,page)
-        else:
-            doc = user_doc(request,title)
-            page = redirect_page(doc)
-            if len(page)>0:
-                return redirect(request,page)
 
-    text = format_doc(doc)
-          
-    #if not permitted(request, doc):
-    #    return redirect(request,'login')
-    
+    doc = user_doc(request,title)
+    log_page (request, title)
+
+    host = request.get_host()
+    text = show_page(host,user(request),title)
     content =  {'site_title':request.get_host(), 'user':request.user, 'title': title, 'text': text}
     return render(request, 'doc.html', content)
 
 
+# Render the home view
 def home(request):
-    '''
-    Render the home view
-    '''
     return  doc(request,'Index')
 
 
@@ -148,10 +107,8 @@ def private(request,title):
 
 
 #@login_required(login_url='/login')
+# Get and put doc directly
 def store(request,title):
-    '''
-    Get and put doc directly
-    '''
     log_page (request, title)
     doc  = user_doc(request,title)
     text = read_doc(doc)
@@ -159,10 +116,8 @@ def store(request,title):
 
 
 #@login_required(login_url='/login')
+# Create a form for editing the object details
 def edit_form (request, doc, title=None, text=None):
-    '''
-    Create a form for editing the object details
-    '''
     log_page (request, 'form:%s'%doc)
     return missing(request,title)
     if request.method == 'POST':
@@ -182,26 +137,23 @@ def edit_form (request, doc, title=None, text=None):
         note.path = title
         log_page (request,'read:%s'%doc)
         if not text:
-            text = read_doc(doc)
+            #text = read_doc(doc)
+            text = get_page(request.get_host(),user(request),title)
         note.body = text
         form =  NoteForm(instance=note)
     data =  { 'form': form, 'title': title, 'banner': True  }
     return render(request, 'docedit.html', data)
 
 
+# Render the add view
 def edit(request,title):
-    '''
-    Render the add view
-    '''
     doc = user_doc(request,title)
     log_page (request, 'edit:%s'%doc)
     return edit_form (request, doc, title)
 
 
+# Render the add view
 def add(request,title):
-    '''
-    Render the add view
-    '''
     log_page (request,'add:%s'%title)
     return missing(request,title)
     text = add_doc(user_doc(request,title))
@@ -220,13 +172,12 @@ def delete(request,title):
     return redirect(request,dirname(title))
 
 
+# Check for all security violations
 def permitted(request,title=''):
-    '''
-    Check for all security violations
-    '''
     return title.startswith('Anonymous') or user(request)!='Anonymous'
 
 
+# Check for permissions
 def illegal(request):
     title = 'IllegalMachine'
     log_page (request, 'illegal: %s'%title)
@@ -235,9 +186,7 @@ def illegal(request):
     return render(request, 'doc.html', {'title': title, 'text': text})
 
 
+# Check the IP address for the request
 def ip_ok(request):
-    '''
-    Check the IP address for the request
-    '''
     valid = [ '108.59.4.75', '50.134.243.56', '127.0.0.1' ]
     return ip(request) in valid

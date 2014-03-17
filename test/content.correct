@@ -1,10 +1,11 @@
 
 Create files
 ------------------
+test/TestDoc/missing
 
 Get files
 ------------------
-redirect:Public/test/Missing/missing
+No file found, /home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/test/Missing
 None
 * Test User Home *
 This is a test page for the test user.
@@ -29,9 +30,9 @@ None
 
 Redirect to Index
 ------------------
-Public/test/Index
+redirect: Public/test/Index
 test/Index
-None
+redirect: test/Index
 
 Index
 ------------------
@@ -100,9 +101,10 @@ This is a test.
 
 Test missing file
 ------------------
-Public/test/xxx/missing
+redirect: Public/test/xxx/missing
 test/xxx/missing
-None
+redirect: test/xxx/missing
+redirect: test/xxx/missing
 
 Private files
 ------------------

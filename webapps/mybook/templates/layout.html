@@ -27,11 +27,12 @@
         <h1>Shrinking-World.Org</h1>
         {% endif %}
 
+
         <div style='float:right'>
           <p>
             {% if user.is_authenticated and user.is_staff %}
-                <a  style='color:white' href="/logout">Log out</a>
-                <span style='color:yellow'>
+                <a class='hlink' href="/logout">Log out</a>
+                <span class='hlink'>
                   <strong>{% firstof user.first_name user.username %}</strong>.
                 </span>
                 <!--
@@ -44,7 +45,7 @@
                 <span style='color:white'>Not logged in</span>
                 <span style='color:white'>{{ user }}</span>
                 -->
-                <a href="/login">Log In</a>
+                <a class='hlink' href="/login">Log In</a>
             {% endif %}
           </p>
 
@@ -52,10 +53,10 @@
 
         {% block navbar %}
         <p>
-          <span style='color:yellow'>
-          <a href="/">Home</a>&nbsp;&nbsp;&nbsp;
+          <span class='hlink'>
+          <a  class='hlink' href="/">Home</a>&nbsp;&nbsp;&nbsp;
           {% if user.is_authenticated and user.is_staff %}
-              <a href='/{{ title }}/edit'>Edit</a>&nbsp;&nbsp;&nbsp;
+              <a class='hlink' href='/{{ title }}/edit'>Edit</a>&nbsp;&nbsp;&nbsp;
           {% endif %}
           </span>
         </p>

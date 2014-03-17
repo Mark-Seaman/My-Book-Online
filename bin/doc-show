@@ -3,10 +3,14 @@
 
 from sys      import argv
 
-from util.doc import  doc_show
+from util.doc import  doc_show,doc_redirect
 
 
 if len(argv)>1: 
-    print doc_show(argv[1])
+    p = doc_redirect(argv[1])
+    if not p:    
+        print doc_show(argv[1])
+    else:
+        print 'redirect:',p
 else:
     print 'usage: ', argv[0], 'url'

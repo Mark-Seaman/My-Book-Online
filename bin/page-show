@@ -2,10 +2,14 @@
 # Format the requested document
 
 from sys       import argv
-from util.page import  show_page
+from util.page import  show_page,page_redirect
 
 
-if len(argv)>1: 
-    print show_page(argv[1])
+if len(argv)>3:
+    p = page_redirect(argv[1],argv[2],argv[3])
+    if not p:
+        print show_page(argv[1],argv[2],argv[3])
+    else:
+        print 'redirect:',p
 else:
-    print 'usage: ', argv[0], 'url'
+    print 'usage: ', argv[0], ' localhost:8052 Public Index'

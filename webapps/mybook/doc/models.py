@@ -71,15 +71,15 @@ def do_command(cmd, input=None):
     return  p.stdout.read()
 
 
-# Run the wiki formatter on the document
-def format_doc(title):
-    #from util.doc import  doc_show
-    #return doc_show(title)
+# # Run the wiki formatter on the document
+# def format_doc(title):
+#     #from util.doc import  doc_show
+#     #return doc_show(title)
 
-    from util.page import  show_page
-    return show_page(title)
+#     from util.page import  show_page
+#     return show_page(title)
 
-#    return do_command('doc-page %s'%title)
+# #    return do_command('doc-page %s'%title)
 
 
 # Check to see if this doc causes a redirect

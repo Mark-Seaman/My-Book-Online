@@ -18,73 +18,40 @@ def log_page(doc):
 
 
 # Convert a url to a directory
-def doc_path(path):
-    dir = domain_directory(path[0])
+def doc_path(host,user,path):
+    dir = domain_directory(host)
     if not dir: 
         dir = '.'
-    if len(path)>1:
-        user = path[1].replace('Anonymous', 'Public')
-    else:
-        user = 'Public'
-    return '/'.join( [user,dir] + path[2:] )
-
-
-# Convert a url to a directory
-def public_doc_path(path):
-    path = doc_path(path.split('/'))
-    path[1] = 'Public'
-    return doc_path(path)
-
-
-# Return the new url to visit  (Implied path host/user/doc)
-def redirect_path(doc):
-    path = doc.split('/')
-    url = '/'.join(path[2:])
-    return url
-
-
-# lookup the path for the doc for this url
-def map_doc_path(url):
-    doc = doc_path(url.split('/'))
+    user = user.replace('Anonymous', 'Public')
+    doc = user+'/'+dir+'/'+path
     log_page(doc)
-    return join(environ['pd'], doc)
+    return environ['pd']+'/'+doc
 
 
 # Either format the doc or return the redirect page
-def doc_redirect (url):
-    doc = map_doc_path(url)
+def page_redirect (host,user,path):
+    doc = doc_path(host,user,path)
     if exists(doc):
         if not isfile(doc):
             index = join(doc,'Index')
             if exists(index):
-                return redirect_path(url) + '/Index'
-            else:
-                return redirect_path(url) + '/Index/missing'
+                return path+'/Index'
+            return  path+'/Index/missing'
     else:
-        return redirect_path(url) + '/missing' 
+        return path + '/missing' 
+ 
 
-
-# Either format the doc or return the redirect page
-def show_page(url):
-    doc = map_doc_path(url)
-    if exists(doc) and isfile(doc):
-        return format_doc(doc)
+# Format the doc contents into HTML
+def show_page(host,user,path):
+    return format_doc(doc_path(host,user,path))
 
 
 # Put the document text in storage
-def put_page(doc):
-    write_file(map_doc_path(doc), read_input())
+def put_page(host,user,path):
+    write_file(doc_path(host,user,path), read_input())
 
 
 # Get the document text from storage
-def get_page(doc):
-    if not doc_redirect(doc):
-        print read_text(map_doc_path(doc))
-    else:
-        print "redirect:%s/missing" % doc_redirect(doc)
-
-
-# #  Formatter to add tabs to the HTML formatting
-# def print_tab_doc(filename):
-#     print format_doc(filename)
+def get_page(host,user,path):
+    return read_text(doc_path(host,user,path))
 

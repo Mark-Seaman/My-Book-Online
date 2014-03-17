@@ -1,20 +1,24 @@
-/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/.
-/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/./Index
-/home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/.
-/home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/./Index
-/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/./test/TestDoc
-/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/.
-/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/./Index
-/home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/.
-/home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/./Index
-/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/./test/TestDoc
-/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/.
-/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/./Index
-/home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/.
-/home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/./Index
-/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/./test/TestDoc
-/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/MyBookOnline
-/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/MyBookOnline/Index
-/home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/MyBookOnline
-/home/seaman/Projects/mybook/webapps/mybook/user_doc/seaman/MyBookOnline/Index
-/home/seaman/Projects/mybook/webapps/mybook/user_doc/Public/MyBookOnline/test/TestDoc
+redir: /Index
+redir: test/Index
+redir: test/xxx/Index/missing
+redir: test/yyy/missing
+
+directories:
+/Index
+/Index
+/Index
+/Index
+/Index
+/Index
+/Index
+
+missing:
+test/TestDoc/missing
+xxx/Index/missing
+test/TestDoc/missing
+test/TestDoc/missing
+test/TestDoc/missing
+/missing
+Index/missing
+
+ok:

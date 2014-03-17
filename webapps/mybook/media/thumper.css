@@ -27,8 +27,8 @@ div.header {
     padding: 1em;
 }
 
-p a {
-    color: yellow;
+a {
+    color: green;
 }
 
 p {
@@ -45,5 +45,9 @@ li {
 
 hr {
     border:2px solid red;
+}
+
+.hlink {
+    color: yellow;
 }
 

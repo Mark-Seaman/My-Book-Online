@@ -59,34 +59,25 @@ def index_text(doc):
 #-----------------------------------------------------------------------------
 # Docs
 
-
 # Convert a url to a directory
 def doc_path(doc):
-    return join(environ['pd'],doc)
+    return environ['pd']+'/'+doc
 
 
-# Return the new url to visit  (Implied path host/user/doc)
-def redirect_path(url):
+# Either format the doc or return the redirect page
+def doc_redirect (url):
     doc = doc_path(url)
-    if exists(doc) and isfile(doc):
-        return
     if exists(doc):
-        if not isfile(doc):
-            #print 'DOCDIR='+doc
+        if isfile(doc):  # Is a file
+            return
+        else:   # Is a directory
             index = join(doc,'Index')
             if exists(index):
-                #print 'INDEX='+index
                 return url+'/Index'
             else:
                 return url+'/Index/missing'
     else:
         return url+'/missing' 
-
-
-# Either format the doc or return the redirect page
-def doc_redirect (url):
-    if redirect_path(doc):
-        print redirect_path(url)
 
 
 # Format the text of a doc as HTML
@@ -103,11 +94,8 @@ def doc_format(doc=None):
 
 # Show the formatted document for the file
 def doc_show(doc):
-    if not redirect_path(doc):
-        return format_doc(doc_path(doc))
-    else:
-        return redirect_path(doc)
-
+    return format_doc(doc_path(doc))
+    
 
 # Put the document text in storage
 def doc_put(doc):
@@ -116,9 +104,5 @@ def doc_put(doc):
 
 # Get the document text from storage
 def doc_get(doc):
-    if not redirect_path(doc):
-        path = doc_path(doc)
-        print read_text(path)
-    else:
-        print "redirect:%s/missing" % doc
+    print read_text(doc_path(doc))
 
