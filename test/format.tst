@@ -1,5 +1,5 @@
 #!/bin/bash
-# Test the hammer-wiki command
+# Test the format command to produce HTML
 
 doc-format < /dev/null
 
