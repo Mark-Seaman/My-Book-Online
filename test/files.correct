@@ -1,7 +1,6 @@
 Remove automatically saved files from this directory tree
 Git orig files
 Git libpeerconnection files
-
 /home/seaman/Projects/mybook:
 bin
 logs
