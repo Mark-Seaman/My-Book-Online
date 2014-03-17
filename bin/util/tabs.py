@@ -39,6 +39,23 @@ def format_tab(text):
     return results
 
 
+# Print all the tabs of text from the file
+def format_tabs(text):
+    results = ''
+    tab_groups = group_tabs(text)
+    tabs = text.split('**')
+    body = tabs[0].split('\n')
+    results += convert_html(body)
+    if len(tab_groups)>1:
+        results += '<div ng-controller="TabbedViewCtrl">\n'
+        results += '  <tabset ng-show="true">\n'
+        for g in tab_groups:
+            results += format_tab(g)
+        results += '  </tabset>\n'
+        results += '</div>\n'
+    return results
+
+
 # Print one tab of text
 def print_tab(text):
     print format_tab(text)
@@ -46,17 +63,18 @@ def print_tab(text):
 
 # Print all the tabs of text from the file
 def print_all_tabs(text):
-    tab_groups = group_tabs(text)
-    tabs = text.split('**')
-    body = tabs[0].split('\n')
-    print convert_html(body)
-    if len(tab_groups)>1:
-        print '<div ng-controller="TabbedViewCtrl">'
-        print '  <tabset ng-show="true">'
-        for g in tab_groups:
-            print_tab(g)
-        print '  </tabset>'
-        print '</div>'
+    # tab_groups = group_tabs(text)
+    # tabs = text.split('**')
+    # body = tabs[0].split('\n')
+    # print convert_html(body)
+    # if len(tab_groups)>1:
+    #     print '<div ng-controller="TabbedViewCtrl">'
+    #     print '  <tabset ng-show="true">'
+    #     for g in tab_groups:
+    #         print_tab(g)
+    #     print '  </tabset>'
+    #     print '</div>'
+    print format_tabs(text)
 
 
 #  Formatter to add tabs to the HTML formatting

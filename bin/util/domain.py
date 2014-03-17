@@ -5,7 +5,7 @@ from os.path    import isfile, exists,join
 from re         import compile, IGNORECASE, DOTALL
 
 from wiki  import *
-from tabs  import print_tab_doc
+from tabs  import print_tab_doc, format_tabs
 from files import read_input, read_text, write_file, is_writable
 
 
@@ -90,7 +90,9 @@ def doc_redirect (url):
 def show_domain_doc(url):
     doc = map_doc_path(url)
     if exists(doc) and isfile(doc):
-        print_tab_doc(doc)
+        #print_tab_doc(doc)
+        text = read_text(map_doc_path(doc))
+        return format_tabs(text)
 
 
 # Put the document text in storage

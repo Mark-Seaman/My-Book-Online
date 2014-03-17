@@ -2,15 +2,13 @@
 <br/> <h1>Test Page</h1>
 <br/> This is a test
 <br/> Check out this output
-<br/> 
-<div ng-controller="TabbedViewCtrl">
+<br/> <div ng-controller="TabbedViewCtrl">
   <tabset ng-show="true">
      <tab heading="Bold text and so much more">
         <div class="page">
         <b>Bold text and so much more</b>
 <br/> More plain text
-<ul><li>Bullet</li></ul>
-        </div>
+<ul><li>Bullet</li></ul>        </div>
      </tab>
      <tab heading="list item 1">
         <div class="page">
@@ -21,8 +19,8 @@
 <br/>  <a href="book/Home">book/Home</a> 
 <br/>  <a href="books">My books</a> 
 <br/> <a href="http://thisandthat.com" target="_blank">http://thisandthat.com</a>
-<br/> 
-        </div>
+<br/>         </div>
      </tab>
   </tabset>
 </div>
+
