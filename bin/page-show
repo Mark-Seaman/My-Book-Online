@@ -2,10 +2,10 @@
 # Format the requested document
 
 from sys        import argv
-from util.domain import  show_domain_doc
+from util.page import  show_page
 
 
 if len(argv)>1: 
-    print show_domain_doc(argv[1])
+    print show_page(argv[1])
 else:
     print 'usage: ', argv[0], 'url'

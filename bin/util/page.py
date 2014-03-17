@@ -7,7 +7,7 @@ from re         import compile, IGNORECASE, DOTALL
 from wiki  import *
 from tabs  import format_tabs, format_doc
 from files import read_input, read_text, write_file, is_writable
-
+from domain import domain_directory
 
 # Log the page hit in page.log  (time, ip, user, page, doc) 
 def log_page(doc):
@@ -15,23 +15,6 @@ def log_page(doc):
     f=open(logFile,'a')
     f.write(str(datetime.now())+',  '+doc+'\n')
     f.close()
-
-
-# Read the domain mapping from a file
-def domain_map():
-    map = {}
-    for d in open(join(environ['pd'],'Domains')).read().split('\n'):
-        d = d.split(' ')
-        if len(d)==2:
-            map[d[0]] = d[1]
-    return map
-
-
-# Map the domain to a document directory
-def domain_directory(domain):
-    m = domain_map()
-    if m.has_key(domain):
-        return m[domain]
 
 
 # Convert a url to a directory
@@ -82,7 +65,7 @@ def doc_redirect (url):
 
 
 # Either format the doc or return the redirect page
-def show_domain_doc(url):
+def show_page(url):
     doc = map_doc_path(url)
     if exists(doc) and isfile(doc):
         text = read_text(doc)
@@ -90,12 +73,12 @@ def show_domain_doc(url):
 
 
 # Put the document text in storage
-def put_domain_doc(doc):
+def put_page(doc):
     write_file(map_doc_path(doc), read_input())
 
 
 # Get the document text from storage
-def get_domain_doc(doc):
+def get_page(doc):
     if not doc_redirect(doc):
         print read_text(map_doc_path(doc))
     else:

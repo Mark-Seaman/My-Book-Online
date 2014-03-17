@@ -87,8 +87,8 @@ def format_doc(title):
     #from util.doc import  doc_show
     #return doc_show(title)
 
-    from util.domain import  show_domain_doc
-    return show_domain_doc(title)
+    from util.page import  show_page
+    return show_page(title)
 
 #    return do_command('doc-page %s'%title)
 

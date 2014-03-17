@@ -2,7 +2,7 @@
 # Format the requested document
 
 from sys         import argv
-from util.domain import  doc_redirect
+from util.page   import doc_redirect
 
 
 if len(argv)>1: 

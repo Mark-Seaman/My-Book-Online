@@ -2,12 +2,12 @@
 # Get the doc from storage
 
 from sys         import argv
-from util.domain import get_domain_doc
+from util.page import get_page
 
 if len(argv)<2:
     print 'usage: doc-page-get doc'
     exit(1)
  
-get_domain_doc(argv[1])
+get_page(argv[1])
 
 
