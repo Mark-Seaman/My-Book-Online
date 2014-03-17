@@ -89,25 +89,6 @@ def doc_redirect (url):
         print redirect_path(url)
 
 
-# Show the formatted document for the file
-def doc_show_tabs(doc):
-    if not redirect_path(doc):
-        print_tab_doc(doc_path(doc))
-    else:
-        print redirect_path(doc)
-
-# # Create html file contents from stdin
-# def page_html():
-#     text = stdin.read().split('\n')
-#     return convert_html(text)
-
-
-# # Create html file contents from stdin
-# def print_page_html():
-#     text = stdin.read() 
-#     print_all_tabs(text)
-
-
 # Format the text of a doc as HTML
 def doc_format(doc=None):
     if not doc:
@@ -118,7 +99,6 @@ def doc_format(doc=None):
         else:
             text = 'No doc found\n\nPATH = '+doc_path(doc)
     print_all_tabs(text)
-    #print convert_html(text)      
 
 
 # Show the formatted document for the file
