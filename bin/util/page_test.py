@@ -113,8 +113,8 @@ def test_web_pages(host,pages):
     try:
        browser.implicitly_wait(5)
        for page in pages:
-           print host+'/'+page
-           test_web_page(host,page)
+           print host+' '+page
+           test_web_page('http://'+host,page)
     except:
         print 'Test web pages failed'
 
