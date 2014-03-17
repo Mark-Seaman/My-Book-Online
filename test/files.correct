@@ -32,9 +32,6 @@ doc-get
 doc-list
 doc-new-page
 doc-oldest
-doc-page
-doc-page-get
-doc-page-put
 doc-pull
 doc-pull-all
 doc-push
@@ -61,9 +58,12 @@ mkexe
 mklinks
 mkpy
 page
+page-get
 page-grab
 page-log
+page-put
 page-redirect
+page-show
 project
 promote
 publish
@@ -87,7 +87,6 @@ svr-control-panel
 svr-do
 svr-restart
 t
-tab-view
 te
 tfail
 tlist

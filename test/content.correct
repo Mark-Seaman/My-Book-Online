@@ -70,6 +70,8 @@ This is a test page for the test user.
         <div class="page">
         <b>Tab 2</b>
 This is some more text
+</p><p>
+</p><p>
 </p><p>        </div>
      </tab>
   </tabset>
@@ -92,6 +94,8 @@ This is a test.
 </p><p>
 <h1>Test Document</h1>
 This is a test.
+</p><p>
+</p><p>
 </p><p>
 
 Test missing file

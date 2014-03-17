@@ -6,9 +6,6 @@ bin/create
 bin/doc-diff
 bin/doc-diff-all
 bin/doc-get
-bin/doc-page
-bin/doc-page-get
-bin/doc-page-put
 bin/doc-pull
 bin/doc-push
 bin/doc-put
@@ -19,7 +16,10 @@ bin/elapsed
 bin/filter-path
 bin/lc
 bin/mkexe
+bin/page-get
 bin/page-grab
+bin/page-put
+bin/page-show
 bin/project
 bin/range
 bin/rbg
@@ -47,6 +47,7 @@ bin/util/files.py
 bin/util/__init__.py
 bin/util/list.py
 bin/util/local_settings.py
+bin/util/page.py
 bin/util/page_test.py
 bin/util/table.py
 bin/util/tabs.py

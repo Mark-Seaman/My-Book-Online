@@ -68,8 +68,7 @@ def doc_redirect (url):
 def show_page(url):
     doc = map_doc_path(url)
     if exists(doc) and isfile(doc):
-        text = read_text(doc)
-        return format_tabs(text)
+        return format_doc(doc)
 
 
 # Put the document text in storage
@@ -85,7 +84,7 @@ def get_page(doc):
         print "redirect:%s/missing" % doc_redirect(doc)
 
 
-#  Formatter to add tabs to the HTML formatting
-def print_tab_doc(filename):
-    print format_doc(filename)
+# #  Formatter to add tabs to the HTML formatting
+# def print_tab_doc(filename):
+#     print format_doc(filename)
 
