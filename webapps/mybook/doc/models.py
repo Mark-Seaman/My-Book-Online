@@ -84,7 +84,13 @@ def format_doc(title):
     '''
     Run the wiki formatter on the document
     '''
-    return do_command('doc-page %s'%title)
+    #from util.doc import  doc_show
+    #return doc_show(title)
+
+    from util.domain import  show_domain_doc
+    return show_domain_doc(title)
+
+#    return do_command('doc-page %s'%title)
 
 
 def redirect_page(title):

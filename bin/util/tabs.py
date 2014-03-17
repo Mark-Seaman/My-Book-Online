@@ -24,17 +24,24 @@ def group_tabs(text):
     return results
 
 
-# Print one tab of text
-def print_tab(text):
+# Format one tab of text
+def format_tab(text):
+    results = ''
     lines   = text.split('\n')
     heading = lines[0]
     body    = lines[1:]
-    print '     <tab heading="%s">'%heading
-    print '        <div class="page">'
-    print '        <b>'+heading+'</b>'
-    print convert_html(body)
-    print '        </div>'
-    print '     </tab>'
+    results += '     <tab heading="%s">\n'%heading
+    results +=  '        <div class="page">\n'
+    results +=  '        <b>'+heading+'</b>\n'
+    results +=  convert_html(body)
+    results +=  '        </div>\n'
+    results +=  '     </tab>\n'
+    return results
+
+
+# Print one tab of text
+def print_tab(text):
+    print format_tab(text)
 
 
 # Print all the tabs of text from the file
