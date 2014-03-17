@@ -2,4 +2,4 @@
 # Wiki text formatter
 
 from util.doc import  doc_format
-doc_format()
+print doc_format()

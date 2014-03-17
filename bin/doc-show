@@ -7,6 +7,6 @@ from util.doc import  doc_show
 
 
 if len(argv)>1: 
-    doc_show(argv[1])
+    print doc_show(argv[1])
 else:
     print 'usage: ', argv[0], 'url'
