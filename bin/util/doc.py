@@ -59,17 +59,6 @@ def index_text(doc):
 #-----------------------------------------------------------------------------
 # Docs
 
-# Create html file contents from stdin
-def page_html():
-    text = stdin.read().split('\n')
-    return convert_html(text)
-
-
-# Create html file contents from stdin
-def print_page_html():
-    text = stdin.read() 
-    print_all_tabs(text)
-
 
 # Convert a url to a directory
 def doc_path(doc):
@@ -107,13 +96,35 @@ def doc_show_tabs(doc):
     else:
         print redirect_path(doc)
 
+# # Create html file contents from stdin
+# def page_html():
+#     text = stdin.read().split('\n')
+#     return convert_html(text)
+
+
+# # Create html file contents from stdin
+# def print_page_html():
+#     text = stdin.read() 
+#     print_all_tabs(text)
+
+
+# Format the text of a doc as HTML
+def doc_format(doc=None):
+    if not doc:
+        text = stdin.read()
+    else:
+        if exists(doc_path(doc)):
+            text = read_text(doc_path(doc))
+        else:
+            text = 'No doc found\n\nPATH = '+doc_path(doc)
+    print_all_tabs(text)
+    #print convert_html(text)      
+
 
 # Show the formatted document for the file
 def doc_show(doc):
     if not redirect_path(doc):
         print_tab_doc(doc_path(doc))
-        #text = read_file(doc_path(doc))
-        #print convert_html(text)
     else:
         print redirect_path(doc)
 

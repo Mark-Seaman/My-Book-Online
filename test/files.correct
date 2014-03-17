@@ -3,6 +3,7 @@ Git orig files
 Git libpeerconnection files
 /home/seaman/Projects/mybook:
 bin
+cache
 logs
 test
 webapps
@@ -112,6 +113,9 @@ web
 words
 wpull
 wpush
+
+/home/seaman/Projects/mybook/cache:
+pages.tst.cache
 
 /home/seaman/Projects/mybook/logs:
 user
