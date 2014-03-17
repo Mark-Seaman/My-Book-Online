@@ -27,7 +27,6 @@ doc-add
 doc-clone
 doc-commit
 doc-diff-all
-doc-file
 doc-format
 doc-get
 doc-list
@@ -64,6 +63,7 @@ mkpy
 page
 page-grab
 page-log
+page-redirect
 project
 promote
 publish
@@ -124,7 +124,6 @@ user
 content.correct
 content.tst
 doc-file.correct
-doc-file.tst
 docs.correct
 docs.tst
 files.correct
@@ -150,6 +149,8 @@ quote.correct
 quote.tst
 quote.txt
 random.correct
+redirect.correct
+redirect.tst
 script.correct
 script.tst
 src.correct

@@ -2,27 +2,27 @@
 # Format a document as HTML
 
 # Test the mapping from URL to DOC
-doc-file localhost:8052/Public
-doc-file localhost:8052/Public/Index
-doc-file localhost:8052/seaman
-doc-file localhost:8052/seaman/Index
-doc-file localhost:8052/Public/test/TestDoc
+page-redirect localhost:8052/Public
+page-redirect localhost:8052/Public/Index
+page-redirect localhost:8052/seaman
+page-redirect localhost:8052/seaman/Index
+page-redirect localhost:8052/Public/test/TestDoc
 
-doc-file shrinking-world.org/Public
-doc-file shrinking-world.org/Public/Index
-doc-file shrinking-world.org/seaman
-doc-file shrinking-world.org/seaman/Index
-doc-file shrinking-world.org/Public/test/TestDoc
+page-redirect shrinking-world.org/Public
+page-redirect shrinking-world.org/Public/Index
+page-redirect shrinking-world.org/seaman
+page-redirect shrinking-world.org/seaman/Index
+page-redirect shrinking-world.org/Public/test/TestDoc
 
-doc-file sxhrinking-world.org/Public
-doc-file sxhrinking-world.org/Public/Index
-doc-file sxhrinking-world.org/seaman
-doc-file sxhrinking-world.org/seaman/Index
-doc-file sxhrinking-world.org/Public/test/TestDoc
+page-redirect sxhrinking-world.org/Public
+page-redirect sxhrinking-world.org/Public/Index
+page-redirect sxhrinking-world.org/seaman
+page-redirect sxhrinking-world.org/seaman/Index
+page-redirect sxhrinking-world.org/Public/test/TestDoc
 
-doc-file mybookonline.org/Public
-doc-file mybookonline.org/Public/Index
-doc-file mybookonline.org/seaman
-doc-file mybookonline.org/seaman/Index
-doc-file mybookonline.org/Public/test/TestDoc
+page-redirect mybookonline.org/Public
+page-redirect mybookonline.org/Public/Index
+page-redirect mybookonline.org/seaman
+page-redirect mybookonline.org/seaman/Index
+page-redirect mybookonline.org/Public/test/TestDoc
 
