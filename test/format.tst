@@ -1,9 +1,9 @@
 #!/bin/bash
 # Test the hammer-wiki command
 
-hammer-wiki < /dev/null
+doc-format < /dev/null
 
-hammer-wiki <<EOF
+doc-format <<EOF
 * Test Page *
 This is a test
 Check out this output

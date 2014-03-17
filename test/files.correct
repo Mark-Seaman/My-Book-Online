@@ -25,11 +25,10 @@ deploy
 doc-add
 doc-clone
 doc-commit
-doc-container
 doc-diff-all
 doc-file
+doc-format
 doc-get
-doc-index
 doc-list
 doc-new-page
 doc-oldest
@@ -63,7 +62,6 @@ hammer-read
 hammer-tabs
 hammer-tests
 hammer-title
-hammer-wiki
 hammer-write
 hammer-years
 hourly
