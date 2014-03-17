@@ -9,7 +9,7 @@
 from sys        import argv, stdin
 from os.path    import exists, join, isfile
 from os         import environ,system
-from util.tabs  import print_tab_doc, print_all_tabs
+from util.tabs  import format_doc, format_tabs
 from util.wiki  import convert_html
 from util.files import read_input, read_text, read_file, write_file
 
@@ -98,15 +98,15 @@ def doc_format(doc=None):
             text = read_text(doc_path(doc))
         else:
             text = 'No doc found\n\nPATH = '+doc_path(doc)
-    print_all_tabs(text)
+    return format_tabs(text)
 
 
 # Show the formatted document for the file
 def doc_show(doc):
     if not redirect_path(doc):
-        print_tab_doc(doc_path(doc))
+        return format_doc(doc_path(doc))
     else:
-        print redirect_path(doc)
+        return redirect_path(doc)
 
 
 # Put the document text in storage

@@ -6,6 +6,6 @@ from util.domain import  show_domain_doc
 
 
 if len(argv)>1: 
-    show_domain_doc(argv[1])
+    print show_domain_doc(argv[1])
 else:
     print 'usage: ', argv[0], 'url'

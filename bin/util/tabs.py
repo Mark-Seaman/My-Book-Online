@@ -63,22 +63,11 @@ def print_tab(text):
 
 # Print all the tabs of text from the file
 def print_all_tabs(text):
-    # tab_groups = group_tabs(text)
-    # tabs = text.split('**')
-    # body = tabs[0].split('\n')
-    # print convert_html(body)
-    # if len(tab_groups)>1:
-    #     print '<div ng-controller="TabbedViewCtrl">'
-    #     print '  <tabset ng-show="true">'
-    #     for g in tab_groups:
-    #         print_tab(g)
-    #     print '  </tabset>'
-    #     print '</div>'
     print format_tabs(text)
 
 
 #  Formatter to add tabs to the HTML formatting
-def print_tab_doc(f):
-    text = read_text(f)
-    text = format_widgets(f,text)
-    print_all_tabs(text)
+def format_doc(filename):
+    text = read_text(filename)
+    text = format_widgets(filename,text)
+    return format_tabs(text)
