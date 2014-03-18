@@ -1,6 +1,6 @@
 
 from datetime   import datetime
-from os         import system,environ
+from os         import system,environ,chdir,getcwd
 from os.path    import isfile, exists,join
 from re         import compile, IGNORECASE, DOTALL
 
@@ -20,10 +20,11 @@ def log_page(doc):
 # Convert a url to a directory
 def doc_path(host,user,path):
     dir = domain_directory(host)
-    if not dir: 
-        dir = '.'
     user = user.replace('Anonymous', 'Public')
-    doc = user+'/'+dir+'/'+path
+    if dir: 
+        doc = user+'/'+dir+'/'+path
+    else:
+        doc = user+'/'+path
     log_page(doc)
     return environ['pd']+'/'+doc
 
@@ -43,7 +44,9 @@ def page_redirect (host,user,path):
 
 # Format the doc contents into HTML
 def show_page(host,user,path):
-    return format_doc(doc_path(host,user,path))
+    doc = doc_path(host,user,path)
+    if exists(doc):
+        return format_doc(doc)
 
 
 # Put the document text in storage

@@ -56,16 +56,6 @@ def format_tabs(text):
     return results
 
 
-# # Print one tab of text
-# def print_tab(text):
-#     print format_tab(text)
-
-
-# # Print all the tabs of text from the file
-# def print_all_tabs(text):
-#     print format_tabs(text)
-
-
 #  Formatter to add tabs to the HTML formatting
 def format_doc(filename):
     text = read_text(filename)
