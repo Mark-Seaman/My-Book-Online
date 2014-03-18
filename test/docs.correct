@@ -1102,6 +1102,7 @@
 ./test/TestDoc1
 ./test/TestIndex
 ./test/TestPrivateDoc1
+./test/xxx
 ./Title
 ./ToDo
 ./vars-data
