@@ -7,7 +7,7 @@ from os                 import system,environ
 from django.template    import loader, Context
 
 from models             import *
-from util.page          import show_page,put_page,get_page
+from util.page          import show_page,put_page,get_page,page_redirect
 
 
 logFile=environ['p']+'/logs/user/page.log'
@@ -85,9 +85,12 @@ def doc(request,title):
 
     doc = user_doc(request,title)
     log_page (request, title)
-
     host = request.get_host()
-    text = show_page(host,user(request),title)
+    u = user(request)
+    p = page_redirect(host,u,title)
+    if p: 
+        return redirect(request,p)
+    text = show_page(host,u,title)
     content =  {'site_title':request.get_host(), 'user':request.user, 'title': title, 'text': text}
     return render(request, 'doc.html', content)
 
