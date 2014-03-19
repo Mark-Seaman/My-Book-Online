@@ -16,9 +16,13 @@ bin/elapsed
 bin/filter-path
 bin/lc
 bin/mkexe
+bin/page
+bin/page-diff
 bin/page-get
 bin/page-grab
+bin/page-log
 bin/page-put
+bin/page-redirect
 bin/page-show
 bin/project
 bin/range
