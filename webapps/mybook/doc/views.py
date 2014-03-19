@@ -55,7 +55,9 @@ def log_page(request,title):
 
 # Render the view for a missing document
 def new(request,title):
-    text = format_doc('./Public/NewPage') # % title
+    #host = request.get_host()
+    #text = show_page(host, user(request),'NewPage') # % title
+    text = 'Creating a new page,'+title
     data = {'title':title, 'dir':dirname(title), 'text':text, 
             'default':basename(title), 'newpage':'{{newpage}}'}
     return render(request, 'new.html', data)
@@ -63,15 +65,10 @@ def new(request,title):
 
 # Render the view for a missing document
 def missing(request,title):
-    #if not permitted(request):
-    #    return redirect(request,'login')
-    text = format_doc('./Public/MissingFile') % title
+    text = 'MissingFile:' + title
     data = {'title':title, 'dir':dirname(title), 'text':text, 
             'default':basename(title), 'newpage':'{{newpage}}'}
-    #return render(request, 'missing.html', data)
-    content =  {'site':request.get_host(), 'user':request.user, 'title': 'Missing doc:'+title, 
-                'text': text}
-    return render(request, 'doc.html', content)
+    return render(request, 'missing.html', data)
 
 
 # Go to a specific page
@@ -82,7 +79,6 @@ def redirect(request,title):
 
 # Render the appropriate doc view
 def doc(request,title):
-
     doc = user_doc(request,title)
     log_page (request, title)
     host = request.get_host()
