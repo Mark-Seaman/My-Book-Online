@@ -38,7 +38,6 @@ else:
 LOGIN_URL           = '/login'
 LOGOUT_URL          = '/logout'
 
-ADMIN_MEDIA_PREFIX  = '/media/admin/'
 MEDIA_URL           = '/media/'
 ROOT_DIR            = dirname(abspath(__file__))
 NOTES_DIR           = ROOT_DIR+'/user_doc'
