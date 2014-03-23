@@ -8,7 +8,7 @@ from django.test            import TestCase
 from os                     import listdir
 from subprocess             import Popen,PIPE
 
-from settings               import DOC_ROOT, STATICFILES_DIRS
+from Hammer.settings        import DOC_ROOT, STATICFILES_DIRS
 from doc.views              import home,list_docs,doc,template,clone_doc
 from doc.models             import Note,NoteForm,list_docs,read_doc
 
