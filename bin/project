@@ -16,6 +16,10 @@ alias papp="cd $pa"
 alias pbin="cd $pb"
 alias pdoc="cd $pd"
 alias ptest="cd $pt"
+alias eapp="e $pa"
+alias ebin="e $pb"
+alias edoc="e $pd"
+alias etest="e $pt"
 
 alias rc='cp ~/bin/bashrc ~/.bashrc'
 alias s=search

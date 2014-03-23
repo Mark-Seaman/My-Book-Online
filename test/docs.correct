@@ -833,6 +833,7 @@
 ./seaman/BizPlan/SWS/DjangoHammer
 ./seaman/BizPlan/SWS/DocumentsToWrite
 ./seaman/BizPlan/SWS/Done
+./seaman/BizPlan/SWS/EngineeringServices
 ./seaman/BizPlan/SWS/Finances
 ./seaman/BizPlan/SWS/Functionality
 ./seaman/BizPlan/SWS/HammerProjects
@@ -1006,8 +1007,8 @@
 ./seaman/Years/Index
 ./seaman/Years/.template
 ./tbeilman
-./tbeilman/BizPlan
 ./tbeilman/Index
+./tbeilman/Publishing
 ./template
 ./template/4thot
 ./template/Action
