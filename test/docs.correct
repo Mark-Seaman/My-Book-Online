@@ -379,6 +379,11 @@
 ./Public/MyBookOnline/Chapter4
 ./Public/MyBookOnline/ContentOutline
 ./Public/MyBookOnline/Index
+./Public/MyBookOnline/Outline1
+./Public/MyBookOnline/Outline2
+./Public/MyBookOnline/Outline3
+./Public/MyBookOnline/Outline4
+./Public/MyBookOnline/Overview
 ./Public/MyBookOnline/Title
 ./Public/NewPage
 ./Public/NodeHammer
@@ -555,6 +560,8 @@
 ./Public/SpiritualGrowth/LifeApps/2014-03-02
 ./Public/SpiritualGrowth/LifeApps/2014-03-09
 ./Public/SpiritualGrowth/LifeApps/2014-03-16
+./Public/SpiritualGrowth/LifeApps/2014-03-23
+./Public/SpiritualGrowth/LifeApps/2014-03-30
 ./Public/SpiritualGrowth/LifeApps/Index
 ./Public/SpiritualGrowth/LifeApps/Random
 ./Public/SpiritualGrowth/Passages
@@ -903,6 +910,7 @@
 ./seaman/MyPlan/Grow/BestPractices
 ./seaman/MyPlan/Grow/BloodPressure
 ./seaman/MyPlan/Grow/Conversations
+./seaman/MyPlan/Grow/DailyQuestions
 ./seaman/MyPlan/Grow/DailyStartup
 ./seaman/MyPlan/Grow/Goals
 ./seaman/MyPlan/Grow/HealthReview
@@ -912,6 +920,7 @@
 ./seaman/MyPlan/Grow/Satisfaction
 ./seaman/MyPlan/Grow/SpiritualGrowth
 ./seaman/MyPlan/Grow/SpiritualThings
+./seaman/MyPlan/Grow/TimeBudget
 ./seaman/MyPlan/Index
 ./seaman/MyPlan/People
 ./seaman/MyPlan/People/Index

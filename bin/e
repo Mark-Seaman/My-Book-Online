@@ -2,7 +2,7 @@
 # Edit a file
 
 # Use gedit by default  (comment these two lines to use emacs instead)
-[ `hostname` == 'web126' ] && rbg gedit $* && exit 
+[ `hostname` == 'web126' ] && vi $* && exit 
 
 # Check to see if emacs is already running
 process=`ps -ef|grep -v grep|grep emacs`

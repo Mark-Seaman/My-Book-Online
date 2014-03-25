@@ -120,7 +120,7 @@ def do_command(cmd, input=None):
             p.stdin.write(input+'\n')
             p.stdin.close()
         else:
-            p = Popen(cmd.split(), stdout=PIPE)
+            p = Popen(cmd.split(' '), stdout=PIPE) #
             return  p.stdout.read()[:-1]
     except:
         return '<h1>Command Error</h1>'+\
