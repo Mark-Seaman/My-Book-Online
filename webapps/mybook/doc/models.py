@@ -4,9 +4,9 @@ from subprocess         import Popen,PIPE
 from os.path            import exists,join,dirname,basename
 from os                 import listdir,remove
 
-from Hammer.settings    import DOC_ROOT
-from util.page          import show_page
-from util.doc           import doc_show
+from settings    import DOC_ROOT
+from util.page   import show_page
+from util.doc    import doc_show
 
 #-----------------------------------------------------------------------------
 # Note data

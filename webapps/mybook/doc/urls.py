@@ -16,8 +16,6 @@ urlpatterns = patterns(
     #url('login',                            'doc.views.login'),
     #url('logout',                           'doc.views.logout_view'),
 
-    url(r'^try$',                           'doc.views.try_view'),
-
     url(r'^$',                              'doc.views.home'),
     url(r'^store/(?P<title>[\w\-_./]+)$',   'doc.views.store'),
     url(r'^(?P<title>[\w\-_./]+)/new$',     'doc.views.new'),
@@ -26,6 +24,5 @@ urlpatterns = patterns(
     url(r'^(?P<title>[\w\-_./]+)/edit$',    'doc.views.edit'),
     url(r'^(?P<title>[\w\-_./]+)/delete$',  'doc.views.delete'),
     url(r'^(?P<title>[\w\-_./]+)$',         'doc.views.doc'),
-
 
 )
