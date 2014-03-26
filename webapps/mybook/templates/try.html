@@ -8,10 +8,6 @@
             name = 'None'
 
             function ViewCtrl($scope,$http) {
-
-                $scope.address = 'My Address';
-                $scope.name = name;
-
             
                 // Get
                 $scope.get_var = function (var_name,action) {
@@ -26,6 +22,9 @@
                }
                $scope.get_address = function () {
                    $scope.get_var('address', function(data){ $scope.address=data} )
+               }
+               $scope.get_phone = function () {
+                   $scope.get_var('phone', function(data){ $scope.phone=data} )
                }
 
 
@@ -43,9 +42,13 @@
                $scope.set_address = function () {
                    $scope.set_var('address', $scope.address, function(data){} )
                }
+               $scope.set_phone = function () {
+                   $scope.set_var('phone', $scope.phone, function(data){} )
+               }
 
                $scope.get_name()
                $scope.get_address()
+               $scope.get_phone()
             }
 
             
@@ -60,6 +63,8 @@
           <input type='text' value='name'    ng-model='name'    ng-change='set_name()'>
           Address: 
           <input type='text' value='address' ng-model='address' ng-change='set_address()'>
+          Phone: 
+          <input type='text' value='phone'   ng-model='phone' ng-change='set_phone()'>
 
 
           <p><b>CONTACT:</b></p>

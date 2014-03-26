@@ -9,7 +9,7 @@ from django.template    import loader, Context
 from models             import *
 from util.page          import show_page,put_page,get_page,page_redirect
 
-page_data = { 'M_name': 'Not set', 'M_address': 'Not set' }
+page_data = { 'M_name': 'Not set', 'M_address': 'Not set', 'M_phone':'None' }
 
 # Create a page for testing
 def try_view(request):
