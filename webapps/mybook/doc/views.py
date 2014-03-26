@@ -9,6 +9,10 @@ from django.template    import loader, Context
 from models             import *
 from util.page          import show_page,put_page,get_page,page_redirect
 
+# Create a page for testing
+def try_view(request):
+    data = {'title':'Try This','text':'There are many things I wish to say'}
+    return  render(request,'try.html',data)
 
 logFile=environ['p']+'/logs/user/page.log'
 
