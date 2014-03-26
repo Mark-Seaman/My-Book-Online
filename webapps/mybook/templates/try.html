@@ -2,7 +2,84 @@
 
 {% block content %}
     {% autoescape off %}
-        <h1>{{ title }}</h1>
-        {{ text }}
+
+        <script>
+
+            name = 'None'
+
+            function ViewCtrl($scope,$http) {
+
+                $scope.address = 'My Address';
+                $scope.name = name;
+
+            
+                // Get
+                $scope.get_var = function (var_name,action) {
+                    source = '/get/'+var_name;
+                    $http.get(source).success(function(data,status,headers,config) {
+                        action(data)
+                    })
+               }
+
+               $scope.get_name = function () {
+                   $scope.get_var('name', function(data){ $scope.name=data} )
+               }
+               $scope.get_address = function () {
+                   $scope.get_var('address', function(data){ $scope.address=data} )
+               }
+
+
+               // Set
+               $scope.set_var = function (var_name, var_value, action) {
+                    source = '/set/'+var_name+'/'+var_value
+                    $http.get(source).success(function(data,status,headers,config) {
+                        action(data)
+                    })
+               }
+
+               $scope.set_name = function () {
+                   $scope.set_var('name', $scope.name, function(data){} )
+               }
+               $scope.set_address = function () {
+                   $scope.set_var('address', $scope.address, function(data){} )
+               }
+
+               $scope.get_name()
+               $scope.get_address()
+            }
+
+            
+        </script>
+
+        <div ng-controller='ViewCtrl'>
+
+          <h1>{{ title }}</h1>
+
+          <p>{{ text }}</p>
+          Name:    
+          <input type='text' value='name'    ng-model='name'    ng-change='set_name()'>
+          Address: 
+          <input type='text' value='address' ng-model='address' ng-change='set_address()'>
+
+
+          <p><b>CONTACT:</b></p>
+
+          <p>Name: {{name}}</p>
+          <button ng-click='get_name()'>Get Name</button>
+          <button ng-click='set_name(name)'>Set Name</button>
+         
+          <p>Address: {{address}}</p>
+          <button ng-click='get_address()'>Get Address</button>
+          <button ng-click='set_address(address)'>Set Address</button>
+
+          <!-- URLs to update data
+              <p>Get name: <a href='get/name'> {{ var }} = {{ value }}</a></p>
+              <p>Set name: <a href='set/name/{{name}}'> {{ var }} = {{ value }}</a></p>
+              <p>Get address: <a href='get/address'> {{ var }} = {{ value }}</a></p>
+              <p>Set address: <a href='set/address/{{address}}'> {{ var }} = {{ value }}</a></p>
+          -->
+
+
+        </div>
     {% endautoescape %}
 {% endblock %}
