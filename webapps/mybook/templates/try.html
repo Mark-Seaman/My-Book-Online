@@ -5,47 +5,47 @@
 
         <script>
 
-            name = 'None'
+            function get_variable (http,var_name,action) {
+                http.get('/get/'+var_name).success(function(data,status,headers,config) {
+                    action(data)
+                })
+            }
+
+            function set_variable (http,var_name, var_value, action) {
+                url = '/set/'+var_name+'/'+var_value
+                http.get(url).success(function(data,status,headers,config) {
+                    action(data)
+                })
+            }
+  
 
             function ViewCtrl($scope,$http) {
-            
-                // Get
-                $scope.get_var = function (var_name,action) {
-                    source = '/get/'+var_name;
-                    $http.get(source).success(function(data,status,headers,config) {
-                        action(data)
-                    })
-               }
-
+         
+               // Get
                $scope.get_name = function () {
-                   $scope.get_var('name', function(data){ $scope.name=data} )
+                   get_variable ($http, 'name', function(data){ $scope.name=data} )
                }
                $scope.get_address = function () {
-                   $scope.get_var('address', function(data){ $scope.address=data} )
+                   get_variable ($http, 'address', function(data){ $scope.address=data} )
                }
                $scope.get_phone = function () {
-                   $scope.get_var('phone', function(data){ $scope.phone=data} )
+                   get_variable ($http, 'phone', function(data){ $scope.phone=data} )
                }
 
 
                // Set
-               $scope.set_var = function (var_name, var_value, action) {
-                    source = '/set/'+var_name+'/'+var_value
-                    $http.get(source).success(function(data,status,headers,config) {
-                        action(data)
-                    })
-               }
-
                $scope.set_name = function () {
-                   $scope.set_var('name', $scope.name, function(data){} )
+                   set_variable ($http, 'name', $scope.name, function(data){} )
                }
                $scope.set_address = function () {
-                   $scope.set_var('address', $scope.address, function(data){} )
+                   set_variable ($http, 'address', $scope.address, function(data){} )
                }
                $scope.set_phone = function () {
-                   $scope.set_var('phone', $scope.phone, function(data){} )
+                   set_variable ($http, 'phone', $scope.phone, function(data){} )
                }
 
+
+               // Initial values
                $scope.get_name()
                $scope.get_address()
                $scope.get_phone()
