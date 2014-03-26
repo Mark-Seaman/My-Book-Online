@@ -1,4 +1,4 @@
-pipe-num = 50
+50
 pipe-num = 50
 scan_path = 2014/CNE-Creative/02-19/20140219
 scan_path = 2014/CNE-Creative/02-19/20140219
@@ -19,5 +19,5 @@ equipment_truck = Truck Name
     "scan_scanID": "65"
 }
 scan_pipeID = 89
-scan_pipeID = 89
+89
 scan_pipeID = 42

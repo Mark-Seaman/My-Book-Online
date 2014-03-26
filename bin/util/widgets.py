@@ -68,8 +68,8 @@ def command_name(doc):
     doc = doc.replace('..','x')
     doc = doc[9:-2]
     doc = doc.split('/')
-    doc = '/'.join(doc[:2]) + ' ' + ' '.join(doc[2:])
-    return environ['p']+"/wmd-scripts/"+doc
+    doc = '/'.join(doc[:1]) + ' ' + ' '.join(doc[1:])
+    return environ['p']+"/bin/scripts/"+doc
 
 # Replace a single include
 def replace_scripts (line):

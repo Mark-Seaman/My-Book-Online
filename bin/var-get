@@ -6,6 +6,6 @@ from util.vars import lookup
 
 
 # Set this var
-print "%s = %s" %(argv[1],lookup(argv[1]))
+print lookup(argv[1])
 
 
