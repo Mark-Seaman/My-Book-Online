@@ -856,6 +856,7 @@
 ./seaman/BizPlan/SWS/BestPractices
 ./seaman/BizPlan/SWS/BizPlan
 ./seaman/BizPlan/SWS/Brain
+./seaman/BizPlan/SWS/BusinessPlanning
 ./seaman/BizPlan/SWS/Communications
 ./seaman/BizPlan/SWS/CompanyServices
 ./seaman/BizPlan/SWS/ComputerSetup
@@ -928,6 +929,7 @@
 ./seaman/MyPlan/Fun/Restaurants
 ./seaman/MyPlan/Fun/TV
 ./seaman/MyPlan/Grow
+./seaman/MyPlan/Grow/12Weeks
 ./seaman/MyPlan/Grow/Beliefs
 ./seaman/MyPlan/Grow/BestPractices
 ./seaman/MyPlan/Grow/BloodPressure
@@ -1040,6 +1042,7 @@
 ./tbeilman
 ./tbeilman/Index
 ./tbeilman/Publishing
+./tbeilman/SpiritualGrowth
 ./template
 ./template/4thot
 ./template/Action

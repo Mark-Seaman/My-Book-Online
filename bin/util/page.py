@@ -1,7 +1,7 @@
 
 from datetime   import datetime
 from os         import system,environ,chdir,getcwd
-from os.path    import isfile, exists,join
+from os.path    import isfile, isdir, exists, join
 from re         import compile, IGNORECASE, DOTALL
 
 from wiki  import *
@@ -29,24 +29,43 @@ def doc_path(host,user,path):
     return environ['pd']+'/'+doc
 
 
-# Either format the doc or return the redirect page
+# Return the redirect page (after looking for Public & Private doc)
 def page_redirect (host,user,path):
+
+    doc = doc_path(host,'Public',path)
+    index = join(doc,'Index')
+
+    if exists(doc) and isfile(doc):
+        return
+
+    if exists(doc) and isdir(doc) and exists(index):
+        return path+'/Index'
+       
+    if exists(doc) and isdir(doc) and not exists(index):
+        return  path+'/Index/missing'
+
     doc = doc_path(host,user,path)
-    if exists(doc):
-        if not isfile(doc):
-            index = join(doc,'Index')
-            if exists(index):
-                return path+'/Index'
-            return  path+'/Index/missing'
-    else:
-        return path + '/missing' 
+    index = join(doc,'Index')
+    
+    if exists(doc) and isfile(doc):
+        return
+
+    if exists(doc) and isdir(doc) and exists(index):
+        return path+'/Index'
+   
+    return path + '/missing' 
  
 
 # Format the doc contents into HTML
 def show_page(host,user,path):
-    doc = doc_path(host,user,path)
+
+    doc = doc_path(host,'Public',path)
     if exists(doc):
         return format_doc(doc)
+
+    doc = doc_path(host,user,path)
+    if exists(doc):
+        return format_doc(doc)        
 
 
 # Put the document text in storage

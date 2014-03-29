@@ -11,14 +11,13 @@ directories:
 /Index
 /Index
 /Index
+/Index
 
 missing:
 test/TestDoc/missing
-xxx/Index/missing
+xxx/missing
 test/TestDoc/missing
 test/TestDoc/missing
 test/TestDoc/missing
-/missing
-Index/missing
 
 ok:

@@ -20,6 +20,7 @@ page-redirect shrinking-world.org seaman ''
 page-redirect sxhrinking-world.org Public ''
 page-redirect sxhrinking-world.org seaman ''
 page-redirect mybookonline.org Public ''
+page-redirect mybookonline.org seaman ''
 
 # Test the missing file detector
 echo
@@ -29,8 +30,6 @@ page-redirect shrinking-world.org test xxx
 page-redirect shrinking-world.org Public test/TestDoc
 page-redirect sxhrinking-world.org Public test/TestDoc
 page-redirect mybookonline.org Public test/TestDoc
-page-redirect mybookonline.org seaman ''
-page-redirect mybookonline.org seaman Index
 
 # Test the good files
 echo
@@ -42,6 +41,7 @@ page-redirect shrinking-world.org seaman Index
 page-redirect sxhrinking-world.org Public Index
 page-redirect sxhrinking-world.org seaman Index
 page-redirect mybookonline.org Public Index
+page-redirect mybookonline.org seaman Index
 
 
 
