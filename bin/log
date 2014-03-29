@@ -1,5 +1,12 @@
 #!/bin/bash
-# Show the page log
+# Show the recording logs
 
-e $p/logs/user/
+echo '--------------------------------------------------------'
+echo 'Page log:'
+tail -20 $p/logs/user/page.log
+
+echo
+echo '--------------------------------------------------------'
+echo 'Docs log:'
+tail -20 $p/logs/user/docs.log
 

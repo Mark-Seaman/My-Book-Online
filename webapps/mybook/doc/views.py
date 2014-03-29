@@ -6,34 +6,10 @@ from os.path            import join, exists, dirname
 from os                 import system,environ
 from django.template    import loader, Context
 
-from models             import *
-from util.page          import show_page,put_page,get_page,page_redirect
+from models    import *
+from util.page import show_page,put_page,get_page,page_redirect
+from util.log  import append_log
 
-page_data = { 'M_name': 'Not set', 'M_address': 'Not set', 'M_phone':'None' }
-
-# Create a page for testing
-def try_view(request):
-    data = {'title': 'Data Binding', 
-            'name': '{{name}}', 
-            'address': '{{address}}', 
-            'text': 'Three way data binding synchronizes the controls, models, and storage.'+
-                    'This data is saved with every keystroke.',
-            'var': 'Variable name',
-            'value': 'Value amount'}
-    return  render(request,'try.html',data)
-
-# Get and put
-def var_get(request,title):
-    title = 'M_'+title
-    return HttpResponse (page_data[title])
-
-def var_set(request,title,value):
-    title = 'M_'+title
-    page_data[title] = value
-    return HttpResponse (page_data[title])
-
-
-logFile=environ['p']+'/logs/user/page.log'
 
 # Render a web page
 def render(request,template,data): 
@@ -55,10 +31,6 @@ def user(request):
     else:
         return 'Anonymous'
 
-# Display the public document
-def public_doc(request,title):
-    return join(request.get_host(),'Public',title)
-
 
 # Return the document for this user.
 def user_doc(request,title):
@@ -68,18 +40,12 @@ def user_doc(request,title):
 
 
 # Log the page hit in page.log  (time, ip, user, page, doc) 
-def log_page(request,title):
-    u   = user(request)
-    f=open(logFile,'a')
-    options = (str(datetime.now()), ip(request), user_doc(request,title))
-    f.write(', '.join(options)+'\n')
-    f.close()
+def log_page(request,title): 
+    append_log( ip(request)+' '+request.get_host()+' '+user(request)+' '+title)
 
 
 # Render the view for a missing document
 def new(request,title):
-    #host = request.get_host()
-    #text = show_page(host, user(request),'NewPage') # % title
     text = 'Creating a new page,'+title
     data = {'title':title, 'dir':dirname(title), 'text':text, 
             'default':basename(title), 'newpage':'{{newpage}}'}
@@ -109,7 +75,7 @@ def doc(request,title):
     p = page_redirect(host,u,title)
     if p: 
         return redirect(request,p)
-    text = show_page(host,u,title)
+    text = show_page(host,u,title,True)
     content =  {'site_title':request.get_host(), 'user':request.user, 'title': title, 'text': text}
     return render(request, 'doc.html', content)
 
@@ -125,44 +91,48 @@ def private(request,title):
 
 
 #-----------------------------------------------------------------------------
-# Login
+# Edit
 
 
-#@login_required(login_url='/login')
 # Get and put doc directly
-def store(request,title):
-    log_page (request, title)
-    doc  = user_doc(request,title)
-    text = read_doc(doc)
-    return HttpResponse(text)
+@login_required(login_url='/login')
+def read_text(request,title,text):
+    log_page (request,'read:%s'%title)
+    if not text:
+        text = get_page(request.get_host(),user(request),title)
+    return text
 
 
-#@login_required(login_url='/login')
+# Save the text after editing
+def save_text(request,title,text):
+    log_page (request, 'save:%s'%title)
+    text = text.encode('ascii', 'ignore')
+    text = text.replace('\r','')
+    host = request.get_host()
+    u = user(request)
+    put_page(host,u,title,text)
+
+
 # Create a form for editing the object details
+@login_required(login_url='/login')
 def edit_form (request, doc, title=None, text=None):
     log_page (request, 'form:%s'%doc)
-    return missing(request,title)
+    #return missing(request,title)
     if request.method == 'POST':
         form = NoteForm(request.POST)
         if request.POST.get('cancel', None):
             return redirect(request,title)
         else:
             if form.is_valid():
-                log_page (request, 'save:%s'%doc)
                 text =  form.cleaned_data['body']
-                text = text.encode('ascii', 'ignore')
-                text = text.replace('\r','')
-                write_doc(doc,text)
+                save_text(request,title,text)
                 return redirect(request,title)
     else:
         note =  Note()
         note.path = title
-        log_page (request,'read:%s'%doc)
-        if not text:
-            #text = read_doc(doc)
-            text = get_page(request.get_host(),user(request),title)
-        note.body = text
+        note.body = read_text(request,title,text)
         form =  NoteForm(instance=note)
+
     data =  { 'form': form, 'title': title, 'banner': True  }
     return render(request, 'docedit.html', data)
 
@@ -171,6 +141,12 @@ def edit_form (request, doc, title=None, text=None):
 def edit(request,title):
     doc = user_doc(request,title)
     log_page (request, 'edit:%s'%doc)
+    host = request.get_host()
+    u = user(request)
+    p = page_redirect(host,u,title,False)
+    if p: 
+        return redirect(request,p)
+
     return edit_form (request, doc, title)
 
 
@@ -183,6 +159,7 @@ def add(request,title):
         return redirect(request,text[len('redirect:'):-1])
     return missing(request,title)
 
+# Delete a specific document
 def delete(request,title):
     '''
     Delete the record

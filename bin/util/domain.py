@@ -30,7 +30,7 @@ def domain_map():
 # Map the domain to a document directory
 def domain_directory(domain):
     m = domain_map()
-    if m.has_key(domain):
+    if m.has_key(domain) and m[domain]!='.':
         return m[domain]
 
 
