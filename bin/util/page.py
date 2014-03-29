@@ -31,7 +31,7 @@ def doc_path(host,user,path):
 # Return the redirect page (after looking for Public & Private doc)
 def page_redirect (host,user,path,allow_public=True):
 
-    log_page('redirect '+host+' '+user+' '+path+' '+allow_public)
+    log_page('redirect '+host+' '+user+' '+path+' '+str(allow_public))
 
     if allow_public:
         doc = doc_path(host,'Public',path)
