@@ -7,7 +7,7 @@ from os                 import system,environ
 from django.template    import loader, Context
 
 from models    import *
-from util.page import show_page,put_page,get_page,page_redirect
+from util.page import show_page,put_page,get_page,page_redirect,allow_edit
 from util.log  import append_log
 
 
@@ -141,13 +141,10 @@ def edit_form (request, doc, title=None, text=None):
 def edit(request,title):
     doc = user_doc(request,title)
     log_page (request, 'edit:%s'%doc)
-    host = request.get_host()
-    u = user(request)
-    p = page_redirect(host,u,title,False)
-    if p: 
-        return redirect(request,p)
-
-    return edit_form (request, doc, title)
+    if allow_edit(request.get_host(), user(request), title):
+        return edit_form (request, doc, title)
+    else:
+        return missing(request,"NOT ALLOWED TO EDIT -- "+title)
 
 
 # Render the add view
