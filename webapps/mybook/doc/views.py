@@ -14,7 +14,7 @@ from util.log  import append_log
 # Render a web page
 def render(request,template,data): 
     page = loader.get_template (template)
-    return HttpResponse (page.render (RequestContext(data)))
+    return HttpResponse (page.render (Context(data)))
 
 
 # Get the IP address for the request
