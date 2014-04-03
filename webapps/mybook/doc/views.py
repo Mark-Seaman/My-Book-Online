@@ -4,7 +4,7 @@ from django.http        import HttpResponseRedirect, HttpResponse
 from django.utils.html  import escape
 from os.path            import join, exists, dirname
 from os                 import system,environ
-from django.template    import loader, Context
+from django.template    import loader, Context, RequestContext
 
 from models    import *
 from util.page import show_page,put_page,get_page,page_redirect,allow_edit
@@ -14,7 +14,7 @@ from util.log  import append_log
 # Render a web page
 def render(request,template,data): 
     page = loader.get_template (template)
-    return HttpResponse (page.render (Context(data)))
+    return HttpResponse (page.render (RequestContext(data)))
 
 
 # Get the IP address for the request
