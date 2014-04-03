@@ -1,20 +1,26 @@
 from datetime           import datetime
 from django.contrib.auth.decorators import login_required
 from django.http        import HttpResponseRedirect, HttpResponse
+from django.shortcuts   import render_to_response, get_object_or_404
+from django.template    import loader, Context, RequestContext
 from django.utils.html  import escape
 from os.path            import join, exists, dirname
 from os                 import system,environ
-from django.template    import loader, Context, RequestContext
 
 from models    import *
 from util.page import show_page,put_page,get_page,page_redirect,allow_edit
 from util.log  import append_log
 
 
+# Render a form for editing
+def form_render(request,template,data):
+    return render_to_response(template, data, context_instance=RequestContext(request))
+
+
 # Render a web page
 def render(request,template,data): 
     page = loader.get_template (template)
-    return HttpResponse (page.render (Context(data)))
+    return HttpResponse(page.render(Context(data)))
 
 
 # Get the IP address for the request
@@ -134,7 +140,7 @@ def edit_form (request, doc, title=None, text=None):
         form =  NoteForm(instance=note)
 
     data =  { 'form': form, 'title': title, 'banner': True  }
-    return render(request, 'docedit.html', data)
+    return form_render (request, 'docedit.html', data)
 
 
 # Render the add view
