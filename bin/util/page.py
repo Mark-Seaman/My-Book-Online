@@ -50,7 +50,20 @@ def page_redirect (host,user,path,allow_public=True):
     if exists(doc) and isdir(doc) and not exists(index):
         return  path+'/Index/missing'
     return path + '/missing' 
+
  
+# Determine if editing is allowed
+def allow_edit(host,user,path):
+    return exists(doc_path(host,user,path))
+
+
+# If editing is allowed then make a hyperlink
+def edit_link(host,user,path):
+    if allow_edit(host,user,path):
+        return '<a href="http://'+host+'/'+path+'/edit">Edit Document</a>'
+    else:
+        return ''
+
 
 # Format the doc contents into HTML
 def show_page(host,user,path,allow_public=True):
@@ -62,7 +75,7 @@ def show_page(host,user,path,allow_public=True):
 
     doc = doc_path(host,user,path)
     if exists(doc):
-        return format_doc(doc)        
+        return edit_link(host,user,path)+format_doc(doc)        
 
 
 # Put the document text in storage
