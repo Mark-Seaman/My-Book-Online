@@ -35,7 +35,7 @@ def preserve_spaces(line):
 
 # Break lines for <space> at beginning
 def space_breaks(line):
-    always_break = False
+    always_break = True
     if always_break or (len(line)>0 and line[0]==' '):
         return  '<br/> '+line
     return line
