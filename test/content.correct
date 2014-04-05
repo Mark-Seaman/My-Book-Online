@@ -36,44 +36,44 @@ redirect: test/Index
 
 Index
 ------------------
-<h1>Test User Home</h1>
-This is a test page for the test user.
-</p><p><div ng-controller="TabbedViewCtrl">
+<br/> <h1>Test User Home</h1>
+<br/> This is a test page for the test user.
+<br/> <div ng-controller="TabbedViewCtrl">
   <tabset ng-show="true">
      <tab heading="Tab 1">
         <div class="page">
         <b>Tab 1</b>
 <br/>  This is some text
-</p><p>        </div>
+<br/>         </div>
      </tab>
      <tab heading="Tab 2">
         <div class="page">
         <b>Tab 2</b>
-This is some more text
-</p><p>
-</p><p>
-</p><p>        </div>
+<br/> This is some more text
+<br/> 
+<br/> 
+<br/>         </div>
      </tab>
   </tabset>
 </div>
 
-<h1>Test User Home</h1>
-This is a test page for the test user.
-</p><p><div ng-controller="TabbedViewCtrl">
+<br/> <h1>Test User Home</h1>
+<br/> This is a test page for the test user.
+<br/> <div ng-controller="TabbedViewCtrl">
   <tabset ng-show="true">
      <tab heading="Tab 1">
         <div class="page">
         <b>Tab 1</b>
 <br/>  This is some text
-</p><p>        </div>
+<br/>         </div>
      </tab>
      <tab heading="Tab 2">
         <div class="page">
         <b>Tab 2</b>
-This is some more text
-</p><p>
-</p><p>
-</p><p>        </div>
+<br/> This is some more text
+<br/> 
+<br/> 
+<br/>         </div>
      </tab>
   </tabset>
 </div>
@@ -88,16 +88,16 @@ This is some more text
 
 Formatted output
 ------------------
-<h1>Test Document</h1>
-This is a test.
-</p><p>
-</p><p>
-</p><p>
-<h1>Test Document</h1>
-This is a test.
-</p><p>
-</p><p>
-</p><p>
+<br/> <h1>Test Document</h1>
+<br/> This is a test.
+<br/> 
+<br/> 
+<br/> 
+<br/> <h1>Test Document</h1>
+<br/> This is a test.
+<br/> 
+<br/> 
+<br/> 
 
 Test missing file
 ------------------

@@ -1,8 +1,7 @@
-#!/bin/bash
-# List all of the saved vars
+#!/usr/bin/env python
+# List the variables
 
-f=$pd/vars-data
-[ -f "$p/pipedata/ramdisk/vars-data" ] && f="$p/pipedata/ramdisk/vars-data"
+from sys  import argv
+from util.vars import list_vars
 
-cat $f
-
+list_vars()

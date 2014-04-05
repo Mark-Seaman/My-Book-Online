@@ -483,6 +483,7 @@
 ./Public/ShrinkingWorld/MySlides/MySlides/WriteANewArticle
 ./Public/ShrinkingWorld/MySlides/MySlides/WriterUserStories
 ./Public/ShrinkingWorld/OpenSource
+./Public/ShrinkingWorld/Pricing
 ./Public/ShrinkingWorld/PythonWebDev
 ./Public/ShrinkingWorld/SlideSlinger
 ./Public/ShrinkingWorld/SoftwareEngineering
@@ -564,6 +565,7 @@
 ./Public/SpiritualGrowth/LifeApps/2014-03-30
 ./Public/SpiritualGrowth/LifeApps/Index
 ./Public/SpiritualGrowth/LifeApps/Random
+./Public/SpiritualGrowth/LifeApps/Template
 ./Public/SpiritualGrowth/Passages
 ./Public/SpiritualGrowth/Passages/01
 ./Public/SpiritualGrowth/Passages/02
@@ -769,6 +771,7 @@
 ./Public/SuperPower/YourPlanningSystem
 ./Public/test
 ./Public/TestIndex
+./Public/WatermillSupportTools
 ./seaman
 ./seaman/BizPlan
 ./seaman/BizPlan/AppThumper
@@ -789,6 +792,7 @@
 ./seaman/BizPlan/AppThumper/History/2014-01
 ./seaman/BizPlan/AppThumper/History/2014-02
 ./seaman/BizPlan/AppThumper/History/2014-03
+./seaman/BizPlan/AppThumper/History/2014-04
 ./seaman/BizPlan/AppThumper/History/Index
 ./seaman/BizPlan/AppThumper/Index
 ./seaman/BizPlan/AppThumper/OldNotes
@@ -821,9 +825,13 @@
 ./seaman/BizPlan/History/2014-03-Time
 ./seaman/BizPlan/History/2014-04
 ./seaman/BizPlan/History/2014-04-Time
+./seaman/BizPlan/History/DoneTemplate
 ./seaman/BizPlan/History/Index
+./seaman/BizPlan/History/TimeTemplate
 ./seaman/BizPlan/History/WorkMap
+./seaman/BizPlan/History/WorkTimeHistory
 ./seaman/BizPlan/Index
+./seaman/BizPlan/Learn
 ./seaman/BizPlan/Meetings
 ./seaman/BizPlan/Meetings/2013-12-10
 ./seaman/BizPlan/Meetings/2013-12-11
@@ -844,10 +852,16 @@
 ./seaman/BizPlan/Publishing/ContentLifecycle
 ./seaman/BizPlan/Publishing/ContentOutline
 ./seaman/BizPlan/Publishing/Index
+./seaman/BizPlan/Publishing/ListMyBook
+./seaman/BizPlan/Publishing/ListSeamansLog
+./seaman/BizPlan/Publishing/ListShrinkingWorld
+./seaman/BizPlan/Publishing/ListSpiritualThings
 ./seaman/BizPlan/Publishing/Log
 ./seaman/BizPlan/Publishing/ProjectPlan
 ./seaman/BizPlan/Publishing/PublishingMetrics
 ./seaman/BizPlan/Publishing/SubscriberList
+./seaman/BizPlan/Publishing/SubscriberListTemplate
+./seaman/BizPlan/Publishing/ToddsTasks
 ./seaman/BizPlan/Publishing/WebSite
 ./seaman/BizPlan/Publishing/Writing
 ./seaman/BizPlan/SWS
@@ -860,6 +874,7 @@
 ./seaman/BizPlan/SWS/Communications
 ./seaman/BizPlan/SWS/CompanyServices
 ./seaman/BizPlan/SWS/ComputerSetup
+./seaman/BizPlan/SWS/DataTypeImplementation
 ./seaman/BizPlan/SWS/DjangoHammer
 ./seaman/BizPlan/SWS/DocumentsToWrite
 ./seaman/BizPlan/SWS/Done
@@ -868,6 +883,7 @@
 ./seaman/BizPlan/SWS/Functionality
 ./seaman/BizPlan/SWS/HammerProjects
 ./seaman/BizPlan/SWS/HammerScripts
+./seaman/BizPlan/SWS/HowWeWork
 ./seaman/BizPlan/SWS/Ideas
 ./seaman/BizPlan/SWS/Index
 ./seaman/BizPlan/SWS/Investments
@@ -883,6 +899,7 @@
 ./seaman/BizPlan/SWS/PageTest
 ./seaman/BizPlan/SWS/Planner
 ./seaman/BizPlan/SWS/PlanningMap
+./seaman/BizPlan/SWS/PricingModel
 ./seaman/BizPlan/SWS/PythonTools
 ./seaman/BizPlan/SWS/ScreenScrape
 ./seaman/BizPlan/SWS/SeamansLog
@@ -927,12 +944,14 @@
 ./seaman/MyPlan/Fun/Movies
 ./seaman/MyPlan/Fun/Music
 ./seaman/MyPlan/Fun/Restaurants
+./seaman/MyPlan/Fun/Travel
 ./seaman/MyPlan/Fun/TV
 ./seaman/MyPlan/Grow
 ./seaman/MyPlan/Grow/12Weeks
 ./seaman/MyPlan/Grow/Beliefs
 ./seaman/MyPlan/Grow/BestPractices
 ./seaman/MyPlan/Grow/BloodPressure
+./seaman/MyPlan/Grow/Build
 ./seaman/MyPlan/Grow/Conversations
 ./seaman/MyPlan/Grow/DailyQuestions
 ./seaman/MyPlan/Grow/DailyStartup
@@ -941,9 +960,11 @@
 ./seaman/MyPlan/Grow/Index
 ./seaman/MyPlan/Grow/Learn
 ./seaman/MyPlan/Grow/PersonalGrowth
+./seaman/MyPlan/Grow/Plan
 ./seaman/MyPlan/Grow/Satisfaction
 ./seaman/MyPlan/Grow/SpiritualGrowth
 ./seaman/MyPlan/Grow/SpiritualThings
+./seaman/MyPlan/Grow/Teach
 ./seaman/MyPlan/Grow/TimeBudget
 ./seaman/MyPlan/Index
 ./seaman/MyPlan/People
@@ -1040,9 +1061,9 @@
 ./seaman/Years/Index
 ./seaman/Years/.template
 ./tbeilman
-./tbeilman/Index
 ./tbeilman/Publishing
 ./tbeilman/SpiritualGrowth
+./tbeilman/ToddHome
 ./template
 ./template/4thot
 ./template/Action

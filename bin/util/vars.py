@@ -5,16 +5,19 @@ from sys import stdin, argv
 from os  import environ, path
 from json import dumps, loads
 from os.path import exists
-
+from shutil import copy
 
 # Global state cache
 vars = {}
 
 # File to save
-var_file = environ['p']+'/pipedata/ramdisk/vars-data'
+var_file = environ['p']+'/profile'
 if not exists(var_file):
-    var_file = environ['pd']+'/vars-data'
-
+    print 'No file found',var_file
+    default_file = environ['pd']+'/vars-data'
+    if exists(default_file):
+        print 'Copy ',default_file,var_file
+        copy (default_file,var_file)
 
 # Save vars in a named file
 def save_all_vars(file=None):
@@ -47,6 +50,13 @@ def lookup(var):
         read_all_vars()
     if vars.has_key(var): return vars[var]
     vars[var] = 0
+
+# List all the store variables
+def list_vars():
+    if vars=={}:
+        read_all_vars()
+    for v in sorted(vars):
+        print v,'=',vars[v]
 
 # Set a variable
 def set_var(name,value):

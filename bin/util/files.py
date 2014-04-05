@@ -51,6 +51,12 @@ def read_text(f):
         return open(f).read()
     return 'No file found, '+f
 
+# Return the text from the file
+def write_text(filename, text, append=None):
+    f=open(filename, 'a' if append else 'w')
+    f.write(text)
+    f.close()
+
 # Read lines from a file and strip off the tailing newline
 def read_file(filename):
     if not exists(filename): return [ ]
@@ -61,9 +67,7 @@ def read_file(filename):
 
 # Write lines of text to a file
 def write_file(filename, lines, append=None):
-    f=open(filename, 'a' if append else 'w')
-    f.write("\n".join(lines)+"\n")
-    f.close()
+    write_text(filename, "\n".join(lines)+"\n", append)
 
 # Gather new lines
 def accumulate_new_lines(accumulator,f2):
@@ -93,12 +97,13 @@ def list_dirs(directory):
 def count_files(directory):
     print len(list_files(directory)), directory
  
-
 # Create the directory if needed
-def create_directory(directory):
-    if not exists(directory):
-        create_directory(dirname(directory))
-        mkdir (directory)
+def create_directory(path):
+    if path=='' or path=='/': 
+        return
+    create_directory(dirname(path))
+    if  not exists(path):
+        mkdir (path)
 
 # Print a flat list
 def print_list (list):
