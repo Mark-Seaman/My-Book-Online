@@ -93,6 +93,7 @@ svr-restart
 t
 te
 tfail
+tfix
 tlist
 tnew
 todo

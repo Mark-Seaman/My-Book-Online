@@ -71,6 +71,7 @@ test/files.tst
 test/git.tst
 test/projects.tst
 test/src.tst
+test/table.tst
 test/update.tst
 test/vars.tst
 
