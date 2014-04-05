@@ -100,6 +100,7 @@ def convert_links(text1):
 
 # Convert a single text line to html
 def convert_line(line):
+    line = line.decode('utf-8').encode('ascii', 'ignore')
     line = remove_muse(line).rstrip()
     line = space_breaks(line)
     line = format_rules(line)
