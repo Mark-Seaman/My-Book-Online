@@ -3,14 +3,14 @@
 
 echo 'Deploy code for $p to server'
 
-cd $pa                              &&
+cd $p                               &&
 git add -A .                        &&
 git commit -m'Automatic deployment' ;
 git pull                            &&
 git push                            &&
 svr-do 'git pull'                   &&
 svr-restart                         &&
-web  
+web                                 &&
+echo 'Deployment was successful'
 
-# ssh $sa
 

@@ -11,7 +11,7 @@ from files  import list_files, read_text, do_command
 
 # Get a directory of possible selection
 def directory_listing(dir):
-    return [ x for x in list_files(dir) if not x in ['Index','Random'] ]
+    return [ x for x in list_files(dir) if not x in ['Index','Random','Template'] ]
 
 
 # Insert a random selected file into this spot if requested
@@ -19,7 +19,7 @@ def lookup_file(dir, line):
     if '[[PICK]]' in line:
         pick = directory_listing(dir)
         pick = choice(pick)
-        return 'selection:%s\n\n%s'%(pick,read_text(join(dir,pick)))
+        return read_text(join(dir,pick))
     return line
 
 
