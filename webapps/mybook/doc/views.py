@@ -99,7 +99,12 @@ def signup(request,listname):
 It's free, and easy.<br>
 <br>
 Unsubscribe at any time.<br>'''
-    return  render(request, 'signup.html', {'title': listname, 'text': text })
+    if listname=='MyBookOnline':
+        form = 'signup.html'
+    else:
+        form = 'signup-seamanslog.html'
+
+    return  render(request, form, {'title': listname, 'text': text })
 
 
 @login_required(login_url='/login')

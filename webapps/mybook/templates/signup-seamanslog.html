@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+      {% autoescape off %}
+      <h1>{{ title }}</h1>
+      <div class='page'>
+          <p>
+            {{ text }}
+          </p>
+
+          <div class="AW-Form-1303203394"></div>
+
+          <script type="text/javascript">(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "http://forms.aweber.com/form/94/1303203394.js";
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, "script", "aweber-wjs-uik3mte61"));
+          </script>      
+          
+          <!--
+              <p><input type="text" ng-model="email" ng-bind="email"/></p>
+              <p>Select to sign up: <a href='/email/{{email}}'>{{email}}</a> </p>
+          -->
+
+      </div>
+
+      {% endautoescape %}
+{% endblock %}
