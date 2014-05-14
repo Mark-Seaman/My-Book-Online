@@ -16,10 +16,10 @@ urlpatterns = patterns(
     #url('login',                            'doc.views.login'),
     #url('logout',                           'doc.views.logout_view'),
 
-    url(r'^signup$',                         'doc.views.signup'),
-    url(r'^try$',                            'doc.view_try.try_view'),
-    url(r'^get/(?P<title>[\w\-_./]+)$',      'doc.view_try.var_get'),
-    url(r'^set/(?P<title>[\w\-_./]+)/(?P<value>[\w\-_\ ./]+)$', 'doc.view_try.var_set'),
+    url(r'^signup/(?P<listname>[\W\w\-_./]+)$', 'doc.views.signup'),
+    #url(r'^try$',                            'doc.view_try.try_view'),
+    #url(r'^get/(?P<title>[\w\-_./]+)$',      'doc.view_try.var_get'),
+    #url(r'^set/(?P<title>[\w\-_./]+)/(?P<value>[\w\-_\ ./]+)$', 'doc.view_try.var_set'),
 
     url(r'^$',                              'doc.views.home'),
     url(r'^store/(?P<title>[\w\-_./]+)$',   'doc.views.store'),
