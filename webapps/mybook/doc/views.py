@@ -93,7 +93,13 @@ def home(request):
 
 # Render the home view
 def signup(request):
-    return  render(request, 'signup.html', {})
+
+    text = '''Get updates automatically by email.<br>
+<br>
+It's free, and easy.<br>
+<br>
+Unsubscribe at any time.<br>'''
+    return  render(request, 'signup.html', {'title': 'My Book Online', 'text': text })
 
 
 @login_required(login_url='/login')
