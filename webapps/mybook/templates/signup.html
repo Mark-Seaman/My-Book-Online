@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+      {% autoescape off %}
+<div class="AW-Form-871785313"></div>
+
+<script type="text/javascript">(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "http://forms.aweber.com/form/13/871785313.js";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, "script", "aweber-wjs-nocnilwsb"));
+</script>
+
+        <div class='page'>
+          <p>
+            Sign up if you want to be notified of new updates.
+          </p>
+            <p><input type="text" ng-model="email" ng-bind="email"/></p>
+            <p>Select to sign up: <a href='/email/{{email}}'>{{email}}</a> </p>
+        </div>
+
+      {% endautoescape %}
+{% endblock %}

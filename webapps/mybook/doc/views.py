@@ -91,6 +91,11 @@ def home(request):
     return  doc(request,'Index')
 
 
+# Render the home view
+def signup(request):
+    return  render(request, 'signup.html', {})
+
+
 @login_required(login_url='/login')
 def private(request,title):
     return doc(request,title)
