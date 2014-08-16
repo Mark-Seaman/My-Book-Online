@@ -5,7 +5,7 @@ cd $pb
 d="$pd/$1"
 
 python <<EOF | sort
-from files import  time_sort_file,recursive_list
+from util.files import  time_sort_file,recursive_list
 
 for f in time_sort_file("$d")[-10:]:
     print f
